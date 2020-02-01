@@ -1,0 +1,13 @@
+
+<div id = "post">
+  <ul style="list-style-type:none" id="list">
+    <li id="title">
+      {{post.title}}
+    </li>
+    <a *ngFor="let content of this.post.content">
+      <li id="item">
+        <div [innerHTML]="content.content"></div>
+      </li>
+    </a>
+  </ul>
+</div>

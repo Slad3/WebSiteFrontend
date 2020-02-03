@@ -11,29 +11,33 @@ import {parseString} from 'xml2js';
 })
 export class DatascienceComponent implements OnInit {
 
-  message: string =  'Message not set yet';
-  url: string = 'http://127.0.0.1:5000/index';
+  message =  'Message not set yet';
+  data;
+  url: string = 'http://127.0.0.1:5000/';
+
+  getData() {
+    console.log('here though');
+
+    this.http.get(  this.url + 'file',
+      { responseType: 'text' }).subscribe((data) => {
+      parseString(data, { explicitArray: false }, (error, result) => {
+        this.data = JSON.stringify(data);
+        this.data = JSON.parse(this.data);
+        this.message = this.data;
+
+      });
+    });
+  }
 
   constructor(private http: HttpClient) {
     this.http = http;
-    this.message = this.getData();
+    this.getData();
+    console.log('Message: ' + this.message);
   }
 
   ngOnInit() {
 
   }
 
-  getData(): string {
-    console.log('here though');
-    this.http.get(  this.url,
-      { responseType: 'text' }).subscribe((data) => {
-      parseString(data, { explicitArray: false }, (error, result) => {
-        console.log('Resulasdft:\t' + result);
-        return result;
-      });
-  });
 
-    console.log('what');
-    return 'not worked';
-  }
 }

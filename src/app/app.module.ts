@@ -9,6 +9,7 @@ import { FeedComponent } from './feed/feed.component';
 import { PostComponent } from './post/post.component';
 import { DatascienceComponent } from './datascience/datascience.component';
 import { CheatsheetsComponent } from './cheatsheets/cheatsheets.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CheatsheetsComponent } from './cheatsheets/cheatsheets.component';
     FeedComponent,
     PostComponent,
     DatascienceComponent,
-    CheatsheetsComponent
+    CheatsheetsComponent,
+    HomeComponent
   ],
     imports: [
         BrowserModule,

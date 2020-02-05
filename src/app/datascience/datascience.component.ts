@@ -24,8 +24,8 @@ export class DatascienceComponent implements OnInit {
       parseString(data, { explicitArray: false }, (error, result) => {
         dat = JSON.stringify(data);
         dat = JSON.parse(dat);
+        console.log(dat.toString());
         this.message = dat.toString();
-        console.log(dat.type());
       });
     });
 
@@ -47,7 +47,6 @@ export class DatascienceComponent implements OnInit {
         dat = JSON.parse(dat);
         console.log(dat);
         this.message = dat.toString();
-        console.log(dat.type());
       });
     });
 
@@ -55,7 +54,7 @@ export class DatascienceComponent implements OnInit {
 
   constructor(private http: HttpClient) {
     this.http = http;
-    this.getDataPost();
+    this.getData();
     console.log('Message: ' + this.message);
   }
 

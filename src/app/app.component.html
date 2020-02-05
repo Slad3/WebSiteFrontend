@@ -1,14 +1,4 @@
 
-<script>
-  document.addEventListener("scroll", function(){
-  var secondToolbar = document.querySelector('.toolbar-2');
-  var map = document.querySelector('.map');
-
-  if ((window.pageYOffset + 50) > (map.offsetTop + map.clientHeight))
-    secondToolbar.classList.add('fixed');
-  else
-    secondToolbar.classList.remove('fixed');
-});</script>
 <ul id = "navbar">
   <nav class="top-nav navbar navbar-static-top navbar-default">
     <li><a routerLink="/">Home</a></li>
@@ -18,4 +8,4 @@
   </nav>
 </ul>
 
-<router-outlet></router-outlet>
+<router-outlet id="router"></router-outlet>

@@ -2,7 +2,10 @@
   list-style-type: none;
   margin: 0px;
   padding: 0px;
+  top: 0px;
+  width: 100%;
   overflow: hidden;
+  position: fixed;
   background-color: #0f4c75;
 }
 
@@ -24,4 +27,11 @@ li a {
 li a:hover {
   background: #a8a8a8;
   color: black;
+}
+
+
+
+#router {
+
+
 }

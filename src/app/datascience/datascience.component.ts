@@ -13,7 +13,7 @@ export class DatascienceComponent implements OnInit {
 
   message =  'Message not set yet';
   data;
-  url: string = 'http://127.0.0.1:5000/';
+  url = 'http://127.0.0.1:5000/';
 
   getData() {
     let dat;
@@ -45,7 +45,7 @@ export class DatascienceComponent implements OnInit {
       parseString(data, { explicitArray: false }, (error, result) => {
         dat = JSON.stringify(data);
         dat = JSON.parse(dat);
-        console.log(dat);
+        console.log(dat.toString());
         this.message = dat.toString();
       });
     });
@@ -54,7 +54,7 @@ export class DatascienceComponent implements OnInit {
 
   constructor(private http: HttpClient) {
     this.http = http;
-    this.getData();
+    this.getDataPost();
     console.log('Message: ' + this.message);
   }
 

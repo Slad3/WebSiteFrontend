@@ -36,7 +36,7 @@ export class DatascienceComponent implements OnInit {
     console.log('here though');
 
     const formData = new FormData();
-    formData.append('start', '2020-01-01');
+    formData.append('start', '2016-01-01');
     formData.append('end', '2020-01-01');
 
     this.http.post(
@@ -54,7 +54,7 @@ export class DatascienceComponent implements OnInit {
 
   constructor(private http: HttpClient) {
     this.http = http;
-    this.getData();
+    this.getDataPost();
     console.log('Message: ' + this.message);
   }
 

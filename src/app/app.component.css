@@ -9,18 +9,23 @@
   background-color: #0f4c75;
 }
 
-li {
-  float: left;
-}
 
 li a {
-  float: left;
   display: block;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+}
+
+.left{
+  float: left;
+}
+
+.right{
+  float: right;
+
 }
 
 /* Change the link color to #111 (black) on hover */
@@ -35,7 +40,7 @@ li a:hover {
   max-width: 1050px;
   min-width: 500px;
   width: 75%;
-  padding: 20px;
+  padding: 40px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;

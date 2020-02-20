@@ -31,12 +31,12 @@ export class DatascienceComponent implements OnInit {
 
   }
 
-  getDataPost () {
+  getDataPost() {
     let dat;
     console.log('here though');
 
     const formData = new FormData();
-    formData.append('start', '2016-01-01');
+    formData.append('start', '2019-01-01');
     formData.append('end', '2020-01-01');
 
     this.http.post(

@@ -11,50 +11,57 @@ import {parseString} from 'xml2js';
 })
 export class DatascienceComponent implements OnInit {
 
-  message =  'Message not set yet';
+  message =  'Loading';
   data;
   url = 'http://127.0.0.1:5000/';
 
-  getData() {
-    let dat;
-    console.log('here though');
-
-    this.http.get(  this.url + 'load',
-      { responseType: 'text' }).subscribe((data) => {
-      parseString(data, { explicitArray: false }, (error, result) => {
-        dat = JSON.stringify(data);
-        dat = JSON.parse(dat);
-        console.log(dat.toString());
-        this.message = dat.toString();
-      });
-    });
-
-  }
-
-  getDataPost() {
-    let dat;
+  getCrimeData() {
+    let data;
     console.log('here though');
 
     const formData = new FormData();
-    formData.append('start', '2019-01-01');
+    formData.append('start', '2019-11-01');
     formData.append('end', '2020-01-01');
 
     this.http.post(
-    this.url + 'load', formData)
-      .subscribe((data) => {
-      parseString(data, { explicitArray: false }, (error, result) => {
-        dat = JSON.stringify(data);
-        dat = JSON.parse(dat);
-        console.log(dat.toString());
-        this.message = dat.toString();
+    this.url + 'loadCrimeData', formData)
+      .subscribe((dat) => {
+      parseString(dat, { explicitArray: false }, (error, result) => {
+        data = JSON.stringify(dat);
+        data = JSON.parse(data);
+        console.log(data);
+        console.log(data.toString());
+        this.message = data[0]['ZIP'].toString();
+        this.data = data;
       });
     });
 
   }
 
+  // getWeatherData(){
+  //   let data;
+  //   const formData = new FormData();
+  //   formData.append('start', '2019-11-01');
+  //   formData.append('end', '2020-01-01');
+  //
+  //   this.http.post(
+  //     this.url + 'loadCrimeData', formData)
+  //     .subscribe((dat) => {
+  //       parseString(dat, { explicitArray: false }, (error, result) => {
+  //         data = JSON.stringify(dat);
+  //         data = JSON.parse(data);
+  //         console.log(data);
+  //         console.log(data.toString());
+  //         this.message = data[0]['ZIP'].toString();
+  //         this.data = data;
+  //       });
+  //     });
+  // }
+
+
   constructor(private http: HttpClient) {
     this.http = http;
-    this.getDataPost();
+    this.getCrimeData();
     console.log('Message: ' + this.message);
   }
 

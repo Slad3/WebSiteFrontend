@@ -10,6 +10,7 @@ import { PostComponent } from './post/post.component';
 import { DatascienceComponent } from './datascience/datascience.component';
 import { CheatsheetsComponent } from './cheatsheets/cheatsheets.component';
 import { HomeComponent } from './home/home.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeComponent } from './home/home.component';
     PostComponent,
     DatascienceComponent,
     CheatsheetsComponent,
-    HomeComponent
+    HomeComponent,
+    ProjectsComponent
   ],
     imports: [
         BrowserModule,

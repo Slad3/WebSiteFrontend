@@ -5,11 +5,13 @@ import {FeedComponent} from './feed/feed.component';
 import {DatascienceComponent} from './datascience/datascience.component';
 import {CheatsheetsComponent} from './cheatsheets/cheatsheets.component';
 import {HomeComponent} from './home/home.component';
+import {ProjectsComponent} from './projects/projects.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'blog', component: FeedComponent },
+  { path: 'projects', component: ProjectsComponent },
   { path: 'datascience', component: DatascienceComponent },
   { path: 'cheatsheets', component: CheatsheetsComponent }
 ];

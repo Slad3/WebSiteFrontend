@@ -1,4 +1,105 @@
 div {
   color: whitesmoke;
   align-content: center;
+
 }
+
+#about{
+  padding: 20px;
+  border-left-style: solid;
+  border-left-width: 2px;
+  /*border-left-color: #0f4c75;*/
+  border-left-color: #f2f2f2;
+
+  /*border-right-style: solid;*/
+  /*border-right-width: 1px;*/
+  /*border-right-color: yellow;*/
+
+  border-bottom-style: solid;
+  border-bottom-width: 4px;
+  border-bottom-color: #0f4c75;
+
+
+  background-color: #3f3f3f;
+}
+
+.aboutIntro{
+  width: 50%;
+  font-weight: bold;
+
+}
+
+#aboutList{
+list-style: none;
+}
+
+#aboutList #techBasedInterests{
+  padding: 20px;
+  border-left-style: solid;
+  border-left-width: 2px;
+  /*border-left-color: #0f4c75;*/
+  border-left-color: #f2f2f2;
+
+  /*border-right-style: solid;*/
+  /*border-right-width: 1px;*/
+  /*border-right-color: yellow;*/
+
+  border-bottom-style: solid;
+  border-bottom-width: 4px;
+  border-bottom-color: #0f4c75;
+
+
+  background-color: #3f3f3f;
+
+}
+
+#aboutList #techBasedInterests li{
+  list-style: none;
+  float: top;
+  padding-right: 20px;
+  width: 80%
+
+}
+
+#aboutList #nonTechBasedInterests li{
+  list-style: none;
+  float: top;
+  display: inline-block;
+  padding-right: 20px;
+  width: 40%
+
+}
+
+#skills{
+  list-style: none;
+}
+
+.skillList{
+  clear: both;
+  display: inline-block;
+  float: top;
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+
+.listTitle{
+  padding: 0px;
+  margin-bottom: 0px;
+  position: center;
+}
+
+
+.list{
+  list-style-type: None;
+
+}
+#python{
+  color: #FFFF00
+
+}
+
+#java{
+  color: #FF8800
+}
+

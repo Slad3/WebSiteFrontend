@@ -24,8 +24,8 @@ export class FeedComponent implements OnInit {
 
 
   ngOnInit(): void {
-      let temp: Post;
-    for (let i = 0; i < 6; i++) {
+    let temp: Post;
+    for(let i = 0; i < 6; i++) {
       temp = new Post(this.titles[i]);
       this.posts.push(temp);
     }

@@ -11,6 +11,7 @@ import { DatascienceComponent } from './datascience/datascience.component';
 import { CheatsheetsComponent } from './cheatsheets/cheatsheets.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
+import {AngularStickyThingsModule} from '@w11k/angular-sticky-things';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ProjectsComponent } from './projects/projects.component';
         RouterModule,
         AppRoutingModule,
         HttpClientModule,
+        AngularStickyThingsModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -34,6 +34,7 @@ list-style: none;
 }
 
 #aboutList #techBasedInterests{
+  color: black;
   padding: 20px;
   border-left-style: solid;
   border-left-width: 2px;
@@ -49,7 +50,8 @@ list-style: none;
   border-bottom-color: #0f4c75;
 
 
-  background-color: #3f3f3f;
+  /*background-color: #3f3f3f;*/
+  background-color: #cacaca;
 
 }
 
@@ -66,7 +68,7 @@ list-style: none;
   float: top;
   display: inline-block;
   padding-right: 20px;
-  width: 40%
+  width: 47%
 
 }
 

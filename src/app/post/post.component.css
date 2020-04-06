@@ -22,7 +22,8 @@
   border-bottom-color: #0f4c75;
 
 
-  background-color: #3f3f3f;
+  /*background-color: #3f3f3f;*/
+  background-color: #cacaca;
 }
 
 .Image{
@@ -34,7 +35,8 @@
 }
 
 #title{
-  color: whitesmoke;
+  /*color: whitesmoke;*/
+  color:black;
   font-size: 30px;
   text-align: left;
 }
@@ -43,7 +45,8 @@
   font-size: 14px;
   text-align: left;
   text-indent: 2em;
-  color:white;
+  /*color:white;*/
+  color:black;
   padding: 7px;
 
 }

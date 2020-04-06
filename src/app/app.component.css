@@ -8,9 +8,8 @@
   overflow: hidden;
   background-color: #0f4c75;
   opacity: 90%;
-  font-style: bold;
+  font-weight: bold;
 }
-
 
 
 li a {
@@ -35,9 +34,31 @@ li a:hover {
   color: black;
 }
 
+
+.container {
+  position: relative;
+}
+
+/* Bottom right text */
+.text-block {
+  position: absolute;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  top: 10%;
+  left: 40%;
+  /*transform: translateX(-60%) translateY(-90%);*/
+  color: rgba(27, 27, 27, 0.86);
+  /*font-weight: bold;*/
+  font-size: 250%;
+
+
+}
+
 #mainphoto {
-  overflow: hidden;
+
   width: 100%;
+  overflow: hidden;
   position: center;
   background-position: center;
 
@@ -46,16 +67,26 @@ li a:hover {
   margin-top:48px;
 }
 
+#photoTitle{
+  list-style: none;
+}
+
+#photoTitle li{
+  float: top;
+  display: inline;
+}
+
 #body {
   color: whitesmoke;
   /*max-width: 1050px;*/
-  min-width: 500px;
-  width: 80%;
+
+  width: 90%;
   padding: 40px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
   alignment: center;
-  max-width: 1400px;
+  max-width: 1200px;
+  min-width: 500px;
 
 }

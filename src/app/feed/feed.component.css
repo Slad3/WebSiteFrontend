@@ -1,13 +1,12 @@
 .wholeBlog{
   max-width: 1050px;
   min-width: 500px;
-  width: 75%;
+  width: 95%;
   padding: 20px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
   alignment: center;
-  font-family: Webdings;
 }
 
 #BigTitle{

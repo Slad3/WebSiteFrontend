@@ -51,9 +51,11 @@ li a:hover {
   color: rgba(27, 27, 27, 0.86);
   /*font-weight: bold;*/
   font-size: 250%;
-
+  /*background-color: black;*/
 
 }
+
+#name{}
 
 #mainphoto {
 

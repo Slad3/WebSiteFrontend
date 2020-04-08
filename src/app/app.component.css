@@ -9,6 +9,7 @@
   background-color: #0f4c75;
   opacity: 90%;
   font-weight: bold;
+  max-height: 48px;
 }
 
 
@@ -34,6 +35,16 @@ li a:hover {
   color: black;
 }
 
+#icon{
+  padding: 6px;
+  margin: 0px;
+}
+
+#iconImage{
+  height: 32px;
+  width: 34px;
+  position: center;
+}
 
 .container {
   position: relative;
@@ -62,7 +73,7 @@ li a:hover {
   width: 100%;
   overflow: hidden;
   position: center;
-  background-position: center;
+  background-position: center top;
 
   padding: 0px;
   margin:0px;

@@ -66,6 +66,13 @@ li a:hover {
 
 }
 
+.text-block #textBackground{
+  float: top;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
 #name{}
 
 #mainphoto {
@@ -93,13 +100,13 @@ li a:hover {
   color: whitesmoke;
   /*max-width: 1050px;*/
 
-  width: 90%;
+  width: 85%;
   padding: 40px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
   alignment: center;
-  max-width: 1200px;
+  max-width: 1070px;
   min-width: 500px;
 
 }

@@ -26,22 +26,19 @@ li a {
   float: left;
 }
 
-.right{
-  float: right;
-}
-
 li a:hover {
   background: #a8a8a8;
   color: black;
 }
 
 #icon{
+  float: right;
   padding: 6px;
   margin: 0px;
 }
 
-#iconImage{
-  height: 32px;
+.iconImage{
+  height: 34px;
   width: 34px;
   position: center;
 }
@@ -50,7 +47,6 @@ li a:hover {
   position: relative;
 }
 
-/* Bottom right text */
 .text-block {
   position: absolute;
 
@@ -70,10 +66,11 @@ li a:hover {
   float: top;
   height: 100%;
   width: 100%;
-  background-color: black;
 }
 
-#name{}
+#name{
+  color: black;
+}
 
 #mainphoto {
 

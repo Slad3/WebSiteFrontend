@@ -48,7 +48,9 @@ div {
   border-bottom-width: 4px;
   border-bottom-color: #0f4c75;
   /*background-color: #3f3f3f;*/
-  background-color: rgb(28, 28, 28);
+  /*background-color: rgb(28, 28, 28);*/
+  background-color: #cacaca;
+  color: black;
   border-radius: 1%;
 
 }
@@ -76,7 +78,8 @@ div {
   background-color: transparent;
   /*padding: 20px;*/
   list-style: none;
-  padding: 10px;
+  padding: 20px;
+  margin-top: 30px;
   /*margin-bottom: 30px;*/
   display: inline-block;
 
@@ -106,7 +109,7 @@ div {
   width: 19%;
   min-width: 54px;
 
-  min-height: 210px;
+  min-height: 250px;
 
   border-left-style: solid;
   border-left-width: 2px;
@@ -139,7 +142,15 @@ div {
   font-family: "Arial Rounded MT Bold";
 }
 
-#skills .skillList{
+#skills #languages h3{
+  font-weight: bold;
+  text-align: center;
+  font-size: 200%;
+  margin-bottom: 10px;
+
+}
+
+#skills #languages .list .language{
   list-style: none;
   float: left;
 
@@ -152,10 +163,10 @@ div {
   margin: 1%;
 
 
-  width: 28%;
+  width: 27%;
   min-width: 54px;
 
-  min-height: 210px;
+  min-height: 220px;
 
   border-left-style: solid;
   border-left-width: 2px;
@@ -164,7 +175,37 @@ div {
   border-right-style: solid;
   border-right-width: 2px;
   border-right-color: #0f4c75;
+}
 
+#skills #languages .list .language h4{
+  margin-top: 5px;
+  font-size: 120%;
+
+}
+
+#skills #languages .list .language li{
+  text-align: left;
+  font-size: 120%;
+  list-style: circle;
+  padding-bottom: 4px;
+
+}
+
+#skills #otherCSSkillsTitle{
+  margin-top: 250px;
+  margin-left: 4%;
+  font-size: 120%;
+}
+
+#skills #otherCSSkills{
+  list-style: none;
+  clear: both;
+}
+
+#skills #otherCSSkills li{
+  float: left;
+  display: inline;
+  margin-right: 3%;
 }
 
 #skills .skillList h4{
@@ -173,7 +214,7 @@ div {
   margin-left: 10%;
   color: white;
   /*text-align: center;*/
-  font-family: "Arial Rounded MT Bold";
+  font-family: "Arial Rounded MT Bold", sans-serif;
 }
 
 #skills .skillList li{

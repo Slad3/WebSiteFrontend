@@ -72,6 +72,8 @@ div {
 
 }
 
+
+
 #techBasedInterests{
 
   color: black;
@@ -126,6 +128,8 @@ div {
   font-size: 17px;
 }
 
+
+
 #skills{
   color: whitesmoke;
   list-style: none;
@@ -140,6 +144,11 @@ div {
   font-size: 40px;
   margin-left: 5%;
   font-family: "Arial Rounded MT Bold";
+}
+
+#skills #languages{
+
+
 }
 
 #skills #languages h3{
@@ -188,24 +197,27 @@ div {
   font-size: 120%;
   list-style: circle;
   padding-bottom: 4px;
-
 }
 
 #skills #otherCSSkillsTitle{
-  margin-top: 250px;
+  border-top: whitesmoke;
+  border-top-style: solid;
+  border-top-width: 2px;
+  margin-top: 280px;
   margin-left: 4%;
   font-size: 120%;
 }
 
 #skills #otherCSSkills{
   list-style: none;
-  clear: both;
+  white-space: normal;
 }
 
 #skills #otherCSSkills li{
   float: left;
-  display: inline;
+  display: block;
   margin-right: 3%;
+
 }
 
 #skills .skillList h4{

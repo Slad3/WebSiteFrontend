@@ -25,6 +25,12 @@ div {
 
 }
 
+.title{
+  font-weight: bold;
+  font-size: 30px;
+  margin-left: 5%;
+  font-family: "Arial Rounded MT Bold";
+}
 
 
 #about{
@@ -55,12 +61,21 @@ div {
 
 }
 
+#about>ul{
+  display: inline;
+  list-style: none;
+}
+
+#about > ul > li{
+  float: left;
+  padding: 0px;
+}
+
 #profilePhoto{
   margin-left: 5px;
-  height: 10%;
-  width: 10%;
-  float: right;
-  position: relative;
+  height: 5%;
+  width: 5%;
+
 }
 
 .aboutIntro{
@@ -72,12 +87,11 @@ div {
 
 }
 
-
-
 #techBasedInterests{
-
   color: black;
-  background-color: transparent;
+  background-color: #cacaca;
+  border-left-color: black;
+
   /*padding: 20px;*/
   list-style: none;
   padding: 20px;
@@ -87,15 +101,13 @@ div {
 
 }
 
-#techBasedInterests h2{
-  font-weight: bold;
-  font-size: 30px;
-  margin-left: 10%;
-  color: white;
-  /*text-align: center;*/
-  font-family: "Arial Rounded MT Bold";
+/*#techBasedInterests>techBasedTitle{*/
+/*  font-weight: bold;*/
+/*  color: white;*/
+/*  !*text-align: center;*!*/
+/*  font-family: "Arial Rounded MT Bold";*/
 
-}
+/*}*/
 
 #techBasedInterests li{
   background-color: rgb(28, 28, 28);
@@ -123,7 +135,7 @@ div {
 
 }
 
-#techBasedInterests li h4{
+#techBasedInterests>li>h4{
   font-weight: bold;
   font-size: 17px;
 }
@@ -139,11 +151,8 @@ div {
   background-color: RGB(28, 28, 28);
 }
 
-#skills #skillsTitle{
-  font-weight: bold;
-  font-size: 40px;
-  margin-left: 5%;
-  font-family: "Arial Rounded MT Bold";
+#skills>#skillsTitle{
+
 }
 
 #skills #languages{
@@ -204,6 +213,7 @@ div {
   border-top-style: solid;
   border-top-width: 2px;
   margin-top: 280px;
+  padding-top: 10px;
   margin-left: 4%;
   font-size: 120%;
 }

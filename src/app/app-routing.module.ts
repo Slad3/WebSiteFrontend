@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import {FeedComponent} from './feed/feed.component';
 import {DatascienceComponent} from './datascience/datascience.component';
-import {CheatsheetsComponent} from './cheatsheets/cheatsheets.component';
 import {HomeComponent} from './home/home.component';
 import {ProjectsComponent} from './projects/projects.component';
+import {ReferenceComponent} from './reference/reference.component';
 
 
 const routes: Routes = [
@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: 'blog', component: FeedComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'datascience', component: DatascienceComponent },
-  { path: 'cheatsheets', component: CheatsheetsComponent }
+  { path: 'reference', component: ReferenceComponent },
+
 ];
 
 @NgModule({

@@ -1,4 +1,4 @@
-.navbar {
+#navbar {
   list-style-type: none;
   margin: 0px;
   padding: 0px;
@@ -12,6 +12,15 @@
   max-height: 48px;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+#quote{
+
+}
 
 li a {
   display: block;
@@ -91,6 +100,10 @@ li a:hover {
 #photoTitle li{
   float: top;
   display: inline;
+}
+
+#quote{
+  margin-top: 0px;
 }
 
 #body {

@@ -10,8 +10,8 @@
 </div>
 
 
-<div #boundary style="alignment: top">
-  <ul class="navbar">
+<div (scroll)="onScroll($event)" >
+  <ul id="navbar">
     <div #spacer></div>
     <nav>     <!--    stickyThing [boundary]="boundary" [spacer]="spacer" marginTop="0">-->
       <li><a class="left" routerLink="/">Home</a></li>
@@ -29,6 +29,7 @@
 
 
 <div id="body">
-<router-outlet id="router"></router-outlet>
+  <h1 id="quote">Quote of your session: "Life is parallel to hell but I must maintain."</h1>
+  <router-outlet id="router"></router-outlet>
 </div>
 

@@ -8,7 +8,7 @@ import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/c
 export class AppComponent implements OnInit {
   title = 'the strangest title';
 
-  @ViewChild('navbar') header: ElementRef;
+  // @ViewChild('navbar') header: ElementRef;
   sticky = null;
 
 
@@ -23,8 +23,7 @@ export class AppComponent implements OnInit {
 
   constructor() {
 
-
-    console.log(this.header);
+    
     // console.log(this.header.toString());
     // this.sticky = this.header.offsetTop;
   }

@@ -120,3 +120,12 @@ li a:hover {
   min-width: 500px;
 
 }
+
+#bottombar{
+  background-color: rgba(28, 28, 28, 0.90);
+  color: whitesmoke;
+  /* height: 200px; */
+  width: 100%;
+  text-align: center;
+  position: fixed;
+}

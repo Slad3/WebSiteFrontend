@@ -1,4 +1,5 @@
 import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
+import { request } from 'http';
 
 @Component({
   selector: 'app-root',
@@ -6,38 +7,43 @@ import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/c
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  url = "localhost:8080/QOTD"
   title = 'the strangest title';
+
+  quote = "Quote server not working";
 
   // @ViewChild('navbar') header: ElementRef;
   sticky = null;
 
 
 
-  // navStick() {
-  //   if (window.pageYOffset > this.sticky) {
-  //     this.header.classList.add("sticky");
-  //   } else {
-  //     this.header.classList.remove("sticky");
-  //   }
-  // }
-
   constructor() {
 
-    
-    // console.log(this.header.toString());
-    // this.sticky = this.header.offsetTop;
+    console.log("here");
+
+    // const req = request(
+    //   {
+    //     host: this.url,
+    //     path: '',
+    //     method: 'GET',
+    //   },
+    //   response => {
+    //     console.log(response.statusCode); // 200
+    //   }
+    // );
+    // console.log(req);
+
   }
+ 
+
 
   ngOnInit() {
-    // window.onscroll = this.navStick();
+
+
+    // this.quote = this.http.get(url);
 
   }
 
-  // @HostListener('window:scroll', ['$event']) // for window scroll events
-  // onScroll(event) {
-  //   if(header.position){}
-  //   // console.log(event.toJSON().toString());
-  // }
 
 
 }

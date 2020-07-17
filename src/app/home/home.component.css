@@ -59,7 +59,7 @@
 }
 
 #typeracer{
-  margin-top: 10px;
+  margin-top: 25px;
   align-self: center;
   /* max-width: 30%; */
   margin-left: 9%;
@@ -126,8 +126,6 @@
   width: 98%;
   background-color: RGB(28, 28, 28);
 }
-
-
 
 #skills>#languages>h3{
   font-weight: bold;
@@ -218,7 +216,8 @@
 }
 
 #skills>.accordion {
-  background-color: #cacaca;
+  background-color: #0f4c75;
+  color: whitesmoke;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -227,11 +226,11 @@
   outline: none;
   font-size: 15px;
   transition: 0.4s;
-
 }
 
 #skills>.active, .accordion:hover {
-  background-color: #777;
+  background-color: #cacaca;
+  color: black;
 }
 
 #skills.accordion:after {

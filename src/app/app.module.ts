@@ -29,8 +29,8 @@ import { ReferenceComponent } from './reference/reference.component';
         BrowserModule,
         RouterModule,
         AppRoutingModule,
-        HttpClientModule,
-        AngularStickyThingsModule,
+		HttpClientModule,
+		AngularStickyThingsModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

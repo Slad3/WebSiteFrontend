@@ -15,18 +15,17 @@
 .sticky {
   position: fixed;
   top: 0;
-  width: 100%
+  width: 100%;
 }
 
-#quote{
-	font-size: 20px;
-	width: -50%;
-	direction: rtl;
-	text-align: right;
-
+#quote {
+  font-size: 20px;
+  width: -50%;
+  direction: rtl;
+  text-align: right;
 }
 
-li a {
+li > a {
   display: block;
   color: #f2f2f2;
   text-align: center;
@@ -35,7 +34,7 @@ li a {
   font-size: 17px;
 }
 
-.left{
+.left {
   float: left;
 }
 
@@ -44,75 +43,82 @@ li a:hover {
   color: black;
 }
 
-#icon{
+#icon {
   float: right;
   padding: 6px;
   margin: 0px;
 }
 
-.iconImage{
+.iconImage {
   height: 34px;
   width: 34px;
   position: center;
 }
 
-.container {
+header {
   position: relative;
+  width: 100%;
 }
 
-.text-block {
+/* .text-block {
   position: absolute;
 
   padding-left: 20px;
   padding-right: 20px;
   top: 10%;
   left: 40%;
-  /*transform: translateX(-60%) translateY(-90%);*/
   color: rgba(27, 27, 27, 0.86);
-  /*font-weight: bold;*/
   font-size: 250%;
-  /*background-color: black;*/
+} */
 
-}
+.text-block {
+	position: absolute;
+  
+	padding-left: 20px;
+	padding-right: 20px;
+	top: 10%;
+	left: 40%;
+	color: rgba(27, 27, 27, 0.86);
+	font-size: 200%;
 
-.text-block #textBackground{
+  }
+
+.text-block > #textBackground {
   float: top;
   height: 100%;
   width: 100%;
 }
 
-#name{
+#name {
   color: black;
 }
 
 #mainphoto {
-
   width: 100%;
   overflow: hidden;
   position: center;
   background-position: center top;
 
   padding: 0px;
-  margin:0px;
-  margin-top:48px;
+  margin: 0px;
+  margin-top: 48px;
 }
 
-#photoTitle{
+#photoTitle {
   list-style: none;
 }
 
-#photoTitle li{
+#photoTitle li {
   float: top;
   display: inline;
 }
 
-#quote{
+#quote {
   margin-top: 0px;
 }
 
 #body {
   color: whitesmoke;
-  /*max-width: 1050px;*/
 
   width: 85%;
   padding: 40px;
@@ -120,16 +126,31 @@ li a:hover {
   margin-right: auto;
   margin-top: 10px;
   alignment: center;
-  max-width: 1070px;
-  min-width: 500px;
 
+  max-width: 1080px;
+
+  min-width: 500px;
 }
 
-#bottombar{
-  background-color: rgba(28, 28, 28, 0.90);
+footer {
+  background-color: rgba(28, 28, 28, 0.9);
   color: whitesmoke;
   /* height: 200px; */
   width: 100%;
   text-align: center;
   position: fixed;
+}
+
+
+/* Full Size CSS */
+@media (max-width: 2000px){
+
+
+}
+
+
+/* Full Size CSS */
+@media (max-width: 1080px){
+
+
 }

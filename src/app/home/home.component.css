@@ -3,7 +3,7 @@
   align-content: center;
 }
 
-.block{
+.block {
   color: black;
   padding: 20px;
   margin-top: 30px;
@@ -20,62 +20,59 @@
   border-radius: 2%;
 }
 
-.title{
+.title {
   font-weight: bold;
   font-size: 30px;
   margin-left: 50px;
   font-family: "Arial Rounded MT Bold";
 }
 
-#about{
+#intro {
   margin-bottom: 20px;
   display: inline;
 }
 
-#about>ul{
+#intro > ul {
   display: inline-block;
   list-style: none;
 }
 
-#aboutTitle{
+#introTitle {
   text-align: center;
 }
 
-#aboutText{
-  /*width: 75%;*/
-  width: 70%;
-
+#introText {
   background-color: #cacaca;
   float: left;
 }
 
-#profilePhoto{
+#profilePhoto {
   margin-top: 30px;
   max-width: 20%;
   margin-left: 5%;
+  align-self: center;
   float: left;
   border-radius: 5%;
-  
 }
 
-#typeracer{
+#typeracer {
   margin-top: 25px;
   align-self: center;
   /* max-width: 30%; */
   margin-left: 9%;
+  /* width: 186px; */
   float: left;
 }
 
-.aboutIntro{
+.introPara {
   text-indent: initial;
   width: 90%;
   padding-left: 5%;
   line-height: 1.5;
   font-size: large;
-
 }
 
-#techBasedInterests{
+#techBasedInterests {
   color: black;
   background-color: #cacaca;
   /*padding: 20px;*/
@@ -83,11 +80,10 @@
   padding: 20px;
   margin-top: 30px;
   /*margin-bottom: 30px;*/
-  display: inline-block;
-
+  display: table-cell;
 }
 
-#techBasedInterests>ul>li{
+#techBasedInterests > ul > li {
   /* background-color: rgb(28, 28, 28); */
   /* color: white; */
   list-style: none;
@@ -98,10 +94,7 @@
   /*margin: 11px;*/
   margin: 1%;
 
-  width: 19%;
   min-width: 54px;
-
-  min-height: 200px;
 
   border-left-style: solid;
   border-left-width: 2px;
@@ -110,15 +103,14 @@
   border-right-style: solid;
   border-right-width: 2px;
   border-right-color: #0f4c75;
-
 }
 
-#techBasedInterests>li>h4{
+#techBasedInterests > li > h4 {
   font-weight: bold;
   font-size: 17px;
 }
 
-#skills{
+#skills {
   color: whitesmoke;
   list-style: none;
   padding: 10px;
@@ -127,7 +119,7 @@
   background-color: RGB(28, 28, 28);
 }
 
-#skills>#languages>h3{
+#skills > #languages > h3 {
   font-weight: bold;
   font-size: 25px;
   text-align: center;
@@ -138,8 +130,9 @@
   border-bottom: #cacaca;
 }
 
-#skills>#languages>.list>.language{
+#skills > #languages > .list > .language {
   list-style: none;
+
   float: left;
 
   color: whitesmoke;
@@ -147,13 +140,10 @@
 
   padding-left: 15px;
   padding-right: 15px;
-  /*margin: 11px;*/
+
   margin: 1%;
 
-  width: 27%;
-  min-width: 54px;
-
-  min-height: 200px;
+  min-height: 180px;
 
   border-left-style: solid;
   border-left-width: 2px;
@@ -164,19 +154,24 @@
   border-right-color: #0f4c75;
 }
 
-#skills #languages>.list>.language>h4{
+#skills #languages > .list > .language > h4 {
   margin-top: 5px;
-  font-size: 120%;
+  /* font-size: 120%; */
+  font-size: 25px;
 }
 
-#skills>#languages>.list>.language>li{
+#skills > #languages > .list > .language > ul{
+	list-style-position: inside;
+}
+
+#skills > #languages > .list > .language > li {
   text-align: left;
   font-size: 120%;
   list-style: circle;
-  padding-bottom: 4px;
+  padding-bottom: 7px;
 }
 
-#skills>#otherCSSkillsTitle{
+#skills > #otherCSSkillsTitle {
   border-top: whitesmoke;
   border-top-style: solid;
   border-top-width: 2px;
@@ -186,18 +181,18 @@
   font-size: 120%;
 }
 
-#skills>.panel>#otherCSSkills{
+#skills > .panel > #otherCSSkills {
   list-style: none;
   white-space: normal;
 }
 
-#skills>.panel>#otherCSSkills>li{
+#skills > .panel > #otherCSSkills > li {
   float: left;
   display: block;
   margin-right: 3%;
 }
 
-#skills>.skillList>h4{
+#skills > .skillList > h4 {
   font-weight: bold;
   font-size: 30px;
   margin-left: 10%;
@@ -206,16 +201,16 @@
   font-family: "Arial Rounded MT Bold", sans-serif;
 }
 
-#skills .skillList>li{
+#skills > .skillList > li {
   text-align: left;
   font-size: 150%;
 }
 
-#skills>#softSkills{
+#skills > #softSkills {
   margin-left: 10%;
 }
 
-#skills>.accordion {
+#skills > .accordion {
   background-color: #0f4c75;
   color: whitesmoke;
   cursor: pointer;
@@ -228,24 +223,25 @@
   transition: 0.4s;
 }
 
-#skills>.active, .accordion:hover {
+#skills > .active,
+.accordion:hover {
   background-color: #cacaca;
   color: black;
 }
 
 #skills.accordion:after {
-  content: '\002B';
+  content: "\002B";
   color: #777;
   font-weight: bold;
   float: right;
   margin-left: 5px;
 }
 
-#skills>.active:after {
+#skills > .active:after {
   content: "\2212";
 }
 
-#skills>.panel {
+#skills > .panel {
   padding: 0 18px;
   background-color: RGB(28, 28, 28);
   max-height: 0;
@@ -265,8 +261,7 @@
   border-bottom-color: #cacaca;
 }
 
-
-#experience{
+#experience {
   background-color: #cacaca;
   border-left-style: solid;
   border-left-width: 2px;
@@ -279,12 +274,54 @@
   border-bottom-color: #0f4c75;
 }
 
-#experience>.list{
+#experience > .list {
   /*margin-left: 10px;*/
   width: 90%;
 }
 
-#FAQ{
+#FAQ {
   background-color: #cacaca;
 }
 
+/* Full Size CSS */
+@media (min-width: 1080px) {
+  #home > #intro > ul > #introText {
+    width: 70%;
+  }
+
+  #techBasedInterests > ul > li {
+    width: 19%;
+    min-height: 200px;
+  }
+
+  #skills > #languages > .list > .language {
+    width: 27%;
+    min-width: 54px;
+  }
+}
+
+/* When quad grids get too compressed */
+
+@media only screen and (max-width: 1200px) {
+  #techBasedInterests > ul > li {
+    width: 39%;
+    min-height: 60px;
+  }
+}
+
+/* When trio grids get too compressed */
+@media only screen and (max-width: 1080px) {
+  #skills > #languages > .list > .language {
+    align-self: center;
+    margin-left: 8%;
+    margin-right: 8%;
+    width: 70%;
+  }
+}
+
+/* For mobile */
+@media only screen and (max-width: 768px) {
+  #home > #intro > ul > #introText {
+    width: 90%;
+  }
+}

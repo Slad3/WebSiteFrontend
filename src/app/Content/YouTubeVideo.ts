@@ -5,14 +5,18 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class YouTubeVideo extends Content {
 
   url: string;
+  full: string;
 
   constructor(url: string) {
     super();
-    this.url = url;
-    this.content = '<p>Video</p>';
-    this.content += '<iframe width="1583" height="635" src="https://www.youtube.com/embed/zTETYF5Vw80"' +
+	this.url = url;
+	this.full = "";
+
+    this.full = '<p>Video</p>';
+    this.full += `<iframe width="1583" height="635" src="${url}"' +
       ' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"' +
-      ' allowfullscreen></iframe>';
-    this.content += '<p>End Video</p>';
+      ' allowfullscreen></iframe>`;
+	this.full += '<p>End Video</p>';
+	this.content = this.full.toString();
   }
 }

@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
 
   constructor(private http: HttpClient) {
     // Making Request for getting from backend
-    const req = new HttpRequest("GET", this.url + "QOTD", {
+    const req = new HttpRequest("GET", this.url + "blog", {
       reportProgress: false,
       responseType: "text",
     });

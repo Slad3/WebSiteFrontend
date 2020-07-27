@@ -1,13 +1,21 @@
 
-<div id = "post">
+<div id = "post" class="block">
   <ul style="list-style-type:none" id="list">
     <li id="title">
       {{post.title}}
-    </li>
-    <a *ngFor="let content of this.post.content">
+	</li>
+	<li id="altTitle">
+		{{post.altTitle}}
+	</li>
+	<li id="date">
+		{{post.date}}
+	</li>
+	
+    <a *ngFor="let cont of this.post.content">
       <li id="item">
-        <div [innerHTML]="content.content"></div>
-      </li>
-    </a>
+        <div [innerHTML]="cont.content"></div>
+	  </li>
+	  
+	</a>
   </ul>
 </div>

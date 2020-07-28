@@ -8,7 +8,7 @@
 		{{post.altTitle}}
 	</li>
 	<li id="date">
-		{{post.date}}
+		<div [innerHTML]="this.post.date.content"></div>
 	</li>
 	
     <a *ngFor="let cont of this.post.content">
@@ -17,5 +17,12 @@
 	  </li>
 	  
 	</a>
+
+	<a *ngFor="let tag of this.post.tags">
+		<li id="tag">
+		  <div [innerHTML]="tag"></div>
+		</li>
+		
+	  </a>
   </ul>
 </div>

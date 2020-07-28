@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
   url = "http://localhost:8080/";
   title = "the strangest title";
 
-  quote: any;
+  quote: string;
 
   // @ViewChild('navbar') header: ElementRef;
   sticky = null;
@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
     this.http.request(req).subscribe(
       (event) => {
         if (event instanceof HttpResponse) {
-          this.quote = event.body;
+          this.quote = event.body.toString();
         }
       },
       (error) => {

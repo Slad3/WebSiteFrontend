@@ -19,7 +19,7 @@
   padding: 20px;
   margin-right: 20px;
   margin-bottom: 10px;
-
+	color: black;
   background-color: #cacaca;
 }
 
@@ -27,7 +27,14 @@
   border-radius: 50%;
 }
 
+#title{
+	font-size: 35px;
+	font-weight: bold;
+	text-align: left;
+  }
+
 .subTitle{
+
 
 }
 
@@ -35,12 +42,7 @@
   margin-bottom: 0px;
 }
 
-#title{
-  /*color: whitesmoke;*/
-  color:black;
-  font-size: 30px;
-  text-align: left;
-}
+
 
 #item{
   font-size: 14px;

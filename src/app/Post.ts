@@ -17,7 +17,7 @@ export class Post {
 	this.title = input.title;
 	this.altTitle = input.altTitle;
 	this.date = new DateStruct(input.date);
-	this.tags.push(input.tags);
+	input.tags.forEach( tag => this.tags.push(tag));
 
 	input.content.forEach(cont => {
 		console.log(typeof cont);
@@ -37,7 +37,7 @@ export class Post {
 		// }
 		else{
 			// console.log(cont.toString())
-			this.content.push(cont.toString())
+			this.content.push(cont)
 		}
 		// console.log(cont);
 		// this.content.push(new Content(cont))

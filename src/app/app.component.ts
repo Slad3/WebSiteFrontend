@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
   url = "http://localhost:8080/";
   title = "the strangest title";
 
-  quote: string;
+  quote: any;
 
   // @ViewChild('navbar') header: ElementRef;
   sticky = null;

@@ -25,7 +25,7 @@ export class DateStruct extends Content {
   ];
   content: string;
   date: Date;
-  constructor(message: string) {
+  constructor(message) {
     super();
     this.date = new Date(message);
     console.log("Date ", this.date.toString());

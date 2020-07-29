@@ -22,7 +22,7 @@ export class SinglepostComponent implements OnInit {
 
   constructor(public router: ActivatedRoute,
     private http: HttpClient) {
-		this.path = router.url._value[1].path;
+		// this.path = router.url._value[1].path;
 		this.updatePost();
    }
 

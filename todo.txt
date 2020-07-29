@@ -1,6 +1,7 @@
 
 
 1. Fix up Frontend 
+	- Fix up the covor photo
     -Do something better for the intro
     - Complete interest paragraphs
 2. Bulid infrastructure for blog

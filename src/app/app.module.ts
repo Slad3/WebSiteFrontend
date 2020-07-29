@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
 import {AngularStickyThingsModule} from '@w11k/angular-sticky-things';
 import { ReferenceComponent } from './reference/reference.component';
+import { SinglepostComponent } from './singlepost/singlepost.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ReferenceComponent } from './reference/reference.component';
     HomeComponent,
     ProjectsComponent,
     ReferenceComponent,
+    SinglepostComponent,
   ],
     imports: [
         BrowserModule,

@@ -6,6 +6,7 @@ import {DatascienceComponent} from './datascience/datascience.component';
 import {HomeComponent} from './home/home.component';
 import {ProjectsComponent} from './projects/projects.component';
 import {ReferenceComponent} from './reference/reference.component';
+import {SinglepostComponent} from './singlepost/singlepost.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,8 @@ const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
   { path: 'datascience', component: DatascienceComponent },
   { path: 'reference', component: ReferenceComponent },
+  { path: 'blog/:id',
+   component: SinglepostComponent}
 
 ];
 

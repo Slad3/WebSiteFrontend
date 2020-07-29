@@ -13,7 +13,6 @@ export class Post {
   tags: string [] = []
 
   constructor(input: Post){
-	console.log(input.title)
 	this.title = input.title;
 	this.altTitle = input.altTitle;
 	this.date = new DateStruct(input.date);
@@ -35,12 +34,10 @@ export class Post {
 		// else if(cont.youtube){
 		// 	this.content.push(new YouTubeVideo(cont.youtube))
 		// }
-		else{
-			// console.log(cont.toString())
-			this.content.push(cont)
-		}
-		// console.log(cont);
-		// this.content.push(new Content(cont))
+		// else{
+		// 	console.log(cont.toString())
+		// 	this.content.push(cont)
+		// }
 	});
 
   }

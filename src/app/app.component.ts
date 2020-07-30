@@ -34,6 +34,8 @@ export class AppComponent implements OnInit {
   sticky = null;
 
   constructor(private http: HttpClient) {
+
+	this.quote = "Loading Quote..."
     // Making Request for getting from backend
     const req = new HttpRequest("GET", this.url + "QOTD", {
       reportProgress: false,

@@ -2,7 +2,7 @@ import {Content} from './Content/Content';
 import {Paragraph} from './Content/Paragraph';
 import {Image} from './Content/Image';
 import {YouTubeVideo} from './Content/YouTubeVideo';
-import {SubTitle} from './Content/subTitle';
+import {SubTitle} from './Content/SubTitle';
 import { DateStruct } from './Content/DateStruct';
 
 export class Post {

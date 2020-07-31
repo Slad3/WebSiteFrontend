@@ -125,6 +125,25 @@ header {
   display: inline;
 }
 
+.socialHomeGroup {
+	position: fixed;
+	float: right;
+	right: 0;
+}
+
+.socialHomeGroup > .socialHomeItem {
+	background-color: whitesmoke;
+	height: 40px;
+	padding: 2px;
+	margin-bottom: 5px;
+	border-radius: 30%;
+  }
+  
+
+.socialHomeGroup > .socialHomeItem > a > img {
+  height: 40px;
+}
+
 #quote {
   margin-top: 0px;
   font-size: 20px;
@@ -180,7 +199,7 @@ footer {
 
 /* Full Size CSS */
 @media only screen and (max-width: 700px) {
-	header > .text-block {
-		left: 50%;
-	  }
+  header > .text-block {
+    left: 50%;
   }
+}

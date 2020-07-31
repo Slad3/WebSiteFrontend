@@ -134,9 +134,9 @@ header {
 .socialHomeGroup > .socialHomeItem {
 	background-color: whitesmoke;
 	height: 40px;
-	padding: 2px;
+	padding: 4px;
 	margin-bottom: 5px;
-	border-radius: 30%;
+	border-radius: 50%;
   }
   
 
@@ -199,7 +199,16 @@ footer {
 
 /* Full Size CSS */
 @media only screen and (max-width: 700px) {
+
+#navbar {
+	
+}
+
   header > .text-block {
     left: 50%;
   }
+  .socialHomeGroup > .socialHomeItem {
+	visibility: hidden;
+  }
+
 }

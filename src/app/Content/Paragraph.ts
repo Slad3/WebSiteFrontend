@@ -7,7 +7,7 @@ export class Paragraph extends Content {
   content: string;
   constructor(message: string) {
     super();
-    this.content = '<p>' +  message + '</p>';
+    this.content = '<p class= "paragraph">' +  message + '</p>';
   }
 
 }

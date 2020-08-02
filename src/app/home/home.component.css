@@ -18,18 +18,17 @@
   border-bottom-width: 4px;
   border-bottom-color: #0f4c75;
 
-  border-radius: 2%;
+  border-radius: 20px;
 }
 
 .title {
   font-weight: bold;
   font-size: 30px;
   margin-left: 50px;
-  font-family: "Arial Rounded MT Bold";
+  font-family: sans-serif;
 }
 
 #intro {
-
   margin-bottom: 20px;
   display: inline;
 }
@@ -39,15 +38,11 @@
   list-style: none;
 }
 
-#introTitle {
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 #introText {
   /* background-color: #cacaca; */
   background-color: rgb(28, 28, 28);
-  
+
   color: #cacaca;
   float: left;
 }
@@ -70,6 +65,10 @@
   float: left;
 }
 
+#typeracer > img {
+	size: 150%;
+}
+
 .introPara {
   text-indent: initial;
   width: 90%;
@@ -81,12 +80,15 @@
 #techBasedInterests {
   color: black;
   background-color: #cacaca;
-  /*padding: 20px;*/
-  list-style: none;
-  padding: 20px;
-  margin-top: 30px;
-  /*margin-bottom: 30px;*/
   display: table-cell;
+
+}
+
+#techBaseInterests > ul {
+	padding: 20px;
+	margin-top: 30px;
+	list-style: none;
+
 }
 
 #techBasedInterests > ul > li {
@@ -167,8 +169,8 @@
   font-size: 25px;
 }
 
-#skills > #languages > .list > .language > ul{
-	list-style-position: inside;
+#skills > #languages > .list > .language > ul {
+  list-style-position: inside;
 }
 
 #skills > #languages > .list > .language > li {

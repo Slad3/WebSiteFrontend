@@ -163,7 +163,7 @@ header {
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
-  alignment: center;
+  align-self: center;
 
   max-width: 1080px;
 

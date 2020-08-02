@@ -25,7 +25,7 @@ import { AngularStickyThingsModule } from "@w11k/angular-sticky-things";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnInit {
-  url = "http://localhost:8080/";
+  url = "http://192.168.50.100:8080/";
   title = "the strangest title";
 
   quote: any;
@@ -34,8 +34,6 @@ export class AppComponent implements OnInit {
   sticky = null;
 
   constructor(private http: HttpClient) {
-
-	this.quote = "Loading Quote..."
     // Making Request for getting from backend
     const req = new HttpRequest("GET", this.url + "QOTD", {
       reportProgress: false,
@@ -45,7 +43,7 @@ export class AppComponent implements OnInit {
     this.http.request(req).subscribe(
       (event) => {
         if (event instanceof HttpResponse) {
-          this.quote = event.body.toString();
+          this.quote = event.body;
         }
       },
       (error) => {

@@ -120,9 +120,9 @@
   color: whitesmoke;
   font-family: Arial, Helvetica, sans-serif;
   list-style: none;
-  padding: 10px;
+  /* padding: 10px; */
   display: inline-block;
-  width: 98%;
+  width: 100%;
   background-color: RGB(28, 28, 28);
 }
 
@@ -330,5 +330,19 @@
 @media only screen and (max-width: 768px) {
   #home > #intro > ul > #introText {
     width: 90%;
+  }
+
+
+
+  .block{
+    padding: 0%;
+    /* width: 90%; */
+  }
+
+
+  #skills{}
+
+  #FAQ > #FAQList > h1{
+    padding: 20%;
   }
 }

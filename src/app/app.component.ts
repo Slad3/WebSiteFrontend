@@ -25,7 +25,7 @@ import { AngularStickyThingsModule } from "@w11k/angular-sticky-things";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnInit {
-  url = "http://192.168.50.100:8080/";
+  url = "http://localhost:8080/";
   title = "the strangest title";
 
   quote: any;

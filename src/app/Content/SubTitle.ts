@@ -3,11 +3,11 @@ import {Component, ElementRef, Input, Renderer2, OnInit, Directive} from '@angul
 
 
 
-export class Paragraph extends Content {
+export class SubTitle extends Content {
   content: string;
   constructor(message: string) {
     super();
-    this.content = '<p class= "paragraph">' +  message + '</p>';
+    this.content = '<h2 class="subTitle">' +  message + '</h2>';
   }
 
 }

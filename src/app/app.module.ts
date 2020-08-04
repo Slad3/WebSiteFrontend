@@ -8,10 +8,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { FeedComponent } from './feed/feed.component';
 import { PostComponent } from './post/post.component';
 import { DatascienceComponent } from './datascience/datascience.component';
-import { CheatsheetsComponent } from './cheatsheets/cheatsheets.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
 import {AngularStickyThingsModule} from '@w11k/angular-sticky-things';
+import { ReferenceComponent } from './reference/reference.component';
+import { SinglepostComponent } from './singlepost/singlepost.component';
+
 
 @NgModule({
   declarations: [
@@ -19,16 +21,18 @@ import {AngularStickyThingsModule} from '@w11k/angular-sticky-things';
     FeedComponent,
     PostComponent,
     DatascienceComponent,
-    CheatsheetsComponent,
+    ReferenceComponent,
     HomeComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ReferenceComponent,
+    SinglepostComponent,
   ],
     imports: [
         BrowserModule,
         RouterModule,
         AppRoutingModule,
-        HttpClientModule,
-        AngularStickyThingsModule,
+		HttpClientModule,
+		AngularStickyThingsModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

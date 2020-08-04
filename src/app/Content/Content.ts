@@ -4,6 +4,9 @@ export class Content {
   type: string;
   title: string;
   content: string;
+  paragraph: string;
+  image: string;
+  subTitle: string;
 
   constructor() {
     this.content = '<p> No Content Loaded</p>';

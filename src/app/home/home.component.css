@@ -19,6 +19,7 @@
   border-bottom-color: #0f4c75;
 
   border-radius: 20px;
+  width: 100%;
 }
 
 .title {
@@ -80,7 +81,6 @@
   color: black;
   background-color: #cacaca;
   display: table-cell;
-  width: 100%;
 }
 
 #techBaseInterests > ul {
@@ -309,7 +309,7 @@
 
 /* When quad grids get too compressed */
 
-@media only screen and (max-width: 1080px) {
+@media only screen and (max-width: 1115px) {
   #techBasedInterests > ul > li {
     width: 39%;
     min-height: 220px;

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CheatsheetsComponent } from './cheatsheets.component';
+import { ReferenceComponent } from './reference.component';
 
-describe('CheatsheetsComponent', () => {
-  let component: CheatsheetsComponent;
-  let fixture: ComponentFixture<CheatsheetsComponent>;
+describe('ReferenceComponent', () => {
+  let component: ReferenceComponent;
+  let fixture: ComponentFixture<ReferenceComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CheatsheetsComponent ]
+      declarations: [ ReferenceComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CheatsheetsComponent);
+    fixture = TestBed.createComponent(ReferenceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

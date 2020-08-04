@@ -1,0 +1,10 @@
+
+
+1. Fix up Frontend 
+	- Move links to the side and make static
+    -Do something better for the intro
+    - Complete interest paragraphs
+2. Bulid infrastructure for blog
+3. Write stuff for blog
+4. Add stuff to projects page
+5. 

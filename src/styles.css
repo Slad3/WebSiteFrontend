@@ -1,0 +1,10 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: #2a2a2a;
+  font-family: Arial;
+  /*background-color: #cacaca;*/
+  /* background-color: rgba(52, 52, 52, 0.64);*/
+  background-image: url("assets/images/prism.png");
+  /*background-image: url("assets/images/tealGraphVisual.jpg");*/
+}

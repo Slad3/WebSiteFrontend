@@ -1,0 +1,13 @@
+<h1> Page where I blog, update on projects, or just spill my mind on whatever I care about. And if you don't care, remember YOU CLICKED ON MY FACE! </h1>
+<div class="wholeBlog">
+ <h1 id="BigTitle"> Bob Lawblaws Law Blog</h1>
+
+ <ul style="" id="postList">
+   <a *ngFor="let post of posts">
+     <li>
+       <app-post [post]="post"></app-post>
+     </li>
+   </a>
+ </ul>
+</div>
+

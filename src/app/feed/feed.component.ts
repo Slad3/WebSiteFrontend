@@ -26,7 +26,7 @@ export class FeedComponent implements OnInit {
     private location: Location,
     private http: HttpClient
   ) {
-	this.updatePosts();
+	// this.updatePosts();
   }
 
   ngOnInit(): void {

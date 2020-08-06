@@ -10,7 +10,6 @@ import { PostComponent } from './post/post.component';
 import { DatascienceComponent } from './datascience/datascience.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
-import {AngularStickyThingsModule} from '@w11k/angular-sticky-things';
 import { ReferenceComponent } from './reference/reference.component';
 import { SinglepostComponent } from './singlepost/singlepost.component';
 
@@ -32,7 +31,6 @@ import { SinglepostComponent } from './singlepost/singlepost.component';
         RouterModule,
         AppRoutingModule,
 		HttpClientModule,
-		AngularStickyThingsModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

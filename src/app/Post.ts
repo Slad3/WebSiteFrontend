@@ -1,9 +1,9 @@
-import {Content} from './Content/Content';
-import {Paragraph} from './Content/Paragraph';
-import {Image} from './Content/Image';
-import {YouTubeVideo} from './Content/YouTubeVideo';
-import {SubTitle} from './Content/SubTitle';
-import { DateStruct } from './Content/DateStruct';
+import {Content} from './api/Content/Content';
+import {Paragraph} from './api/Content/Paragraph';
+import {Image} from './api/Content/Image';
+import {YouTubeVideo} from './api/Content/YouTubeVideo';
+import {SubTitle} from './api/Content/SubTitle';
+import { DateStruct } from './api/Content/DateStruct';
 
 export class Post {
   title: string;

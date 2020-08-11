@@ -11,7 +11,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  url = 'http://localhost:8080/';
+  url = 'https://localhost:8080/';
   title = 'the strangest title';
 
   quote: string = 'Loading';

@@ -16,7 +16,7 @@ import {
 })
 export class SinglepostComponent implements OnInit {
 	post: Post;
-	url = "http://localhost:8080/"
+	url = "https://localhost:8080/"
 	path = ""
 
 
@@ -54,7 +54,6 @@ export class SinglepostComponent implements OnInit {
 		  }
 		},
 		(error) => {
-			console.log("here")
 		  console.log("Error", error);
 
 		}

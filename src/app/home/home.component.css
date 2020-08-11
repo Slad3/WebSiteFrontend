@@ -14,6 +14,11 @@
   /*border-left-color: #0f4c75;*/
   border-left-color: #f2f2f2;
 
+  border-right-style: solid;
+  border-right-width: 2px;
+  /*border-right-color: #0f4c75;*/
+  border-right-color: #f2f2f2;
+
   border-bottom-style: solid;
   border-bottom-width: 4px;
   border-bottom-color: #0f4c75;
@@ -45,12 +50,11 @@
 
   color: #cacaca;
   float: left;
+  align-self: center;
+  margin-left: 0%x;
 }
 
 #profilePhoto {
-  margin-top: 30px;
-  max-width: 20%;
-  margin-left: 5%;
   align-self: center;
   float: left;
   border-radius: 5%;
@@ -291,14 +295,20 @@
 }
 
 /* Full Size CSS */
-@media (min-width: 1080px) {
+@media (min-width: 1115px) {
   #home > #intro > ul > #introText {
     width: 70%;
   }
 
+  #profilePhoto{
+	margin-top: 30px;
+	max-width: 20%;
+	margin-left: 5%;
+  }
+
   #techBasedInterests > ul > li {
     width: 19%;
-    min-height: 100px;
+    min-height: 250px;
   }
 
   #skills > #languages > .list > .language {
@@ -308,41 +318,37 @@
 }
 
 /* When quad grids get too compressed */
-
-@media only screen and (max-width: 1115px) {
-  #techBasedInterests > ul > li {
-    width: 39%;
-    min-height: 220px;
-  }
-}
-
 /* When trio grids get too compressed */
 
-@media only screen and (max-width: 1080px) {
+@media only screen and (max-width: 1114px) {
+  #techBasedInterests > ul > li {
+    width: 39%;
+    min-height: 10px;
+  }
+
   #profilePhoto {
     visibility: hidden;
     height: 0px;
   }
 
-  #skills > #languages > .list > .language > h3{
-	margin-bottom: 5px;
-}
+  #skills > #languages > .list > .language > h3 {
+    margin-bottom: 5px;
+  }
 
   #skills > #languages > #languages > h3 {
-}
+  }
 
   #skills > #languages > .list > .language {
     align-self: center;
     margin-left: 8%;
-	margin-right: 8%;
-	width: 70%;
-	border-top-style: solid;
-	border-top-width: 1px;
-	border-top-color: whitesmoke;
-	border-top-left-radius: 2%;
-	border-top-right-radius: 2%;
-	border-top-style: dashed;
-
+    margin-right: 8%;
+    width: 70%;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: whitesmoke;
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+    border-top-style: dashed;
   }
 }
 
@@ -350,6 +356,11 @@
 @media only screen and (max-width: 768px) {
   #home > #intro > ul > #introText {
     width: 90%;
+  }
+
+  #techBasedInterests > ul > li {
+	width: 80%;
+	min-height: 150px;
   }
 
   .block {

@@ -6,8 +6,8 @@
 
 .block {
   color: black;
-  padding: 20px;
   margin-top: 30px;
+  border-radius: 20px;
 
   border-left-style: solid;
   border-left-width: 2px;
@@ -22,9 +22,6 @@
   border-bottom-style: solid;
   border-bottom-width: 4px;
   border-bottom-color: #0f4c75;
-
-  border-radius: 20px;
-  width: 100%;
 }
 
 .title {
@@ -42,11 +39,15 @@
 #intro > ul {
   display: inline-block;
   list-style: none;
+  margin-left: 0px;
+  padding-left: 0px;
+  /* margin-block-start: 0em;
+  margin-block-end: 0em; */
 }
 
 #introText {
   /* background-color: #cacaca; */
-  background-color: rgb(28, 28, 28);
+  background-color: rgba(28, 28, 28, 0.7);
 
   color: #cacaca;
   float: left;
@@ -124,10 +125,9 @@
   color: whitesmoke;
   font-family: Arial, Helvetica, sans-serif;
   list-style: none;
-  /* padding: 10px; */
   display: inline-block;
-  width: 100%;
   background-color: RGB(28, 28, 28);
+  max-width: 100%;;
 }
 
 #skills > #languages > h3 {
@@ -296,14 +296,20 @@
 
 /* Full Size CSS */
 @media (min-width: 1115px) {
-  #home > #intro > ul > #introText {
-    width: 70%;
+  .block {
+    padding: 2.5%;
+    width: 95%;
   }
 
-  #profilePhoto{
-	margin-top: 30px;
-	max-width: 20%;
-	margin-left: 5%;
+  #home > #intro > ul > #introText {
+	width: 70%;
+	padding: 2%;
+  }
+
+  #profilePhoto {
+    margin-top: 30px;
+    max-width: 20%;
+    margin-left: 5%;
   }
 
   #techBasedInterests > ul > li {
@@ -321,21 +327,28 @@
 /* When trio grids get too compressed */
 
 @media only screen and (max-width: 1114px) {
+  .block {
+    width: 95%;
+    padding: 2.5%;
+  }
+  #profilePhoto {
+    visibility: hidden;
+    height: 0px;
+    width: 0px;
+  }
+
+  #techBasedInterests {
+    width: 100%;
+    min-height: 10px;
+  }
+
   #techBasedInterests > ul > li {
     width: 39%;
     min-height: 10px;
   }
 
-  #profilePhoto {
-    visibility: hidden;
-    height: 0px;
-  }
-
   #skills > #languages > .list > .language > h3 {
     margin-bottom: 5px;
-  }
-
-  #skills > #languages > #languages > h3 {
   }
 
   #skills > #languages > .list > .language {
@@ -343,6 +356,7 @@
     margin-left: 8%;
     margin-right: 8%;
     width: 70%;
+
     border-top-style: solid;
     border-top-width: 1px;
     border-top-color: whitesmoke;
@@ -355,23 +369,28 @@
 /* For mobile */
 @media only screen and (max-width: 768px) {
   #home > #intro > ul > #introText {
-    width: 90%;
+    width: 100%;
+  }
+
+  .title {
+    text-align: center;
+    margin-left: 0px;
   }
 
   #techBasedInterests > ul > li {
-	width: 80%;
-	min-height: 150px;
+    width: 80%;
+    min-height: 150px;
   }
 
   .block {
     padding: 0%;
-    /* width: 90%; */
+  }
+
+  #FAQ {
+    padding: 2.5%;
+    width: 95%;
   }
 
   #skills {
-  }
-
-  #FAQ > #FAQList > h1 {
-    padding: 20%;
   }
 }

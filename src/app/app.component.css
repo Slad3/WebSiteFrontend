@@ -12,6 +12,8 @@
 		font-weight: bold;
 		max-height: 48px;
 	}
+
+	
 	
 	.sticky {
 		position: fixed;
@@ -62,16 +64,6 @@
 		min-height: 300px;
 	}
 	
-	/* .text-block {
-		position: absolute;
-	
-		padding-left: 20px;
-		padding-right: 20px;
-		top: 10%;
-		left: 40%;
-		color: rgba(27, 27, 27, 0.86);
-		font-size: 250%;
-	} */
 	
 	.text-block {
 		position: absolute;

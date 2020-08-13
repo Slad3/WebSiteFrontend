@@ -1,0 +1,24 @@
+{
+  "experience": [
+    {
+      "title": "Image Analysis/Machine Learning Engineer",
+      "experience": "Hey",
+      "place": "White House Custom Color",
+      "date": "January 2nd - January 27th 2020",
+      "description": [
+        "I took on a month long internship over winter break building building tools, concepts, and resources for automated analysis on professional photos for White House Custom Color. This includes face and label recognition through AWS Rekognition from images stored in S3 Buckets, creating algorithms for automated cropping, color analysis involving color clusters and product color matching, and focus recognition and mapping the focus of an image. At the end of my internship I presented my work to the management of WHCC. Utilized Python with libraries such as OpenCV, SciPy (NumPy, Pandas, and Matplotlib), Scikit-learn, Keras, and Boto (for AWS connectivity)."
+      ],
+      "skills": [
+        "python",
+        "OpenCV",
+        "AWS S3",
+        "AWS Rekognition",
+        "Pandas",
+        "NumPy",
+        "MatPlotLib",
+        "Scikit-Learn",
+        "Keras"
+      ]
+    }
+  ]
+}

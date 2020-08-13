@@ -1,5 +1,9 @@
 {
-  "files": ["./Post.ts"],
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  },
+  "files": ["./src/app/Post.ts"],
   "references": [
     {
       "path": "./tsconfig.app.json"

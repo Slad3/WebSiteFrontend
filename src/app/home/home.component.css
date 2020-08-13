@@ -41,8 +41,6 @@
   list-style: none;
   margin-left: 0px;
   padding-left: 0px;
-  /* margin-block-start: 0em;
-  margin-block-end: 0em; */
 }
 
 #introText {
@@ -80,6 +78,12 @@
   padding-left: 5%;
   line-height: 1.5;
   font-size: large;
+}
+
+#experience {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  clear: both;
 }
 
 #techBasedInterests {
@@ -348,16 +352,16 @@
   }
 
   #skills > #languages > .list > .language > h3 {
-	margin-bottom: 5px;
+    margin-bottom: 5px;
   }
 
-  #skills > #languages > .list > .language > ol > li > h4{
-	  align-items: center;
-	  color: red;
+  #skills > #languages > .list > .language > ol > li > h4 {
+    align-items: center;
+    color: red;
   }
 
   #skills > #languages > .list > .language {
-	align-self: center;
+    align-self: center;
 
     margin-left: 8%;
     margin-right: 8%;
@@ -375,8 +379,8 @@
 /* For mobile */
 @media only screen and (max-width: 768px) {
   .block {
-	padding: 0%;
-	width: 100%;
+    padding: 0%;
+    width: 100%;
   }
 
   .title {
@@ -393,64 +397,56 @@
     min-height: 150px;
   }
 
-  #skills{
-	  padding-bottom: 5%;
+  #skills {
+    padding-bottom: 5%;
   }
-
 
   #skills > .accordion {
-	background-color: #0f4c75;
-	color: whitesmoke;
-	cursor: pointer;
-	padding: 18px;
-	width: 90%;
-	border: none;
-	text-align: left;
-	outline: none;
-	font-size: 15px;
-	transition: 0.4s;
-	/* margin-bottom: 15px; */
-	margin-left: 5%;
-
-
+    background-color: #0f4c75;
+    color: whitesmoke;
+    cursor: pointer;
+    padding: 18px;
+    width: 90%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    /* margin-bottom: 15px; */
+    margin-left: 5%;
   }
-  
+
   #skills > .active,
   .accordion:hover {
-	background-color: #cacaca;
-	color: black;
+    background-color: #cacaca;
+    color: black;
   }
-  
+
   #skills.accordion:after {
-	content: "\002B";
-	color: #777;
-	font-weight: bold;
-	float: right;
-	border-left-style: none;
-	border-right-style: none;
-	border-bottom-style: none;
+    content: "\002B";
+    color: #777;
+    font-weight: bold;
+    float: right;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
   }
-  
+
   #skills > .active:after {
-	content: "\2212";
+    content: "\2212";
   }
-  
+
   #skills > .panel {
-	padding: 0 18px;
-	background-color: RGB(28, 28, 28);
-	max-height: 0;
-	overflow: hidden;
-	transition: max-height 0.2s ease-out;
+    padding: 0 18px;
+    background-color: RGB(28, 28, 28);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 
-	border-left-style: none;
-	border-right-style: none;
-	border-bottom-style: none;
-
-
-
-
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
   }
-
 
   #FAQ {
     padding: 2.5%;

@@ -13,6 +13,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ReferenceComponent } from './reference/reference.component';
 import { SinglepostComponent } from './singlepost/singlepost.component';
 import { PostComponent } from './post/post.component';
+import { ExperienceComponent } from './experience/experience.component';
 
 
 
@@ -26,6 +27,7 @@ import { PostComponent } from './post/post.component';
     ReferenceComponent,
     SinglepostComponent,
     PostComponent,
+    ExperienceComponent,
 
  
   ],

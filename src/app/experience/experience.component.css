@@ -1,0 +1,153 @@
+.block {
+  color: whitesmoke;
+  border-radius: 20px;
+  background-color: RGBA(28, 28, 28, 0.6);
+  padding: 2.5%;
+  width: 95%;
+
+  border-left-style: solid;
+  border-left-width: 2px;
+  border-left-color: #f2f2f2;
+
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #f2f2f2;
+
+  border-bottom-style: solid;
+  border-bottom-width: 4px;
+  border-bottom-color: #0f4c75;
+
+  min-height: 400px;
+}
+
+.mySlides {
+  display: none;
+}
+
+.companyImage {
+  float: left;
+  width: 26%;
+  display: inline-block;
+  padding: 5%;
+  padding-bottom: 0%;
+}
+
+.companyImage img {
+  width: 100%;
+}
+
+.content {
+  width: 64%;
+
+  clear: both;
+  display: inline-block;
+}
+
+.title {
+  font-weight: bolder;
+  font-size: 27px;
+  float: top;
+  font-family: sans-serif;
+  clear: both;
+}
+
+.experienceType {
+  float: right;
+  font-size: 50%;
+}
+
+.place {
+  font-size: 20px;
+}
+
+.date {
+  float: right;
+  font-size: 80%;
+  clear: both;
+}
+
+.expSkillsList {
+  text-align: center;
+  white-space: normal;
+}
+
+.expSkillsList li {
+  float: left;
+  display: block;
+  margin-right: 7px;
+  font-size: 15px;
+}
+
+#navagation {
+  padding: 10px;
+  margin-top: 10px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+}
+
+#left,
+#right,
+.badge {
+  cursor: pointer;
+  color: white;
+}
+
+#left {
+  float: left !important;
+  margin-left: 15px;
+}
+
+#right {
+  float: right !important;
+  margin-right: 15px;
+}
+
+.badge {
+  height: 10px;
+  width: 10px;
+  padding: 5px;
+  border-radius: 50%;
+
+  background-color: #000;
+  color: #fff;
+  display: inline-block;
+
+  text-align: center;
+}
+
+.w3-display-container {
+  position: relative;
+}
+
+.w3-display-container:hover .w3-display-hover {
+  display: block;
+}
+.w3-display-container:hover span.w3-display-hover {
+  display: inline-block;
+}
+
+.w3-white {
+  color: #000 !important;
+  background-color: #fff !important;
+}
+
+.w3-center {
+  text-align: center !important;
+}
+
+/* For mobile */
+@media only screen and (max-width: 768px) {
+  .companyImage {
+    visibility: hidden;
+    width: 0%;
+    padding: 0%;
+    margin: 0%;
+  }
+
+  .content {
+    width: 100%;
+  }
+}

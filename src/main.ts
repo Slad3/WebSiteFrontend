@@ -7,7 +7,6 @@ import { environment } from './environments/environment';
 if (environment.production) {
   enableProdMode();
 }
-console.log("New")
 
 if(location.host.toString() !== "localhost:4200" && location.protocol !== 'https:'){
 	location.replace(`https:${location.href.substring(location.protocol.length)}`);

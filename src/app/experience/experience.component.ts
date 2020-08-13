@@ -9,7 +9,7 @@ export class ExperienceComponent implements OnInit {
 
 	experience = [
 		{
-		  "title": "Image Analysis/Machine Learning Engineer",
+		  "title": "Image Analysist/Machine Learning Engineer",
 		  "experience": "Internship",
 		  "place": "White House Custom Color",
 		  "image": "../../assets/companyLogos/whcclogo.png",

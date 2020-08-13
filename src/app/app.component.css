@@ -12,7 +12,6 @@
 		font-weight: bold;
 		max-height: 48px;
 	}
-
 	
 	
 	.sticky {
@@ -197,7 +196,7 @@
 	@media (max-width: 768px) {
 	
 		#body {
-			width: 95%;
+			width: 100%;
 			padding: 0%;
 		}
 	

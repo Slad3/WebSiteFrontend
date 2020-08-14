@@ -1,7 +1,7 @@
 <div class="w3-content w3-display-container">
 
   <div class="mySlides block">
-	<h1 class="mainTitle title"> Experience </h1>
+	<h1 class="mainTitle title"> Professional Experience </h1>
     <div class="companyImage">
       <img src="{{ experience[0].image }}" />
       <p class="credit">{{ experience[0].imageCredit }}</p>
@@ -17,19 +17,19 @@
       </h3>
 
       <div class="description">
-        <p *ngFor="let para of experience[0].description">{{ para }}</p>
+        <p class="paragraph" *ngFor="let para of experience[0].description">{{ para }}</p>
       </div>
 
       <ul class="expSkillsList">
 		<h3>Skills Utilized</h3>
-        <li *ngFor="let sk of experience[0].skills">{{ sk }}</li>
+        <li *ngFor="let sk of experience[0].skills">{{ sk }} |</li>
       </ul>
     </div>
   </div>
 
   <div *ngFor="let ex of exp">
     <div class="mySlides block">
-	<h1 class="mainTitle title"> Experience </h1>
+	<h1 class="mainTitle title"> Professional Experience </h1>
       <div class="companyImage">
         <img src="{{ ex.image }}" />
         <p class="credit">{{ ex.imageCredit }}</p>
@@ -45,12 +45,12 @@
         </h3>
 
         <div class="description">
-          <p *ngFor="let para of ex.description">{{ para }}</p>
+          <p class="paragraph" *ngFor="let para of ex.description">{{ para }}</p>
         </div>
 
         <h3>Skills Utilized</h3>
         <ul class="expSkillsList">
-          <li *ngFor="let sk of ex.skills">{{ sk }}</li>
+          <li *ngFor="let sk of ex.skills">{{ sk }} |</li>
         </ul>
       </div>
     </div>
@@ -61,9 +61,10 @@
     class="w3-center w3-display-bottommiddle"
     style="width: 100%;"
   >
-    <div id="left" (click)="this.plusDivs(-1)">&#10094;</div>
-    <div id="right" (click)="this.plusDivs(1)">&#10095;</div>
+    <div id="left" class="arrow" (click)="this.plusDivs(-1)">&#10094;</div>
+    <div id="right" class="arrow" (click)="this.plusDivs(1)">&#10095;</div>
     <span class="badge demo w3-border" (click)="currentDiv(1)"></span>
     <span class="badge demo w3-border" (click)="currentDiv(2)"></span>
+    <span class="badge demo w3-border" (click)="currentDiv(3)"></span>
   </div>
 </div>

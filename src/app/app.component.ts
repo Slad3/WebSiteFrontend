@@ -16,9 +16,13 @@ export class AppComponent implements OnInit {
 
   quote: string = 'Loading';
 
-  // @ViewChild('navbar') header: ElementRef;
-
   constructor(private request: Request, private http: HttpClient) {
+    this.getQuote();
+  }
+
+  ngOnInit() {}
+
+  getQuote() {
     let req = new HttpRequest('GET', this.url + 'QOTD', {
       responseType: 'text',
     });
@@ -26,16 +30,13 @@ export class AppComponent implements OnInit {
     this.http.request(req).subscribe(
       (event) => {
         if (event instanceof HttpResponse) {
-          console.log('here');
           this.quote = event.body.toString();
         }
       },
       (error) => {
         console.log('Error', error);
-        this.quote = 'Error';
+        this.quote = 'Error connecting to backend server';
       }
     );
   }
-
-  ngOnInit() {}
 }

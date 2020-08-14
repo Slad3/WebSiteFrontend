@@ -45,7 +45,7 @@
 
 #introText {
   /* background-color: #cacaca; */
-  background-color: rgba(28, 28, 28, 0.7);
+  background-color: rgba(28, 28, 28, 0.6);
 
   color: #cacaca;
   float: left;
@@ -82,7 +82,6 @@
 
 #experience {
   margin-top: 30px;
-  margin-bottom: 30px;
   clear: both;
 }
 
@@ -130,14 +129,20 @@
   font-family: Arial, Helvetica, sans-serif;
   list-style: none;
   display: inline-block;
-  background-color: RGB(28, 28, 28);
+  background-color: RGB(28, 28, 28, .6);
   max-width: 100%;
+}
+
+#skills > .title {
+	margin-bottom: 0px;
+	float: top;
 }
 
 #skills > #languages > h3 {
   font-weight: bold;
   font-size: 25px;
   text-align: center;
+  margin-top: 0px;
   margin-bottom: 10px;
 
   border-bottom-style: solid;
@@ -276,26 +281,8 @@
   border-bottom-color: #cacaca;
 }
 
-#experience {
-  background-color: #cacaca;
-  border-left-style: solid;
-  border-left-width: 2px;
-  border-left-color: #f2f2f2;
-
-  color: black;
-
-  border-bottom-style: solid;
-  border-bottom-width: 4px;
-  border-bottom-color: #0f4c75;
-}
-
-#experience > .list {
-  /*margin-left: 10px;*/
-  width: 90%;
-}
-
 #FAQ {
-  background-color: #cacaca;
+  background-color: RGBA(202, 202, 202, .8);
 }
 
 /* Full Size CSS */

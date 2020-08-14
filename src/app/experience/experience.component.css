@@ -1,30 +1,31 @@
 .block {
-  color: whitesmoke;
+  /* color: whitesmoke; */
+  color: RGBA(28, 28, 28, 1);
   border-radius: 20px;
-  background-color: RGBA(28, 28, 28, 0.6);
+  /* background-color: RGBA(28, 28, 28, 0.6); */
+  background-color: RGBA(202, 202, 202, 0.8);
   padding: 2.5%;
   width: 95%;
 
   border-left-style: solid;
-  border-left-width: 2px;
-  border-left-color: #f2f2f2;
+  border-left-width: 4px;
+  border-left-color: RGBA(28, 28, 28, 1);
 
   border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #f2f2f2;
+  border-right-width: 4px;
+  border-right-color: RGBA(28, 28, 28, 1);
 
   border-bottom-style: solid;
   border-bottom-width: 4px;
   border-bottom-color: #0f4c75;
 
+  /* min-height: 475px; */
   min-height: 400px;
 }
 
 .mySlides {
   display: none;
 }
-
-
 
 .companyImage {
   float: left;
@@ -36,6 +37,12 @@
 
 .companyImage img {
   width: 100%;
+}
+
+.credit {
+  font-size: 75%;
+  font-style: italic;
+  text-align: center;
 }
 
 .content {
@@ -54,11 +61,12 @@
 }
 
 .mainTitle {
-	margin-left: 50px;
-	float: top;
-	margin-top: 0px;
-	font-size: 30px;
-	margin-bottom: 0px;
+  margin-left: 50px;
+  float: top;
+  margin-top: 0px;
+  font-size: 30px;
+  font-weight: bolder;
+  margin-bottom: 0px;
 }
 
 .experienceType {
@@ -76,9 +84,14 @@
   clear: both;
 }
 
+.paragraph {
+  text-indent: 4%;
+}
+
 .expSkillsList {
   text-align: center;
   white-space: normal;
+  float: bottom;
 }
 
 .expSkillsList li {
@@ -103,17 +116,17 @@
 #right,
 .badge {
   cursor: pointer;
-  color: white;
+  color: black;
 }
 
 #left {
   float: left !important;
-  margin-left: 35%;
+  margin-left: 75%;
 }
 
 #right {
   float: right !important;
-  margin-right: 35%;
+  margin-right: 5%;
 }
 
 .badge {
@@ -122,7 +135,7 @@
   padding: 5px;
   border-radius: 50%;
 
-  background-color: #000;
+  background-color: #0f4c75;
   color: #fff;
   display: inline-block;
 
@@ -141,8 +154,8 @@
 }
 
 .w3-white {
-  color: #000 !important;
-  background-color: #fff !important;
+  color: #0f4c75 !important;
+  background-color: white !important;
 }
 
 .w3-center {
@@ -151,6 +164,19 @@
 
 /* For mobile */
 @media only screen and (max-width: 768px) {
+  #left {
+    margin-left: 30%;
+  }
+
+  #right {
+    margin-right: 30%;
+  }
+
+  .mainTitle {
+	margin-top: 42px;
+	text-align: center;
+  }
+
   .companyImage {
     visibility: hidden;
     width: 0%;

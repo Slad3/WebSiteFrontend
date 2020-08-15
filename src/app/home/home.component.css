@@ -129,13 +129,12 @@
   font-family: Arial, Helvetica, sans-serif;
   list-style: none;
   display: inline-block;
-  background-color: RGB(28, 28, 28, .6);
-  max-width: 100%;
+  background-color: RGB(28, 28, 28, 0.6);
 }
 
 #skills > .title {
-	margin-bottom: 0px;
-	float: top;
+  margin-bottom: 0px;
+  float: top;
 }
 
 #skills > #languages > h3 {
@@ -282,7 +281,7 @@
 }
 
 #FAQ {
-  background-color: RGBA(202, 202, 202, .8);
+  background-color: RGBA(202, 202, 202, 0.8);
 }
 
 /* Full Size CSS */
@@ -368,6 +367,15 @@
   .block {
     padding: 0%;
     width: 100%;
+    border-left-width: 0px;
+	border-right-width: 0px;
+	
+	margin-left: 0px;
+	margin-right: 0px;
+  }
+
+  #experience{
+	  width: 100%
   }
 
   .title {
@@ -436,7 +444,8 @@
   }
 
   #FAQ {
-    padding: 2.5%;
+	padding: 2.5%;
+	margin-left: 0px;
     width: 95%;
   }
 }

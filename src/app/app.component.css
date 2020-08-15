@@ -7,7 +7,6 @@ nav {
   position: fixed;
   overflow: hidden;
   background-color: #0f4c75;
-  opacity: 95%;
   font-weight: bold;
   max-height: 48px;
 }
@@ -189,11 +188,12 @@ footer {
 /* Full Size CSS */
 @media (max-width: 768px) {
   #body {
-    width: 100%;
+    width: 97%;
     padding: 0%;
   }
 
   #navbar {
+	  width: 100%;
   }
 
   header > .text-block {

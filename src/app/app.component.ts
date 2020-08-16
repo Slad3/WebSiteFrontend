@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
 
   navbar: any;
   body: any;
+  socialGroup: any;
   sticky: Number;
 
   quote: string = 'Loading';
@@ -25,37 +26,38 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-	this.navbar = document.getElementById('navbar')
-	this.body = document.getElementById('body')
+	this.navbar = document.getElementById('navbar');
+	this.body = document.getElementById('body');
+	this.socialGroup = document.getElementById('socialHomeGroup');
 	this.sticky = this.navbar.offsetTop;
-	window.addEventListener('scroll', event => {
-		if (window.pageYOffset >= this.sticky) {
-		  this.navbar.classList.add('sticky');
-		  this.body.classList.add('bodyAfter');
-
-		} else {
-		  this.navbar.classList.remove('sticky');
-		  this.body.classList.remove('bodyAfter');
-		}
-	  });
+	window.addEventListener('scroll', (event) => {
+	  if (window.pageYOffset >= this.sticky) {
+		this.navbar.classList.add('sticky');
+		this.body.classList.add('bodyAfter');
+		this.socialGroup.classList.add('socialAdjust');
+	  } else {
+		this.navbar.classList.remove('sticky');
+		this.body.classList.remove('bodyAfter');
+		this.socialGroup.classList.remove('socialAdjust');
+	  }
+	});
   }
 
-
   getQuote() {
-    let req = new HttpRequest('GET', this.backendUrl + 'QOTD', {
-      responseType: 'text',
-    });
+	let req = new HttpRequest('GET', this.backendUrl + 'QOTD', {
+	  responseType: 'text',
+	});
 
-    this.http.request(req).subscribe(
-      (event) => {
-        if (event instanceof HttpResponse) {
-          this.quote = event.body.toString();
-        }
-      },
-      (error) => {
-        console.log('Error', error);
-        this.quote = 'Error connecting to backend server';
-      }
-    );
+	this.http.request(req).subscribe(
+	  (event) => {
+		if (event instanceof HttpResponse) {
+		  this.quote = event.body.toString();
+		}
+	  },
+	  (error) => {
+		console.log('Error', error);
+		this.quote = 'Error connecting to backend server';
+	  }
+	);
   }
 }

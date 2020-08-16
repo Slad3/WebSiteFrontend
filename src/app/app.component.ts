@@ -4,7 +4,6 @@ import { Request } from './api/request.service';
 import { HttpClient, HttpRequest, HttpResponse } from '@angular/common/http';
 
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-root',
@@ -33,7 +32,7 @@ export class AppComponent implements OnInit {
 		if (window.pageYOffset >= this.sticky) {
 		  this.navbar.classList.add('sticky');
 		  this.body.classList.add('bodyAfter');
-				
+
 		} else {
 		  this.navbar.classList.remove('sticky');
 		  this.body.classList.remove('bodyAfter');

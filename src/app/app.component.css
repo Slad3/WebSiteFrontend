@@ -1,3 +1,26 @@
+.block {
+	color: whitesmoke;
+	margin-top: 30px;
+	border-radius: 20px;
+	padding: 3%;
+  
+	border-left-style: solid;
+	border-left-width: 2px;
+	/*border-left-color: #0f4c75;*/
+	border-left-color: #f2f2f2;
+  
+	border-right-style: solid;
+	border-right-width: 2px;
+	/*border-right-color: #0f4c75;*/
+	border-right-color: #f2f2f2;
+  
+	border-bottom-style: solid;
+	border-bottom-width: 4px;
+	border-bottom-color: #0f4c75;
+
+	background-color: rgba(28, 28, 28, 0.3);
+  }
+
 nav {
   list-style-type: none;
   margin: 0px;
@@ -67,7 +90,7 @@ header {
 		left: 45%; */
   top: 40%;
   left: 55%;
-  padding: 20px;
+  padding: 1%;
   color: rgba(0, 0, 0, 0.86);
   color: rgba(250, 250, 250, 0.86);
   background-color: rgba(0, 0, 0, 0.5);
@@ -196,8 +219,17 @@ footer {
 	  width: 100%;
   }
 
+
+  header {
+	  height: 70vh;
+	  background-position: 30% center;
+  }
+
   header > .text-block {
-    left: 50%;
+	left: 50%;
+	top: 50%;
+	max-width: 100vw;
+	font-size: 3.75vw;
   }
   .socialHomeGroup > .socialHomeItem {
     visibility: hidden;

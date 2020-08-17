@@ -29,7 +29,6 @@ export class AppComponent implements OnInit {
     this.navbar = document.getElementById('navbar') as HTMLElement;
     this.body = document.getElementById('body') as HTMLElement;
     this.sticky = this.navbar.offsetTop;
-    console.log(this.sticky);
 
     window.addEventListener('scroll', (event) => {
       if (window.pageYOffset >= this.sticky) {
@@ -38,6 +37,14 @@ export class AppComponent implements OnInit {
       } else {
         this.navbar.classList.remove('sticky');
         this.body.classList.remove('bodyAfter');
+      }
+    });
+
+    window.addEventListener('resize', (event) => {
+      console.log('resizing');
+
+      if (this.navbar.offsetTop > 0) {
+        this.sticky = this.navbar.offsetTop;
       }
     });
   }

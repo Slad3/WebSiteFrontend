@@ -284,6 +284,58 @@
   background-color: RGBA(202, 202, 202, 0.8);
 }
 
+#FAQ > ul {
+	list-style: none;
+}
+
+#FAQ > #FAQList > li > .accordion {
+  background-color: #0f4c75;
+  color: whitesmoke;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  float: left;
+}
+
+#FAQ > #FAQList > li > .accordion:after {
+	content: "\002B";
+	color: black;
+	font-weight: bold;
+	float: left;
+	margin-right: 10px;
+
+}
+
+#FAQ > #FAQList > li > .active:after {
+	content: "\2212";
+	float: left;
+}
+
+
+#FAQ > #FAQList > li > .answer {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+
+  border-left-style: solid;
+  border-left-width: 2px;
+  border-left-color: #0f4c75;
+
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #cacaca;
+
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: RGB(28, 28, 28);
+}
+
 /* Full Size CSS */
 @media (min-width: 1115px) {
   .block {
@@ -368,14 +420,14 @@
     padding: 0%;
     width: 100%;
     border-left-width: 0px;
-	border-right-width: 0px;
-	
-	margin-left: 0px;
-	margin-right: 0px;
+    border-right-width: 0px;
+
+    margin-left: 0px;
+    margin-right: 0px;
   }
 
-  #experience{
-	  width: 100%
+  #experience {
+    width: 100%;
   }
 
   .title {
@@ -444,8 +496,8 @@
   }
 
   #FAQ {
-	padding: 2.5%;
-	margin-left: 0px;
+    padding: 2.5%;
+    margin-left: 0px;
     width: 95%;
   }
 }

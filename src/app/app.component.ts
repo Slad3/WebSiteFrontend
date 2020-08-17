@@ -22,39 +22,41 @@ export class AppComponent implements OnInit {
   quote: string = 'Loading';
 
   constructor(private request: Request, private http: HttpClient) {
-	this.getQuote();
+    // this.getQuote();
   }
 
   ngOnInit() {
-	this.navbar = document.getElementById('navbar') as HTMLElement;
-	this.body = document.getElementById('body') as HTMLElement;
-	this.sticky = this.navbar.offsetTop;
-	window.addEventListener('scroll', (event) => {
-	  if (window.pageYOffset >= this.sticky) {
-		this.navbar.classList.add('sticky');
-		this.body.classList.add('bodyAfter');
-	  } else {
-		this.navbar.classList.remove('sticky');
-		this.body.classList.remove('bodyAfter');
-	  }
-	});
+    this.navbar = document.getElementById('navbar') as HTMLElement;
+    this.body = document.getElementById('body') as HTMLElement;
+    this.sticky = this.navbar.offsetTop;
+    console.log(this.sticky);
+
+    window.addEventListener('scroll', (event) => {
+      if (window.pageYOffset >= this.sticky) {
+        this.navbar.classList.add('sticky');
+        this.body.classList.add('bodyAfter');
+      } else {
+        this.navbar.classList.remove('sticky');
+        this.body.classList.remove('bodyAfter');
+      }
+    });
   }
 
   getQuote() {
-	let req = new HttpRequest('GET', this.backendUrl + 'QOTD', {
-	  responseType: 'text',
-	});
+    let req = new HttpRequest('GET', this.backendUrl + 'QOTD', {
+      responseType: 'text',
+    });
 
-	this.http.request(req).subscribe(
-	  (event) => {
-		if (event instanceof HttpResponse) {
-		  this.quote = event.body.toString();
-		}
-	  },
-	  (error) => {
-		console.log('Error', error);
-		this.quote = 'Error connecting to backend server';
-	  }
-	);
+    this.http.request(req).subscribe(
+      (event) => {
+        if (event instanceof HttpResponse) {
+          this.quote = event.body.toString();
+        }
+      },
+      (error) => {
+        console.log('Error', error);
+        this.quote = 'Error connecting to backend server';
+      }
+    );
   }
 }

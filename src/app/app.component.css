@@ -32,6 +32,8 @@
   /* position: fixed; */
   font-weight: bold;
   max-height: 48px;
+  opacity: 85%;
+  z-index: 99;
 }
 
 .sticky {
@@ -60,6 +62,7 @@ nav > li > a {
 li a:hover {
   background: #a8a8a8;
   color: black;
+  opacity: 117.64%;
 }
 
 #icon {

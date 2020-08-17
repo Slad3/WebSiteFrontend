@@ -1,0 +1,6 @@
+1. Compress main image
+2. Put experience component in home compeonent 
+	(or change layer visibility of the title bar to always be on top)
+3. Get professional email account
+4. Figure out loading JSON in typescript
+5. 

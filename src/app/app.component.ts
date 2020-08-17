@@ -26,19 +26,16 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-	this.navbar = document.getElementById('navbar');
-	this.body = document.getElementById('body');
-	this.socialGroup = document.getElementById('socialHomeGroup');
+	this.navbar = document.getElementById('navbar') as HTMLElement;
+	this.body = document.getElementById('body') as HTMLElement;
 	this.sticky = this.navbar.offsetTop;
 	window.addEventListener('scroll', (event) => {
 	  if (window.pageYOffset >= this.sticky) {
 		this.navbar.classList.add('sticky');
 		this.body.classList.add('bodyAfter');
-		this.socialGroup.classList.add('socialAdjust');
 	  } else {
 		this.navbar.classList.remove('sticky');
 		this.body.classList.remove('bodyAfter');
-		this.socialGroup.classList.remove('socialAdjust');
 	  }
 	});
   }

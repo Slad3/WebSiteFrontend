@@ -1,6 +1,6 @@
-1. Compress main image
-2. Put experience component in home compeonent 
-	(or change layer visibility of the title bar to always be on top)
-3. Get professional email account
-4. Figure out loading JSON in typescript
-5. 
+- Compress main image
+- Make main image not conform to height of screen
+	- Use javascript to access the css
+- Get professional email account
+- Figure out loading JSON in typescript
+- 

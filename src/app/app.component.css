@@ -148,8 +148,10 @@ header {
 
 .socialHomeGroup {
   position: fixed;
+  top: 60vh;
+  right: 0px;
   float: right;
-  right: 0;
+  z-index: 99;
 }
 
 .socialHomeGroup > .socialHomeItem {
@@ -169,11 +171,16 @@ header {
 }
 
 #quote {
-  margin-top: 0px;
-  font-size: 20px;
-  width: -60%;
-  direction: rtl;
+  width: 100%;
   text-align: right;
+  padding: 20px;
+}
+
+#quote > h1 {
+	margin-top: 0px;
+	font-size: 20px;
+	width: -60%;
+
 }
 
 #body {
@@ -199,7 +206,7 @@ footer {
 /* Full Size CSS */
 @media (min-width: 1720px) {
   header {
-    height: 50vh;
+    height: 30vh;
 
     background-size: fit;
   }
@@ -213,12 +220,13 @@ footer {
 /* Full Size CSS */
 @media (max-width: 1720px) {
   header {
-    height: 30vh;
+	/* height: 30vh; */
+	height: 50vh;
   }
 }
 
 /* Full Size CSS */
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   #body {
     width: 97%;
     padding: 0%;

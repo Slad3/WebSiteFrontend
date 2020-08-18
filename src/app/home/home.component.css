@@ -182,7 +182,6 @@
 #skills > #languages > .list > .language > ul {
   list-style-position: inside;
   text-align: left;
-
 }
 
 #skills > #languages > .list > .language > li {
@@ -322,6 +321,10 @@
   margin-bottom: 20px;
   text-indent: 3%;
 
+  background-color: RGB(50, 50, 50);
+
+  color: whitesmoke;
+
   border-left-style: solid;
   border-left-width: 2px;
   border-left-color: #0f4c75;
@@ -333,9 +336,10 @@
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: RGB(28, 28, 28);
+
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
-
-
 
 /* Full Size CSS */
 @media (min-width: 1115px) {

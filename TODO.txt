@@ -1,4 +1,3 @@
-- Compress main image
 - Make main image not conform to height of screen
 	- Use javascript to access the css
 - Get professional email account

@@ -181,10 +181,13 @@
 
 #skills > #languages > .list > .language > ul {
   list-style-position: inside;
+  text-align: left;
+
 }
 
 #skills > #languages > .list > .language > li {
   text-align: left;
+  float: left;
   font-size: 120%;
   list-style: circle;
   padding-bottom: 7px;
@@ -240,24 +243,20 @@
   outline: none;
   font-size: 15px;
   transition: 0.4s;
+  float: left;
 }
 
-#skills > .active,
-.accordion:hover {
-  background-color: #cacaca;
-  color: black;
-}
-
-#skills.accordion:after {
+#skills > .accordion:after {
   content: "\002B";
-  color: #777;
+  color: whitesmoke;
   font-weight: bold;
-  float: right;
-  /* margin-left: 5px; */
+  float: left;
+  margin-right: 10px;
 }
 
 #skills > .active:after {
   content: "\2212";
+  float: left;
 }
 
 #skills > .panel {
@@ -285,7 +284,7 @@
 }
 
 #FAQ > ul {
-	list-style: none;
+  list-style: none;
 }
 
 #FAQ > #FAQList > li > .accordion {
@@ -303,25 +302,25 @@
 }
 
 #FAQ > #FAQList > li > .accordion:after {
-	content: "\002B";
-	color: black;
-	font-weight: bold;
-	float: left;
-	margin-right: 10px;
-
+  content: "\002B";
+  color: whitesmoke;
+  font-weight: bold;
+  float: left;
+  margin-right: 10px;
 }
 
 #FAQ > #FAQList > li > .active:after {
-	content: "\2212";
-	float: left;
+  content: "\2212";
+  float: left;
 }
 
-
 #FAQ > #FAQList > li > .answer {
-  padding: 0 18px;
+  padding: 0 20px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+  margin-bottom: 20px;
+  text-indent: 3%;
 
   border-left-style: solid;
   border-left-width: 2px;
@@ -335,6 +334,8 @@
   border-bottom-width: 2px;
   border-bottom-color: RGB(28, 28, 28);
 }
+
+
 
 /* Full Size CSS */
 @media (min-width: 1115px) {

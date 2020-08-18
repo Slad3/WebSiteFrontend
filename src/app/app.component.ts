@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   quote: string = 'Loading';
 
   constructor(private request: Request, private http: HttpClient) {
-    // this.getQuote();
+    this.getQuote();
   }
 
   ngOnInit() {
@@ -41,7 +41,6 @@ export class AppComponent implements OnInit {
     });
 
     window.addEventListener('resize', (event) => {
-      console.log('resizing');
 
       if (this.navbar.offsetTop > 0) {
         this.sticky = this.navbar.offsetTop;

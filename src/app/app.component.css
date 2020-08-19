@@ -250,4 +250,11 @@ footer {
   .socialHomeGroup > .socialHomeItem {
     visibility: hidden;
   }
+
+#quote {
+	  width: 90%;
+	  align-self: center;
+  }
+
+
 }

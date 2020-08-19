@@ -173,10 +173,24 @@
   border-right-color: #0f4c75;
 }
 
-#skills #languages > .list > .language > h4 {
+#skills #languages > .list > .language > .languageTitle > h4 {
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  font-family: "Arial Rounded MT Bold", sans-serif;
   margin-top: 5px;
+  padding-top: 10px;
   /* font-size: 120%; */
   font-size: 25px;
+
+}
+
+#skills #languages > .list > .language > .languageTitle > .icon {
+  margin-left: 10%;
+  max-width: 70px;
+  float: left;
+  max-height: 50px;
 }
 
 #skills > #languages > .list > .language > ul {
@@ -211,15 +225,6 @@
   float: left;
   display: block;
   margin-right: 3%;
-}
-
-#skills > .skillList > h4 {
-  font-weight: bold;
-  font-size: 30px;
-  margin-left: 10%;
-  color: white;
-  /*text-align: center;*/
-  font-family: "Arial Rounded MT Bold", sans-serif;
 }
 
 #skills > .skillList > li {

@@ -482,7 +482,13 @@
   #skills > #languages > .list > .language {
     align-self: center;
     width: 75%;
-    min-height: 200px;
+    min-height: 210px;
+  }
+
+  #skills > #languages > .list > #java{
+    align-self: center;
+    width: 75%;
+	min-height: 240px;
   }
 
   #skills #languages > .list > .language > .languageTitle > .icon {

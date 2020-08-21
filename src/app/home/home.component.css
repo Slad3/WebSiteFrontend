@@ -463,8 +463,11 @@
 
   .title {
     text-align: center;
-    margin-left: 0px;
+	margin-left: 0px;
+	font-size: 26px;
+	/* color: red; */
   }
+
 
   #home > #intro > ul > #introText {
     width: 100%;
@@ -479,16 +482,39 @@
     padding-bottom: 5%;
   }
 
+  #skills > h1  {
+	  float: left;
+	  margin-left: 10%;
+  }
+
+  #skills > #languages {
+	  margin-top: 50px;
+  }
+
+  #skills > #languages > h3 {
+
+  }
+
   #skills > #languages > .list > .language {
     align-self: center;
     width: 75%;
-    min-height: 210px;
+	min-height: 210px;
+  }
+  #skills > #languages > .list > .language > ul{
+	  
+	margin: 40px;
+	margin-top: 50px;
+	margin-left: 0px;
+	padding-left: 30px;
+	position: relative;
+  }
+
+  #skills > #languages > .list > #python{
+	min-height: 190px;
   }
 
   #skills > #languages > .list > #java{
-    align-self: center;
-    width: 75%;
-	min-height: 240px;
+	min-height: 200px;
   }
 
   #skills #languages > .list > .language > .languageTitle > .icon {
@@ -564,5 +590,9 @@
     padding: 2.5%;
     margin-left: 0px;
     width: 95%;
+  }
+
+  #FAQ > ul {
+	padding-left: 10px;
   }
 }

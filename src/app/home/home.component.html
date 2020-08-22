@@ -1,7 +1,8 @@
+
 <div id="home">
-  <div id="intro">
-    <ul>
-      <li class="block" id="introText">
+  <div id="intro" class="container-fluid">
+    <div class="row">
+      <div class="block col-md-9 col-sm-12 " id="introText">
         <h1 id="introTitle" class="title">About This Site and About Me</h1>
 
         <p class="introPara">
@@ -22,19 +23,20 @@
           offered a full time job before graduation, I'll take it into
           consideration.
         </p>
-      </li>
-      <li class="rightSideIntro">
-        <img
+      </div>
+      <div class="d-md-block d-none col-md-3 col-sm-0 center-image">
+		<img
+			class= ""
           id="profilePhoto"
           src="assets/images/profileCropped.jpg"
           alt="What did I ever do to make you treat me so disrespectfully"
         />
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 
-  <app-experience #experience id="experience"></app-experience>
-  <br />
+  <!-- <app-experience #experience id="experience"></app-experience>
+  <br /> -->
 
   <!-- <div id="techBasedInterests" class="block">
 	<h1 class="title">Technology Based Interests</h1>
@@ -76,8 +78,11 @@
     <div class="" id="languages">
       <h3>Top Skills</h3>
       <ol class="list">
-        <li class="language" id="python">
-          <div class="languageTitle" id="python"><img class="icon" src="../../assets/icons/pythonIcon.png"/><h4>Python</h4></div>
+        <li class="language " id="python">
+          <div class="languageTitle" id="python">
+            <img class="icon" src="../../assets/icons/pythonIcon.png" />
+            <h4>Python</h4>
+          </div>
           <ul>
             <li>Pandas</li>
             <li>NumPy</li>
@@ -88,7 +93,10 @@
           </ul>
         </li>
         <li class="language" id="java">
-			<div class="languageTitle"><img class="icon"src="../../assets/icons/javaIcon.png"/><h4>Java</h4></div>
+          <div class="languageTitle">
+            <img class="icon" src="../../assets/icons/javaIcon.png" />
+            <h4>Java</h4>
+          </div>
           <ul>
             <li>DOM/Stax/Sax XML Parsing</li>
             <li>JSON Parsing</li>
@@ -97,8 +105,11 @@
             <li>Maven & Gradle</li>
           </ul>
         </li>
-        <li class="language" id="linux">
-			<div class="languageTitle"  ><img class="icon" src="../../assets/icons/linuxIcon.png"/><h4>Linux</h4></div>
+        <li class="language " id="linux">
+          <div class="languageTitle">
+            <img class="icon" src="../../assets/icons/linuxIcon.png" />
+            <h4>Linux</h4>
+          </div>
           <ul>
             <li>GUI and terminal</li>
             <li>Debian and Manjaro</li>
@@ -185,10 +196,11 @@
           <p>
             Although for some things I tend to perfer Java for the times when I
             want over all general speed, easy packaging, and XML parsing.
-		  </p>
-		  <p>
-			  As for libraries, some of my favorites include Flask, Pandas, and the Google Maps api for Android development.
-		  </p>
+          </p>
+          <p>
+            As for libraries, some of my favorites include Flask, Pandas, and
+            the Google Maps api for Android development.
+          </p>
         </div>
       </li>
       <li>
@@ -211,9 +223,9 @@
             end up doing lots of development on both.
           </p>
           <p>
-            For programming, I typically gravitate towards a Jetbrain's
-            IDE when I can, however I'm growing used to VSCode and doing most of
-            my compiling, running, and management from the command line.
+            For programming, I typically gravitate towards a Jetbrain's IDE when
+            I can, however I'm growing used to VSCode and doing most of my
+            compiling, running, and management from the command line.
           </p>
         </div>
       </li>

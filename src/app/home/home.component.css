@@ -22,6 +22,8 @@
   border-bottom-style: solid;
   border-bottom-width: 4px;
   border-bottom-color: #0f4c75;
+
+  padding: 2.5%;
 }
 
 .title {
@@ -33,14 +35,7 @@
 
 #intro {
   margin-bottom: 20px;
-  display: inline;
-}
-
-#intro > ul {
-  display: inline-block;
-  list-style: none;
-  margin-left: 0px;
-  padding-left: 0px;
+  /* display: inline; */
 }
 
 #introText {
@@ -48,15 +43,17 @@
   background-color: rgba(28, 28, 28, 0.6);
 
   color: #cacaca;
-  float: left;
-  align-self: center;
-  margin-left: 0%x;
+  /* float: left;
+  align-self: center; */
+  margin-left: 0%;
 }
 
 #profilePhoto {
   align-self: center;
-  float: left;
+  max-width: 100%;
+  height: auto;
   border-radius: 5%;
+  margin-top: 30px;
 }
 
 #typeracer {
@@ -349,18 +346,11 @@
 @media (min-width: 1115px) {
   .block {
     padding: 2.5%;
-    width: 95%;
   }
 
-  #home > #intro > ul > #introText {
-    width: 70%;
-    padding: 2%;
-  }
 
-  #profilePhoto {
-    margin-top: 30px;
-    max-width: 20%;
-    margin-left: 5%;
+  #skills > #languages > .list > .language > ul {
+	  margin-top: 25px;
   }
 
   #techBasedInterests > ul > li {
@@ -369,7 +359,7 @@
   }
 
   #skills > #languages > .list > .language {
-    width: 27%;
+    width: 31%;
     min-width: 54px;
   }
 }
@@ -377,16 +367,11 @@
 /* When quad grids get too compressed */
 /* When trio grids get too compressed */
 @media only screen and (max-width: 1114px) {
-  .block {
-    width: 95%;
-    padding: 2.5%;
-  }
-
-  #profilePhoto {
+  /* #profilePhoto {
     visibility: hidden;
     height: 0px;
     width: 0px;
-  }
+  } */
 
   #techBasedInterests {
     width: 100%;
@@ -414,12 +399,12 @@
     min-height: 140px;
   }
 
-  #skills #languages > .list > .language > .languageTitle > h4 {
+  #skills > #languages > .list > .language > .languageTitle > h4 {
     float: left;
     position: absolute;
   }
 
-  #skills #languages > .list > .language > .languageTitle > .icon {
+  #skills > #languages > .list > .language > .languageTitle > .icon {
     margin-top: 60px;
     margin-left: 5%;
     max-width: 70px;
@@ -448,8 +433,7 @@
 /* For mobile */
 @media only screen and (max-width: 768px) {
   .block {
-    padding: 0%;
-    width: 100%;
+
     border-left-width: 0px;
     border-right-width: 0px;
 
@@ -463,14 +447,9 @@
 
   .title {
     text-align: center;
-	margin-left: 0px;
-	font-size: 26px;
-	/* color: red; */
-  }
-
-
-  #home > #intro > ul > #introText {
-    width: 100%;
+    margin-left: 0px;
+    font-size: 26px;
+    /* color: red; */
   }
 
   #techBasedInterests > ul > li {
@@ -482,13 +461,13 @@
     padding-bottom: 5%;
   }
 
-  #skills > h1  {
-	  float: left;
-	  margin-left: 10%;
+  #skills > h1 {
+    float: left;
+    margin-left: 10%;
   }
 
   #skills > #languages {
-	  margin-top: 50px;
+    margin-top: 50px;
   }
 
   #skills > #languages > h3 {
@@ -498,7 +477,7 @@
   #skills > #languages > .list > .language {
     align-self: center;
     width: 75%;
-	min-height: 210px;
+    min-height: 210px;
   }
   #skills > #languages > .list > .language > ul{
 	  
@@ -506,7 +485,7 @@
 	margin-top: 50px;
 	margin-left: 0px;
 	padding-left: 30px;
-	position: relative;
+	position: relative; 
   }
 
   #skills > #languages > .list > #python{
@@ -593,6 +572,6 @@
   }
 
   #FAQ > ul {
-	padding-left: 10px;
+    padding-left: 10px;
   }
 }

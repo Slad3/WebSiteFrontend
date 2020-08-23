@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute} from '@angular/router';
-import { Post } from '../Post';
+import { Post } from '../../Post';
 import {
 	HttpClient,
 	HttpErrorResponse,
@@ -36,7 +36,7 @@ export class SinglepostComponent implements OnInit {
 		reportProgress: false,
 		responseType: "text",
 	  });
-  
+
 	  this.http.request(req).subscribe(
 		(event) => {
 		  if (event instanceof HttpResponse) {
@@ -49,7 +49,7 @@ export class SinglepostComponent implements OnInit {
 				  console.log(temp.Post)
 				this.post = new Post(temp.Post)
 			  }
-  
+
 			}
 		  }
 		},

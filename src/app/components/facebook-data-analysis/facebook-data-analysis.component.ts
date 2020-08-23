@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Request } from '../../api/request.service';
 import {
   HttpClient,
@@ -36,6 +36,10 @@ export class FacebookDataAnalysisComponent implements OnInit {
   fileNeeded = false;
   toggle = false;
 
+  @ViewChild('progressbar') progressbar: any
+  progressbarShow = true;
+  progress: number;
+
   constructor(
     private request: Request,
     private http: HttpClient,
@@ -57,7 +61,11 @@ export class FacebookDataAnalysisComponent implements OnInit {
   chart2Options: Highcharts.Options;
   chart2NotFound: string[];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+	// this.progressbar =  document.getElementById('progressbar') as HTMLElement
+	this.progressbar.innerHTML = "asdfasdf"
+    this.progress = 0;
+  }
 
   onFileChange(event) {
     console.log('change');
@@ -79,13 +87,18 @@ export class FacebookDataAnalysisComponent implements OnInit {
       );
 
       this.uploadStatus = response.status;
-      response.file.subscribe((file) => {
-		this.newResponse.emit(file);
-		this.data = JSON.parse(file);
-		console.log(this.data)
-		this.loadGraphs(this.data);
-      });
 
+        response.status.subscribe((event) => {
+			this.progress = event
+			this.progressbar.innerHTML = event.toString();
+        })
+  
+
+      response.file.subscribe((file) => {
+        this.newResponse.emit(file);
+        this.data = JSON.parse(file);
+        this.loadGraphs();
+      });
     } else {
       this.fileNeeded = false;
     }
@@ -101,22 +114,22 @@ export class FacebookDataAnalysisComponent implements OnInit {
       (event) => {
         if (event instanceof HttpResponse) {
           this.data = JSON.parse(event.body.toString());
-          this.loadGraphs(this.data);
+          this.loadGraphs();
         }
       },
       (error) => {
-		console.log('Error', error);
+        console.log('Error', error);
         this.data = 'Error connecting to backend server';
       }
     );
   }
 
-  loadGraphs(data) {
+  loadGraphs() {
     console.log('loading Graphs');
 
     const chart1Data = [];
     this.chart1NotFound = [];
-    console.log(data);
+    console.log(this.data);
     this.data['SearchHistory'].Frequency.forEach((search) => {
       if (search.times > 3)
         chart1Data.push({ name: search.search, y: search.percent });
@@ -130,13 +143,12 @@ export class FacebookDataAnalysisComponent implements OnInit {
           data: chart1Data,
           type: 'pie',
         },
-	  ],
-	  tooltip: {
-		formatter: function() {
-			return 'The value for <b>' + this.x +
-			'</b> is <b>' + this.y + '</b>';
-		  }
-	  }
+      ],
+      tooltip: {
+        formatter: function () {
+          return 'The value for <b>' + this.x + '</b> is <b>' + this.y + '</b>';
+        },
+      },
     };
 
     this.toggle = true;

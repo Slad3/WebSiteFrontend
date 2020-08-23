@@ -8,10 +8,17 @@ import {
   HttpResponse,
 } from '@angular/common/http';
 
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
-import { NgxSpinnerService } from 'ngx-spinner';
 import { ThrowStmt } from '@angular/compiler';
+
+import * as Highcharts from 'highcharts';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-facebook-data-analysis',
@@ -19,8 +26,8 @@ import { ThrowStmt } from '@angular/compiler';
   styleUrls: ['./facebook-data-analysis.component.css'],
 })
 export class FacebookDataAnalysisComponent implements OnInit {
-  data = 'asdfa';
-  backendUrl = 'http://localhost:8091/upload';
+  data: Object;
+  backendUrl = 'http://localhost:8091/';
 
   form: FormGroup;
   uploadStatus: Observable<number>;
@@ -32,48 +39,99 @@ export class FacebookDataAnalysisComponent implements OnInit {
   constructor(
     private request: Request,
     private http: HttpClient,
-	private formBuilder: FormBuilder,
-	private spinner: NgxSpinnerService
+    private formBuilder: FormBuilder,
+    private spinner: NgxSpinnerService
   ) {
-	this.form = this.formBuilder.group({
-		file: ['']
-	  });
+    this.form = this.formBuilder.group({
+      file: [''],
+    });
   }
+
+  // Graphs and Charts
+
+  chart1: typeof Highcharts;
+  chart1Options: Highcharts.Options;
+  chart1NotFound: string[];
 
   ngOnInit(): void {}
 
   onFileChange(event) {
-	  console.log("change")
-	  if (event.target.files && event.target.files[0]) {
-		const file = event.target.files[0];
-		this.form.get("file").setValue(file);
-	  }
+    console.log('change');
+    if (event.target.files && event.target.files[0]) {
+      const file = event.target.files[0];
+      this.form.get('file').setValue(file);
+    }
   }
 
   onSubmitUpload() {
-	  console.log('submit')
+    console.log('submit');
 
-    if (this.form.get("file").value !== "") {
+    if (this.form.get('file').value !== '') {
       this.spinner.show();
 
       const response = this.request.uploadFile(
-        this.form.get("file").value,
-        this.backendUrl
-	  );
-	  
+        this.form.get('file').value,
+        this.backendUrl + 'upload'
+      );
+
       this.uploadStatus = response.status;
       response.file.subscribe((file) => {
-
-		this.newResponse.emit(file);
-		this.data = JSON.parse(file)
-		console.log(this.data)
-		this.toggle = true;
+        this.newResponse.emit(file);
+        this.data = JSON.parse(file);
+        console.log(this.data);
+        this.toggle = true;
       });
+
+      this.loadGraphs();
     } else {
-		console.log("failed")
+      console.log('failed');
       this.fileNeeded = false;
     }
   }
 
+  loadTestSuccess() {
+    this.spinner.show();
+    let req = new HttpRequest('GET', this.backendUrl + 'sample', {
+      responseType: 'text',
+    });
 
+    this.http.request(req).subscribe(
+      (event) => {
+        if (event instanceof HttpResponse) {
+          this.data = JSON.parse(event.body);
+          this.loadGraphs(this.data);
+        }
+      },
+      (error) => {
+        console.log('Error', error);
+        this.data = 'Error connecting to backend server';
+      }
+    );
+  }
+
+  loadGraphs(data) {
+    console.log('loading Graphs');
+
+    const chart1Data = [];
+    this.chart1NotFound = [];
+    console.log(data);
+    this.data['SearchHistory'].Frequency.forEach((search) => {
+      if (search.times > 3)
+        chart1Data.push({ name: search.search, y: search.percent });
+    });
+
+    this.chart1 = Highcharts;
+    this.chart1Options = {
+      title: { text: 'Search Frequency' },
+      series: [
+        {
+          data: chart1Data,
+          type: 'pie',
+        },
+      ],
+    };
+
+    this.toggle = true;
+    this.spinner.hide();
+  }
 }

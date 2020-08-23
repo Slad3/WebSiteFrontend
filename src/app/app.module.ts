@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
-
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule  } from '@angular/forms';
+
+import { HighchartsChartModule } from 'highcharts-angular';
 
 import { Request } from './api/request.service';
 
@@ -33,7 +33,14 @@ import { FacebookDataAnalysisComponent } from './components/facebook-data-analys
     ExperienceComponent,
     FacebookDataAnalysisComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,	ReactiveFormsModule],
+  imports: [
+	  	BrowserModule,
+		AppRoutingModule,
+		HttpClientModule,
+		FormsModule,
+		ReactiveFormsModule,
+		HighchartsChartModule,
+	],
   providers: [Request, HttpClient],
   bootstrap: [AppComponent],
 })

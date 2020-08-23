@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute} from '@angular/router';
-import { Post } from '../Post';
+import { Post } from '../../Post';
 import {
 	HttpClient,
 	HttpErrorResponse,

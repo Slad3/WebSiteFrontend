@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Post} from '../Post';
+import {Post} from '../../Post';
 
 @Component({
   selector: 'app-post',

@@ -1,34 +1,45 @@
-<button
-  class="btn btn-secondary btn-sm"
-  (click)="this.loadTestSuccess();"
->
-  Example Success</button
-><br />
+<div id="uploadForm" class="container">
 
-<div id="uploadForm">
   <p>{{ uploadStatus | async }}</p>
-  <form [formGroup]="form" (ngSubmit)="onSubmitUpload()" class="form-group">
-    <div *ngIf="fileNeeded">Please select a file before submitting.</div>
-    <input
-      type="file"
-      class="form-control-file"
-      name="file"
-      aria-describedby="repoHelp"
-      placeholder="Upload Zip"
-      (change)="onFileChange($event)"
-    />
-    <br />
-    <button type="submit" class="btn btn-primary">Submit File</button>
-  </form>
+  <div class="contain">
+    <form [formGroup]="form" (ngSubmit)="onSubmitUpload()" class="form-group row">
+      <div *ngIf="fileNeeded">Please select a file before submitting.</div>
+	  <input
+	  class="form-control-file col-4"
+        type="file"
+        name="file"
+        aria-describedby="repoHelp"
+        placeholder="Upload Zip"
+        (change)="onFileChange($event)"
+      />
+      <button type="submit" class="btn btn-primary  col-4" id="submitFile">
+        Submit File
+	  </button>
+	  <button class="btn btn-secondary btn-sm  col-4" id="testSuccess" (click)="this.loadTestSuccess()">
+		Example Success
+	</button>
+	</form>
+
+  </div>
 </div>
 
 <div id="graphs" class="container-fluid" *ngIf="this.toggle">
   <h3>Graphs</h3>
-	<div class="row" id="searchGraphs">
-		<h3 class="title"></h3>
-		<div class="col-md-6 col-12 chart">
-			<highcharts-chart [Highcharts]="chart1" [options]="chart1Options" style="width: 100%; height: 400px; display: block;"></highcharts-chart>
-		</div>
+  <h3 class="title">Search Graphs</h3>
+  <div class="row block" id="searchGraphs">
+    <div class="col-md-6">
+      <highcharts-chart
+        class="chart"
+        [Highcharts]="chart1"
+        [options]="chart1Options"
+      ></highcharts-chart>
 	</div>
-
+	<div class="col-md-6">
+		<highcharts-chart
+		  class="chart"
+		  [Highcharts]="chart2"
+		  [options]="chart2Options"
+		></highcharts-chart>
+	  </div>
+  </div>
 </div>

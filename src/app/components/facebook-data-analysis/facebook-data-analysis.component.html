@@ -1,1 +1,16 @@
-<p>facebook-data-analysis works!</p>
+
+<div id="uploadForm">
+  <p>{{ uploadStatus | async }}</p>
+  <form [formGroup]="form" (ngSubmit)="onSubmitUpload()" class="form-group">
+	<div *ngIf="fileNeeded">Please select a file before submitting.</div>
+		  <input type="file" class="form-control-file" name='file' aria-describedby="repoHelp"
+			  placeholder="Upload Zip" (change)="onFileChange($event)">
+			  <br/>
+		  <button type="submit" class="btn btn-primary">Submit File</button>
+  </form>
+</div>
+
+<div id="graphs" *ngIf= "this.toggle">
+<h1>graphs</h1>
+
+</div>

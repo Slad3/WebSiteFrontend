@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
+
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule  } from '@angular/forms';
+
 import { Request } from './api/request.service';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,7 +33,7 @@ import { FacebookDataAnalysisComponent } from './components/facebook-data-analys
     ExperienceComponent,
     FacebookDataAnalysisComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,	ReactiveFormsModule],
   providers: [Request, HttpClient],
   bootstrap: [AppComponent],
 })

@@ -1,6 +1,6 @@
 <div id="uploadForm" class="container">
 
-  <p>{{ uploadStatus | async }}</p>
+ 
   <div class="contain">
     <form [formGroup]="form" (ngSubmit)="onSubmitUpload()" class="form-group row">
       <div *ngIf="fileNeeded">Please select a file before submitting.</div>
@@ -19,7 +19,11 @@
 		Example Success
 	</button>
 	</form>
-
+	<p>{{ uploadStatus | async }}</p>
+	<div class="progress" *ngIf="progressbarShow">
+		<div #progressbar id="progressbar" class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" [style.width]="this.progress + '%'">
+		  </div>
+	</div> 
   </div>
 </div>
 
@@ -34,12 +38,12 @@
         [options]="chart1Options"
       ></highcharts-chart>
 	</div>
-	<div class="col-md-6">
+	<!-- <div class="col-md-6">
 		<highcharts-chart
-		  class="chart"
+		  class="chart2"
 		  [Highcharts]="chart2"
 		  [options]="chart2Options"
 		></highcharts-chart>
-	  </div>
+	  </div> -->
   </div>
 </div>

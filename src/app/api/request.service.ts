@@ -20,21 +20,6 @@ export class Request {
       responseType: 'text',
     });
 
-    // const promise = new Promise((resolve, reject) => {
-    //   this.http.request(req).subscribe(
-    //     (event) => {
-    //       if (event instanceof HttpResponse) {
-    //         console.log('here');
-    //         result = event.body.toString();
-    //         resolve(event.body);
-    //       }
-    //     },
-    //     (error) => {
-    //       console.log('Error', error);
-    //       reject('Error');
-    //     }
-    //   );
-    // });
 
     const result =
       new Promise((resolve, reject) =>

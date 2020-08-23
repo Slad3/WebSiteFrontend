@@ -4,6 +4,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 import { HighchartsChartModule } from 'highcharts-angular';
+import { NgxSpinnerService, NgxSpinnerModule } from 'ngx-spinner';
 
 import { Request } from './api/request.service';
 
@@ -40,6 +41,7 @@ import { FacebookDataAnalysisComponent } from './components/facebook-data-analys
 		FormsModule,
 		ReactiveFormsModule,
 		HighchartsChartModule,
+		NgxSpinnerModule,
 	],
   providers: [Request, HttpClient],
   bootstrap: [AppComponent],

@@ -1,44 +1,67 @@
+<ngx-spinner
+  type="line-scale-party"
+  size="medium"
+  color="#FFF"
+  fullScreen="false"
+></ngx-spinner>
 <div id="uploadForm" class="container">
-
- 
   <div class="contain">
-    <form [formGroup]="form" (ngSubmit)="onSubmitUpload()" class="form-group row">
+    <form
+      [formGroup]="form"
+      (ngSubmit)="onSubmitUpload()"
+      class="form-group row"
+    >
       <div *ngIf="fileNeeded">Please select a file before submitting.</div>
-	  <input
-	  class="form-control-file col-4"
+      <input
+        class="form-control-file col-lg-4"
         type="file"
         name="file"
         aria-describedby="repoHelp"
         placeholder="Upload Zip"
         (change)="onFileChange($event)"
       />
-      <button type="submit" class="btn btn-primary  col-4" id="submitFile">
+      <button type="submit" class="btn btn-primary col-lg-4" id="submitFile">
         Submit File
-	  </button>
-	  <button class="btn btn-secondary btn-sm  col-4" id="testSuccess" (click)="this.loadTestSuccess()">
-		Example Success
-	</button>
-	</form>
-	<p>{{ uploadStatus | async }}</p>
-	<div class="progress" *ngIf="progressbarShow">
-		<div #progressbar id="progressbar" class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" [style.width]="this.progress + '%'">
-		  </div>
-	</div> 
+      </button>
+      <button
+        *ngIf="this.dev"
+        class="btn btn-secondary btn-sm col-lg-4"
+        id="testSuccess"
+        (click)="this.loadTestSuccess()"
+      >
+        Example Success
+      </button>
+    </form>
+    <p>{{ uploadStatus | async }}</p>
+    <div class="progress" *ngIf="progressbarShow">
+      <div
+        #progressbar
+        id="progressbar"
+        class="progress-bar"
+        role="progressbar"
+        aria-valuenow="60"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        [style.width]="this.progress + '%'"
+      ></div>
+    </div>
   </div>
 </div>
 
-<div id="graphs" class="container-fluid" *ngIf="this.toggle">
+<div id="graphs" class="container-fluid block" *ngIf="this.toggle">
   <h3>Graphs</h3>
   <h3 class="title">Search Graphs</h3>
-  <div class="row block" id="searchGraphs">
+  <div class="row" id="searchGraphs">
+
     <div class="col-md-6">
       <highcharts-chart
         class="chart"
         [Highcharts]="chart1"
         [options]="chart1Options"
+        style="width: 100%; display: block;"
       ></highcharts-chart>
-	</div>
-	<!-- <div class="col-md-6">
+    </div>
+    <!-- <div class="col-md-6">
 		<highcharts-chart
 		  class="chart2"
 		  [Highcharts]="chart2"

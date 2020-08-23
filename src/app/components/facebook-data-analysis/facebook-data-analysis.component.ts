@@ -1,4 +1,10 @@
-import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { Request } from '../../api/request.service';
 import {
   HttpClient,
@@ -19,6 +25,7 @@ import { ThrowStmt, NONE_TYPE } from '@angular/compiler';
 
 import * as Highcharts from 'highcharts';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-facebook-data-analysis',
@@ -26,6 +33,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./facebook-data-analysis.component.css'],
 })
 export class FacebookDataAnalysisComponent implements OnInit {
+  dev: boolean;
   data: Object;
   backendUrl = 'http://localhost:8091/';
 
@@ -35,20 +43,24 @@ export class FacebookDataAnalysisComponent implements OnInit {
   @Output() newResponse = new EventEmitter<string>();
   fileNeeded = false;
   toggle = false;
-
-  @ViewChild('progressbar') progressbar: any
   progressbarShow = true;
   progress: number;
 
   constructor(
     private request: Request,
     private http: HttpClient,
-    private formBuilder: FormBuilder,
-    private spinner: NgxSpinnerService
+	private formBuilder: FormBuilder,
+	private spinner: NgxSpinnerService,
   ) {
     this.form = this.formBuilder.group({
       file: [''],
     });
+
+    if (environment.production) {
+      this.dev = true;
+    } else {
+      this.dev = false;
+    }
   }
 
   // Graphs and Charts
@@ -62,9 +74,10 @@ export class FacebookDataAnalysisComponent implements OnInit {
   chart2NotFound: string[];
 
   ngOnInit(): void {
-	// this.progressbar =  document.getElementById('progressbar') as HTMLElement
-	this.progressbar.innerHTML = "asdfasdf"
-    this.progress = 0;
+    // this.progressbar =  document.getElementById('progressbar')
+    // this.progressbar.innerHTML = "asdfasdf"
+	this.progress = 0;
+
   }
 
   onFileChange(event) {
@@ -79,7 +92,9 @@ export class FacebookDataAnalysisComponent implements OnInit {
     console.log('submit');
 
     if (this.form.get('file').value !== '') {
-      this.spinner.show();
+	  this.toggle = false;
+		this.spinner.show();
+	  
 
       const response = this.request.uploadFile(
         this.form.get('file').value,
@@ -88,11 +103,10 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
       this.uploadStatus = response.status;
 
-        response.status.subscribe((event) => {
-			this.progress = event
-			this.progressbar.innerHTML = event.toString();
-        })
-  
+      response.status.subscribe((event) => {
+        this.progress = event;
+        // this.progressbar.innerHTML = event.toString();
+      });
 
       response.file.subscribe((file) => {
         this.newResponse.emit(file);
@@ -105,6 +119,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
   }
 
   loadTestSuccess() {
+	this.toggle = false;
     this.spinner.show();
     let req = new HttpRequest('GET', this.backendUrl + 'sample', {
       responseType: 'text',

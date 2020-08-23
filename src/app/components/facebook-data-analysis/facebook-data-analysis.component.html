@@ -1,5 +1,5 @@
 <ngx-spinner
-  type="line-scale-party"
+  type="line-scale-pulse-out"
   size="medium"
   color="#FFF"
   fullScreen="false"
@@ -32,7 +32,7 @@
         Example Success
       </button>
     </form>
-    <p>{{ uploadStatus | async }}</p>
+    <!-- <p>{{ uploadStatus | async }}</p> -->
     <div class="progress" *ngIf="progressbarShow">
       <div
         #progressbar
@@ -48,25 +48,27 @@
   </div>
 </div>
 
-<div id="graphs" class="container-fluid block" *ngIf="this.toggle">
-  <h3>Graphs</h3>
-  <h3 class="title">Search Graphs</h3>
-  <div class="row" id="searchGraphs">
-
-    <div class="col-md-6">
-      <highcharts-chart
-        class="chart"
-        [Highcharts]="chart1"
-        [options]="chart1Options"
-        style="width: 100%; display: block;"
-      ></highcharts-chart>
+<div id="graphs" *ngIf="this.toggle">
+<h3>Graphs</h3>
+  <div class="container-fluid block">
+    <h3 class="title" style="text-align: center; padding: 1%">Search Graphs</h3>
+    <div class="row" id="searchGraphs">
+      <div class="col-md-6">
+        <highcharts-chart
+          class="chart"
+          [Highcharts]="chart1"
+          [options]="chart1Options"
+          style="width: 100%; display: block;"
+        ></highcharts-chart>
+      </div>
+      <div class="col-md-6">
+        <highcharts-chart
+          class="chart2"
+          [Highcharts]="chart2"
+          [options]="chart2Options"
+          style="width: 100%; display: block;"
+        ></highcharts-chart>
+      </div>
     </div>
-    <!-- <div class="col-md-6">
-		<highcharts-chart
-		  class="chart2"
-		  [Highcharts]="chart2"
-		  [options]="chart2Options"
-		></highcharts-chart>
-	  </div> -->
   </div>
 </div>

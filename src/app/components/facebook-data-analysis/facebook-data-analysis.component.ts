@@ -49,8 +49,8 @@ export class FacebookDataAnalysisComponent implements OnInit {
   constructor(
     private request: Request,
     private http: HttpClient,
-	private formBuilder: FormBuilder,
-	private spinner: NgxSpinnerService,
+    private formBuilder: FormBuilder,
+    private spinner: NgxSpinnerService
   ) {
     this.form = this.formBuilder.group({
       file: [''],
@@ -76,8 +76,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
   ngOnInit(): void {
     // this.progressbar =  document.getElementById('progressbar')
     // this.progressbar.innerHTML = "asdfasdf"
-	this.progress = 0;
-
+    this.progress = 0;
   }
 
   onFileChange(event) {
@@ -92,9 +91,8 @@ export class FacebookDataAnalysisComponent implements OnInit {
     console.log('submit');
 
     if (this.form.get('file').value !== '') {
-	  this.toggle = false;
-		this.spinner.show();
-	  
+      this.toggle = false;
+      this.spinner.show();
 
       const response = this.request.uploadFile(
         this.form.get('file').value,
@@ -119,7 +117,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
   }
 
   loadTestSuccess() {
-	this.toggle = false;
+    this.toggle = false;
     this.spinner.show();
     let req = new HttpRequest('GET', this.backendUrl + 'sample', {
       responseType: 'text',
@@ -141,10 +139,10 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
   loadGraphs() {
     console.log('loading Graphs');
-
+    console.log(this.data);
+    // Loading chart 1
     const chart1Data = [];
     this.chart1NotFound = [];
-    console.log(this.data);
     this.data['SearchHistory'].Frequency.forEach((search) => {
       if (search.times > 3)
         chart1Data.push({ name: search.search, y: search.percent });
@@ -157,6 +155,37 @@ export class FacebookDataAnalysisComponent implements OnInit {
         {
           data: chart1Data,
           type: 'pie',
+        },
+      ],
+      tooltip: {
+        formatter: function () {
+          return 'The value for <b>' + this.x + '</b> is <b>' + this.y + '</b>';
+        },
+      },
+      chart: {
+		renderTo: 'container',
+      },
+    };
+
+    // Loading chart 2
+    const chart2Data = [];
+    let chart2Categories = [];
+    this.chart2NotFound = [];
+    this.data['SearchHistory'].DateHistogram.forEach((iteration) => {
+      chart2Categories.push(iteration.date);
+      chart2Data.push({ name: iteration.date, y: iteration.searches.length });
+    });
+
+    this.chart2 = Highcharts;
+    this.chart2Options = {
+      title: { text: 'Search Frequency' },
+      xAxis: {
+        categories: chart2Categories,
+      },
+      series: [
+        {
+          data: chart2Data,
+          type: 'column',
         },
       ],
       tooltip: {

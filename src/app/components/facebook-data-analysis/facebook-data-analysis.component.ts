@@ -15,7 +15,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
-import { ThrowStmt } from '@angular/compiler';
+import { ThrowStmt, NONE_TYPE } from '@angular/compiler';
 
 import * as Highcharts from 'highcharts';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -53,6 +53,10 @@ export class FacebookDataAnalysisComponent implements OnInit {
   chart1Options: Highcharts.Options;
   chart1NotFound: string[];
 
+  chart2: typeof Highcharts;
+  chart2Options: Highcharts.Options;
+  chart2NotFound: string[];
+
   ngOnInit(): void {}
 
   onFileChange(event) {
@@ -76,15 +80,13 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
       this.uploadStatus = response.status;
       response.file.subscribe((file) => {
-        this.newResponse.emit(file);
-        this.data = JSON.parse(file);
-        console.log(this.data);
-        this.toggle = true;
+		this.newResponse.emit(file);
+		this.data = JSON.parse(file);
+		console.log(this.data)
+		this.loadGraphs(this.data);
       });
 
-      this.loadGraphs();
     } else {
-      console.log('failed');
       this.fileNeeded = false;
     }
   }
@@ -98,12 +100,12 @@ export class FacebookDataAnalysisComponent implements OnInit {
     this.http.request(req).subscribe(
       (event) => {
         if (event instanceof HttpResponse) {
-          this.data = JSON.parse(event.body);
+          this.data = JSON.parse(event.body.toString());
           this.loadGraphs(this.data);
         }
       },
       (error) => {
-        console.log('Error', error);
+		console.log('Error', error);
         this.data = 'Error connecting to backend server';
       }
     );
@@ -128,7 +130,13 @@ export class FacebookDataAnalysisComponent implements OnInit {
           data: chart1Data,
           type: 'pie',
         },
-      ],
+	  ],
+	  tooltip: {
+		formatter: function() {
+			return 'The value for <b>' + this.x +
+			'</b> is <b>' + this.y + '</b>';
+		  }
+	  }
     };
 
     this.toggle = true;

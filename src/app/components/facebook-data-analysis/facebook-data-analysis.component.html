@@ -51,7 +51,14 @@
 <div id="graphs" *ngIf="this.toggle">
 <h3>Graphs</h3>
   <div class="container-fluid block">
-    <h3 class="title" style="text-align: center; padding: 1%">Search Graphs</h3>
+    <h3 class="title" style="text-align: center; padding: 1%">Search Graphs      <button
+        class="btn btn-secondary btn-sm col-lg-2 showButton"
+		id="searchesButton"
+		data-toggle="collapse"
+		 href="#searchGraphs"
+      >
+        Show Graphs
+      </button></h3>
     <div class="row" id="searchGraphs">
       <div class="col-md-6">
         <highcharts-chart
@@ -66,6 +73,22 @@
           class="chart2"
           [Highcharts]="chart2"
           [options]="chart2Options"
+          style="width: 100%; display: block;"
+        ></highcharts-chart>
+	  </div>
+	  <div class="col-md-6">
+        <highcharts-chart
+          class="chart3"
+          [Highcharts]="chart3"
+          [options]="chart3Options"
+          style="width: 100%; display: block;"
+        ></highcharts-chart>
+	  </div>
+	  <div class="col-md-6">
+        <highcharts-chart
+          class="chart4"
+          [Highcharts]="chart4"
+          [options]="chart4Options"
           style="width: 100%; display: block;"
         ></highcharts-chart>
       </div>

@@ -73,6 +73,14 @@ export class FacebookDataAnalysisComponent implements OnInit {
   chart2Options: Highcharts.Options;
   chart2NotFound: string[];
 
+  chart3: typeof Highcharts;
+  chart3Options: Highcharts.Options;
+  chart3NotFound: string[];
+
+  chart4: typeof Highcharts;
+  chart4Options: Highcharts.Options;
+  chart4NotFound: string[];
+
   ngOnInit(): void {
     // this.progressbar =  document.getElementById('progressbar')
     // this.progressbar.innerHTML = "asdfasdf"
@@ -92,7 +100,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
     if (this.form.get('file').value !== '') {
       this.toggle = false;
-      this.spinner.show();
+      //   this.spinner.show();
 
       const response = this.request.uploadFile(
         this.form.get('file').value,
@@ -163,7 +171,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
         },
       },
       chart: {
-		renderTo: 'container',
+        renderTo: 'container',
       },
     };
 
@@ -195,7 +203,94 @@ export class FacebookDataAnalysisComponent implements OnInit {
       },
     };
 
+    // Loading chart 3
+
+    const chart3Data = [];
+    let chart3Categories = [];
+    this.chart3NotFound = [];
+    this.data['SearchHistory'].DateHistogram.forEach((iteration) => {
+      if (this.contains(chart1Data[0].name, iteration.searches)) {
+        //   console.log()
+        chart3Categories.push(iteration.date);
+        let times = this.times(chart1Data[0].name, iteration.searches);
+        chart3Data.push({ name: iteration.date, y: times });
+      }
+    });
+
+    this.chart3 = Highcharts;
+    this.chart3Options = {
+      title: { text: `Search Frequency for most searched: ${chart1Data[0].name}` },
+      xAxis: {
+        categories: chart3Categories,
+      },
+      series: [
+        {
+          data: chart3Data,
+          type: 'column',
+        },
+      ],
+      tooltip: {
+        formatter: function () {
+          return 'The value for <b>' + this.x + '</b> is <b>' + this.y + '</b>';
+        },
+      },
+    };
+
+    // Loading chart 4
+
+    const chart4Data = [];
+    let chart4Categories = [];
+    this.chart4NotFound = [];
+    this.data['SearchHistory'].DateHistogram.forEach((iteration) => {
+      if (this.contains(chart1Data[1].name, iteration.searches)) {
+        //   console.log()
+        chart4Categories.push(iteration.date);
+        let times = this.times(chart1Data[1].name, iteration.searches);
+        chart4Data.push({ name: iteration.date, y: times });
+      }
+    });
+
+    this.chart4 = Highcharts;
+    this.chart4Options = {
+      title: { text: `Search Frequency for second most searched: ${chart1Data[1].name}` },
+      xAxis: {
+        categories: chart4Categories,
+      },
+      series: [
+        {
+          data: chart4Data,
+          type: 'column',
+        },
+      ],
+      tooltip: {
+        formatter: function () {
+          return 'The value for <b>' + this.x + '</b> is <b>' + this.y + '</b>';
+        },
+      },
+    };
+
     this.toggle = true;
     this.spinner.hide();
+  }
+
+  contains(str: string, list: []): boolean {
+    let contain = false;
+
+    list.forEach((iter) => {
+      if (iter == str) {
+        contain = true;
+      }
+    });
+    return contain;
+  }
+
+  times(str: string, list: string[]): number {
+    let time = 0;
+    list.forEach((iter) => {
+      if (iter == str) {
+        time++;
+      }
+    });
+    return time;
   }
 }

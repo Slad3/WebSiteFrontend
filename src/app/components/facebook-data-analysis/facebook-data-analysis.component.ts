@@ -178,7 +178,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
     this.chart2 = Highcharts;
     this.chart2Options = {
-      title: { text: 'Search Frequency' },
+      title: { text: 'Search Frequency All' },
       xAxis: {
         categories: chart2Categories,
       },

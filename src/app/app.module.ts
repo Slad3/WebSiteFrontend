@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule  } from '@angu
 
 import { HighchartsChartModule } from 'highcharts-angular';
 import { NgxSpinnerService, NgxSpinnerModule } from 'ngx-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 import { Request } from './api/request.service';
 
@@ -42,6 +43,7 @@ import { FacebookDataAnalysisComponent } from './components/facebook-data-analys
 		ReactiveFormsModule,
 		HighchartsChartModule,
 		NgxSpinnerModule,
+		BrowserAnimationsModule,
 	],
   providers: [Request, HttpClient],
   bootstrap: [AppComponent],

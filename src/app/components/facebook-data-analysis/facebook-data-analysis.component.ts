@@ -100,7 +100,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
     if (this.form.get('file').value !== '') {
       this.toggle = false;
-      //   this.spinner.show();
+        this.spinner.show();
 
       const response = this.request.uploadFile(
         this.form.get('file').value,

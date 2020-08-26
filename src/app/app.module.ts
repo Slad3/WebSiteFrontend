@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http'
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { Request } from './api/request.service';
 
@@ -14,8 +14,7 @@ import { ReferenceComponent } from './reference/reference.component';
 import { SinglepostComponent } from './singlepost/singlepost.component';
 import { PostComponent } from './post/post.component';
 import { ExperienceComponent } from './experience/experience.component';
-
-
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 @NgModule({
   declarations: [
@@ -28,18 +27,9 @@ import { ExperienceComponent } from './experience/experience.component';
     SinglepostComponent,
     PostComponent,
     ExperienceComponent,
-
- 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-  ],
-  providers: [
-    Request,
-    HttpClient,
-  ],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  providers: [Request, HttpClient],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

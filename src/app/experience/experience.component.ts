@@ -55,7 +55,7 @@ export class ExperienceComponent implements OnInit {
 	  },
 	  {
 		"title": "Mobile Applications Development Course",
-		"experience": "Experience Course",
+		"experience": "HS Course",
 		"place": "Eagan High School",
 		"image": "../../assets/companyLogos/EaganHighLogo.png",
 		"imageCredit": "Image credit to Eagan High School",

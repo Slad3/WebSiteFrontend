@@ -458,7 +458,8 @@
   }
 
   #skills {
-    padding-bottom: 5%;
+	padding-bottom: 5%;
+	width: 100%;
   }
 
   #skills > h1 {
@@ -568,7 +569,7 @@
   #FAQ {
     padding: 2.5%;
     margin-left: 0px;
-    width: 95%;
+    width: 100%;
   }
 
   #FAQ > ul {

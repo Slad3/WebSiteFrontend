@@ -1,3 +1,4 @@
+import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({

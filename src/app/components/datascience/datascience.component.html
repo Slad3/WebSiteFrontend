@@ -1,4 +1,20 @@
+<a href="http://localhost:4200/datascience/facebookanalyzer"
+  >facebookanalyzer</a
+>
 
-<a href="http://localhost:4200/datascience/facebookanalyzer">facebookanalyzer</a>
+<a [routerLink]="['facebookAnalyzer']">Facebook</a>
 
-<app-facebook-data-analysis></app-facebook-data-analysis>
+<div class="sidenav">
+  <a [routerLink]="['home']">Home</a>
+
+  <button class="dropdown-btn">
+    Social Media
+    <div id="caret"> &#9660; </div>
+  </button>
+  <div class="dropdown-container">
+    <a [routerLink]="['facebookAnalyzer']">-Facebook</a>
+    <a [routerLink]="['facebookAnalyzer']">-Instagram</a>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

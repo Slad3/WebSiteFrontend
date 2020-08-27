@@ -5,7 +5,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { Request } from '../../api/request.service';
+import { Request } from '../../../api/request.service';
 import {
   HttpClient,
   HttpErrorResponse,
@@ -25,7 +25,7 @@ import { ThrowStmt, NONE_TYPE } from '@angular/compiler';
 
 import * as Highcharts from 'highcharts';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-facebook-data-analysis',

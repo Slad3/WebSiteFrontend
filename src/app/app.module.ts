@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule  } from '@angu
 
 import { HighchartsChartModule } from 'highcharts-angular';
 import { NgxSpinnerService, NgxSpinnerModule } from 'ngx-spinner';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { Request } from './api/request.service';
 
@@ -20,7 +20,8 @@ import { SinglepostComponent } from './components/singlepost/singlepost.componen
 import { PostComponent } from './components/post/post.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
-import { FacebookDataAnalysisComponent } from './components/facebook-data-analysis/facebook-data-analysis.component';
+import { FacebookDataAnalysisComponent } from './components/datascience/facebook-data-analysis/facebook-data-analysis.component';
+import { DatascienceHomeComponent } from './components/datascience/datascience-home/datascience-home.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FacebookDataAnalysisComponent } from './components/facebook-data-analys
     PostComponent,
     ExperienceComponent,
     FacebookDataAnalysisComponent,
+    DatascienceHomeComponent,
   ],
   imports: [
 	  	BrowserModule,

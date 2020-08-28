@@ -1,30 +1,13 @@
 .block {
-  /* color: whitesmoke; */
-  color: RGBA(28, 28, 28, 1);
-  border-radius: 20px;
-  /* background-color: RGBA(28, 28, 28, 0.6); */
-  background-color: RGBA(202, 202, 202, 0.8);
-  padding: 2.5%;
-  width: 95%;
+  width: 100%;
 
-  border-left-style: solid;
-  border-left-width: 2px;
-  border-left-color: RGBA(28, 28, 28, 1);
+  min-height: 500px;
+  height: 550px;
+  /* height: auto; */
 
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: RGBA(28, 28, 28, 1);
-
-  border-bottom-style: solid;
-  border-bottom-width: 4px;
-  border-bottom-color: #0f4c75;
-
-  /* min-height: 475px; */
-  min-height: 400px;
 }
 
-.mySlides {
-  display: none;
+.carousel-item{
 }
 
 .companyImage {
@@ -61,12 +44,13 @@
 }
 
 .mainTitle {
-  margin-left: 50px;
+  margin-left: 10px;
   float: top;
   margin-top: 0px;
   font-size: 30px;
   font-weight: bolder;
-  margin-bottom: 0px;
+  margin-bottom: 5px;
+  text-align: left;
 }
 
 .experienceType {
@@ -86,6 +70,7 @@
 
 .paragraph {
   text-indent: 4%;
+  font-size: 11pt;
 }
 
 .expSkillsList {
@@ -101,70 +86,6 @@
   font-size: 15px;
 }
 
-#navagation {
-  padding: 10px;
-  margin-top: 10px;
-  width: 90%;
-  /* padding-bottom: 20px; */
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, 0%);
-  -ms-transform: translate(-50%, 0%);
-}
-
-#left,
-#right,
-.badge {
-  cursor: pointer;
-  color: black;
-}
-
-#left {
-  float: left !important;
-  margin-left: 75%;
-}
-
-#right {
-  float: right !important;
-  margin-right: 5%;
-}
-
-.badge {
-  height: 10px;
-  width: 10px;
-  padding: 5px;
-  margin-left: .5%;
-  margin-right: .5%;
-  border-radius: 50%;
-
-  background-color: #0f4c75;
-  color: #fff;
-  display: inline-block;
-
-  text-align: center;
-}
-
-.w3-display-container {
-  position: relative;
-}
-
-.w3-display-container:hover .w3-display-hover {
-  display: block;
-}
-.w3-display-container:hover span.w3-display-hover {
-  display: inline-block;
-}
-
-.w3-white {
-  color: #0f4c75 !important;
-  background-color: white !important;
-}
-
-.w3-center {
-  text-align: center !important;
-}
-
 /* For mobile */
 @media only screen and (max-width: 768px) {
   .block {
@@ -172,48 +93,9 @@
     border-right-width: 0px;
   }
 
-  #navagation {
-	  margin-top: 0px;
-  }
-
-  #left {
-    margin-left: 5%;
-  }
-
-  #right {
-    margin-right: 5%;
-  }
-
-  .arrow {
-	  margin-top: 3px;
-	  font-size: 175%;
-  }
-
-
-  .badge {
-    height: 15px;
-	width: 15px;
-	padding: 10px;
-	margin: 5px;
-
-	margin-top: 2px;
-  }
-
-  .mainTitle {
-    margin-top: 50px;
-	text-align: center;
-	float: left;
-	font-size: 25px;
-  }
-
-  .companyImage {
-    visibility: hidden;
-    width: 0%;
-    padding: 0%;
-    margin: 0%;
-  }
-
-  .content {
-    width: 100%;
+  .companyImage{
+		visibility: hidden;
+		height: 0px;
+		width: 0px;
   }
 }

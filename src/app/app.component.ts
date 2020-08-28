@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   quote: string = 'Loading';
 
   constructor(private request: Request, private http: HttpClient) {
-    this.getQuote();
+    // this.getQuote();
   }
 
   ngOnInit() {

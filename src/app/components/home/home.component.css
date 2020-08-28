@@ -4,27 +4,6 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.block {
-  color: black;
-  margin-top: 30px;
-  border-radius: 20px;
-
-  border-left-style: solid;
-  border-left-width: 2px;
-  /*border-left-color: #0f4c75;*/
-  border-left-color: #f2f2f2;
-
-  border-right-style: solid;
-  border-right-width: 2px;
-  /*border-right-color: #0f4c75;*/
-  border-right-color: #f2f2f2;
-
-  border-bottom-style: solid;
-  border-bottom-width: 4px;
-  border-bottom-color: #0f4c75;
-
-  padding: 2.5%;
-}
 
 .title {
   font-weight: bold;
@@ -40,9 +19,8 @@
 
 #introText {
   /* background-color: #cacaca; */
-  background-color: rgba(28, 28, 28, 0.6);
 
-  color: #cacaca;
+  color: whitesmoke;
   /* float: left;
   align-self: center; */
   margin-left: 0%;
@@ -51,7 +29,7 @@
 #profilePhoto {
   align-self: center;
   max-width: 100%;
-  height: auto;
+  /* height: auto; */
   border-radius: 5%;
   margin-top: 30px;
 }
@@ -280,7 +258,8 @@
 }
 
 #FAQ {
-  background-color: RGBA(202, 202, 202, 0.8);
+  background-color: rgba(245, 245, 245, .5);
+  color: black;
 }
 
 #FAQ > ul {
@@ -344,9 +323,7 @@
 
 /* Full Size CSS */
 @media (min-width: 1115px) {
-  .block {
-    padding: 2.5%;
-  }
+
 
 
   #skills > #languages > .list > .language > ul {
@@ -445,12 +422,7 @@
     width: 100%;
   }
 
-  .title {
-    text-align: center;
-    margin-left: 0px;
-    font-size: 26px;
-    /* color: red; */
-  }
+
 
   #techBasedInterests > ul > li {
     width: 80%;

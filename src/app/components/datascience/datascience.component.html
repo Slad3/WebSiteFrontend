@@ -1,16 +1,14 @@
 
 <div class="sidenav">
   <a [routerLink]="['home']">Home</a>
-  <a [routerLink]="['facebookAnalyzer']">-Facebook</a>
-  <a routerlink="/facebookAnalyzer" routerLinkActive="active">-Facebook asdf</a>
+  <a [routerLink]="['/facebook']">-Facebook</a>
   <button class="dropdown-btn">
     Social Media
     <div id="caret"> &#9660; </div>
   </button>
   <div class="dropdown-container">
-    <a [routerLink]="['facebookAnalyzer']">-Facebook</a>
-    <a [routerLink]="['facebookAnalyzer']">-Instagram</a>
+    <a [routerLink]="['/facebook']">-Facebook</a>
+    <a [routerLink]="['/faceboook']">-Instagram</a>
   </div>
 </div>
 
-<router-outlet></router-outlet>

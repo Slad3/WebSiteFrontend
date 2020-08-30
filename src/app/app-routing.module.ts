@@ -16,11 +16,6 @@ const routes: Routes = [
   {
     path: 'datascience',
 	component: DatascienceComponent,
-    children: [
-	{ path: '', component: DatascienceHomeComponent },
-	{ path: 'home', redirectTo: '/datascience' },
-      { path: 'facebookAnalyzer', component: FacebookDataAnalysisComponent },
-    ],
   },
 ];
 

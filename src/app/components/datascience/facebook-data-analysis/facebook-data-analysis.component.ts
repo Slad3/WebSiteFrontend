@@ -180,7 +180,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
     const chart2Data = [];
     let chart2Categories = [];
     this.chart2NotFound = [];
-    this.data['SearchHistory'].DateHistogram.forEach((iteration) => {
+    this.data['SearchHistory'].DateHistogram.histogram.forEach((iteration) => {
       if (iteration.searches.length > 0) {
         chart2Categories.push(iteration.date);
         chart2Data.push({ name: iteration.date, y: iteration.searches.length });
@@ -212,7 +212,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
     let chart3Categories = [];
 	this.chart3NotFound = [];
 	let total = 0;
-    this.data['SearchHistory'].DateHistogram.forEach((iteration) => {
+    this.data['SearchHistory'].DateHistogram.histogram.forEach((iteration) => {
       if (true || this.contains(chart1Data[0].name, iteration.searches)) {
         chart3Categories.push(iteration.date);
         total += this.times(chart1Data[0].name, iteration.searches);
@@ -248,7 +248,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
     let chart4Categories = [];
 	this.chart4NotFound = [];
 	total = 0;
-    this.data['SearchHistory'].DateHistogram.forEach((iteration) => {
+    this.data['SearchHistory'].DateHistogram.histogram.forEach((iteration) => {
       if (true || this.contains(chart1Data[1].name, iteration.searches)) {
         //   console.log()
         chart4Categories.push(iteration.date);

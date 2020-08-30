@@ -1,101 +1,106 @@
-<ngx-spinner
-  type="line-scale-pulse-out"
-  size="medium"
-  color="#FFF"
-  fullScreen="false"
-></ngx-spinner>
+<app-datascience></app-datascience>  
+  <ngx-spinner
+    type="line-scale-pulse-out"
+    size="medium"
+    color="#FFF"
+    fullScreen="false"
+  ></ngx-spinner>
 
-<div class="block">
-	<h1>Facebook data analysis</h1>
-</div>
-<div id="uploadForm" class="container">
-  <div class="contain">
-    <form
-      [formGroup]="form"
-      (ngSubmit)="onSubmitUpload()"
-      class="form-group row"
-    >
-      <div *ngIf="fileNeeded">Please select a file before submitting.</div>
-      <input
-        class="form-control-file col-lg-4"
-        type="file"
-        name="file"
-        aria-describedby="repoHelp"
-        placeholder="Upload Zip"
-        (change)="onFileChange($event)"
-      />
-      <button type="submit" class="btn btn-primary col-lg-4" id="submitFile">
-        Submit File
-      </button>
-      <button
-        *ngIf="this.dev"
-        class="btn btn-secondary btn-sm col-lg-4"
-        id="testSuccess"
-        (click)="this.loadTestSuccess()"
-      >
-        Example Success
-      </button>
-    </form>
-    <!-- <p>{{ uploadStatus | async }}</p> -->
-    <div class="progress" *ngIf="progressbarShow">
-      <div
-        #progressbar
-        id="progressbar"
-        class="progress-bar"
-        role="progressbar"
-        aria-valuenow="60"
-        aria-valuemin="0"
-        aria-valuemax="100"
-        [style.width]="this.progress + '%'"
-      ></div>
-    </div>
+  <div class="block">
+    <h1>Facebook data analysis</h1>
   </div>
-</div>
-
-<div id="graphs" *ngIf="this.toggle">
-<h3>Graphs</h3>
-  <div class="container-fluid block">
-    <h3 class="title" style="text-align: center; padding: 1%">Search Graphs      <button
-        class="btn btn-secondary btn-sm col-lg-2 showButton"
-		id="searchesButton"
-		data-toggle="collapse"
-		 href="#searchGraphs"
+  <div id="uploadForm" class="container">
+    <div class="contain">
+      <form
+        [formGroup]="form"
+        (ngSubmit)="onSubmitUpload()"
+        class="form-group row"
       >
-        Show Graphs
-      </button></h3>
-    <div class="row" id="searchGraphs">
-      <div class="col-md-6">
-        <highcharts-chart
-          class="chart"
-          [Highcharts]="chart1"
-          [options]="chart1Options"
-          style="width: 100%; display: block;"
-        ></highcharts-chart>
-      </div>
-      <div class="col-md-6">
-        <highcharts-chart
-          class="chart2"
-          [Highcharts]="chart2"
-          [options]="chart2Options"
-          style="width: 100%; display: block;"
-        ></highcharts-chart>
-	  </div>
-	  <div class="col-md-6">
-        <highcharts-chart
-          class="chart3"
-          [Highcharts]="chart3"
-          [options]="chart3Options"
-          style="width: 100%; display: block;"
-        ></highcharts-chart>
-	  </div>
-	  <div class="col-md-6">
-        <highcharts-chart
-          class="chart4"
-          [Highcharts]="chart4"
-          [options]="chart4Options"
-          style="width: 100%; display: block;"
-        ></highcharts-chart>
+        <div *ngIf="fileNeeded">Please select a file before submitting.</div>
+        <input
+          class="form-control-file col-lg-4"
+          type="file"
+          name="file"
+          aria-describedby="repoHelp"
+          placeholder="Upload Zip"
+          (change)="onFileChange($event)"
+        />
+        <button type="submit" class="btn btn-primary col-lg-4" id="submitFile">
+          Submit File
+        </button>
+        <button
+          *ngIf="this.dev"
+          class="btn btn-secondary btn-sm col-lg-4"
+          id="testSuccess"
+          (click)="this.loadTestSuccess()"
+        >
+          Example Success
+        </button>
+      </form>
+      <!-- <p>{{ uploadStatus | async }}</p> -->
+      <div class="progress" *ngIf="progressbarShow">
+        <div
+          #progressbar
+          id="progressbar"
+          class="progress-bar"
+          role="progressbar"
+          aria-valuenow="60"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          [style.width]="this.progress + '%'"
+        ></div>
       </div>
     </div>
   </div>
-</div>
+
+  <div id="graphs" *ngIf="this.toggle">
+    <h3>Graphs</h3>
+    <div class="container-fluid block">
+      <h3 class="title" style="text-align: center; padding: 1%">
+        Search Graphs
+        <button
+          class="btn btn-secondary btn-sm col-lg-2 showButton"
+          id="searchesButton"
+          data-toggle="collapse"
+          href="#searchGraphs"
+        >
+          Show Graphs
+        </button>
+      </h3>
+      <div class="row" id="searchGraphs">
+        <div class="col-md-6">
+          <highcharts-chart
+            class="chart"
+            [Highcharts]="chart1"
+            [options]="chart1Options"
+            style="width: 100%; display: block"
+          ></highcharts-chart>
+        </div>
+        <div class="col-md-6">
+          <highcharts-chart
+            class="chart2"
+            [Highcharts]="chart2"
+            [options]="chart2Options"
+            style="width: 100%; display: block"
+          ></highcharts-chart>
+        </div>
+        <div class="col-md-12">
+          <highcharts-chart
+            class="chart3"
+            [Highcharts]="chart3"
+            [options]="chart3Options"
+            style="width: 100%; display: block"
+          ></highcharts-chart>
+        </div>
+        <div class="col-md-12">
+          <highcharts-chart
+            class="chart4"
+            [Highcharts]="chart4"
+            [options]="chart4Options"
+            style="width: 100%; display: block"
+          ></highcharts-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+

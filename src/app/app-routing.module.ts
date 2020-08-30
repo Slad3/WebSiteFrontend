@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'blog', component: FeedComponent },
   { path: 'experience', component: ExperienceComponent },
-  { path: 'datacience/facebook', component: FacebookDataAnalysisComponent},
+  { path: 'facebook', component: FacebookDataAnalysisComponent},
   {
     path: 'datascience',
 	component: DatascienceComponent,

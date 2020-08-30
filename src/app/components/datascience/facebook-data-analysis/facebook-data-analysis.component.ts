@@ -100,7 +100,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
     if (this.form.get('file').value !== '') {
       this.toggle = false;
-        this.spinner.show();
+      this.spinner.show();
 
       const response = this.request.uploadFile(
         this.form.get('file').value,
@@ -175,13 +175,16 @@ export class FacebookDataAnalysisComponent implements OnInit {
       },
     };
 
-    // Loading chart 2
+	// Loading chart 2
+	// Full frequency
     const chart2Data = [];
     let chart2Categories = [];
     this.chart2NotFound = [];
     this.data['SearchHistory'].DateHistogram.forEach((iteration) => {
-      chart2Categories.push(iteration.date);
-      chart2Data.push({ name: iteration.date, y: iteration.searches.length });
+      if (iteration.searches.length > 0) {
+        chart2Categories.push(iteration.date);
+        chart2Data.push({ name: iteration.date, y: iteration.searches.length });
+      }
     });
 
     this.chart2 = Highcharts;
@@ -204,29 +207,32 @@ export class FacebookDataAnalysisComponent implements OnInit {
     };
 
     // Loading chart 3
-
+	// Top serach frequency
     const chart3Data = [];
     let chart3Categories = [];
-    this.chart3NotFound = [];
+	this.chart3NotFound = [];
+	let total = 0;
     this.data['SearchHistory'].DateHistogram.forEach((iteration) => {
-      if (this.contains(chart1Data[0].name, iteration.searches)) {
-        //   console.log()
+      if (true || this.contains(chart1Data[0].name, iteration.searches)) {
         chart3Categories.push(iteration.date);
-        let times = this.times(chart1Data[0].name, iteration.searches);
-        chart3Data.push({ name: iteration.date, y: times });
+        total += this.times(chart1Data[0].name, iteration.searches);
+        chart3Data.push({ name: iteration.date, y: total });
       }
     });
 
     this.chart3 = Highcharts;
     this.chart3Options = {
-      title: { text: `Search Frequency for most searched: ${chart1Data[0].name}` },
+      title: {
+        text: `Search Frequency for most searched: ${chart1Data[0].name}`,
+      },
       xAxis: {
         categories: chart3Categories,
       },
       series: [
         {
-          data: chart3Data,
-          type: 'column',
+		  data: chart3Data,
+		  turboThreshold: 0,
+          type: 'area',
         },
       ],
       tooltip: {
@@ -237,29 +243,33 @@ export class FacebookDataAnalysisComponent implements OnInit {
     };
 
     // Loading chart 4
-
+	// Second serach frequency
     const chart4Data = [];
     let chart4Categories = [];
-    this.chart4NotFound = [];
+	this.chart4NotFound = [];
+	total = 0;
     this.data['SearchHistory'].DateHistogram.forEach((iteration) => {
-      if (this.contains(chart1Data[1].name, iteration.searches)) {
+      if (true || this.contains(chart1Data[1].name, iteration.searches)) {
         //   console.log()
         chart4Categories.push(iteration.date);
-        let times = this.times(chart1Data[1].name, iteration.searches);
-        chart4Data.push({ name: iteration.date, y: times });
+        total += this.times(chart1Data[1].name, iteration.searches);
+        chart4Data.push({ name: iteration.date, y: total });
       }
     });
 
     this.chart4 = Highcharts;
     this.chart4Options = {
-      title: { text: `Search Frequency for second most searched: ${chart1Data[1].name}` },
+      title: {
+        text: `Search Frequency for second most searched: ${chart1Data[1].name}`,
+      },
       xAxis: {
         categories: chart4Categories,
       },
       series: [
         {
-          data: chart4Data,
-          type: 'column',
+		  data: chart4Data,
+		  turboThreshold: 0,
+          type: 'area',
         },
       ],
       tooltip: {

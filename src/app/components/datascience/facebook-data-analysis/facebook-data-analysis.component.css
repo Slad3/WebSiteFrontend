@@ -1,9 +1,13 @@
 
 .chart{
-	background-color: red;
+	margin-bottom: 10px;
 }
 
 #submitFile {
 	padding-left: 5%;
 	padding-right: 5%;
+}
+
+#graphs > h3 {
+	margin-top: 20px;
 }

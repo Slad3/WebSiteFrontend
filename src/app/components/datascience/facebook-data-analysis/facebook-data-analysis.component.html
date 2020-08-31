@@ -1,4 +1,4 @@
-<app-datascience></app-datascience>  
+<app-datascience></app-datascience>
   <ngx-spinner
     type="line-scale-pulse-out"
     size="medium"
@@ -54,7 +54,7 @@
   </div>
 
   <div id="graphs" *ngIf="this.toggle">
-    <h3>Graphs</h3>
+    <h3 class="title">Graphs</h3>
     <div class="container-fluid block">
       <h3 class="title" style="text-align: center; padding: 1%">
         Search Graphs
@@ -68,7 +68,7 @@
         </button>
       </h3>
       <div class="row" id="searchGraphs">
-        <div class="col-md-6">
+        <div class="col-md-6 chart">
           <highcharts-chart
             class="chart"
             [Highcharts]="chart1"
@@ -76,7 +76,7 @@
             style="width: 100%; display: block"
           ></highcharts-chart>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 chart">
           <highcharts-chart
             class="chart2"
             [Highcharts]="chart2"
@@ -84,7 +84,7 @@
             style="width: 100%; display: block"
           ></highcharts-chart>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 chart">
           <highcharts-chart
             class="chart3"
             [Highcharts]="chart3"
@@ -92,7 +92,7 @@
             style="width: 100%; display: block"
           ></highcharts-chart>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 chart">
           <highcharts-chart
             class="chart4"
             [Highcharts]="chart4"

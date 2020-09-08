@@ -10,26 +10,49 @@ import { HttpClient, HttpRequest, HttpResponse } from '@angular/common/http';
 export class ExperienceComponent implements OnInit {
   experience = [
     {
+      title: 'Software Engineer Intern',
+      experience: 'Internship',
+      place: 'White House Custom Color',
+      image: '../../assets/companyLogos/whcclogo.png',
+      imageCredit: 'Image credit to WHCC',
+      date: 'May 26th - Sept 4th 2020',
+      description: [
+        "Following up with the job offer after my January internship, I decided to work remotely with White House Custom Color (WHCC) remotely for the summer. Contrary to January where I mostly did R&D on image anlysis on my own, I worked on revitalizing old codebases that haven't been maintained in years.",
+        'Some of the projects I worked on were adding text filters to a Photoshop plugin, eventually converting that plugin to TypeScript, creating MongoDB scripts to edit attributes on a multi-layer level, and modify the frontend to successfully filter out product attributes. All projects have been successfully deployed to production.',
+        'I have a new love for VSCode now.',
+      ],
+      skills: [
+        'JavaScript',
+        'MongoDB',
+        'NodeJS',
+        'Meteor',
+        'Jira',
+        'Photoshop Generator',
+        'TypeScript',
+        'Blaze',
+      ],
+    },
+    {
       title: 'Research Assistant',
       experience: 'Campus Job',
       place: 'University of Wisconsin-Stout',
       image: '../../assets/companyLogos/UWStoutlogo.jpg',
       imageCredit: 'Image credit to UW-Stout',
-      date: 'Feburary 2019 - ',
+      date: 'Feburary 2019 - Current',
       description: [
         'Working as a research assitant for Dr. Saleh Alnaeli, our research focuses on the vulnerability of software in the age of multithreaded applications and popularity of the open source software module. We analyze open source software systems, run a historcal analysis on the given software system, ',
         'We are currently developing a web application that analyzes user uploaded source code detecting vulnerabilites such as safe/Unsafe functions, race conditions, unsafe memory management, unsafe arithmatic (I.E. unchecked divide by zero), etc.',
         'Published and presented papers and our application at the 2019 Midwest Instruction and Computing Symposium (MICS) conference at NDSU, 2020 MICS Online, IEEE/EIT 2020',
       ],
       skills: [
-		'Java',
-		'Jooby Microframework',
+        'Java',
+        'Jooby Microframework',
         'Maven Package Management',
         'XML/JSON Parsing',
         'AWS',
         'Ubuntu Server',
-		'Angular',
-		'Python Request and Automation'
+        'Angular',
+        'Python Request and Automation',
       ],
     },
     {

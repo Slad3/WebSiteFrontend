@@ -4,6 +4,7 @@
     <li data-target="#experienceBlock" data-slide-to="0" class="active"></li>
     <li data-target="#experienceBlock" data-slide-to="1"></li>
     <li data-target="#experienceBlock" data-slide-to="2"></li>
+    <li data-target="#experienceBlock" data-slide-to="3"></li>
   </ul>
 
   <!-- The slideshow -->
@@ -78,7 +79,7 @@
         <div class="content">
           <h1 class="title">
             {{ experience[2].title }}
-            <div class="experienceType">{{experience[0].experience}}</div>
+            <div class="experienceType">{{experience[2].experience}}</div>
           </h1>
           <h3 class="place">
             {{ experience[2].place }}
@@ -97,7 +98,37 @@
           </ul>
         </div>
       </div>
-    </div>
+	</div>
+	<div class="carousel-item">
+		<div class="block">
+		  <h1 class="mainTitle title">Professional Experience</h1>
+		  <div class="companyImage">
+			<img src="{{ experience[3].image }}" />
+			<p class="credit">{{ experience[3].imageCredit }}</p>
+		  </div>
+		  <div class="content">
+			<h1 class="title">
+			  {{ experience[3].title }}
+			  <div class="experienceType">{{experience[3].experience}}</div>
+			</h1>
+			<h3 class="place">
+			  {{ experience[3].place }}
+			  <div class="date">{{ experience[3].date }}</div>
+			</h3>
+  
+			<div class="description">
+			  <p class="paragraph" *ngFor="let para of experience[3].description">
+				{{ para }}
+			  </p>
+			</div>
+  
+			<h3>Skills Utilized</h3>
+			<ul class="expSkillsList">
+			  <li *ngFor="let sk of experience[3].skills">{{ sk }} |</li>
+			</ul>
+		  </div>
+		</div>
+	  </div>
 
     <a class="carousel-control-prev" href="#experienceBlock" data-slide="prev">
       <span class="carousel-control-prev-icon"></span>

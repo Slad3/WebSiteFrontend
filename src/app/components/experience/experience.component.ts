@@ -17,9 +17,9 @@ export class ExperienceComponent implements OnInit {
       imageCredit: 'Image credit to WHCC',
       date: 'May 26th - Sept 4th 2020',
       description: [
-        "Following up with the job offer after my January internship, I decided to work remotely with White House Custom Color (WHCC) remotely for the summer. Contrary to January where I mostly did R&D on image anlysis on my own, I worked on revitalizing old codebases that haven't been maintained in years.",
-        'Some of the projects I worked on were adding text filters to a Photoshop plugin, eventually converting that plugin to TypeScript, creating MongoDB scripts to edit attributes on a multi-layer level, and modify the frontend to successfully filter out product attributes. All projects have been successfully deployed to production.',
-        'I have a new love for VSCode now.',
+        "Following up with the job offer after my January internship, I decided to work remotely with White House Custom Color (WHCC) remotely for the summer. Contrary to January where I mostly did R&D on image analysis on my own, I worked on revamping old codebases that haven't been maintained in years.",
+		'Some of the projects I worked on were adding text filters to a Photoshop plugin, eventually converting that plugin to TypeScript, creating MongoDB scripts to edit attributes on a multi-layer level, and modify the frontend to successfully filter out product attributes. All projects have been successfully deployed to production.',
+		'I have a new love for the VSCode debugger now.',
       ],
       skills: [
         'JavaScript',

@@ -115,9 +115,14 @@ export class FacebookDataAnalysisComponent implements OnInit {
       });
 
       response.file.subscribe((file) => {
-        this.newResponse.emit(file);
-        this.data = JSON.parse(file);
-        this.loadGraphs();
+        try {
+          this.newResponse.emit(file);
+          this.data = JSON.parse(file);
+          this.loadGraphs();
+        } catch (error) {
+          alert('Error connecting to backend Server');
+          this.spinner.hide();
+        }
       });
     } else {
       this.fileNeeded = false;
@@ -141,6 +146,8 @@ export class FacebookDataAnalysisComponent implements OnInit {
       (error) => {
         console.log('Error', error);
         this.data = 'Error connecting to backend server';
+        this.spinner.hide();
+        alert('Error Connecting to Server');
       }
     );
   }
@@ -175,8 +182,8 @@ export class FacebookDataAnalysisComponent implements OnInit {
       },
     };
 
-	// Loading chart 2
-	// Full frequency
+    // Loading chart 2
+    // Full frequency
     const chart2Data = [];
     let chart2Categories = [];
     this.chart2NotFound = [];
@@ -207,11 +214,11 @@ export class FacebookDataAnalysisComponent implements OnInit {
     };
 
     // Loading chart 3
-	// Top serach frequency
+    // Top serach frequency
     const chart3Data = [];
     let chart3Categories = [];
-	this.chart3NotFound = [];
-	let total = 0;
+    this.chart3NotFound = [];
+    let total = 0;
     this.data['SearchHistory'].DateHistogram.histogram.forEach((iteration) => {
       if (true || this.contains(chart1Data[0].name, iteration.searches)) {
         chart3Categories.push(iteration.date);
@@ -230,8 +237,8 @@ export class FacebookDataAnalysisComponent implements OnInit {
       },
       series: [
         {
-		  data: chart3Data,
-		  turboThreshold: 0,
+          data: chart3Data,
+          turboThreshold: 0,
           type: 'area',
         },
       ],
@@ -243,11 +250,11 @@ export class FacebookDataAnalysisComponent implements OnInit {
     };
 
     // Loading chart 4
-	// Second serach frequency
+    // Second serach frequency
     const chart4Data = [];
     let chart4Categories = [];
-	this.chart4NotFound = [];
-	total = 0;
+    this.chart4NotFound = [];
+    total = 0;
     this.data['SearchHistory'].DateHistogram.histogram.forEach((iteration) => {
       if (true || this.contains(chart1Data[1].name, iteration.searches)) {
         //   console.log()
@@ -267,8 +274,8 @@ export class FacebookDataAnalysisComponent implements OnInit {
       },
       series: [
         {
-		  data: chart4Data,
-		  turboThreshold: 0,
+          data: chart4Data,
+          turboThreshold: 0,
           type: 'area',
         },
       ],

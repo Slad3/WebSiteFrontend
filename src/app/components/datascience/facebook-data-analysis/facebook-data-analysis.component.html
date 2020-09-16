@@ -38,7 +38,7 @@
         </button>
       </form>
       <!-- <p>{{ uploadStatus | async }}</p> -->
-      <div class="progress" *ngIf="progressbarShow">
+      <div  class="progress" *ngIf="this.progressBarToggle">
         <div
           #progressbar
           id="progressbar"
@@ -53,7 +53,7 @@
     </div>
   </div>
 
-  <div id="graphs" *ngIf="this.toggle">
+  <div id="graphs" *ngIf="this.graphsToggle">
     <h3 class="title">Graphs</h3>
     <div class="container-fluid block">
       <h3 class="title" style="text-align: center; padding: 1%">

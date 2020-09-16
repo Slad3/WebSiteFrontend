@@ -42,8 +42,10 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
   @Output() newResponse = new EventEmitter<string>();
   fileNeeded = false;
-  toggle = false;
-  progressbarShow = true;
+
+  graphsToggle = false;
+  progressBarToggle = false;
+
   progress: number;
 
   constructor(
@@ -99,8 +101,9 @@ export class FacebookDataAnalysisComponent implements OnInit {
     console.log('submit');
 
     if (this.form.get('file').value !== '') {
-      this.toggle = false;
+      this.graphsToggle = false;
       this.spinner.show();
+      this.progressBarToggle = true;
 
       const response = this.request.uploadFile(
         this.form.get('file').value,
@@ -123,6 +126,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
           alert('Error connecting to backend Server');
           this.spinner.hide();
         }
+        this.progressBarToggle = false;
       });
     } else {
       this.fileNeeded = false;
@@ -130,7 +134,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
   }
 
   loadTestSuccess() {
-    this.toggle = false;
+    this.graphsToggle = false;
     this.spinner.show();
     let req = new HttpRequest('GET', this.backendUrl + 'sample', {
       responseType: 'text',
@@ -152,6 +156,8 @@ export class FacebookDataAnalysisComponent implements OnInit {
     );
   }
 
+
+
   loadGraphs() {
     console.log('loading Graphs');
     console.log(this.data);
@@ -159,8 +165,12 @@ export class FacebookDataAnalysisComponent implements OnInit {
     const chart1Data = [];
     this.chart1NotFound = [];
     this.data['SearchHistory'].Frequency.forEach((search) => {
-      if (search.times > 3)
-        chart1Data.push({ name: search.search, y: search.percent });
+      if (search.times > 7)
+        chart1Data.push({
+          name: search.search,
+          percent: this.formatPercent(search.percent),
+          y: search.percent,
+        });
     });
 
     this.chart1 = Highcharts;
@@ -174,7 +184,13 @@ export class FacebookDataAnalysisComponent implements OnInit {
       ],
       tooltip: {
         formatter: function () {
-          return 'The value for <b>' + this.x + '</b> is <b>' + this.y + '</b>';
+          return (
+            'The value for <b>' +
+            this.point.name +
+            '</b> is <b>' +
+            this.point.percent +
+            '</b>'
+          );
         },
       },
       chart: {
@@ -286,7 +302,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
       },
     };
 
-    this.toggle = true;
+    this.graphsToggle = true;
     this.spinner.hide();
   }
 
@@ -309,5 +325,9 @@ export class FacebookDataAnalysisComponent implements OnInit {
       }
     });
     return time;
+  }
+
+  formatPercent(num: number) {
+    return (num * 100).toString().slice(0, 5) + '%';
   }
 }

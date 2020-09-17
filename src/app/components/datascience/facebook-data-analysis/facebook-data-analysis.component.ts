@@ -43,6 +43,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
   @Output() newResponse = new EventEmitter<string>();
   fileNeeded = false;
 
+  instructionsToggle = true;
   graphsToggle = false;
   progressBarToggle = false;
 
@@ -156,11 +157,12 @@ export class FacebookDataAnalysisComponent implements OnInit {
     );
   }
 
-
-
   loadGraphs() {
     console.log('loading Graphs');
-    console.log(this.data);
+	// console.log(this.data);
+
+	this.instructionsToggle = false;
+
     // Loading chart 1
     const chart1Data = [];
     this.chart1NotFound = [];
@@ -184,11 +186,12 @@ export class FacebookDataAnalysisComponent implements OnInit {
       ],
       tooltip: {
         formatter: function () {
+			console.log(this)
           return (
             'The value for <b>' +
             this.point.name +
             '</b> is <b>' +
-            this.point.percent +
+            this.y +
             '</b>'
           );
         },

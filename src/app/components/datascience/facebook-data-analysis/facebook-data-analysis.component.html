@@ -53,6 +53,12 @@
     </div>
   </div>
 
+  <div id="instructions" class="block" *ngIf="this.instructionsToggle">
+	  <h3>Instructions</h3>
+
+
+  </div>
+
   <div id="graphs" *ngIf="this.graphsToggle">
     <h3 class="title">Graphs</h3>
     <div class="container-fluid block">
@@ -67,7 +73,7 @@
           Show Graphs
         </button>
       </h3>
-      <div class="row" id="searchGraphs">
+      <div class="row collapse" id="searchGraphs">
         <div class="col-md-6 chart">
           <highcharts-chart
             class="chart"
@@ -101,6 +107,41 @@
           ></highcharts-chart>
         </div>
       </div>
-    </div>
+	</div>
+	
+	<div class="container-fluid block">
+		<h3 class="title" style="text-align: center; padding: 1%">
+		  Message Graphs
+		  <button
+			class="btn btn-secondary btn-sm col-lg-2 showButton"
+			id="searchesButton"
+			data-toggle="collapse"
+			href="#messageGraphs"
+		  >
+			Show Graphs
+		  </button>
+		</h3>
+		<div class="row collapse" id="messageGraphs">
+			<div class="col-md-12 chart" id="resposeTimes">
+
+			</div>
+
+			<div class="col-md-12 chart" id="doubleText">
+
+			</div>
+
+			<div class="col-md-6 chart" id="mostSelfInitiations">
+
+			</div>
+
+			<div class="col-md-6 chart" id="leastSelfInitiations">
+
+			</div>
+
+
+
+
+		</div>
+	  </div>
   </div>
 

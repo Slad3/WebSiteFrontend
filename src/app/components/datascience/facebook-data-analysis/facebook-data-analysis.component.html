@@ -37,7 +37,7 @@
           Example Success
         </button>
       </form>
-      <!-- <p>{{ uploadStatus | async }}</p> -->
+ 
       <div  class="progress" *ngIf="this.progressBarToggle">
         <div
           #progressbar
@@ -61,7 +61,7 @@
 
   <div id="graphs" *ngIf="this.graphsToggle">
     <h3 class="title">Graphs</h3>
-    <div class="container-fluid block">
+    <div #SearhGraphs class="container-fluid block">
       <h3 class="title" style="text-align: center; padding: 1%">
         Search Graphs
         <button
@@ -109,7 +109,7 @@
       </div>
 	</div>
 	
-	<div class="container-fluid block">
+	<div #MessageGraphs class="container-fluid block">
 		<h3 class="title" style="text-align: center; padding: 1%">
 		  Message Graphs
 		  <button

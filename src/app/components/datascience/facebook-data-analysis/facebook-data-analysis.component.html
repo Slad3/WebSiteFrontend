@@ -1,147 +1,154 @@
 <app-datascience></app-datascience>
-  <ngx-spinner
-    type="line-scale-pulse-out"
-    size="medium"
-    color="#FFF"
-    fullScreen="false"
-  ></ngx-spinner>
+<ngx-spinner
+  type="line-scale-pulse-out"
+  size="medium"
+  color="#FFF"
+  fullScreen="false"
+></ngx-spinner>
 
-  <div class="block">
-    <h1>Facebook data analysis</h1>
-  </div>
-  <div id="uploadForm" class="container">
-    <div class="contain">
-      <form
-        [formGroup]="form"
-        (ngSubmit)="onSubmitUpload()"
-        class="form-group row"
+<div class="block">
+  <h1>Facebook data analysis</h1>
+</div>
+<div id="uploadForm" class="container">
+  <div class="contain">
+    <form
+      [formGroup]="form"
+      (ngSubmit)="onSubmitUpload()"
+      class="form-group row"
+    >
+      <div *ngIf="fileNeeded">Please select a file before submitting.</div>
+      <input
+        class="form-control-file col-lg-4"
+        type="file"
+        name="file"
+        aria-describedby="repoHelp"
+        placeholder="Upload Zip"
+        (change)="onFileChange($event)"
+      />
+      <button type="submit" class="btn btn-primary col-lg-4" id="submitFile">
+        Submit File
+      </button>
+      <button
+        *ngIf="this.dev"
+        class="btn btn-secondary btn-sm col-lg-4"
+        id="testSuccess"
+        (click)="this.loadTestSuccess()"
       >
-        <div *ngIf="fileNeeded">Please select a file before submitting.</div>
-        <input
-          class="form-control-file col-lg-4"
-          type="file"
-          name="file"
-          aria-describedby="repoHelp"
-          placeholder="Upload Zip"
-          (change)="onFileChange($event)"
-        />
-        <button type="submit" class="btn btn-primary col-lg-4" id="submitFile">
-          Submit File
-        </button>
-        <button
-          *ngIf="this.dev"
-          class="btn btn-secondary btn-sm col-lg-4"
-          id="testSuccess"
-          (click)="this.loadTestSuccess()"
-        >
-          Example Success
-        </button>
-      </form>
- 
-      <div  class="progress" *ngIf="this.progressBarToggle">
-        <div
-          #progressbar
-          id="progressbar"
-          class="progress-bar"
-          role="progressbar"
-          aria-valuenow="60"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          [style.width]="this.progress + '%'"
-        ></div>
+        Example Success
+      </button>
+    </form>
+
+    <div class="progress" *ngIf="this.progressBarToggle">
+      <div
+        #progressbar
+        id="progressbar"
+        class="progress-bar"
+        role="progressbar"
+        aria-valuenow="60"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        [style.width]="this.progress + '%'"
+      ></div>
+    </div>
+  </div>
+</div>
+
+<div id="instructions" class="block" *ngIf="this.instructionsToggle">
+  <h3>Instructions</h3>
+</div>
+
+<div id="graphs" *ngIf="this.graphsToggle">
+  <h3 class="title">Graphs</h3>
+  <div #SearhGraphs class="container-fluid block">
+    <h3 class="title" style="text-align: center; padding: 1%">
+      Search Graphs
+      <button
+        class="btn btn-secondary btn-sm col-lg-2 showButton"
+        id="searchesButton"
+        data-toggle="collapse"
+        href="#searchGraphs"
+      >
+        Show Graphs
+      </button>
+    </h3>
+    <div class="row collapse" id="searchGraphs">
+      <div class="col-md-6 chart">
+        <highcharts-chart
+          class="chart"
+          [Highcharts]="chart1"
+          [options]="chart1Options"
+          style="width: 100%; display: block"
+        ></highcharts-chart>
+      </div>
+      <div class="col-md-6 chart">
+        <highcharts-chart
+          class="chart2"
+          [Highcharts]="chart2"
+          [options]="chart2Options"
+          style="width: 100%; display: block"
+        ></highcharts-chart>
+      </div>
+      <div class="col-md-12 chart">
+        <highcharts-chart
+          class="chart3"
+          [Highcharts]="chart3"
+          [options]="chart3Options"
+          style="width: 100%; display: block"
+        ></highcharts-chart>
+      </div>
+      <div class="col-md-12 chart">
+        <highcharts-chart
+          class="chart4"
+          [Highcharts]="chart4"
+          [options]="chart4Options"
+          style="width: 100%; display: block"
+        ></highcharts-chart>
       </div>
     </div>
   </div>
 
-  <div id="instructions" class="block" *ngIf="this.instructionsToggle">
-	  <h3>Instructions</h3>
-
-
-  </div>
-
-  <div id="graphs" *ngIf="this.graphsToggle">
-    <h3 class="title">Graphs</h3>
-    <div #SearhGraphs class="container-fluid block">
-      <h3 class="title" style="text-align: center; padding: 1%">
-        Search Graphs
-        <button
-          class="btn btn-secondary btn-sm col-lg-2 showButton"
-          id="searchesButton"
-          data-toggle="collapse"
-          href="#searchGraphs"
-        >
-          Show Graphs
-        </button>
-      </h3>
-      <div class="row collapse" id="searchGraphs">
-        <div class="col-md-6 chart">
-          <highcharts-chart
-            class="chart"
-            [Highcharts]="chart1"
-            [options]="chart1Options"
-            style="width: 100%; display: block"
-          ></highcharts-chart>
+  <div #MessageGraphs class="container-fluid block">
+    <h3 class="title" style="text-align: center; padding: 1%">
+      Message Graphs
+      <button
+        class="btn btn-secondary btn-sm col-lg-2 showButton"
+        id="searchesButton"
+        data-toggle="collapse"
+        href="#messageGraphs"
+      >
+        Show Graphs
+      </button>
+    </h3>
+    <div class="row collapse" id="messageGraphs">
+      <div class="col-md-12 chart" id="resposeTimes">
+        <div class="col-md-12" id="personalResponseData">
+          <div>
+            <h3>
+              Your average response time is: {{ personalAverageResponseTime }}
+            </h3>
+          </div>
         </div>
-        <div class="col-md-6 chart">
-          <highcharts-chart
-            class="chart2"
-            [Highcharts]="chart2"
-            [options]="chart2Options"
-            style="width: 100%; display: block"
-          ></highcharts-chart>
+
+        <div class="col-md-6">
+          <h3>You respond the fastest to:</h3>
+          <ol>
+              <li *ngFor="let person of this.fastestResponseToThem">{{ person }}</li>
+          </ol>
         </div>
-        <div class="col-md-12 chart">
-          <highcharts-chart
-            class="chart3"
-            [Highcharts]="chart3"
-            [options]="chart3Options"
-            style="width: 100%; display: block"
-          ></highcharts-chart>
-        </div>
-        <div class="col-md-12 chart">
-          <highcharts-chart
-            class="chart4"
-            [Highcharts]="chart4"
-            [options]="chart4Options"
-            style="width: 100%; display: block"
-          ></highcharts-chart>
+
+        <div class="col-md-6">
+          <h3>The people that respond the fastest to you:</h3>
+          <ol>
+			<li *ngFor="let person of this.fastestResponseToMe">{{ person }}</li>
+          </ol>
         </div>
       </div>
-	</div>
-	
-	<div #MessageGraphs class="container-fluid block">
-		<h3 class="title" style="text-align: center; padding: 1%">
-		  Message Graphs
-		  <button
-			class="btn btn-secondary btn-sm col-lg-2 showButton"
-			id="searchesButton"
-			data-toggle="collapse"
-			href="#messageGraphs"
-		  >
-			Show Graphs
-		  </button>
-		</h3>
-		<div class="row collapse" id="messageGraphs">
-			<div class="col-md-12 chart" id="resposeTimes">
 
-			</div>
+      <div class="col-md-12 chart" id="doubleText"></div>
 
-			<div class="col-md-12 chart" id="doubleText">
+      <div class="col-md-6 chart" id="mostSelfInitiations"></div>
 
-			</div>
-
-			<div class="col-md-6 chart" id="mostSelfInitiations">
-
-			</div>
-
-			<div class="col-md-6 chart" id="leastSelfInitiations">
-
-			</div>
-
-
-
-
-		</div>
-	  </div>
+      <div class="col-md-6 chart" id="leastSelfInitiations"></div>
+    </div>
   </div>
-
+</div>

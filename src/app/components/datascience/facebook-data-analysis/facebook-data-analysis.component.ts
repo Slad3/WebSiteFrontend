@@ -49,6 +49,11 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
   progress: number;
 
+  personalAverageResponseTime: string;
+
+  fastestResponseToMe: [];
+  fastestResponseToThem: [];
+
   constructor(
     private request: Request,
     private http: HttpClient,
@@ -159,9 +164,9 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
   loadGraphs() {
     console.log('loading Graphs');
-	// console.log(this.data);
+    console.log(this.data);
 
-	this.instructionsToggle = false;
+    this.instructionsToggle = false;
 
     // Loading chart 1
     const chart1Data = [];
@@ -186,7 +191,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
       ],
       tooltip: {
         formatter: function () {
-			console.log(this)
+          console.log(this);
           return (
             'The value for <b>' +
             this.point.name +
@@ -305,6 +310,21 @@ export class FacebookDataAnalysisComponent implements OnInit {
       },
     };
 
+    let totalResponse = 0;
+    let messagesThreadSize = 0;
+    this.data['MessageData'].forEach((thread) => {
+      if (thread['averageResponse'][1]) {
+        totalResponse += thread['averageResponse'][1]['response'];
+        messagesThreadSize++;
+      }
+	});
+
+	let tempTime = totalResponse / messagesThreadSize
+	
+	this.personalAverageResponseTime = this.parseTime(tempTime);
+
+    console.log(totalResponse / messagesThreadSize);
+
     this.graphsToggle = true;
     this.spinner.hide();
   }
@@ -332,5 +352,24 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
   formatPercent(num: number) {
     return (num * 100).toString().slice(0, 5) + '%';
+  }
+
+
+  parseTime(timestamp){
+
+	const plus0 = num => `0${num.toString()}`.slice(-2)
+  
+	const d = new Date(timestamp)
+  
+	const year = d.getFullYear()
+	const monthTmp = d.getMonth() + 1
+	const month = plus0(monthTmp)
+	const date = plus0(d.getDate())
+	const hour = plus0(d.getHours())
+	const minute = plus0(d.getMinutes())
+	const second = plus0(d.getSeconds())
+	const rest = timestamp.toString().slice(-5)
+  
+	return `${hour}:${minute}:${second}`
   }
 }

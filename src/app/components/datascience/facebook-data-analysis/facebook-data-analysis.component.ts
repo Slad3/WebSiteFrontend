@@ -26,6 +26,7 @@ import { ThrowStmt, NONE_TYPE } from '@angular/compiler';
 import * as Highcharts from 'highcharts';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { environment } from '../../../../environments/environment';
+import { Timestamp } from 'rxjs/internal/operators/timestamp';
 
 @Component({
   selector: 'app-facebook-data-analysis',
@@ -174,9 +175,11 @@ export class FacebookDataAnalysisComponent implements OnInit {
     this.data['SearchHistory'].Frequency.forEach((search) => {
       if (search.times > 7)
         chart1Data.push({
+          x: search.search,
           name: search.search,
           percent: this.formatPercent(search.percent),
-          y: search.percent,
+          y: search.times,
+          times: search.times,
         });
     });
 
@@ -190,15 +193,14 @@ export class FacebookDataAnalysisComponent implements OnInit {
         },
       ],
       tooltip: {
-        formatter: function () {
-          console.log(this);
-          return (
-            'The value for <b>' +
-            this.point.name +
-            '</b> is <b>' +
-            this.y +
-            '</b>'
-          );
+        formatter: function (p) {
+			return (
+				'<b>' +
+				this.key +
+				'</b>  <b>' +
+				this.y +
+				' times</b>'
+			);
         },
       },
       chart: {
@@ -254,7 +256,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
     this.chart3 = Highcharts;
     this.chart3Options = {
       title: {
-        text: `Search Frequency for most searched: ${chart1Data[0].name}`,
+        text: `Cumulative Search Frequency for Most Searched: ${chart1Data[0].name}`,
       },
       xAxis: {
         categories: chart3Categories,
@@ -291,7 +293,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
     this.chart4 = Highcharts;
     this.chart4Options = {
       title: {
-        text: `Search Frequency for second most searched: ${chart1Data[1].name}`,
+        text: `Cumulative Search Frequency for 2nd Most Searched: ${chart1Data[1].name}`,
       },
       xAxis: {
         categories: chart4Categories,
@@ -317,13 +319,15 @@ export class FacebookDataAnalysisComponent implements OnInit {
         totalResponse += thread['averageResponse'][1]['response'];
         messagesThreadSize++;
       }
-	});
+    });
 
-	let tempTime = totalResponse / messagesThreadSize
-	
-	this.personalAverageResponseTime = this.parseTime(tempTime);
+    let tempAverageTime = new Date(totalResponse / messagesThreadSize);
 
-    console.log(totalResponse / messagesThreadSize);
+    console.log(tempAverageTime);
+    this.personalAverageResponseTime = `${tempAverageTime.getHours()}:${tempAverageTime
+      .getMinutes()
+      .toString()}:${tempAverageTime.getSeconds().toString()}`; //this.parseTime(tempTime);
+    // this.personalAverageResponseTime = tempAverageTime.toString()
 
     this.graphsToggle = true;
     this.spinner.hide();
@@ -352,24 +356,5 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
   formatPercent(num: number) {
     return (num * 100).toString().slice(0, 5) + '%';
-  }
-
-
-  parseTime(timestamp){
-
-	const plus0 = num => `0${num.toString()}`.slice(-2)
-  
-	const d = new Date(timestamp)
-  
-	const year = d.getFullYear()
-	const monthTmp = d.getMonth() + 1
-	const month = plus0(monthTmp)
-	const date = plus0(d.getDate())
-	const hour = plus0(d.getHours())
-	const minute = plus0(d.getMinutes())
-	const second = plus0(d.getSeconds())
-	const rest = timestamp.toString().slice(-5)
-  
-	return `${hour}:${minute}:${second}`
   }
 }

@@ -6,8 +6,8 @@
   fullScreen="false"
 ></ngx-spinner>
 
-<div class="block">
-  <h1>Facebook data analysis</h1>
+<div class="">
+  <h1 class="mainTitle">Facebook Data Analysis</h1>
 </div>
 <div id="uploadForm" class="container">
   <div class="contain">
@@ -54,12 +54,42 @@
 </div>
 
 <div id="instructions" class="block" *ngIf="this.instructionsToggle">
-  <h3>Instructions</h3>
+  <h2>Instructions</h2>
+
+  <p>
+    <a href="https://www.facebook.com/dyi/?referrer=ayi" target="_blank"
+      >Access your Facebook data at here.
+    </a>
+  </p>
+
+  <h4 style="text-align: center">
+    Required: Make sure your download data format is in JSON, not HTML as shown
+    in the image below.
+  </h4>
+  <p>
+    Its also recommended that you set the media quality to low to lower the file
+    size.
+  </p>
+
+  <img src="../../../../assets/facebookDownloadForm.png" />
+
+  <p>
+    It is recommended that you download only the data you want analyzed or
+    downloaded in order to keep the file size small so uploading doesn't take
+    forever.
+  </p>
+
+  <p>
+    From here you can request your data to be downloaded. Once your request has
+    been sent, Facebook will send you an email to the address you use to log
+    into Facebook with, with a direct link for you to download your data. It is
+    strongly recommended download this
+  </p>
 </div>
 
 <div id="graphs" *ngIf="this.graphsToggle">
   <h3 class="title">Graphs</h3>
-  
+
   <div #MessageGraphs class="container-fluid block">
     <h3 class="title" style="text-align: center; padding: 1%">
       Message Graphs
@@ -85,14 +115,18 @@
         <div class="col-md-6">
           <h4>You respond the fastest to:</h4>
           <ol>
-              <li *ngFor="let person of this.fastestResponseToThem">{{ person }}</li>
+            <li *ngFor="let person of this.fastestResponseToThem">
+              {{ person }}
+            </li>
           </ol>
         </div>
 
         <div class="col-md-5">
           <h4>The people that respond the fastest to you:</h4>
           <ol>
-			<li *ngFor="let person of this.fastestResponseToMe">{{ person }}</li>
+            <li *ngFor="let person of this.fastestResponseToMe">
+              {{ person }}
+            </li>
           </ol>
         </div>
       </div>
@@ -152,6 +186,4 @@
       </div>
     </div>
   </div>
-
-
 </div>

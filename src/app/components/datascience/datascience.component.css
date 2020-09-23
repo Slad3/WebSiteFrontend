@@ -110,7 +110,6 @@
 	top: 30;
 }
 
-
 #sidenav > #closeButton {
   /* font-size: 30px; */
   cursor: pointer;
@@ -119,3 +118,6 @@
   padding-top: 0px;
   float: right;
 }
+
+
+.mainTitle{}

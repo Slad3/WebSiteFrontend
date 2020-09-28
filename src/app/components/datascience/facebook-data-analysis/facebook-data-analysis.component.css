@@ -1,4 +1,11 @@
 
+.mainTitle{
+
+	text-align: center;
+	/* margin-left: 20%; */
+	font-weight: bold;
+}
+
 .chart{
 	margin-bottom: 10px;
 }
@@ -10,4 +17,10 @@
 
 #graphs > h3 {
 	margin-top: 20px;
+}
+
+
+#downloadExamplePhoto {
+	margin-top: 10px;
+	margin-bottom: 20px;
 }

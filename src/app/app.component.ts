@@ -26,6 +26,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+
+
     this.navbar = document.getElementById('navbar') as HTMLElement;
     this.body = document.getElementById('body') as HTMLElement;
     this.sticky = this.navbar.offsetTop;

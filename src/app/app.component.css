@@ -96,7 +96,7 @@ header > .homeSouth {
   transform: translateX(-50%) translateY(-50%);
 
   opacity: 0;
-  animation: fadeIn 1s ease .3s forwards;
+  animation: fadeIn 1s ease 0.3s forwards;
 }
 
 .text-block .name {
@@ -179,20 +179,15 @@ header > .homeSouth {
   color: whitesmoke;
   position: relative;
   height: 100%;
-  margin-bottom: 0px;
-  margin-right: 0px;
-  padding-right: 0px;
 
 }
 
 #router {
-  /* width: 85%; */
   padding-top: 40px;
   padding-bottom: 2.5rem;
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: auto;
+  margin-right: auto;
   align-self: center;
-
   min-height: 50vh;
   max-width: 1080px;
 }
@@ -208,7 +203,6 @@ footer {
   max-height: 50vh;
   min-height: 200px;
   margin-bottom: 0px;
-
 }
 
 /* Full Size CSS */

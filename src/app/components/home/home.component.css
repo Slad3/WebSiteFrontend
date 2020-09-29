@@ -268,6 +268,7 @@
 }
 
 #FAQ {
+	position: relative;
   background-color: rgba(245, 245, 245, 0.5);
   color: black;
 }
@@ -550,7 +551,7 @@
   #FAQ {
     padding: 2.5%;
     margin-left: 0px;
-    width: 95%;
+    width: 100%;
   }
 
   #FAQ > ul {

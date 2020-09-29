@@ -180,14 +180,17 @@ header > .homeSouth {
   position: relative;
   height: 100%;
   margin-bottom: 0px;
+  margin-right: 0px;
+  padding-right: 0px;
+
 }
 
 #router {
   /* width: 85%; */
   padding-top: 40px;
   padding-bottom: 2.5rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
   align-self: center;
 
   min-height: 50vh;
@@ -227,7 +230,7 @@ footer {
 /* Full Size CSS */
 @media only screen and (max-width: 768px) {
   #body {
-    width: 97%;
+    width: 100%;
     padding: 0%;
   }
 

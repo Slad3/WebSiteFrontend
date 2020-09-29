@@ -15,8 +15,6 @@
   margin-bottom: 20px;
   /* display: inline; */
   transition: width 2s;
-
-
 }
 
 #introText {
@@ -26,9 +24,7 @@
   /* float: left;
   align-self: center; */
   margin-left: 0%;
-  animation: fadeIn 2s ease .7s forwards;
-
-
+  animation: fadeIn 2s ease 0.3s forwards;
 }
 
 #profilePhoto {
@@ -38,7 +34,7 @@
   opacity: 0;
   border-radius: 5%;
   margin-top: 30px;
-  animation: fadeIn 2s ease 1s forwards;
+  animation: fadeIn 2s ease .5s forwards;
 }
 
 #typeracer {
@@ -63,8 +59,12 @@
 }
 
 #experience {
+  opacity: 0;
+
   margin-top: 30px;
   clear: both;
+
+
 }
 
 #techBasedInterests {
@@ -112,6 +112,9 @@
   list-style: none;
   display: inline-block;
   background-color: RGB(28, 28, 28, 0.6);
+
+  opacity: 0;
+  animation: fadeIn 1.5s ease 1.3s forwards;
 }
 
 #skills > .title {
@@ -421,6 +424,11 @@
     margin-right: 0px;
   }
 
+  #introTitle{
+
+	  margin-left: auto;
+  }
+
   #experience {
     width: 100%;
   }
@@ -431,7 +439,10 @@
   }
 
   #skills {
-    padding-bottom: 5%;
+	padding-bottom: 5%;
+	visibility: hidden;
+	height: 0px;
+	width: 0px;
   }
 
   #skills > h1 {
@@ -547,48 +558,47 @@
   }
 }
 
-
 @keyframes fadeIn {
-	0% {
-	  opacity: 0;
-	}
-	100% {
-	  opacity: 1;
-	}
+  0% {
+    opacity: 0;
   }
-  
-  @-moz-keyframes fadeIn {
-	0% {
-	  opacity: 0;
-	}
-	100% {
-	  opacity: 1;
-	}
+  100% {
+    opacity: 1;
   }
-  
-  @-webkit-keyframes fadeIn {
-	0% {
-	  opacity: 0;
-	}
-	100% {
-	  opacity: 1;
-	}
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  
-  @-o-keyframes fadeIn {
-	0% {
-	  opacity: 0;
-	}
-	100% {
-	  opacity: 1;
-	}
+  100% {
+    opacity: 1;
   }
-  
-  @-ms-keyframes fadeIn {
-	0% {
-	  opacity: 0;
-	}
-	100% {
-	  opacity: 1;
-	}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

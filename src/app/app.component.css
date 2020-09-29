@@ -58,16 +58,18 @@ header {
   margin-top: 0px;
   position: relative;
 
-  background-image: url("../assets/images/mainphotoCompressed.jpg");
+  background-image: url("../assets/images/mainphotoCompressedMedium.jpg");
   background-position: 45% 50% top;
   /* background-position-y: center; */
   background-repeat: no-repeat;
   background-size: cover;
 
   min-height: 300px;
-  height: 70vh;
+  height: 50vh;
 
-  /* animation: fadeIn ease-in 1s; */
+  opacity: 0;
+
+  animation: fadeIn 1.5s forwards;
 }
 
 header > .homeSouth {
@@ -93,8 +95,8 @@ header > .homeSouth {
   border-radius: 25px;
   transform: translateX(-50%) translateY(-50%);
 
-  -moz-animation-delay: 30s;
-  -moz-animation: fadeIn ease-in 0.3s;
+  opacity: 0;
+  animation: fadeIn 1s ease .3s forwards;
 }
 
 .text-block .name {
@@ -182,7 +184,7 @@ header > .homeSouth {
 
 #router {
   /* width: 85%; */
-  padding: 40px;
+  padding-top: 40px;
   padding-bottom: 2.5rem;
   margin-left: auto;
   margin-right: auto;

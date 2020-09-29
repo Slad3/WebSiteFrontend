@@ -7,6 +7,11 @@
 
 }
 
+#experienceBlock{
+	opacity: 0;
+	animation: fadeIn 1s ease 1s forwards;
+}
+
 .carousel-item{
 }
 
@@ -43,6 +48,11 @@
   clear: both;
 }
 
+.experienceType {
+	float: right;
+	font-size: 50%;
+  }
+
 .mainTitle {
   margin-left: 10px;
   float: top;
@@ -53,10 +63,7 @@
   text-align: left;
 }
 
-.experienceType {
-  float: right;
-  font-size: 50%;
-}
+
 
 .place {
   font-size: 20px;
@@ -90,12 +97,87 @@
 @media only screen and (max-width: 768px) {
   .block {
     border-left-width: 0px;
-    border-right-width: 0px;
+	border-right-width: 0px;
+
+	min-height: 100px;
+	height: 450px;
   }
+
+  .mainTitle{
+	  font-size: 120%;
+	  padding: 5px;
+	  border-bottom-style: solid;
+	  border-bottom-width: 1px;
+	  border-bottom-color: whitesmoke;
+  }
+
+  .content{
+	  width: 80%;
+  }
+
+  .content> .title, .experienceType{
+	  margin: 0px;
+	  padding: 0px;
+	  font-size: 12pt;
+	  float: none;
+  }
+
 
   .companyImage{
 		visibility: hidden;
 		height: 0px;
 		width: 0px;
   }
+
+  .description{
+	  visibility: hidden;
+	  width: 0;
+	  height: 0;
+  }
 }
+
+
+@keyframes fadeIn {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+  
+  @-moz-keyframes fadeIn {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+  
+  @-webkit-keyframes fadeIn {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+  
+  @-o-keyframes fadeIn {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+  
+  @-ms-keyframes fadeIn {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }

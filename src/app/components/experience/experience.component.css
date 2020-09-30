@@ -1,18 +1,18 @@
 .block {
   width: 100%;
 
-  min-height: 500px;
-  height: 550px;
+  min-height: 100%;
+
+  padding-bottom: 40px;
   /* height: auto; */
-
 }
 
-#experienceBlock{
-	opacity: 0;
-	animation: fadeIn 1s ease 1s forwards;
+#experienceBlock {
+  opacity: 0;
+  animation: fadeIn 1s ease 1s forwards;
 }
 
-.carousel-item{
+.carousel-item {
 }
 
 .companyImage {
@@ -49,9 +49,9 @@
 }
 
 .experienceType {
-	float: right;
-	font-size: 50%;
-  }
+  float: right;
+  font-size: 50%;
+}
 
 .mainTitle {
   margin-left: 10px;
@@ -62,8 +62,6 @@
   margin-bottom: 5px;
   text-align: left;
 }
-
-
 
 .place {
   font-size: 20px;
@@ -97,87 +95,106 @@
 @media only screen and (max-width: 768px) {
   .block {
     border-left-width: 0px;
-	border-right-width: 0px;
-
-	min-height: 100px;
-	height: 450px;
+    border-right-width: 0px;
   }
 
-  .mainTitle{
-	  font-size: 120%;
-	  padding: 5px;
-	  border-bottom-style: solid;
-	  border-bottom-width: 1px;
-	  border-bottom-color: whitesmoke;
+  .mainTitle {
+    font-size: 120%;
+    padding: 5px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: whitesmoke;
   }
 
-  .content{
-	  width: 80%;
+  .content {
+    width: 80%;
   }
 
-  .content> .title, .experienceType{
-	  margin: 0px;
-	  padding: 0px;
-	  font-size: 12pt;
-	  float: none;
+  .content > .title,
+  .experienceType {
+    margin: 0px;
+    padding: 0px;
+    font-size: 12pt;
+    float: none;
   }
 
-
-  .companyImage{
-		visibility: hidden;
-		height: 0px;
-		width: 0px;
+  .experienceType {
+	  float: right;
   }
 
-  .description{
-	  visibility: hidden;
-	  width: 0;
-	  height: 0;
+  .companyImage {
+    visibility: hidden;
+    height: 0px;
+    width: 0px;
+  }
+
+  .place {
+	  font-size: 100%;
+  }
+
+  .description {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+
+  .skillsTitle {
+    margin-top: 20px;
+    padding-top: 7px;
+
+    border-top-style: dashed;
+    border-top-width: 1px;
+    border-top-color: #888888;
+
+    font-size: 120%;
+  }
+
+  .expSkillsList > li {
+    font-size: 80%;
   }
 }
 
-
 @keyframes fadeIn {
-	0% {
-	  opacity: 0;
-	}
-	100% {
-	  opacity: 1;
-	}
+  0% {
+    opacity: 0;
   }
-  
-  @-moz-keyframes fadeIn {
-	0% {
-	  opacity: 0;
-	}
-	100% {
-	  opacity: 1;
-	}
+  100% {
+    opacity: 1;
   }
-  
-  @-webkit-keyframes fadeIn {
-	0% {
-	  opacity: 0;
-	}
-	100% {
-	  opacity: 1;
-	}
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  
-  @-o-keyframes fadeIn {
-	0% {
-	  opacity: 0;
-	}
-	100% {
-	  opacity: 1;
-	}
+  100% {
+    opacity: 1;
   }
-  
-  @-ms-keyframes fadeIn {
-	0% {
-	  opacity: 0;
-	}
-	100% {
-	  opacity: 1;
-	}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

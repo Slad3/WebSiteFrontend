@@ -125,9 +125,10 @@
 #skills > #languages > h3 {
   font-weight: bold;
   font-size: 25px;
-  text-align: center;
+  /* text-align: center; */
   margin-top: 0px;
   margin-bottom: 10px;
+  margin-left: 20%;
 
   border-bottom-style: solid;
   border-bottom-width: 2px;
@@ -371,8 +372,7 @@
   #skills > #languages > .list > .language {
     align-self: center;
 
-    margin-left: 8%;
-    margin-right: 8%;
+    margin-left: 15%;
     width: 70%;
 
     border-top-style: solid;
@@ -381,8 +381,17 @@
     border-top-left-radius: 2%;
     border-top-right-radius: 2%;
     border-top-style: dashed;
-    min-height: 140px;
+    min-height: 100%;
   }
+
+  #skills > #languages > .list > .language > ul {
+    float: left;
+	margin-top: 5%;
+	margin-left: 10%;
+    width: -70%;
+    word-wrap: normal;
+  }
+
 
   #skills > #languages > .list > .language > .languageTitle > h4 {
     float: left;
@@ -395,13 +404,6 @@
     max-width: 70px;
     max-height: 50px;
     float: left;
-  }
-
-  #skills > #languages > .list > .language > ul {
-    float: left;
-    margin-top: 5%;
-    width: -70%;
-    word-wrap: normal;
   }
 
   #skills > #languages > .list > .language > h3 {
@@ -441,9 +443,6 @@
 
   #skills {
 	padding-bottom: 5%;
-	visibility: hidden;
-	height: 0px;
-	width: 0px;
   }
 
   #skills > h1 {
@@ -460,23 +459,28 @@
 
   #skills > #languages > .list > .language {
     align-self: center;
-    width: 75%;
-    min-height: 210px;
+	width: 95%;
+	position: relative;
+	/* min-height: 500px; */
+	overflow: hidden;
+	margin-left: 0;
+
+
+	border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: whitesmoke;
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+    border-top-style: dashed;
   }
   #skills > #languages > .list > .language > ul {
     margin: 40px;
-    margin-top: 50px;
-    margin-left: 0px;
-    padding-left: 30px;
-    position: relative;
-  }
-
-  #skills > #languages > .list > #python {
-    min-height: 190px;
-  }
-
-  #skills > #languages > .list > #java {
-    min-height: 200px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    margin-left: 5%;
+	/* padding-left: 30px; */
+	float: none;
+	min-height: 100%;
   }
 
   #skills #languages > .list > .language > .languageTitle > .icon {
@@ -487,13 +491,6 @@
     margin-right: 10%;
   }
 
-  #skills #languages > .list > .language > ul {
-    margin-top: 50px;
-    float: left;
-    position: absolute;
-    word-wrap: normal;
-    width: 40%;
-  }
 
   #skills > #softSkills {
     clear: both;

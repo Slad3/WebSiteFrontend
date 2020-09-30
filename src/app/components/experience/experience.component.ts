@@ -86,8 +86,7 @@ export class ExperienceComponent implements OnInit {
       date: 'September 2017 - June 2018',
       description: [
         'After completing the AP &#174; Computer Science my junior year of high school, I had the opportunity to take a course that gives us real world experience of the software development lifecycle and process through building a real iOS Application with a small team. This consisted of our team of 4 finding a client, working with that client in discussing what kind of application would fit their needs. ',
-        'Our group worked with the Eagan FRC team designed to help make security and commmunications more effective at competitions. While I did mostly backend network connectivity, I also did a fair amount of frontend work.',
-        'Got lots of experience developing a real world application with a team, working on a official design document, presenting biweekly reports to the class, working on a schedule, and of course coding an in Swift.',
+        'Our group worked with the Eagan FRC team designed to help make security and commmunications more effective at competitions. While I did mostly backend network connectivity, I also did a fair amount of frontend work. Got lots of experience developing a real world application with a team, working on a official design document, presenting biweekly reports to the class, working on a schedule, and of course coding an in Swift.',
       ],
       skills: ['Swift', 'iOS Development', 'Gannt Charting'],
     },

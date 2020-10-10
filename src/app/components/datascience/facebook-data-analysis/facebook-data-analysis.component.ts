@@ -48,6 +48,9 @@ export class FacebookDataAnalysisComponent implements OnInit {
   graphsToggle = false;
   progressBarToggle = false;
 
+  messageGraphsToggle = false;
+  searchHistoryGraphsToggle = false;
+
   progress: number;
 
   personalAverageResponseTime: number;
@@ -169,148 +172,167 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
     this.instructionsToggle = false;
 
-    // Loading chart 1
-    const chart1Data = [];
-    this.chart1NotFound = [];
-    this.data['SearchHistory'].Frequency.forEach((search) => {
-      if (search.times > 7)
-        chart1Data.push({
-          x: search.search,
-          name: search.search,
-          percent: this.formatPercent(search.percent),
-          y: search.times,
-          times: search.times,
-        });
-    });
+    if (this.data['SearchHistory'] != null) {
+      // Loading chart 1
+      const chart1Data = [];
+      this.chart1NotFound = [];
+      this.data['SearchHistory'].Frequency.forEach((search) => {
+        if (search.times > 7)
+          chart1Data.push({
+            x: search.search,
+            name: search.search,
+            percent: this.formatPercent(search.percent),
+            y: search.times,
+            times: search.times,
+          });
+      });
 
-    this.chart1 = Highcharts;
-    this.chart1Options = {
-      title: { text: 'Search Frequency' },
-      series: [
-        {
-          data: chart1Data,
-          type: 'pie',
+      this.chart1 = Highcharts;
+      this.chart1Options = {
+        title: { text: 'Search Frequency' },
+        series: [
+          {
+            data: chart1Data,
+            type: 'pie',
+          },
+        ],
+        tooltip: {
+          formatter: function (p) {
+            return '<b>' + this.key + '</b>  <b>' + this.y + ' times</b>';
+          },
         },
-      ],
-      tooltip: {
-        formatter: function (p) {
-          return '<b>' + this.key + '</b>  <b>' + this.y + ' times</b>';
+        chart: {
+          renderTo: 'container',
         },
-      },
-      chart: {
-        renderTo: 'container',
-      },
-    };
+      };
 
-    // Loading chart 2
-    // Full frequency
-    const chart2Data = [];
-    let chart2Categories = [];
-    this.chart2NotFound = [];
-    this.data['SearchHistory'].DateHistogram.histogram.forEach((iteration) => {
-      if (iteration.searches.length > 0) {
-        chart2Categories.push(iteration.date);
-        chart2Data.push({ name: iteration.date, y: iteration.searches.length });
-      }
-    });
+      // Loading chart 2
+      // Full frequency
+      const chart2Data = [];
+      let chart2Categories = [];
+      this.chart2NotFound = [];
+      this.data['SearchHistory'].DateHistogram.histogram.forEach(
+        (iteration) => {
+          if (iteration.searches.length > 0) {
+            chart2Categories.push(iteration.date);
+            chart2Data.push({
+              name: iteration.date,
+              y: iteration.searches.length,
+            });
+          }
+        }
+      );
 
-    this.chart2 = Highcharts;
-    this.chart2Options = {
-      title: { text: 'Search Frequency All' },
-      xAxis: {
-        categories: chart2Categories,
-      },
-      series: [
-        {
-          data: chart2Data,
-          type: 'column',
+      this.chart2 = Highcharts;
+      this.chart2Options = {
+        title: { text: 'Search Frequency All' },
+        xAxis: {
+          categories: chart2Categories,
         },
-      ],
-      tooltip: {
-        formatter: function () {
-          return 'The value for <b>' + this.x + '</b> is <b>' + this.y + '</b>';
+        series: [
+          {
+            data: chart2Data,
+            type: 'column',
+          },
+        ],
+        tooltip: {
+          formatter: function () {
+            return (
+              'The value for <b>' + this.x + '</b> is <b>' + this.y + '</b>'
+            );
+          },
         },
-      },
-    };
+      };
 
-    // Loading chart 3
-    // Top serach frequency
-    const chart3Data = [];
-    let chart3Categories = [];
-    this.chart3NotFound = [];
-    let total = 0;
-    this.data['SearchHistory'].DateHistogram.histogram.forEach((iteration) => {
-      if (true || this.contains(chart1Data[0].name, iteration.searches)) {
-        chart3Categories.push(iteration.date);
-        total += this.times(chart1Data[0].name, iteration.searches);
-        chart3Data.push({ name: iteration.date, y: total });
-      }
-    });
+      // Loading chart 3
+      // Top serach frequency
+      const chart3Data = [];
+      let chart3Categories = [];
+      this.chart3NotFound = [];
+      let total = 0;
+      this.data['SearchHistory'].DateHistogram.histogram.forEach(
+        (iteration) => {
+          if (true || this.contains(chart1Data[0].name, iteration.searches)) {
+            chart3Categories.push(iteration.date);
+            total += this.times(chart1Data[0].name, iteration.searches);
+            chart3Data.push({ name: iteration.date, y: total });
+          }
+        }
+      );
 
-    this.chart3 = Highcharts;
-    this.chart3Options = {
-      title: {
-        text: `Cumulative Search Frequency for Most Searched: ${chart1Data[0].name}`,
-      },
-      xAxis: {
-        categories: chart3Categories,
-      },
-      series: [
-        {
-          data: chart3Data,
-          turboThreshold: 0,
-          type: 'area',
+      this.chart3 = Highcharts;
+      this.chart3Options = {
+        title: {
+          text: `Cumulative Search Frequency for Most Searched: ${chart1Data[0].name}`,
         },
-      ],
-      tooltip: {
-        formatter: function () {
-          return 'The value for <b>' + this.x + '</b> is <b>' + this.y + '</b>';
+        xAxis: {
+          categories: chart3Categories,
         },
-      },
-    };
+        series: [
+          {
+            data: chart3Data,
+            turboThreshold: 0,
+            type: 'area',
+          },
+        ],
+        tooltip: {
+          formatter: function () {
+            return (
+              'The value for <b>' + this.x + '</b> is <b>' + this.y + '</b>'
+            );
+          },
+        },
+      };
 
-    // Loading chart 4
-    // Second serach frequency
-    const chart4Data = [];
-    let chart4Categories = [];
-    this.chart4NotFound = [];
-    total = 0;
-    this.data['SearchHistory'].DateHistogram.histogram.forEach((iteration) => {
-      if (true || this.contains(chart1Data[1].name, iteration.searches)) {
-        //   console.log()
-        chart4Categories.push(iteration.date);
-        total += this.times(chart1Data[1].name, iteration.searches);
-        chart4Data.push({ name: iteration.date, y: total });
-      }
-    });
+      // Loading chart 4
+      // Second serach frequency
+      const chart4Data = [];
+      let chart4Categories = [];
+      this.chart4NotFound = [];
+      total = 0;
+      this.data['SearchHistory'].DateHistogram.histogram.forEach(
+        (iteration) => {
+          if (true || this.contains(chart1Data[1].name, iteration.searches)) {
+            //   console.log()
+            chart4Categories.push(iteration.date);
+            total += this.times(chart1Data[1].name, iteration.searches);
+            chart4Data.push({ name: iteration.date, y: total });
+          }
+        }
+      );
 
-    this.chart4 = Highcharts;
-    this.chart4Options = {
-      title: {
-        text: `Cumulative Search Frequency for 2nd Most Searched: ${chart1Data[1].name}`,
-      },
-      xAxis: {
-        categories: chart4Categories,
-      },
-      series: [
-        {
-          data: chart4Data,
-          turboThreshold: 0,
-          type: 'area',
+      this.chart4 = Highcharts;
+      this.chart4Options = {
+        title: {
+          text: `Cumulative Search Frequency for 2nd Most Searched: ${chart1Data[1].name}`,
         },
-      ],
-      tooltip: {
-        formatter: function () {
-          return 'The value for <b>' + this.x + '</b> is <b>' + this.y + '</b>';
+        xAxis: {
+          categories: chart4Categories,
         },
-      },
-    };
+        series: [
+          {
+            data: chart4Data,
+            turboThreshold: 0,
+            type: 'area',
+          },
+        ],
+        tooltip: {
+          formatter: function () {
+            return (
+              'The value for <b>' + this.x + '</b> is <b>' + this.y + '</b>'
+            );
+          },
+        },
+	  };
+	  
+	  this.searchHistoryGraphsToggle = true;
+    }
 
-    if (this.data.MessageData != null) {
+    if (this.data['MessageData'] != null) {
       let totalResponse = 0;
       let messagesThreadSize = 0;
 
-      this.data.MessageData.MessageThreads.forEach((thread) => {
+      this.data['MessageData'].MessageThreads.forEach((thread) => {
         if (thread.averageResponse[1] < 90000000) {
           messagesThreadSize++;
           console.log(thread.averageResponse[1]);
@@ -326,8 +348,14 @@ export class FacebookDataAnalysisComponent implements OnInit {
       //this.parseTime(tempTime);
       // this.personalAverageResponseTime = tempAverageTime.toString()
 
-      this.fastestResponseToMe = this.data.MessageData.totalAverageResponseTime[0];
-      this.fastestResponseToThem = this.data.MessageData.totalAverageResponseTime[1];
+      this.fastestResponseToMe = this.data[
+        'MessageData'
+      ].totalAverageResponseTime[0];
+      this.fastestResponseToThem = this.data[
+        'MessageData'
+	  ].totalAverageResponseTime[1];
+	  
+	  this.messageGraphsToggle = true;
     }
 
     this.graphsToggle = true;

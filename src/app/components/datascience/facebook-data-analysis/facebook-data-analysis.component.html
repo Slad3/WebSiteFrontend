@@ -95,7 +95,7 @@
 <div id="graphs" *ngIf="this.graphsToggle">
   <!-- <h3 class="title">Graphs</h3> -->
 
-  <div #MessageGraphs class="container-fluid block">
+  <div #MessageGraphs *ngIf="this.messageGraphsToggle" class="container-fluid block">
     <h3 class="title sectionData">
       Messages
       <button
@@ -107,11 +107,11 @@
         Show Graphs
       </button>
     </h3>
-    <div class="row collapse" id="messageGraphs">
+    <div class="row" id="messageGraphs">
         <div class="col-md-12" id="personalResponseData">
           <div>
             <h4>
-              Your average response time is: {{ personalAverageResponseTime }}
+              Your average response time is: {{ personalAverageResponseTime }} milliseconds
             </h4>
           </div>
         </div>
@@ -142,7 +142,7 @@
     </div>
   </div>
 
-  <div #SearchGraphs class="container-fluid block">
+  <div #SearchGraphs *ngIf="this.searchHistoryGraphsToggle" class="container-fluid block">
     <h3 class="title sectionData">
       Search History
       <button

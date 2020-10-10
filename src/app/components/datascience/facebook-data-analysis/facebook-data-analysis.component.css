@@ -19,6 +19,22 @@
 	margin-top: 20px;
 }
 
+.chunk {
+	margin: 0;
+	border-style: dotted;
+	border-color: whitesmoke;
+	border-width: 1px;
+}
+
+.sectionData {
+	padding: 1%;
+}
+
+
+.showButton{
+	float: right;
+}
+
 
 #downloadExamplePhoto {
 	margin-top: 10px;

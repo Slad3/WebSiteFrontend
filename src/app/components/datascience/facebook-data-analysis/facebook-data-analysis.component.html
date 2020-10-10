@@ -57,7 +57,9 @@
   <h2>Instructions for Downloading Your Data</h2>
 
   <a href="https://www.facebook.com/dyi/?referrer=ayi" target="_blank">
-    <h4 style="font-weight: bold; text-align: center;">Access your Facebook data at here.</h4>
+    <h4 style="font-weight: bold; text-align: center">
+      Access your Facebook data at here.
+    </h4>
   </a>
 
   <h4 style="text-align: center">
@@ -91,13 +93,13 @@
 </div>
 
 <div id="graphs" *ngIf="this.graphsToggle">
-  <h3 class="title">Graphs</h3>
+  <!-- <h3 class="title">Graphs</h3> -->
 
   <div #MessageGraphs class="container-fluid block">
-    <h3 class="title" style="text-align: center; padding: 1%">
-      Message Graphs
+    <h3 class="title sectionData">
+      Messages
       <button
-        class="btn btn-secondary btn-sm col-lg-2 showButton"
+        class="btn btn-secondary btn-xs col-xs-2 showButton"
         id="searchesButton"
         data-toggle="collapse"
         href="#messageGraphs"
@@ -106,7 +108,6 @@
       </button>
     </h3>
     <div class="row collapse" id="messageGraphs">
-      <div class="col-md-12 chart" id="resposeTimes">
         <div class="col-md-12" id="personalResponseData">
           <div>
             <h4>
@@ -115,25 +116,24 @@
           </div>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-md-6 chunk">
           <h4>You respond the fastest to:</h4>
           <ol>
             <li *ngFor="let person of this.fastestResponseToThem">
-				{{ person.person }}: {{person.responseTime}}
+              {{ person.person }}: {{ person.responseTime }}
             </li>
           </ol>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-md-6 chunk">
           <h4>The people that respond the fastest to you:</h4>
           <ol>
             <li *ngFor="let person of this.fastestResponseToMe">
-              {{ person.person }}: {{person.responseTime}}
+              {{ person.person }}: {{ person.responseTime }}
             </li>
           </ol>
         </div>
-      </div>
-
+      
       <div class="col-md-12 chart" id="doubleText"></div>
 
       <div class="col-md-6 chart" id="mostSelfInitiations"></div>
@@ -143,10 +143,10 @@
   </div>
 
   <div #SearchGraphs class="container-fluid block">
-    <h3 class="title" style="text-align: center; padding: 1%">
-      Search Graphs
+    <h3 class="title sectionData">
+      Search History
       <button
-        class="btn btn-secondary btn-sm col-lg-2 showButton"
+        class="btn btn-secondary btn-xs col-xs-2 showButton"
         id="searchesButton"
         data-toggle="collapse"
         href="#searchGraphs"

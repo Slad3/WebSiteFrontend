@@ -108,8 +108,6 @@ export class FacebookDataAnalysisComponent implements OnInit {
   }
 
   onSubmitUpload() {
-    console.log('submit');
-
     if (this.form.get('file').value !== '') {
       this.graphsToggle = false;
       this.spinner.show();
@@ -126,7 +124,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
         this.progress = event;
         // this.progressbar.innerHTML = event.toString();
       });
-
+	  this.data = null
       response.file.subscribe((file) => {
         try {
           this.newResponse.emit(file);
@@ -145,7 +143,8 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
   loadTestSuccess() {
     this.graphsToggle = false;
-    this.spinner.show();
+	this.spinner.show();
+	this.data = null
     let req = new HttpRequest('GET', this.backendUrl + 'sample', {
       responseType: 'text',
     });

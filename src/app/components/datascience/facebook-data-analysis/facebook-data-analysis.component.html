@@ -115,20 +115,20 @@
           </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-sm-6">
           <h4>You respond the fastest to:</h4>
           <ol>
             <li *ngFor="let person of this.fastestResponseToThem">
-              {{ person }}
+				{{ person.person }}: {{person.responseTime}}
             </li>
           </ol>
         </div>
 
-        <div class="col-md-5">
+        <div class="col-sm-6">
           <h4>The people that respond the fastest to you:</h4>
           <ol>
             <li *ngFor="let person of this.fastestResponseToMe">
-              {{ person }}
+              {{ person.person }}: {{person.responseTime}}
             </li>
           </ol>
         </div>
@@ -142,7 +142,7 @@
     </div>
   </div>
 
-  <div #SearhGraphs class="container-fluid block">
+  <div #SearchGraphs class="container-fluid block">
     <h3 class="title" style="text-align: center; padding: 1%">
       Search Graphs
       <button

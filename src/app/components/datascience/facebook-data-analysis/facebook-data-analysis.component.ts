@@ -50,7 +50,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
   progress: number;
 
-  personalAverageResponseTime: string;
+  personalAverageResponseTime: number;
 
   fastestResponseToMe: [];
   fastestResponseToThem: [];
@@ -194,13 +194,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
       ],
       tooltip: {
         formatter: function (p) {
-			return (
-				'<b>' +
-				this.key +
-				'</b>  <b>' +
-				this.y +
-				' times</b>'
-			);
+          return '<b>' + this.key + '</b>  <b>' + this.y + ' times</b>';
         },
       },
       chart: {
@@ -312,22 +306,29 @@ export class FacebookDataAnalysisComponent implements OnInit {
       },
     };
 
-    let totalResponse = 0;
-    let messagesThreadSize = 0;
-    this.data['MessageData'].forEach((thread) => {
-      if (thread['averageResponse'][1]) {
-        totalResponse += thread['averageResponse'][1]['response'];
-        messagesThreadSize++;
-      }
-    });
+    if (this.data.MessageData != null) {
+      let totalResponse = 0;
+      let messagesThreadSize = 0;
 
-    let tempAverageTime = new Date(totalResponse / messagesThreadSize);
+      this.data.MessageData.MessageThreads.forEach((thread) => {
+        if (thread.averageResponse[1] < 90000000) {
+          messagesThreadSize++;
+          console.log(thread.averageResponse[1]);
+          totalResponse += thread.averageResponse[1];
+        }
+      });
 
-    console.log(tempAverageTime);
-    this.personalAverageResponseTime = `${tempAverageTime.getHours()}:${tempAverageTime
-      .getMinutes()
-      .toString()}:${tempAverageTime.getSeconds().toString()}`; //this.parseTime(tempTime);
-    // this.personalAverageResponseTime = tempAverageTime.toString()
+      this.personalAverageResponseTime = totalResponse / messagesThreadSize;
+
+      // this.personalAverageResponseTime = `${tempAverageTime.getHours()}:${tempAverageTime
+      //   .getMinutes()
+      //   .toString()}:${tempAverageTime.getSeconds().toString()}`;
+      //this.parseTime(tempTime);
+      // this.personalAverageResponseTime = tempAverageTime.toString()
+
+      this.fastestResponseToMe = this.data.MessageData.totalAverageResponseTime[0];
+      this.fastestResponseToThem = this.data.MessageData.totalAverageResponseTime[1];
+    }
 
     this.graphsToggle = true;
     this.spinner.hide();

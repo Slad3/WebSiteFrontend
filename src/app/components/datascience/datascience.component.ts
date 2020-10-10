@@ -19,6 +19,7 @@ export class DatascienceComponent implements OnInit {
     // this.route.parent.params.subscribe(params => console.log(params));
   }
   ngOnInit() {
+	document.getElementById('sidenav').style.left = '-2px';
     let dropdown = document.getElementsByClassName('dropdown-btn');
     let i;
     for (i = 0; i < dropdown.length; i++) {
@@ -56,15 +57,15 @@ export class DatascienceComponent implements OnInit {
   }
 
   openNav() {
-    console.log('asdfasdfsa');
     document.getElementById('sidenav').style.width = '180px';
-    document.getElementById('sideButton').style.width = '0px';
+	document.getElementById('sideButton').style.width = '0px';
+	document.getElementById('sidenav').style.left = '0px';
     document.body.style.backgroundColor = 'rgba(0,0,0,0.4)';
   }
 
   closeNav() {
-    console.log('buttts');
     document.getElementById('sidenav').style.width = '0px';
+    document.getElementById('sidenav').style.left = '-2px';
     document.getElementById('sideButton').style.width = 'auto';
     document.body.style.backgroundColor = 'rgba(0,0,0,0.4)';
   }

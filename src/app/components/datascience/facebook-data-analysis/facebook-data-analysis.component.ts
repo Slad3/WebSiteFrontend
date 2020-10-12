@@ -37,6 +37,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
   dev: boolean;
   data: Object;
   backendUrl = 'http://localhost:8091/';
+  maxFileSizeMB = 50;
 
   form: FormGroup;
   uploadStatus: Observable<number>;
@@ -102,8 +103,15 @@ export class FacebookDataAnalysisComponent implements OnInit {
   onFileChange(event) {
     console.log('change');
     if (event.target.files && event.target.files[0]) {
-      const file = event.target.files[0];
-      this.form.get('file').setValue(file);
+      let size = event.target.files[0].size / 1024 / 1024;
+		console.log(size)
+      if (size < this.maxFileSizeMB) {
+        const file = event.target.files[0];
+        this.form.get('file').setValue(file);
+	  }
+	  else{
+		  window.alert(`File over ${this.maxFileSizeMB}, cosider unzipping and deleting a bunch fo videos and pictures`)
+	  }
     }
   }
 
@@ -124,7 +132,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
         this.progress = event;
         // this.progressbar.innerHTML = event.toString();
       });
-	  this.data = null
+      this.data = null;
       response.file.subscribe((file) => {
         try {
           this.newResponse.emit(file);
@@ -137,14 +145,15 @@ export class FacebookDataAnalysisComponent implements OnInit {
         this.progressBarToggle = false;
       });
     } else {
+		window.alert(`Add a file under ${this.maxFileSizeMB} before uploading`)
       this.fileNeeded = false;
     }
   }
 
   loadTestSuccess() {
     this.graphsToggle = false;
-	this.spinner.show();
-	this.data = null
+    this.spinner.show();
+    this.data = null;
     let req = new HttpRequest('GET', this.backendUrl + 'sample', {
       responseType: 'text',
     });
@@ -322,9 +331,9 @@ export class FacebookDataAnalysisComponent implements OnInit {
             );
           },
         },
-	  };
-	  
-	  this.searchHistoryGraphsToggle = true;
+      };
+
+      this.searchHistoryGraphsToggle = true;
     }
 
     if (this.data['MessageData'] != null) {
@@ -352,9 +361,9 @@ export class FacebookDataAnalysisComponent implements OnInit {
       ].totalAverageResponseTime[0];
       this.fastestResponseToThem = this.data[
         'MessageData'
-	  ].totalAverageResponseTime[1];
-	  
-	  this.messageGraphsToggle = true;
+      ].totalAverageResponseTime[1];
+
+      this.messageGraphsToggle = true;
     }
 
     this.graphsToggle = true;

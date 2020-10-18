@@ -1,6 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule  } from '@angular/forms';
+
+import { HighchartsChartModule } from 'highcharts-angular';
+import { NgxSpinnerService, NgxSpinnerModule } from 'ngx-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { Request } from './api/request.service';
 
@@ -14,6 +19,9 @@ import { ReferenceComponent } from './components/reference/reference.component';
 import { SinglepostComponent } from './components/singlepost/singlepost.component';
 import { PostComponent } from './components/post/post.component';
 import { ExperienceComponent } from './components/experience/experience.component';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { FacebookDataAnalysisComponent } from './components/datascience/facebook-data-analysis/facebook-data-analysis.component';
+import { DatascienceHomeComponent } from './components/datascience/datascience-home/datascience-home.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +34,19 @@ import { ExperienceComponent } from './components/experience/experience.componen
     SinglepostComponent,
     PostComponent,
     ExperienceComponent,
+    FacebookDataAnalysisComponent,
+    DatascienceHomeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+	  	BrowserModule,
+		AppRoutingModule,
+		HttpClientModule,
+		FormsModule,
+		ReactiveFormsModule,
+		HighchartsChartModule,
+		NgxSpinnerModule,
+		BrowserAnimationsModule,
+	],
   providers: [Request, HttpClient],
   bootstrap: [AppComponent],
 })

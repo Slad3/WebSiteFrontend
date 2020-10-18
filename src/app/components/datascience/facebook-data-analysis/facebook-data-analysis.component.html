@@ -28,15 +28,15 @@
       <button type="submit" class="btn btn-primary col-lg-4" id="submitFile">
         Submit File
       </button>
-      <button
-        *ngIf="this.dev"
-        class="btn btn-secondary btn-sm col-lg-4"
-        id="testSuccess"
-        (click)="this.loadTestSuccess()"
-      >
-        Example Success
-      </button>
     </form>
+    <button
+      *ngIf="this.dev"
+      class="btn btn-secondary btn-sm col-lg-4"
+      id="testSuccess"
+      (click)="this.loadTestSuccess()"
+    >
+      Example Success
+    </button>
 
     <div class="progress" *ngIf="this.progressBarToggle">
       <div
@@ -95,7 +95,11 @@
 <div id="graphs" *ngIf="this.graphsToggle">
   <!-- <h3 class="title">Graphs</h3> -->
 
-  <div #MessageGraphs *ngIf="this.messageGraphsToggle" class="container-fluid block">
+  <div
+    #MessageGraphs
+    *ngIf="this.messageGraphsToggle"
+    class="container-fluid block"
+  >
     <h3 class="title sectionData">
       Messages
       <button
@@ -108,32 +112,33 @@
       </button>
     </h3>
     <div class="row" id="messageGraphs">
-        <div class="col-md-12" id="personalResponseData">
-          <div>
-            <h4>
-              Your average response time is: {{ personalAverageResponseTime }} milliseconds
-            </h4>
-          </div>
+      <div class="col-md-12" id="personalResponseData">
+        <div>
+          <h4>
+            Your average response time is:
+            {{ personalAverageResponseTime }}
+          </h4>
         </div>
+      </div>
 
-        <div class="col-md-6 chunk">
-          <h4>You respond the fastest to:</h4>
-          <ol>
-            <li *ngFor="let person of this.fastestResponseToThem">
-              {{ person.person }}: {{ person.responseTime }}
-            </li>
-          </ol>
-        </div>
+      <div class="col-md-6 chunk">
+        <h4>You respond the fastest to:</h4>
+        <ol>
+          <li *ngFor="let person of this.fastestResponseToThem">
+            {{ person.person }}: {{ person.responseTime }}
+          </li>
+        </ol>
+      </div>
 
-        <div class="col-md-6 chunk">
-          <h4>The people that respond the fastest to you:</h4>
-          <ol>
-            <li *ngFor="let person of this.fastestResponseToMe">
-              {{ person.person }}: {{ person.responseTime }}
-            </li>
-          </ol>
-        </div>
-      
+      <div class="col-md-6 chunk">
+        <h4>The people that respond the fastest to you:</h4>
+        <ol>
+          <li *ngFor="let person of this.fastestResponseToMe">
+            {{ person.person }}: {{ person.responseTime }}
+          </li>
+        </ol>
+      </div>
+
       <div class="col-md-12 chart" id="doubleText"></div>
 
       <div class="col-md-6 chart" id="mostSelfInitiations"></div>
@@ -142,7 +147,11 @@
     </div>
   </div>
 
-  <div #SearchGraphs *ngIf="this.searchHistoryGraphsToggle" class="container-fluid block">
+  <div
+    #SearchGraphs
+    *ngIf="this.searchHistoryGraphsToggle"
+    class="container-fluid block"
+  >
     <h3 class="title sectionData">
       Search History
       <button

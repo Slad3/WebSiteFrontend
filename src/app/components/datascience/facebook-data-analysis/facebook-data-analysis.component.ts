@@ -36,8 +36,8 @@ import { Timestamp } from 'rxjs/internal/operators/timestamp';
 export class FacebookDataAnalysisComponent implements OnInit {
   dev: boolean;
   data: Object;
-  backendUrl = 'http://localhost:8091/';
-  maxFileSizeMB = 50;
+  backendUrl = 'https://dev.benbarcaskey.com/';
+  maxFileSizeMB = 100;
 
   form: FormGroup;
   uploadStatus: Observable<number>;
@@ -73,7 +73,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
       this.dev = true;
     } else {
       this.dev = false;
-    }
+	}
   }
 
   // Graphs and Charts
@@ -112,6 +112,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
 	  else{
 		  window.alert(`File over ${this.maxFileSizeMB}, cosider unzipping and deleting a bunch fo videos and pictures`)
 	  }
+	  
     }
   }
 
@@ -123,7 +124,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
       const response = this.request.uploadFile(
         this.form.get('file').value,
-        this.backendUrl + 'upload'
+        this.backendUrl + ''
       );
 
       this.uploadStatus = response.status;
@@ -145,7 +146,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
         this.progressBarToggle = false;
       });
     } else {
-		window.alert(`Add a file under ${this.maxFileSizeMB} before uploading`)
+		window.alert(`Add a file under ${this.maxFileSizeMB} Mb before uploading`)
       this.fileNeeded = false;
     }
   }
@@ -348,7 +349,8 @@ export class FacebookDataAnalysisComponent implements OnInit {
         }
       });
 
-      this.personalAverageResponseTime = totalResponse / messagesThreadSize;
+    //   this.personalAverageResponseTime = totalResponse / messagesThreadSize;
+      this.personalAverageResponseTime = this.data['MessageData']['totalAverageResponseTime']['average'];
 
       // this.personalAverageResponseTime = `${tempAverageTime.getHours()}:${tempAverageTime
       //   .getMinutes()
@@ -358,10 +360,10 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
       this.fastestResponseToMe = this.data[
         'MessageData'
-      ].totalAverageResponseTime[0];
+      ].totalAverageResponseTime['individuals'][0];
       this.fastestResponseToThem = this.data[
         'MessageData'
-      ].totalAverageResponseTime[1];
+      ].totalAverageResponseTime['individuals'][1];
 
       this.messageGraphsToggle = true;
     }

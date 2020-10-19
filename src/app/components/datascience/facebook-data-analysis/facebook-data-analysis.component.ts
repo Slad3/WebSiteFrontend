@@ -155,7 +155,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
     this.graphsToggle = false;
     this.spinner.show();
     this.data = null;
-    let req = new HttpRequest('GET', this.backendUrl + 'sample', {
+    let req = new HttpRequest('GET', "http://localhost:8091/" + 'sample', {
       responseType: 'text',
     });
 

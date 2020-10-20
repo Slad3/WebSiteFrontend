@@ -68,11 +68,11 @@ export class FacebookDataAnalysisComponent implements OnInit {
     this.form = this.formBuilder.group({
       file: [''],
     });
-
+	console.log(environment.production)
     if (environment.production) {
-      this.dev = true;
-    } else {
       this.dev = false;
+    } else {
+      this.dev = true;
 	}
 
 	this.instructionsToggle = true;
@@ -104,10 +104,10 @@ export class FacebookDataAnalysisComponent implements OnInit {
   }
 
   onFileChange(event) {
-    console.log('change');
+    // console.log('change');
     if (event.target.files && event.target.files[0]) {
       let size = event.target.files[0].size / 1024 / 1024;
-		console.log(size)
+		// console.log(size)
       if (size < this.maxFileSizeMB) {
         const file = event.target.files[0];
         this.form.get('file').setValue(file);
@@ -179,8 +179,8 @@ export class FacebookDataAnalysisComponent implements OnInit {
   }
 
   loadGraphs() {
-    console.log('loading Graphs');
-    console.log(this.data);
+    // console.log('loading Graphs');
+    // console.log(this.data);
 
     this.instructionsToggle = false;
 
@@ -347,7 +347,6 @@ export class FacebookDataAnalysisComponent implements OnInit {
       this.data['MessageData'].MessageThreads.forEach((thread) => {
         if (thread.averageResponse[1] < 90000000) {
           messagesThreadSize++;
-          console.log(thread.averageResponse[1]);
           totalResponse += thread.averageResponse[1];
         }
       });

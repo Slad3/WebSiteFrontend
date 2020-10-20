@@ -68,11 +68,10 @@ export class FacebookDataAnalysisComponent implements OnInit {
     this.form = this.formBuilder.group({
       file: [''],
     });
-	console.log(environment.production)
-    if (environment.production) {
-      this.dev = false;
-    } else {
+    if (location.host.toString() === "localhost:4200") {
       this.dev = true;
+    } else {
+      this.dev = false;
 	}
 
 	this.instructionsToggle = true;

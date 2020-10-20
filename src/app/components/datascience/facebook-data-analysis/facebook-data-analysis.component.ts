@@ -74,6 +74,8 @@ export class FacebookDataAnalysisComponent implements OnInit {
     } else {
       this.dev = false;
 	}
+
+	this.instructionsToggle = true;
   }
 
   // Graphs and Charts
@@ -97,7 +99,8 @@ export class FacebookDataAnalysisComponent implements OnInit {
   ngOnInit(): void {
     // this.progressbar =  document.getElementById('progressbar')
     // this.progressbar.innerHTML = "asdfasdf"
-    this.progress = 0;
+	this.progress = 0;
+	this.instructionsToggle = true;
   }
 
   onFileChange(event) {

@@ -37,7 +37,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
   dev: boolean;
   data: Object;
   backendUrl = 'https://dev.benbarcaskey.com/';
-  maxFileSizeMB = 100;
+  maxFileSizeMB = 200;
 
   form: FormGroup;
   uploadStatus: Observable<number>;

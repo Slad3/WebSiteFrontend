@@ -6,6 +6,7 @@
 /out-tsc
 # Only exists if Bazel was run
 /bazel-out
+/target
 
 # dependencies
 /node_modules
@@ -43,4 +44,6 @@ testem.log
 
 # System Files
 .DS_Store
+.DS_Store/*
 Thumbs.db
+

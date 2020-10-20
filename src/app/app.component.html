@@ -9,8 +9,15 @@
   <li><a class="left" [routerLink]="'/'">Home</a></li>
   <!-- <li><a class="left" [routerLink]="'/blog'">Blog</a></li> -->
   <!-- <li><a class="left" [routerLink]="'/projects'">Projects</a></li> -->
-  <li><a class="left" [routerLink]="'/datascience'">Data Science</a></li>
+  <li>
+    <a class="left" [routerLink]="'/datascience'">Data Science</a>
+  </li>
   <!-- <li><a class="left" [routerLink]="'/reference'">Reference</a></li> -->
+  <li>
+    <a id="icon" href="mailto:benbarcaskey@gmail.com"
+      ><img class="iconImage" src="./assets/images/email.png"
+    /></a>
+  </li>
   <li>
     <a id="icon" href="https://www.linkedin.com/in/ben-barcaskey/"
       ><img class="iconImage" src="./assets/images/linkedin.png"
@@ -43,9 +50,5 @@
   <div id="router">
     <router-outlet></router-outlet>
   </div>
-  <footer>
-	
-	
-	
-  </footer>
+  <footer></footer>
 </div>

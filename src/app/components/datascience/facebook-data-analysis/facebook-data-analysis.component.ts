@@ -36,7 +36,7 @@ import { Timestamp } from 'rxjs/internal/operators/timestamp';
 export class FacebookDataAnalysisComponent implements OnInit {
   dev: boolean;
   data: Object;
-  backendUrl = 'https://dev.benbarcaskey.com/';
+  backendUrl = 'https://dev.benbarcaskey.com/facebook';
   maxFileSizeMB = 200;
 
   form: FormGroup;

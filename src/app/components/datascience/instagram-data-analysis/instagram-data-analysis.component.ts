@@ -51,7 +51,7 @@ export class InstagramDataAnalysisComponent implements OnInit {
   progressBarToggle = false;
 
   messageGraphsToggle = false;
-  searchHistoryGraphsToggle = false;
+accountHistoryToggle = false;
 
   progress: number;
 
@@ -59,6 +59,8 @@ export class InstagramDataAnalysisComponent implements OnInit {
 
   fastestResponseToMe: [];
   fastestResponseToThem: [];
+
+  accountHistory: [];
 
   constructor(
     private request: Request,
@@ -193,7 +195,12 @@ export class InstagramDataAnalysisComponent implements OnInit {
       ].totalAverageResponseTime['individuals'][1];
 
       this.messageGraphsToggle = true;
-    }
+	}
+	
+	if(this.data['AccountHistory'] != null){
+		this.accountHistory = this.data['AccountHistory'];
+		this.accountHistoryToggle = true;
+	}
 
     this.graphsToggle = true;
     this.spinner.hide();

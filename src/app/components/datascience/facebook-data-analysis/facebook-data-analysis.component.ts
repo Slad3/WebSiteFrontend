@@ -59,6 +59,9 @@ export class FacebookDataAnalysisComponent implements OnInit {
   fastestResponseToMe: [];
   fastestResponseToThem: [];
 
+  doubleTextToMe: [];
+  doubleTextToThem: [];
+
   constructor(
     private request: Request,
     private http: HttpClient,
@@ -350,21 +353,15 @@ export class FacebookDataAnalysisComponent implements OnInit {
         }
       });
 
-    //   this.personalAverageResponseTime = totalResponse / messagesThreadSize;
+
       this.personalAverageResponseTime = this.data['MessageData']['totalAverageResponseTime']['average'];
 
-      // this.personalAverageResponseTime = `${tempAverageTime.getHours()}:${tempAverageTime
-      //   .getMinutes()
-      //   .toString()}:${tempAverageTime.getSeconds().toString()}`;
-      //this.parseTime(tempTime);
-      // this.personalAverageResponseTime = tempAverageTime.toString()
 
-      this.fastestResponseToMe = this.data[
-        'MessageData'
-      ].totalAverageResponseTime['individuals'][0];
-      this.fastestResponseToThem = this.data[
-        'MessageData'
-      ].totalAverageResponseTime['individuals'][1];
+      this.fastestResponseToMe = this.data['MessageData'].totalAverageResponseTime['individuals'][0];
+	  this.fastestResponseToThem = this.data['MessageData'].totalAverageResponseTime['individuals'][1];
+	  
+	  this.doubleTextToMe = this.data['MessageData'].doubleMessaging[0];
+	  this.doubleTextToThem =this.data['MessageData'].doubleMessaging[1];
 
       this.messageGraphsToggle = true;
     }

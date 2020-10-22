@@ -17,8 +17,8 @@
       class="form-group row"
     >
       <div *ngIf="fileNeeded">Please select a file before submitting.</div>
-	  <input
-	  	id="fileUpload"
+      <input
+        id="fileUpload"
         class="form-control-file col-lg-6"
         type="file"
         name="file"
@@ -48,9 +48,9 @@
         aria-valuenow="60"
         aria-valuemin="0"
         aria-valuemax="100"
-		[style.width]="this.progress + '%'"
-	  ></div>
-	  Uploading
+        [style.width]="this.progress + '%'"
+      ></div>
+      Uploading
     </div>
   </div>
 </div>
@@ -93,11 +93,14 @@
     strongly recommended you download and upload this on a desktop/laptop platform rather than a mobile device, though it is possible on a phone.
   </p> -->
 
-  <h4 style="font-weight: bold; color: red;">DISCLAIMER: No data is saved after session ends, nor sent to any external sources.<br/>TLDU: I don't want your data, nor do I want to send your data to someone. That's creepy.</h4>
+  <h4 style="font-weight: bold; color: red">
+    DISCLAIMER: No data is saved after session ends, nor sent to any external
+    sources.<br />TLDU: I don't want your data, nor do I want to send your data
+    to someone. That's creepy.
+  </h4>
 </div>
 
 <div id="graphs" *ngIf="this.graphsToggle">
-  <!-- <h3 class="title">Graphs</h3> -->
 
   <div
     #MessageGraphs
@@ -151,4 +154,36 @@
     </div>
   </div>
 
+  <div
+    #AccountHistory
+    *ngIf="this.accountHistoryToggle"
+    class="container-fluid block"
+  >
+    <h3 class="title sectionData">
+      Account History
+      <button
+        class="btn btn-secondary btn-xs col-xs-2 showButton"
+        id="accountButton"
+        data-toggle="collapse"
+        href="#accountHistory"
+      >
+        Show Graphs
+      </button>
+    </h3>
+    <div class="row" id="accountHistory">
+      <div class="col-md-12 chunk">
+        <h4>Account History:</h4>
+        <ul>
+          <li *ngFor="let login of this.accountHistory">
+            IP Address: {{ login.ipAddress }}<br/>
+            Timestamp: {{ login.timestamp }}<br/>
+            Language: {{ login.language }}<br/>
+            Client: {{ login.client }}<br/>
+			Device id: {{ login.deviceId }}<br/>
+			<br/>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>

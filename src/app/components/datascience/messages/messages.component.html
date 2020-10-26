@@ -1,0 +1,47 @@
+<div class="container-fluid block">
+  <h3 class="title sectionData">
+    Messages
+    <button
+      class="btn btn-secondary btn-xs col-xs-2 showButton"
+      id="searchesButton"
+      data-toggle="collapse"
+      href="#messageGraphs"
+    >
+      Show Graphs
+    </button>
+  </h3>
+  <div class="row" id="messageGraphs">
+    <div class="col-md-12" id="personalResponseData">
+      <div>
+        <h4>
+          Your average response time is:
+          <!-- {{ personalAverageResponseTime }} -->
+        </h4>
+      </div>
+    </div>
+
+    <div class="col-md-6 chunk">
+      <h4>You respond the fastest to:</h4>
+      <ol>
+        <!-- <li *ngFor="let person of this.fastestResponseToThem">
+          {{ person.person }}: {{ person.responseTime }}
+        </li> -->
+      </ol>
+    </div>
+
+    <div class="col-md-6 chunk">
+      <h4>The people that respond the fastest to you:</h4>
+      <ol>
+        <!-- <li *ngFor="let person of this.fastestResponseToMe">
+          {{ person.person }}: {{ person.responseTime }}
+        </li> -->
+      </ol>
+    </div>
+
+    <div class="col-md-12 chart" id="doubleText"></div>
+
+    <div class="col-md-6 chart" id="mostSelfInitiations"></div>
+
+    <div class="col-md-6 chart" id="leastSelfInitiations"></div>
+  </div>
+</div>

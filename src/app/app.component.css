@@ -205,6 +205,12 @@ footer {
   margin-bottom: 0px;
 }
 
+.contactList {
+	color: red;
+	list-style: none;
+	list-style-position: outside;
+}
+
 /* Full Size CSS */
 @media (min-width: 1720px) {
   header {

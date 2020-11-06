@@ -120,6 +120,7 @@
         Show Graphs
       </button>
     </h3>
+
     <div class="row" id="messageGraphs">
       <!-- <div class="col-md-12" id="personalResponseData">
         <div>
@@ -130,7 +131,7 @@
         </div>
 	  </div> -->
 
-	  <div class="subtitle col-md-12"><h3>Response Time</h3></div>
+      <!-- <div class="subtitle col-md-12"><h3>Response Time</h3></div>
 
       <div class="col-md-6 chunk">
         <h4>You respond the fastest to:</h4>
@@ -148,7 +149,7 @@
             {{ person.person }}: {{ person.responseTime }}
           </li>
         </ol>
-      </div>
+      </div> -->
 
       <div class="subtitle col-md-12"><h3>Double texting</h3></div>
 
@@ -169,6 +170,26 @@
           </li>
         </ol>
       </div>
+
+      <div class="subtitle col-md-12"><h3>Message Analysis Per Person</h3></div>
+
+      <select
+        class="select-option"
+        #mySelect
+        (change)="onPersonSelected(mySelect.value)"
+      >
+        <option
+          class="option"
+          *ngFor="let thread of this.messageThreads"
+          [value]="thread.to"
+        >
+          {{ thread.to }}
+        </option>
+	  </select>
+	  <br/>
+	  <br/> 
+	  <h3>Name: {{this.personData.to}}</h3>
+	  <p>Number of Messages: {{this.personData.numberOfMessages}}</p>
 
       <div class="col-md-12 chart" id="doubleText"></div>
 

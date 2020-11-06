@@ -101,7 +101,6 @@
 </div>
 
 <div id="graphs" *ngIf="this.graphsToggle">
-
   <div
     #MessageGraphs
     *ngIf="this.messageGraphsToggle"
@@ -173,16 +172,24 @@
     <div class="row" id="accountHistory">
       <div class="col-md-12 chunk">
         <h4>Account History:</h4>
-        <ul>
-          <li *ngFor="let login of this.accountHistory">
-            IP Address: {{ login.ipAddress }}<br/>
-            Timestamp: {{ login.timestamp }}<br/>
-            Language: {{ login.language }}<br/>
-            Client: {{ login.client }}<br/>
-			Device id: {{ login.deviceId }}<br/>
-			<br/>
-          </li>
-        </ul>
+
+        <table id="accountTable">
+          <tr>
+			<th class="ipAddress">Ip Address</th>
+			<th class="language">Lang</th>
+            <th class="timestamp">Time</th>
+            <th class="Client">Client</th>
+            <th class="Device ID">Device ID</th>
+          </tr>
+          <tr *ngFor="let login of this.accountHistory">
+			<td class="ipAddress">{{ login.ipAddress }}</td>
+			<td class="language">{{ login.language }}</td>
+            <td class="timestamp">{{ login.timestamp }}</td>
+            <td class="client">{{ login.client }}</td>
+            <td class="deviceID">{{ login.deviceId }}</td>
+          </tr>
+		</table>
+		
       </div>
     </div>
   </div>

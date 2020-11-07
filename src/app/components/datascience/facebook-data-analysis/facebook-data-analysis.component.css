@@ -61,3 +61,20 @@
 	max-height: 100%;
 }
 
+#personSelect {
+	float: right;
+	height: 50px;
+	margin-bottom: 40px;
+}
+
+.individualAnalysis {
+	margin-top: 50px;
+	padding-top: 50px;
+	border-top-style: solid;
+	border-top-color: whitesmoke;
+	border-top-width: 2px;
+}
+
+.messageHistogram {
+	margin-top: 30px;
+}

@@ -106,6 +106,14 @@ export class FacebookDataAnalysisComponent implements OnInit {
   chart4Options: Highcharts.Options;
   chart4NotFound: string[];
 
+  messageHistogram: typeof Highcharts;
+  messageHistogramOptions: Highcharts.Options;
+  messageHistogramNotFound: string[];
+
+  messageWeekDayHistogram: typeof Highcharts;
+  messageWeekDayHistogramOptions: Highcharts.Options;
+  messageWeekDayHistogramNotFound: string[];
+
   ngOnInit(): void {
     // this.progressbar =  document.getElementById('progressbar')
     // this.progressbar.innerHTML = "asdfasdf"
@@ -358,10 +366,6 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
       this.messageThreads = this.data['MessageData'].MessageThreads;
 
-      var temp = this.data['MessageData'].MessageThreads[0].to;
-      console.log(temp);
-       this.onPersonSelected(temp);
-
       this.data['MessageData'].MessageThreads.forEach((thread) => {
         if (thread.averageResponse[1] < 90000000) {
           messagesThreadSize++;
@@ -381,7 +385,24 @@ export class FacebookDataAnalysisComponent implements OnInit {
       ].totalAverageResponseTime['individuals'][1];
 
       this.doubleTextToMe = this.data['MessageData'].doubleMessaging[0];
-      this.doubleTextToThem = this.data['MessageData'].doubleMessaging[1];
+	  this.doubleTextToThem = this.data['MessageData'].doubleMessaging[1];
+	  
+	
+	  var topName = "";
+	//   var max = 0;
+	//   this.data['MessageData'].MessageThreads.forEach(element => {
+	// 	  if(element.numberOfMessages > max){
+	// 		  topName = element.to;
+	// 		  max = element.numberOfMessages;
+	// 	  }
+	//   });
+
+	  topName = this.data['MessageData'].MessageThreads[0].to;
+
+      console.log(topName);
+		this.onPersonSelected(topName);
+
+
 
       this.messageGraphsToggle = true;
     }
@@ -425,9 +446,80 @@ export class FacebookDataAnalysisComponent implements OnInit {
     });
 
     console.log('Person Data: ' + this.personData);
-
+	this.loadMessageHistogram(this.personData)
     return;
   }
 
-  return;
+  loadMessageHistogram(person){
+
+		// Loading Histogram
+		  const messageHistogramData = [];
+		  let messageHistogramCategories = [];
+		  this.messageHistogramNotFound = [];
+				
+		person.hourHistogram.forEach(element => {
+			 messageHistogramCategories.push(element.time);
+			 messageHistogramData.push(element.value);
+		 });
+	
+		  this.messageHistogram = Highcharts;
+		  this.messageHistogramOptions = {
+			title: {
+			  text: `Histogram By Hour`,
+			},
+			xAxis: {
+			  categories: messageHistogramCategories,
+			},
+			series: [
+			  {
+				data: messageHistogramData,
+				type: 'column',
+				color: '#0f4c75'
+			  },
+			],
+			tooltip: {
+			  formatter: function () {
+				return (
+				  this.y + ' times</b>'
+				);
+			  },
+			},
+		  };
+		
+
+		// Loading Histogram
+			const messageWeekDayHistogramData = [];
+			let messageWeekDayHistogramCategories = [];
+			this.messageWeekDayHistogramNotFound = [];
+				
+		person.dayHistogram.forEach(element => {
+				messageWeekDayHistogramCategories.push(element.day);
+				messageWeekDayHistogramData.push(element.value);
+			});
+	
+			this.messageWeekDayHistogram = Highcharts;
+			this.messageWeekDayHistogramOptions = {
+			title: {
+				text: `Histogram By Hour`,
+			},
+			xAxis: {
+				categories: messageWeekDayHistogramCategories,
+			},
+			series: [
+				{
+				data: messageWeekDayHistogramData,
+				type: 'column',
+				color: '#0f4c75'
+				},
+			],
+			tooltip: {
+				formatter: function () {
+				return (
+					this.y + ' times</b>'
+				);
+				},
+			},
+			};
+  }
+
 }

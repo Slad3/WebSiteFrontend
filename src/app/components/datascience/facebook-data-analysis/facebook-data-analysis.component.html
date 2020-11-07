@@ -16,10 +16,11 @@
       (ngSubmit)="onSubmitUpload()"
       class="form-group row"
     >
-      <div *ngIf="fileNeeded">Please select a file before submitting.</div>
+	  <div *ngIf="fileNeeded">Please select a file before submitting.</div>
+	  <label for="fileUpload">Input File: </label>
       <input
         id="fileUpload"
-        class="form-control-file col-lg-6"
+        class="form-control-file col-lg-5"
         type="file"
         name="file"
         aria-describedby="repoHelp"
@@ -36,8 +37,7 @@
       id="testSuccess"
       (click)="this.loadTestSuccess()"
     >
-	  Example Success
-	  
+      Example Success
     </button>
 
     <div class="progress" *ngIf="this.progressBarToggle">
@@ -132,7 +132,7 @@
         </div>
 	  </div> -->
 
-      <!-- <div class="subtitle col-md-12"><h3>Response Time</h3></div>
+      <div class="subtitle col-md-12"><h3>Top Response Times</h3></div>
 
       <div class="col-md-6 chunk">
         <h4>You respond the fastest to:</h4>
@@ -150,9 +150,9 @@
             {{ person.person }}: {{ person.responseTime }}
           </li>
         </ol>
-      </div> -->
+      </div>
 
-      <div class="subtitle col-md-12"><h3>Double texting</h3></div>
+      <div class="subtitle col-md-12"><h3>Top Double Texters</h3></div>
 
       <div class="col-md-6 chunk">
         <h4>You double text the most to:</h4>
@@ -172,25 +172,62 @@
         </ol>
       </div>
 
-      <div class="subtitle col-md-12"><h3>Message Analysis Per Person</h3></div>
+      <div class="subtitle col-md-12 individualAnalysis">
+        <h3 class="title" style="float: left">Message Analysis Per Person</h3>
 
-      <select
-        class="select-option"
-        #mySelect
-        (change)="onPersonSelected(mySelect.value)"
-      >
-        <option
-          class="option"
-          *ngFor="let thread of this.messageThreads"
-          [value]="thread.to"
+        <select
+          class="select-option"
+          id="personSelect"
+          #mySelect
+          (change)="onPersonSelected(mySelect.value)"
         >
-          {{ thread.to }}
-        </option>
-	  </select>
-	  <br/>
-	  <br/> 
-	  <h3>Name: {{this.personData.to}}</h3>
-	  <p>Number of Messages: {{this.personData.numberOfMessages}}</p>
+          <option
+            class="option"
+            id=""
+            *ngFor="let thread of this.messageThreads"
+            [value]="thread.to"
+          >
+            {{ thread.to }}
+          </option>
+        </select>
+      </div>
+      <div class="col-md-6 chunk">
+        <h1>Number of Messages: {{ this.personData.numberOfMessages }}</h1>
+      </div>
+      <div class="col-md-6 chunk">
+        <h3>Double Messaging</h3>
+        <p>They double message: {{ this.personData.doubleMessage[0] }} times</p>
+        <p>You double message: {{ this.personData.doubleMessage[1] }} times</p>
+      </div>
+      <div class="col-md-6 chunk">
+        <h3>Response time</h3>
+        <p>
+          Their Aveverage Response time:
+          {{ this.personData.averageResponse[0] }}
+        </p>
+        <p>
+          Your Aveverage Response time: {{ this.personData.averageResponse[1] }}
+        </p>
+      </div>
+      <div class="col-md-6 chunk"></div>
+
+      <div class="col-md-12 chart">
+        <highcharts-chart
+          class="messageHistogram"
+          [Highcharts]="messageHistogram"
+          [options]="messageHistogramOptions"
+          style="width: 100%; display: block"
+        ></highcharts-chart>
+      </div>
+
+      <div class="col-md-12 chart">
+        <highcharts-chart
+          class="messageWeekDayHistogram"
+          [Highcharts]="messageWeekDayHistogram"
+          [options]="messageWeekDayHistogramOptions"
+          style="width: 100%; display: block"
+        ></highcharts-chart>
+      </div>
 
       <div class="col-md-12 chart" id="doubleText"></div>
 

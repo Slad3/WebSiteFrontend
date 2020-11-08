@@ -16,8 +16,8 @@
       (ngSubmit)="onSubmitUpload()"
       class="form-group row"
     >
-	  <div *ngIf="fileNeeded">Please select a file before submitting.</div>
-	  <label for="fileUpload">Input File: </label>
+      <div *ngIf="fileNeeded">Please select a file before submitting.</div>
+      <h3 for="fileUpload">Input File: </h3>
       <input
         id="fileUpload"
         class="form-control-file col-lg-5"
@@ -192,7 +192,11 @@
         </select>
       </div>
       <div class="col-md-6 chunk">
-        <h1>Number of Messages: {{ this.personData.numberOfMessages }}</h1>
+		<h3>General Stats</h3>
+        <p>Number of Messages: {{ this.personData.numberOfMessages }}</p>
+        <p>Number of Photos: {{ this.personData.numberOfPictures }}</p>
+        <p>Number of Videos: {{ this.personData.numberOfVideos }}</p>
+        <p>Number of Links: {{ this.personData.numberOfLinks }}</p>
       </div>
       <div class="col-md-6 chunk">
         <h3>Double Messaging</h3>
@@ -211,23 +215,23 @@
       </div>
       <div class="col-md-6 chunk"></div>
 
-      <div class="col-md-12 chart">
-        <highcharts-chart
-          class="messageHistogram"
-          [Highcharts]="messageHistogram"
-          [options]="messageHistogramOptions"
-          style="width: 100%; display: block"
-        ></highcharts-chart>
-      </div>
+        <div class="col-md-12 chart">
+          <highcharts-chart
+            class="messageHistogram"
+            [Highcharts]="messageHistogram"
+            [options]="messageHistogramOptions"
+            style="width: 100%; display: block"
+          ></highcharts-chart>
+        </div>
 
-      <div class="col-md-12 chart">
-        <highcharts-chart
-          class="messageWeekDayHistogram"
-          [Highcharts]="messageWeekDayHistogram"
-          [options]="messageWeekDayHistogramOptions"
-          style="width: 100%; display: block"
-        ></highcharts-chart>
-      </div>
+        <div class="col-md-12 chart">
+          <highcharts-chart
+            class="messageWeekDayHistogram"
+            [Highcharts]="messageWeekDayHistogram"
+            [options]="messageWeekDayHistogramOptions"
+            style="width: 100%; display: block"
+          ></highcharts-chart>
+        </div>
 
       <div class="col-md-12 chart" id="doubleText"></div>
 

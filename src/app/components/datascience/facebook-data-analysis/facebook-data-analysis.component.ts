@@ -465,7 +465,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
 		  this.messageHistogram = Highcharts;
 		  this.messageHistogramOptions = {
 			title: {
-			  text: `Histogram By Hour`,
+			  text: `Messages per Hour`,
 			},
 			xAxis: {
 			  categories: messageHistogramCategories,
@@ -474,7 +474,8 @@ export class FacebookDataAnalysisComponent implements OnInit {
 			  {
 				data: messageHistogramData,
 				type: 'column',
-				color: '#0f4c75'
+				color: '#005522',
+				name: 'Total Time in Hour'
 			  },
 			],
 			tooltip: {
@@ -500,7 +501,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
 			this.messageWeekDayHistogram = Highcharts;
 			this.messageWeekDayHistogramOptions = {
 			title: {
-				text: `Histogram By Hour`,
+				text: `Messages per Weekday`,
 			},
 			xAxis: {
 				categories: messageWeekDayHistogramCategories,
@@ -509,7 +510,8 @@ export class FacebookDataAnalysisComponent implements OnInit {
 				{
 				data: messageWeekDayHistogramData,
 				type: 'column',
-				color: '#0f4c75'
+				color: '#E39F3D',
+				name: 'Total Times in Day'
 				},
 			],
 			tooltip: {

@@ -42,12 +42,12 @@ body {
 
 .btn-primary {
 	background-color: #0f4c75;
-	border-color: white;
+	border-color: #0f4c75;
 	color: white;
 }
 
 .btn-primary:hover{
 	background-color: #0f4c75;
 	border-color: white; 
-	color: black;
+	color: white;
 }

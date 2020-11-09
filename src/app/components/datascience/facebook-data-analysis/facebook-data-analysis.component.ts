@@ -510,7 +510,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
 				{
 				data: messageWeekDayHistogramData,
 				type: 'column',
-				color: '#E39F3D',
+				color: '#005522',
 				name: 'Total Times in Day'
 				},
 			],

@@ -51,14 +51,9 @@ export class InstagramDataAnalysisComponent implements OnInit {
   progressBarToggle = false;
 
   messageGraphsToggle = false;
-accountHistoryToggle = false;
+  accountHistoryToggle = false;
 
   progress: number;
-
-  personalAverageResponseTime: number;
-
-  fastestResponseToMe: [];
-  fastestResponseToThem: [];
 
   accountHistory: [];
 
@@ -166,41 +161,13 @@ accountHistoryToggle = false;
     this.instructionsToggle = false;
 
     if (this.data['MessageData'] != null) {
-      let totalResponse = 0;
-      let messagesThreadSize = 0;
-
-      this.data['MessageData'].MessageThreads.forEach((thread) => {
-        if (thread.averageResponse[1] < 90000000) {
-          messagesThreadSize++;
-          totalResponse += thread.averageResponse[1];
-        }
-      });
-
-      //   this.personalAverageResponseTime = totalResponse / messagesThreadSize;
-      this.personalAverageResponseTime = this.data['MessageData'][
-        'totalAverageResponseTime'
-      ]['average'];
-
-      // this.personalAverageResponseTime = `${tempAverageTime.getHours()}:${tempAverageTime
-      //   .getMinutes()
-      //   .toString()}:${tempAverageTime.getSeconds().toString()}`;
-      //this.parseTime(tempTime);
-      // this.personalAverageResponseTime = tempAverageTime.toString()
-
-      this.fastestResponseToMe = this.data[
-        'MessageData'
-      ].totalAverageResponseTime['individuals'][0];
-      this.fastestResponseToThem = this.data[
-        'MessageData'
-      ].totalAverageResponseTime['individuals'][1];
-
       this.messageGraphsToggle = true;
-	}
-	
-	if(this.data['AccountHistory'] != null){
-		this.accountHistory = this.data['AccountHistory'];
-		this.accountHistoryToggle = true;
-	}
+    }
+
+    if (this.data['AccountHistory'] != null) {
+      this.accountHistory = this.data['AccountHistory'];
+      this.accountHistoryToggle = true;
+    }
 
     this.graphsToggle = true;
     this.spinner.hide();

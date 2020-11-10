@@ -48,6 +48,8 @@ export class MessagesComponent implements OnInit {
     this.personData = {
 		to: 'Sample',
 		numberOfMessages: 69,
+		doubleMessaging: [69, 69],
+		MessageThreads: []
 	  };
   }
 
@@ -58,29 +60,32 @@ export class MessagesComponent implements OnInit {
   loadGraphs() {
     console.log('Messages: ', this.data);
 
-    if (this.data['MessageData'] != null) {
-      let totalResponse = 0;
-      let messagesThreadSize = 0;
+    if (this.data != null) {
 
 
-      this.personalAverageResponseTime = this.data['MessageData'][
+      this.personalAverageResponseTime = this.data[
         'totalAverageResponseTime'
       ]['average'];
 
-      this.fastestResponseToMe = this.data['MessageData'].totalAverageResponseTime['individuals'][0];
-      this.fastestResponseToThem = this.data['MessageData'].totalAverageResponseTime['individuals'][1];
+      this.fastestResponseToMe = this.data['totalAverageResponseTime']['individuals'][0];
+      this.fastestResponseToThem = this.data['totalAverageResponseTime']['individuals'][1];
 
-      this.doubleTextToMe = this.data['MessageData'].doubleMessaging[0];
-      this.doubleTextToThem = this.data['MessageData'].doubleMessaging[1];
+      this.doubleTextToMe = this.data['doubleMessaging'][0];
+      this.doubleTextToThem = this.data['doubleMessaging'][1];
 
 	  this.messageGraphsToggle = true;
 	  
 
-	//   topName = 
+	  var topName = "";
+	  topName = this.data['MessageThreads'][0].to;
+	  this.onPersonSelected(topName);
 
+
+
+	  this.messageGraphsToggle = true;
 	}
 	
-	this.messageGraphsToggle = true;
+
   }
   
   contains(str: string, list: []): boolean {
@@ -110,7 +115,7 @@ export class MessagesComponent implements OnInit {
 
   onPersonSelected(value) {
 
-    this.data['MessageData'].MessageThreads.forEach((element) => {
+    this.data['MessageThreads'].forEach((element) => {
       if (element.to === value) {
         this.personData = element;
         return;

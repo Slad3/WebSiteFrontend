@@ -101,56 +101,8 @@
 </div>
 
 <div id="graphs" *ngIf="this.graphsToggle">
-  <div
-    #MessageGraphs
-    *ngIf="this.messageGraphsToggle"
-    class="container-fluid block"
-  >
-    <h3 class="title sectionData">
-      Messages
-      <button
-        class="btn btn-secondary btn-xs col-xs-2 showButton"
-        id="searchesButton"
-        data-toggle="collapse"
-        href="#messageGraphs"
-      >
-        Show Graphs
-      </button>
-    </h3>
-    <div class="row" id="messageGraphs">
-      <div class="col-md-12" id="personalResponseData">
-        <div>
-          <h4>
-            Your average response time is:
-            {{ personalAverageResponseTime }}
-          </h4>
-        </div>
-      </div>
-
-      <div class="col-md-6 chunk">
-        <h4>You respond the fastest to:</h4>
-        <ol>
-          <li *ngFor="let person of this.fastestResponseToThem">
-            {{ person.person }}: {{ person.responseTime }}
-          </li>
-        </ol>
-      </div>
-
-      <div class="col-md-6 chunk">
-        <h4>The people that respond the fastest to you:</h4>
-        <ol>
-          <li *ngFor="let person of this.fastestResponseToMe">
-            {{ person.person }}: {{ person.responseTime }}
-          </li>
-        </ol>
-      </div>
-
-      <div class="col-md-12 chart" id="doubleText"></div>
-
-      <div class="col-md-6 chart" id="mostSelfInitiations"></div>
-
-      <div class="col-md-6 chart" id="leastSelfInitiations"></div>
-    </div>
+  <div *ngIf="this.messageGraphsToggle">
+    <app-messages [data]="this.data['MessageData']"></app-messages>
   </div>
 
   <div
@@ -175,21 +127,20 @@
 
         <table id="accountTable">
           <tr>
-			<th class="ipAddress">Ip Address</th>
-			<th class="language">Lang</th>
+            <th class="ipAddress">Ip Address</th>
+            <th class="language">Lang</th>
             <th class="timestamp">Time</th>
             <th class="Client">Client</th>
             <th class="Device ID">Device ID</th>
           </tr>
           <tr *ngFor="let login of this.accountHistory">
-			<td class="ipAddress">{{ login.ipAddress }}</td>
-			<td class="language">{{ login.language }}</td>
+            <td class="ipAddress">{{ login.ipAddress }}</td>
+            <td class="language">{{ login.language }}</td>
             <td class="timestamp">{{ login.timestamp }}</td>
             <td class="client">{{ login.client }}</td>
             <td class="deviceID">{{ login.deviceId }}</td>
           </tr>
-		</table>
-		
+        </table>
       </div>
     </div>
   </div>

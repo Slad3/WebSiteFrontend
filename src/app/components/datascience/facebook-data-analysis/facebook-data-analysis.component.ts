@@ -52,15 +52,6 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
   progress: number;
 
-  personalAverageResponseTime: number;
-
-  fastestResponseToMe: [];
-  fastestResponseToThem: [];
-
-  doubleTextToMe: [];
-  doubleTextToThem: [];
-
-  personData: any;
 
   constructor(
     private request: Request,

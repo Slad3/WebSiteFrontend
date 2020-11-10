@@ -62,7 +62,8 @@ export class MessagesComponent implements OnInit {
 
     if (this.data != null) {
 
-
+	this.messageThreads = this.data['MessageThreads'];
+	
       this.personalAverageResponseTime = this.data[
         'totalAverageResponseTime'
       ]['average'];
@@ -72,8 +73,6 @@ export class MessagesComponent implements OnInit {
 
       this.doubleTextToMe = this.data['doubleMessaging'][0];
       this.doubleTextToThem = this.data['doubleMessaging'][1];
-
-	  this.messageGraphsToggle = true;
 	  
 
 	  var topName = "";
@@ -116,13 +115,14 @@ export class MessagesComponent implements OnInit {
   onPersonSelected(value) {
 
     this.data['MessageThreads'].forEach((element) => {
+		console.log("here");
       if (element.to === value) {
         this.personData = element;
         return;
       }
     });
 
-    console.log('Person Data: ' + this.personData);
+    console.log('Person Data: ', this.personData);
 	this.loadMessageHistogram(this.personData)
     return;
   }

@@ -11,26 +11,26 @@ The main goal of this project is to provide public visuals for some of the side 
 
 ### Social Media Analyzers
 
-	The Social media analyzer allows a user to upload their user data, and recieve back results about the data that their social media sites collects. Both analysis tools 
+The Social media analyzer allows a user to upload their user data, and recieve back results about the data that their social media sites collects. Both analysis tools 
 
-	All analysis pages have message analysis
+All analysis pages have message analysis
 
-	- Message
-	With only the timestamps and type of contnet (aka not reading texts), 
+- Message
+With only the timestamps and type of contnet (aka not reading texts), 
 
 #### Facebook
 
-	- Search History
-		Analysis on how many times you searched a query, and when you searched the most. It also pulls your top two most popular seraches, and graphs them on a timeline.
+- Search History
+	Analysis on how many times you searched a query, and when you searched the most. It also pulls your top two most popular seraches, and graphs them on a timeline.
 
 #### Instagram
 
-	- Account History
-		This just diplays an easy to read table of the history of the devices your account was logged into. This includes the IP Address, timestamp, client type, and device ID.
+- Account History
+	This just diplays an easy to read table of the history of the devices your account was logged into. This includes the IP Address, timestamp, client type, and device ID.
 
 ### The Office Script Analyzer
 
-	If you've ever though of a quote from a TV show (specifically The Office) but just can't place where it is in the show, you're not alone. This page allows you to enter a quote from the The Office, and see where in the series that quote appears in the series, who said it, and who says it the most in the series.
+If you've ever though of a quote from a TV show (specifically The Office) but just can't place where it is in the show, you're not alone. This page allows you to enter a quote from the The Office, and see where in the series that quote appears in the series, who said it, and who says it the most in the series.
 
 ## Technology
 

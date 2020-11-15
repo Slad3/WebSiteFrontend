@@ -206,9 +206,23 @@ footer {
 }
 
 .contactList {
-	color: red;
+	color: whitesmoke;
 	list-style: none;
 	list-style-position: outside;
+	
+}
+
+.contactList > li {
+	align-self: left;
+}
+
+.contactList > li > a {
+	color: whitesmoke;
+}
+
+.contactList > li > a:hover {
+	color: rgb(102, 102, 255); 
+	background-color: transparent;
 }
 
 /* Full Size CSS */

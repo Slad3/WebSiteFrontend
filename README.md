@@ -1,6 +1,6 @@
 # Slad3.github.io or whatever I want to call it
 
-Frontend for my personal website, hosted on github pages.
+Frontend for my personal website, hosted on GitHub pages.
 
 ## Goals
 
@@ -11,21 +11,21 @@ The main goal of this project is to provide public visuals for some of the side 
 
 ### Social Media Analyzers
 
-The Social media analyzer allows a user to upload their user data, and recieve back results about the data that their social media sites collects. Both analysis tools 
+The Social media analyzer allows a user to upload their user data, and recieve back results about the data that their social media sites collects.
 
-All analysis pages have message analysis
+All social media analysis pages have message analysis
 
-- Message
-With only the timestamps and type of contnet (aka not reading texts), 
+- Message Analysis: 
+With only the timestamps and type of content (aka not reading texts, that's creepy), you can analyze a lot about a conversation such as response time, double texting, sheer amount of messages per person, average messages per day, times per weekday, times per specific hour etc.
 
 #### Facebook
 
-- Search History
-	Analysis on how many times you searched a query, and when you searched the most. It also pulls your top two most popular seraches, and graphs them on a timeline.
+- Search History: 
+	Basic analysis on how many times you searched a query, and when you searched the most. It also pulls your top two most popular seraches, and graphs them on a cumulative timeline.
 
 #### Instagram
 
-- Account History
+- Account History: 
 	This just diplays an easy to read table of the history of the devices your account was logged into. This includes the IP Address, timestamp, client type, and device ID.
 
 ### The Office Script Analyzer

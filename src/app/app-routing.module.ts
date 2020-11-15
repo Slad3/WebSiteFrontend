@@ -7,7 +7,7 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { FacebookDataAnalysisComponent } from './components/datascience/facebook-data-analysis/facebook-data-analysis.component';
 import { DatascienceHomeComponent } from './components/datascience/datascience-home/datascience-home.component';
 import { InstagramDataAnalysisComponent } from './components/datascience/instagram-data-analysis/instagram-data-analysis.component';
-
+import { TheOfficeScriptAnalyzerComponent } from './components/datascience/the-office-script-analyzer/the-office-script-analyzer.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'blog', component: FeedComponent },
@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'datascience', component: DatascienceHomeComponent },
   { path: 'facebook', component: FacebookDataAnalysisComponent },
   { path: 'instagram', component: InstagramDataAnalysisComponent },
+  { path: 'TheOffice', component: TheOfficeScriptAnalyzerComponent },
 
 ];
 

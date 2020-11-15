@@ -25,8 +25,6 @@ import { ThrowStmt, NONE_TYPE } from '@angular/compiler';
 
 import * as Highcharts from 'highcharts';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { environment } from '../../../../environments/environment';
-import { Timestamp } from 'rxjs/internal/operators/timestamp';
 
 @Component({
   selector: 'app-facebook-data-analysis',
@@ -54,10 +52,6 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
   progress: number;
 
-  personalAverageResponseTime: number;
-
-  fastestResponseToMe: [];
-  fastestResponseToThem: [];
 
   constructor(
     private request: Request,
@@ -68,13 +62,15 @@ export class FacebookDataAnalysisComponent implements OnInit {
     this.form = this.formBuilder.group({
       file: [''],
     });
-    if (location.host.toString() === "localhost:4200") {
+    if (location.host.toString() === 'localhost:4200') {
       this.dev = true;
+      this.backendUrl = 'http://localhost:8091/';
     } else {
       this.dev = false;
-	}
+    }
 
-	this.instructionsToggle = true;
+    this.instructionsToggle = true;
+
   }
 
   // Graphs and Charts
@@ -95,26 +91,28 @@ export class FacebookDataAnalysisComponent implements OnInit {
   chart4Options: Highcharts.Options;
   chart4NotFound: string[];
 
+
+
   ngOnInit(): void {
     // this.progressbar =  document.getElementById('progressbar')
     // this.progressbar.innerHTML = "asdfasdf"
-	this.progress = 0;
-	this.instructionsToggle = true;
+    this.progress = 0;
+    this.instructionsToggle = true;
   }
 
   onFileChange(event) {
     // console.log('change');
     if (event.target.files && event.target.files[0]) {
       let size = event.target.files[0].size / 1024 / 1024;
-		// console.log(size)
+      // console.log(size)
       if (size < this.maxFileSizeMB) {
         const file = event.target.files[0];
         this.form.get('file').setValue(file);
-	  }
-	  else{
-		  window.alert(`File over ${this.maxFileSizeMB}, cosider unzipping and deleting a bunch fo videos and pictures`)
-	  }
-	  
+      } else {
+        window.alert(
+          `File over ${this.maxFileSizeMB}, cosider unzipping and deleting a bunch fo videos and pictures`
+        );
+      }
     }
   }
 
@@ -126,7 +124,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
       const response = this.request.uploadFile(
         this.form.get('file').value,
-        this.backendUrl + ''
+        this.backendUrl + 'facebook'
       );
 
       this.uploadStatus = response.status;
@@ -148,7 +146,9 @@ export class FacebookDataAnalysisComponent implements OnInit {
         this.progressBarToggle = false;
       });
     } else {
-		window.alert(`Add a file under ${this.maxFileSizeMB} Mb before uploading`)
+      window.alert(
+        `Add a file under ${this.maxFileSizeMB} Mb before uploading`
+      );
       this.fileNeeded = false;
     }
   }
@@ -157,7 +157,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
     this.graphsToggle = false;
     this.spinner.show();
     this.data = null;
-    let req = new HttpRequest('GET', "http://localhost:8091/" + 'sample', {
+    let req = new HttpRequest('GET', 'http://localhost:8091/' + 'sample', {
       responseType: 'text',
     });
 
@@ -337,37 +337,11 @@ export class FacebookDataAnalysisComponent implements OnInit {
       };
 
       this.searchHistoryGraphsToggle = true;
-    }
-
-    if (this.data['MessageData'] != null) {
-      let totalResponse = 0;
-      let messagesThreadSize = 0;
-
-      this.data['MessageData'].MessageThreads.forEach((thread) => {
-        if (thread.averageResponse[1] < 90000000) {
-          messagesThreadSize++;
-          totalResponse += thread.averageResponse[1];
-        }
-      });
-
-    //   this.personalAverageResponseTime = totalResponse / messagesThreadSize;
-      this.personalAverageResponseTime = this.data['MessageData']['totalAverageResponseTime']['average'];
-
-      // this.personalAverageResponseTime = `${tempAverageTime.getHours()}:${tempAverageTime
-      //   .getMinutes()
-      //   .toString()}:${tempAverageTime.getSeconds().toString()}`;
-      //this.parseTime(tempTime);
-      // this.personalAverageResponseTime = tempAverageTime.toString()
-
-      this.fastestResponseToMe = this.data[
-        'MessageData'
-      ].totalAverageResponseTime['individuals'][0];
-      this.fastestResponseToThem = this.data[
-        'MessageData'
-      ].totalAverageResponseTime['individuals'][1];
-
-      this.messageGraphsToggle = true;
-    }
+	}
+	
+	if(this.data['MessageData'] != null){
+		this.messageGraphsToggle = true; 
+	}
 
     this.graphsToggle = true;
     this.spinner.hide();
@@ -397,4 +371,7 @@ export class FacebookDataAnalysisComponent implements OnInit {
   formatPercent(num: number) {
     return (num * 100).toString().slice(0, 5) + '%';
   }
+
+
+
 }

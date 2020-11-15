@@ -12,14 +12,8 @@
 	font-size: 200%;
 }
 
-.subtitle{
-	margin-top: 20px;
-	text-align: center;
-}
-
 
 .chart{
-	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
@@ -55,10 +49,24 @@
 }
 
 
-#downloadExamplePhoto {
-	margin-top: 10px;
-	margin-bottom: 20px;
-	width: 100%;
-	max-height: 100%;
+#personSelect {
+	float: right;
+	height: 50px;
+	margin-bottom: 40px;
 }
 
+.individualAnalysis {
+	margin-top: 50px;
+	padding-top: 50px;
+	border-top-style: solid;
+	border-top-color: whitesmoke;
+	border-top-width: 2px;
+}
+
+.messageHistogram {
+
+}
+
+.charts{
+	/* margin-top: 30px; */
+}

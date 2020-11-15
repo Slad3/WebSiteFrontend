@@ -133,9 +133,15 @@
   }
 
   .description {
-    visibility: hidden;
+    border-top-style: dashed;
+    border-top-width: 1px;
+	border-top-color: #888888;
+	
+	margin-top: 5px;
+	padding-top: 5px;
+    /* visibility: hidden;
     width: 0;
-    height: 0;
+    height: 0; */
   }
 
   .skillsTitle {

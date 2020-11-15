@@ -15,17 +15,17 @@ The Social media analyzer allows a user to upload their user data, and recieve b
 
 All social media analysis pages have message analysis
 
-- Message Analysis: 
+- Message Analysis: \
 With only the timestamps and type of content (aka not reading texts, that's creepy), you can analyze a lot about a conversation such as response time, double texting, sheer amount of messages per person, average messages per day, times per weekday, times per specific hour etc.
 
-#### Facebook
+#### **Facebook Analyzer**
 
-- Search History: 
+- **Search History**:\
 	Basic analysis on how many times you searched a query, and when you searched the most. It also pulls your top two most popular seraches, and graphs them on a cumulative timeline.
 
-#### Instagram
+#### **Instagram Analyzer**
 
-- Account History: 
+- **Account History**:\
 	This just diplays an easy to read table of the history of the devices your account was logged into. This includes the IP Address, timestamp, client type, and device ID.
 
 ### The Office Script Analyzer

@@ -20,12 +20,12 @@ With only the timestamps and type of content (aka not reading texts, that's cree
 
 #### **Facebook Analyzer**
 
-- **Search History**:\
+- Search History:\
 	Basic analysis on how many times you searched a query, and when you searched the most. It also pulls your top two most popular seraches, and graphs them on a cumulative timeline.
 
 #### **Instagram Analyzer**
 
-- **Account History**:\
+- Account History:\
 	This just diplays an easy to read table of the history of the devices your account was logged into. This includes the IP Address, timestamp, client type, and device ID.
 
 ### The Office Script Analyzer

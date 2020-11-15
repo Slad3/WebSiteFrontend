@@ -22,6 +22,8 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { FacebookDataAnalysisComponent } from './components/datascience/facebook-data-analysis/facebook-data-analysis.component';
 import { DatascienceHomeComponent } from './components/datascience/datascience-home/datascience-home.component';
+import { InstagramDataAnalysisComponent } from './components/datascience/instagram-data-analysis/instagram-data-analysis.component';
+import { MessagesComponent } from './components/datascience/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { DatascienceHomeComponent } from './components/datascience/datascience-h
     ExperienceComponent,
     FacebookDataAnalysisComponent,
     DatascienceHomeComponent,
+    InstagramDataAnalysisComponent,
+    MessagesComponent,
   ],
   imports: [
 	  	BrowserModule,

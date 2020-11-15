@@ -36,8 +36,8 @@ import { Timestamp } from 'rxjs/internal/operators/timestamp';
 export class InstagramDataAnalysisComponent implements OnInit {
   dev: boolean;
   data: Object;
-  // backendUrl = 'https://dev.benbarcaskey.com/instagram';
-  backendUrl = 'http://localhost:8091/instagram';
+  backendUrl = 'https://dev.benbarcaskey.com/instagram';
+//   backendUrl = 'http://localhost:8091/instagram';
   maxFileSizeMB = 200;
 
   form: FormGroup;

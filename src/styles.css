@@ -1,41 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    padding: 0px;
-    margin: 0px;
-    background-color: #2a2a2a;
-    font-family: Arial;
-    /*background-color: #cacaca;*/
-    /* background-color: rgba(52, 52, 52, 0.64);*/
-    background-image: url("assets/images/prism.png");
-	/*background-image: url("assets/images/tealGraphVisual.jpg");*/
-	scroll-behavior: smooth;
-	overflow-y: scroll;
-  }
+  padding: 0px;
+  margin: 0px;
+  background-color: #2a2a2a;
+  font-family: Arial;
+  /*background-color: #cacaca;*/
+  /* background-color: rgba(52, 52, 52, 0.64);*/
+  background-image: url("assets/images/prism.png");
+  /*background-image: url("assets/images/tealGraphVisual.jpg");*/
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
 
-  .block {
-	color: whitesmoke;
-	margin-top: 30px;
-	border-radius: 20px;
-	padding: 3%;
-  
-	border-left-style: solid;
-	border-left-width: 2px;
-	border-left-color: #f2f2f2;
-  
-	border-right-style: solid;
-	border-right-width: 2px;
-	border-right-color: #f2f2f2;
-  
-	border-bottom-style: solid;
-	border-bottom-width: 4px;
-	border-bottom-color: #0f4c75;
-  
-	background-color: rgba(28, 28, 28, 0.6);
-  }
-  
-  .title {
-    text-align: center;
-    margin-left: 0px;
-    font-size: 26px;
-    /* color: red; */
-  }
+.block {
+  color: whitesmoke;
+  margin-top: 30px;
+  border-radius: 20px;
+  padding: 3%;
+
+  border-left-style: solid;
+  border-left-width: 2px;
+  border-left-color: #f2f2f2;
+
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #f2f2f2;
+
+  border-bottom-style: solid;
+  border-bottom-width: 4px;
+  border-bottom-color: #0f4c75;
+
+  background-color: rgba(28, 28, 28, 0.6);
+}
+
+.title {
+  text-align: center;
+  margin-left: 0px;
+  font-size: 26px;
+  /* color: red; */
+}
+
+.btn-primary {
+	background-color: #0f4c75;
+	border-color: #0f4c75;
+	color: white;
+}
+
+.btn-primary:hover{
+	background-color: #0f4c75;
+	border-color: white; 
+	color: white;
+}

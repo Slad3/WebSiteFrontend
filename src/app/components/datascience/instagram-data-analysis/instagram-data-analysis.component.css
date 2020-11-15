@@ -12,14 +12,8 @@
 	font-size: 200%;
 }
 
-.subtitle{
-	margin-top: 20px;
-	text-align: center;
-}
-
 
 .chart{
-	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
@@ -60,5 +54,27 @@
 	margin-bottom: 20px;
 	width: 100%;
 	max-height: 100%;
+}
+
+#accountTable {
+	overflow: hidden;
+
+	table-layout: fixed;
+
+	text-overflow: ellipsis;
+
+}
+
+#accountTable > td {
+	padding: 10px;
+
+	border-top-style: dotted;
+	border-top-color: whitesmoke;
+	border-top-width: 1px;
+}
+
+.ipAddress {
+	max-width: 150px;
+	overflow: hidden;
 }
 

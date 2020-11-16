@@ -32,7 +32,7 @@
       <button type="submit" class="btn btn-primary" id="submit">Submit</button>
     </form>
 
-	<h4>Sample Queries</h4> 
+    <h4>Sample Queries</h4>
     <button
       *ngIf="this.dev"
       class="btn btn-secondary col-sm-4"
@@ -63,8 +63,19 @@
 </div>
 
 <div *ngIf="this.graphsToggle">
-  <div class="block">
-	  <h3 class="title"></h3>
+  <div #AllTimes class="container-fluid block">
+    <h3 class="title">
+      All Times in Series
+      <button
+        class="btn btn-secondary btn-xs col-xs-2 showButton"
+        id="allTimesButton"
+        data-toggle="collapse"
+        href="#allTimes"
+      >
+        Collapse
+      </button>
+    </h3>
+
     <table id="fullTable">
       <tr>
         <th class="season tableTitle">Season</th>

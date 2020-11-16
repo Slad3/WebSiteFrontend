@@ -108,6 +108,32 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
     }
   }
 
+
+  loadThatsWhatSheSaid() {
+
+	this.form.get('query').setValue("That's what she said")
+	this.form.get('person').setValue("")
+
+	this.onSubmitUpload();
+  }
+
+  loadTuna() {
+
+	this.form.get('query').setValue("Tuna")
+	this.form.get('person').setValue("Andy")
+
+	this.onSubmitUpload();
+  }
+
+  loadIdiot() {
+
+	this.form['query'] = "Idiot";
+	this.form.get('query').setValue("Idiot")
+	this.form.get('person').setValue("Dwight")
+
+	this.onSubmitUpload();
+  }
+
   loadGraphs() {
 
     // console.log('loading Graphs');

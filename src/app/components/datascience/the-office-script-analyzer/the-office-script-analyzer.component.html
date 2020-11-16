@@ -1,46 +1,85 @@
 <div class="">
-	<h1 class="mainTitle">The Office Quote Analysis</h1>
-  </div>
+  <h1 class="mainTitle">The Office Quote Analysis</h1>
+</div>
 
 <div id="uploadForm" class="container block">
-	<div class="contain">
-	  <form
-		[formGroup]="form"
-		(ngSubmit)="onSubmitUpload()"
-		class="form-group row"
-	  >
-		<h3 for="query">Quote: </h3>
-		<input
-		  id="query"
-		  class="form-control-file col-lg-3"
-		  type="text"
-		  name="query"
-		  aria-describedby="repoHelp"
-		  placeholder="That's What She Said"
-		  (change)="onFileChange($event)"
-		/>
-		<h3 for="person">Who: </h3>
-		<input
-		  id="person"
-		  class="form-control-file col-lg-3"
-		  type="text"
-		  name="person"
-		  aria-describedby="repoHelp"
-		  placeholder="any"
-		  (change)="onFileChange($event)"
-		/>
-		<button type="submit" class="btn btn-primary" id="submit">
-		  Submit
-		</button>
-	  </form>
-	  <!-- <button
-		*ngIf="this.dev"
-		class="btn btn-secondary btn-"
-		id="testSuccess"
-		(click)="this.loadTestSuccess()"
-	  >
-		Example Success
-	  </button> -->
-  
-	</div>
+  <div class="contain">
+    <form
+      [formGroup]="form"
+      (ngSubmit)="onSubmitUpload()"
+      class="form-group row"
+    >
+      <h3 for="query">Quote:</h3>
+      <input
+        id="query"
+        class="form-control-file col-md-3"
+        type="text"
+        name="query"
+        aria-describedby="repoHelp"
+        placeholder=""
+        (change)="onFileChange($event)"
+      />
+      <h3 for="person">Who:</h3>
+      <input
+        id="person"
+        class="form-control-file col-md-3"
+        type="text"
+        name="person"
+        aria-describedby="repoHelp"
+        placeholder=""
+        (change)="onFileChange($event)"
+      />
+      <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+    </form>
+
+	<h4>Sample Queries</h4> 
+    <button
+      *ngIf="this.dev"
+      class="btn btn-secondary col-sm-4"
+      id="testSuccess"
+      (click)="this.loadThatsWhatSheSaid()"
+    >
+      That's What She Said
+    </button>
+
+    <button
+      *ngIf="this.dev"
+      class="btn btn-secondary col-sm-4"
+      id="testSuccess"
+      (click)="this.loadTuna()"
+    >
+      Andy says Tuna
+    </button>
+
+    <button
+      *ngIf="this.dev"
+      class="btn btn-secondary col-sm-4"
+      id="testSuccess"
+      (click)="this.loadIdiot()"
+    >
+      Dwight says Idiot
+    </button>
   </div>
+</div>
+
+<div *ngIf="this.graphsToggle">
+  <div class="block">
+	  <h3 class="title"></h3>
+    <table id="fullTable">
+      <tr>
+        <th class="season tableTitle">Season</th>
+        <th class="episode tableTitle">Episode</th>
+        <th class="episodeTitle tableTitle">Episode Title</th>
+        <th class="character tableTitle">Character</th>
+        <th class="location tableTitle">Location % in Episode</th>
+      </tr>
+      <tr *ngFor="let query of this.data['Queries']">
+        <td class="season">{{ query.season }}</td>
+        <td class="episode">{{ query.episode }}</td>
+        <td class="episodeTitle">{{ query.title }}</td>
+        <td class="character">{{ query.character }}</td>
+        <td class="location">{{ query.location }}%</td>
+      </tr>
+    </table>
+  </div>
+</div>

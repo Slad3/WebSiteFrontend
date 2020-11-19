@@ -178,8 +178,6 @@ export class FacebookDataAnalysisComponent implements OnInit {
   }
 
   loadGraphs() {
-    // console.log('loading Graphs');
-    // console.log(this.data);
 
     this.instructionsToggle = false;
 

@@ -66,7 +66,8 @@ export class InstagramDataAnalysisComponent implements OnInit {
       file: [''],
     });
     if (location.host.toString() === 'localhost:4200') {
-      this.dev = true;
+	  this.dev = true;
+	  this.backendUrl = "http://localhost:8091/instagram"
     } else {
       this.dev = false;
     }

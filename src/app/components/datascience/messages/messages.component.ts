@@ -58,7 +58,6 @@ export class MessagesComponent implements OnInit {
   }
 
   loadGraphs() {
-    console.log('Messages: ', this.data);
 
     if (this.data != null) {
 
@@ -71,8 +70,8 @@ export class MessagesComponent implements OnInit {
       this.fastestResponseToMe = this.data['totalAverageResponseTime']['individuals'][0];
       this.fastestResponseToThem = this.data['totalAverageResponseTime']['individuals'][1];
 
-      this.doubleTextToMe = this.data['doubleMessaging'][0];
-      this.doubleTextToThem = this.data['doubleMessaging'][1];
+      this.doubleTextToMe = this.data['doubleMessaging'][1];
+      this.doubleTextToThem = this.data['doubleMessaging'][0];
 	  
 
 	  var topName = "";

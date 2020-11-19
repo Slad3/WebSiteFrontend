@@ -15,7 +15,6 @@ const routes: Routes = [
   { path: 'datascience', component: DatascienceHomeComponent },
   { path: 'facebook', component: FacebookDataAnalysisComponent },
   { path: 'instagram', component: InstagramDataAnalysisComponent },
-
 ];
 
 @NgModule({

@@ -36,7 +36,9 @@ import { Timestamp } from 'rxjs/internal/operators/timestamp';
 export class InstagramDataAnalysisComponent implements OnInit {
   dev: boolean;
   data: Object;
-  backendUrl = 'https://dev.benbarcaskey.com/SocialMedia/instagram';
+
+  backendUrl = 'https://dev.benbarcaskey.com/SocialMedia/';
+
   maxFileSizeMB = 200;
  
   form: FormGroup;
@@ -67,7 +69,7 @@ export class InstagramDataAnalysisComponent implements OnInit {
     });
     if (location.host.toString() === 'localhost:4200') {
 	  this.dev = true;
-	  this.backendUrl = "http://localhost:8091/instagram"
+	  this.backendUrl = "http://localhost:8091/"
     } else {
       this.dev = false;
     }
@@ -101,7 +103,7 @@ export class InstagramDataAnalysisComponent implements OnInit {
 
       const response = this.request.uploadFile(
         this.form.get('file').value,
-        this.backendUrl + ''
+        this.backendUrl + 'instagram'
       );
 
       this.uploadStatus = response.status;

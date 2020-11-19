@@ -34,7 +34,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class FacebookDataAnalysisComponent implements OnInit {
   dev: boolean;
   data: Object;
-  backendUrl = 'https://dev.benbarcaskey.com/SocialMedia/facebook';
+  backendUrl = 'https://dev.benbarcaskey.com/SocialMedia/';
+
   maxFileSizeMB = 200;
 
   form: FormGroup;

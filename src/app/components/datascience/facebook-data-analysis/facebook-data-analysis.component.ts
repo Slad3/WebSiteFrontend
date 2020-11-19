@@ -101,10 +101,8 @@ export class FacebookDataAnalysisComponent implements OnInit {
   }
 
   onFileChange(event) {
-    // console.log('change');
     if (event.target.files && event.target.files[0]) {
       let size = event.target.files[0].size / 1024 / 1024;
-      // console.log(size)
       if (size < this.maxFileSizeMB) {
         const file = event.target.files[0];
         this.form.get('file').setValue(file);
@@ -178,8 +176,6 @@ export class FacebookDataAnalysisComponent implements OnInit {
   }
 
   loadGraphs() {
-    // console.log('loading Graphs');
-    // console.log(this.data);
 
     this.instructionsToggle = false;
 

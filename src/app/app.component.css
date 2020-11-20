@@ -229,22 +229,18 @@ footer {
 	background-color: transparent;
 }
 
-/* Full Size CSS */
-@media (min-width: 1720px) {
-  header {
-    background-size: fit;
+  /* Full Size CSS */
+  @media (min-width: 1720px) {
+	header {
+	  background-size: fit;
+	}
+  
+	header > .text-block {
+	  font-size: 200%;
+	  left: 50%;
+	}
   }
-
-  header > .text-block {
-    font-size: 200%;
-    left: 50%;
-  }
-}
-
-/* Full Size CSS */
-@media (max-width: 1720px) {
-}
-
+  
 /* Full Size CSS */
 @media only screen and (max-width: 768px) {
   #body {
@@ -275,21 +271,7 @@ footer {
 	margin-bottom: 0px;
   }
   
-  /* Full Size CSS */
-  @media (min-width: 1720px) {
-	header {
-	  background-size: fit;
-	}
-  
-	header > .text-block {
-	  font-size: 200%;
-	  left: 50%;
-	}
-  }
-  
-  /* Full Size CSS */
-  @media (max-width: 1720px) {
-  }
+
 
   #quote {
     width: 90%;

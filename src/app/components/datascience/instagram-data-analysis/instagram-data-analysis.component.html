@@ -17,7 +17,7 @@
       class="form-group row"
     >
 	  <div *ngIf="fileNeeded">Please select a file before submitting.</div>
-	  <h3 for="fileUpload">Input File: </h3>
+	  <h3 class="title" for="fileUpload">Input File: </h3>
       <input
         id="fileUpload"
         class="form-control-file col-lg-5"
@@ -27,7 +27,7 @@
         placeholder="Upload Zip"
         (change)="onFileChange($event)"
       />
-      <button type="submit" class="btn btn-primary col-lg-5" id="submitFile">
+      <button type="submit" class="btn btn-primary col-lg-4" id="submitFile">
         Submit File
       </button>
     </form>

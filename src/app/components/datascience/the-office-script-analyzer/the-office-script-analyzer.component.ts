@@ -24,6 +24,7 @@ import {
 import { Observable, Subject } from 'rxjs';
 import * as Highcharts from 'highcharts';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { query } from '@angular/animations';
 
 @Component({
   selector: 'app-the-office-script-analyzer',
@@ -65,7 +66,9 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+	this.loadThatsWhatSheSaid()
+  }
 
   onFileChange(event) {
 	// console.log('change');
@@ -111,25 +114,41 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
 
   loadThatsWhatSheSaid() {
 
-	this.form.get('query').setValue("That's what she said")
-	this.form.get('person').setValue("")
+	let tempQuery = "That's what she said"
+	let tempPerson = ""
+	document.getElementById('query').value = tempQuery
+	document.getElementById('person').value = tempPerson
+
+
+	this.form.get('query').setValue(tempQuery)
+	this.form.get('person').setValue(tempPerson)
 
 	this.onSubmitUpload();
   }
 
   loadTuna() {
+	let tempQuery = "Tuna"
+	let tempPerson = "Andy"
+	document.getElementById('query').value = tempQuery
+	document.getElementById('person').value = tempPerson
 
-	this.form.get('query').setValue("Tuna")
-	this.form.get('person').setValue("Andy")
+
+	this.form.get('query').setValue(tempQuery)
+	this.form.get('person').setValue(tempPerson)
 
 	this.onSubmitUpload();
   }
 
   loadIdiot() {
 
-	this.form['query'] = "Idiot";
-	this.form.get('query').setValue("Idiot")
-	this.form.get('person').setValue("Dwight")
+	let tempQuery = "Idiot"
+	let tempPerson = "Dwight"
+	document.getElementById('query').value = tempQuery
+	document.getElementById('person').value = tempPerson
+
+
+	this.form.get('query').setValue(tempQuery)
+	this.form.get('person').setValue(tempPerson)
 
 	this.onSubmitUpload();
   }

@@ -39,7 +39,7 @@
       id="testSuccess"
       (click)="this.loadThatsWhatSheSaid()"
     >
-      That's What She Said
+     Every That's What She Said
     </button>
 
     <button
@@ -48,7 +48,7 @@
       id="testSuccess"
       (click)="this.loadTuna()"
     >
-      Andy says Tuna
+      All times Andy says Tuna
     </button>
 
     <button
@@ -57,23 +57,52 @@
       id="testSuccess"
       (click)="this.loadIdiot()"
     >
-      Dwight says Idiot
+      All times Dwight says Idiot
     </button>
   </div>
 </div>
 
 <div *ngIf="this.graphsToggle">
+
+  <div #Summary class="container-fluid block">
+    <h3 class="title">
+		Summary
+		<!-- <button
+		  class="btn btn-secondary btn-xs col-xs-2 showButton"
+		  id="allTimesButton"
+		  data-toggle="collapse"
+		  href="#allTimes"
+		>
+		  Collapse
+		</button> -->
+	  </h3>
+
+	  <h4 class="subtitle">
+		Said a total {{this.data['Times']}} times in the series
+	  </h4>
+
+	  <h4 class="subtitle">
+		Said the most by: "{{this.data['Mode']['Character']}}"
+		A total of {{this.data['Mode']['CharacterTimes']}} times
+	  </h4>
+
+	  <h4 class="subtitle">
+		Said most in the episode: {{this.data['Mode']['Mode']}}
+	  </h4>
+
+  </div>
+
   <div #AllTimes class="container-fluid block">
     <h3 class="title">
       All Times in Series
-      <button
+      <!-- <button
         class="btn btn-secondary btn-xs col-xs-2 showButton"
         id="allTimesButton"
         data-toggle="collapse"
         href="#allTimes"
       >
         Collapse
-      </button>
+      </button> -->
     </h3>
 
     <table id="fullTable">

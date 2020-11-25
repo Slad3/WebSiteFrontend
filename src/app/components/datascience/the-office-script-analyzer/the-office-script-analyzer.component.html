@@ -64,7 +64,7 @@
 <div *ngIf="this.graphsToggle">
   <div #Summary id="summary" class="container-fluid block">
     <h2 class="title">
-      Summary
+      Summary of: "{{this.query}}"
     </h2>
 
     <h4 class="subtitle">Said a total:</h4>
@@ -85,14 +85,6 @@
   <div #AllTimes class="container-fluid block">
     <h3 class="title">
       All Times in Series
-      <!-- <button
-        class="btn btn-secondary btn-xs col-xs-2 showButton"
-        id="allTimesButton"
-        data-toggle="collapse"
-        href="#allTimes"
-      >
-        Collapse
-      </button> -->
     </h3>
 
     <div class="table-responsiv">

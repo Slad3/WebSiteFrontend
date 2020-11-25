@@ -45,6 +45,9 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
   instructionsToggle = true;
   graphsToggle = false;
 
+  query = "";
+  person = "";
+
   constructor(
     private request: Request,
     private http: HttpClient,
@@ -80,7 +83,10 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
     if (this.form.get('query').value !== '' || this.form.get('person').value !== '') {
       this.graphsToggle = false;
       this.spinner.show();
-
+		this.query = this.form.get('query').value
+		if(this.query === ""){
+			this.query = "All quotes"
+		}
       const response = this.request.postQuery(
 		  this.form,
         this.backendUrl + 'TheOfficeQuery'
@@ -159,7 +165,7 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
   }
 
   loadGraphs() {
-
+	console.log(this.data)
     this.instructionsToggle = false;
 
 

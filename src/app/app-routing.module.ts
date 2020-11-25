@@ -16,7 +16,6 @@ const routes: Routes = [
   { path: 'facebook', component: FacebookDataAnalysisComponent },
   { path: 'instagram', component: InstagramDataAnalysisComponent },
   { path: 'TheOffice', component: TheOfficeScriptAnalyzerComponent },
-
 ];
 
 @NgModule({

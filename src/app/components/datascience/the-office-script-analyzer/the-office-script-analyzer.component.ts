@@ -35,7 +35,7 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
   dev: boolean;
   progress: number;
   data: Object;
-  backendUrl = 'localhost:8092';
+  backendUrl = 'https://dev.benbarcaskey.com/ScriptAnalysis/';
  
   form: FormGroup;
 
@@ -59,7 +59,7 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
 
 	if (location.host.toString() === 'localhost:4200') {
 		this.dev = true;
-		this.backendUrl = "http://localhost:8092"
+		this.backendUrl = "http://localhost:8092/"
 	  } else {
 		this.dev = false;
 	  }
@@ -71,7 +71,6 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
   }
 
   onFileChange(event) {
-	// console.log('change');
 
 	this.form.get('query').setValue(event.target.form[0].value)
 	this.form.get('person').setValue(event.target.form[1].value)
@@ -84,7 +83,7 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
 
       const response = this.request.postQuery(
 		  this.form,
-        this.backendUrl + '/OfficeQuery'
+        this.backendUrl + 'TheOfficeQuery'
       );
 
       this.uploadStatus = response.status;
@@ -106,7 +105,7 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
       });
     } else {
       window.alert(
-        `Error`
+        `Please populate at least one of the text boxes`
       );
     }
   }
@@ -116,8 +115,10 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
 
 	let tempQuery = "That's what she said"
 	let tempPerson = ""
-	document.getElementById('query').value = tempQuery
-	document.getElementById('person').value = tempPerson
+	let queryElement: HTMLInputElement = document.getElementById('query') as HTMLInputElement
+	queryElement.value = tempQuery;
+	let personElement: HTMLInputElement = document.getElementById('person') as HTMLInputElement
+	personElement.value = tempPerson;
 
 
 	this.form.get('query').setValue(tempQuery)
@@ -129,8 +130,10 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
   loadTuna() {
 	let tempQuery = "Tuna"
 	let tempPerson = "Andy"
-	document.getElementById('query').value = tempQuery
-	document.getElementById('person').value = tempPerson
+	let queryElement: HTMLInputElement = document.getElementById('query') as HTMLInputElement
+	queryElement.value = tempQuery;
+	let personElement: HTMLInputElement = document.getElementById('person') as HTMLInputElement
+	personElement.value = tempPerson;
 
 
 	this.form.get('query').setValue(tempQuery)
@@ -143,8 +146,10 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
 
 	let tempQuery = "Idiot"
 	let tempPerson = "Dwight"
-	document.getElementById('query').value = tempQuery
-	document.getElementById('person').value = tempPerson
+	let queryElement: HTMLInputElement = document.getElementById('query') as HTMLInputElement
+	queryElement.value = tempQuery;
+	let personElement: HTMLInputElement = document.getElementById('person') as HTMLInputElement
+	personElement.value = tempPerson;
 
 
 	this.form.get('query').setValue(tempQuery)
@@ -154,9 +159,6 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
   }
 
   loadGraphs() {
-
-    // console.log('loading Graphs');
-    console.log(this.data);
 
     this.instructionsToggle = false;
 

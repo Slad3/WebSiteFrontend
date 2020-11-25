@@ -1,28 +1,27 @@
-<div class="">
-  <h1 class="mainTitle">The Office Quote Analysis</h1>
-</div>
+<h1 class="mainTitle">The Office Quote Analysis</h1>
 
-<div id="uploadForm" class="container block">
+<div id="uploadForm" class="block">
   <div class="contain">
     <form
       [formGroup]="form"
       (ngSubmit)="onSubmitUpload()"
       class="form-group row"
     >
-      <h3 for="query">Quote:</h3>
+      <h3 class="textTitle" for="query">Quote:</h3>
       <input
         id="query"
-        class="form-control-file col-md-3"
+        class="textBox form-control-file col-lg-5"
         type="text"
         name="query"
         aria-describedby="repoHelp"
         placeholder=""
         (change)="onFileChange($event)"
       />
-      <h3 for="person">Who:</h3>
+      <br />
+      <h3 class="textTitle" for="person">Who:</h3>
       <input
         id="person"
-        class="form-control-file col-md-3"
+        class="textBox form-control-file col-lg-3"
         type="text"
         name="person"
         aria-describedby="repoHelp"
@@ -39,7 +38,7 @@
       id="testSuccess"
       (click)="this.loadThatsWhatSheSaid()"
     >
-     Every That's What She Said
+      Every "That's What She Said"
     </button>
 
     <button
@@ -63,33 +62,24 @@
 </div>
 
 <div *ngIf="this.graphsToggle">
+  <div #Summary id="summary" class="container-fluid block">
+    <h2 class="title">
+      Summary
+    </h2>
 
-  <div #Summary class="container-fluid block">
-    <h3 class="title">
-		Summary
-		<!-- <button
-		  class="btn btn-secondary btn-xs col-xs-2 showButton"
-		  id="allTimesButton"
-		  data-toggle="collapse"
-		  href="#allTimes"
-		>
-		  Collapse
-		</button> -->
-	  </h3>
+    <h4 class="subtitle">Said a total:</h4>
 
-	  <h4 class="subtitle">
-		Said a total {{this.data['Times']}} times in the series
-	  </h4>
+    <h2>{{ this.data["Times"] }} times</h2>
 
-	  <h4 class="subtitle">
-		Said the most by: "{{this.data['Mode']['Character']}}"
-		A total of {{this.data['Mode']['CharacterTimes']}} times
-	  </h4>
+    <h4 class="subtitle">Said the most by:</h4>
 
-	  <h4 class="subtitle">
-		Said most in the episode: {{this.data['Mode']['Mode']}}
-	  </h4>
+    <h2>
+      "{{ this.data["Mode"]["Character"] }}"
+      {{ this.data["Mode"]["CharacterTimes"] }} times
+    </h2>
 
+    <h4 class="subtitle">Said most in the episode:</h4>
+    <h2>{{ this.data["Mode"]["Mode"] }}</h2>
   </div>
 
   <div #AllTimes class="container-fluid block">
@@ -105,21 +95,21 @@
       </button> -->
     </h3>
 
-    <table id="fullTable">
-      <tr>
-        <th class="season tableTitle">Season</th>
-        <th class="episode tableTitle">Episode</th>
-        <th class="episodeTitle tableTitle">Episode Title</th>
-        <th class="character tableTitle">Character</th>
-        <th class="location tableTitle">Location % in Episode</th>
-      </tr>
-      <tr *ngFor="let query of this.data['Queries']">
-        <td class="season">{{ query.season }}</td>
-        <td class="episode">{{ query.episode }}</td>
-        <td class="episodeTitle">{{ query.title }}</td>
-        <td class="character">{{ query.character }}</td>
-        <td class="location">{{ query.location }}%</td>
-      </tr>
-    </table>
+    <div class="table-responsiv">
+      <table id="fullTable" class="table">
+        <tr>
+          <th class="season tableTitle">Episode</th>
+          <th class="episodeTitle tableTitle">Episode Title</th>
+          <th class="character tableTitle">Character</th>
+          <th class="location tableTitle">Location % in Episode</th>
+        </tr>
+        <tr *ngFor="let query of this.data['Queries']">
+          <td class="season">{{ query.season }}:{{ query.episode }}</td>
+          <td class="episodeTitle">{{ query.title }}</td>
+          <td class="character">{{ query.character }}</td>
+          <td class="location">{{ query.location }}%</td>
+        </tr>
+      </table>
+    </div>
   </div>
 </div>

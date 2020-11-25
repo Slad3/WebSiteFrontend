@@ -10,6 +10,7 @@
 	text-align: left;
 	font-weight: bold;
 	font-size: 200%;
+	padding-left: 10px;
 }
 
 
@@ -18,14 +19,14 @@
 }
 
 #submitFile {
-	margin-left: auto;
-	padding-left: 5%;
+	/* padding-left: 10px; */
 	padding-right: 5%;
 	/* float: right !important; */
 }
 
 #submitFile, #fileUpload{
-	margin: 5px;
+	/* margin-left: 10px; */
+	padding: 5px;
 }
 
 #graphs > h3 {

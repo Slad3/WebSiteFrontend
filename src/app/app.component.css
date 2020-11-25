@@ -200,15 +200,16 @@ footer {
   background-color: transparent;
 }
 
-/* Full Size CSS */
-@media (min-width: 1720px) {
-  header {
-    background-size: fit;
-  }
-
-  header > .text-block {
-    font-size: 200%;
-    left: 50%;
+  /* Full Size CSS */
+  @media (min-width: 1720px) {
+	header {
+	  background-size: fit;
+	}
+  
+	header > .text-block {
+	  font-size: 200%;
+	  left: 50%;
+	}
   }
 
   .text-block {
@@ -316,7 +317,8 @@ footer {
   }
 
   footer {
-    background-color: rgba(28, 28, 28, 0.9);
+
+ background-color: rgba(28, 28, 28, 0.9);
     width: 100%;
     padding: 10px;
     text-align: center;
@@ -327,6 +329,7 @@ footer {
     min-height: 200px;
     margin-bottom: 0px;
   }
+
 
   #quote {
     width: 90%;

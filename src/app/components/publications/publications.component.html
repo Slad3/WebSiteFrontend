@@ -1,0 +1,34 @@
+<div class="block">
+  <h1 class="title">Publications/Presentations</h1>
+  <ul *ngFor="let pub of publications" id="publicationList">
+    <li>
+
+
+      <div class="publication">
+        <h4 class="pubTitle">
+          {{ pub.title }}
+		</h4>
+		
+		
+        <div class="container-fluid">
+          <div class="row">
+            <p class="col-sm-4 conference">{{ pub.conference }}</p>
+            <p class="col-sm-4 date">{{ pub.date }}</p>
+          </div>
+		</div>
+		
+
+        <div class="container-fluid">
+          <div class="row">
+            <div *ngFor="let note of pub.notes" class="notes">
+              <p class="col-12 note">{{ note }}</p>
+            </div>
+          </div>
+        </div>
+	  </div>
+	  
+
+
+    </li>
+  </ul>
+</div>

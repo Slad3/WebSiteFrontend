@@ -1,0 +1,27 @@
+
+#publcationList{
+	list-style: none;
+}
+
+
+.publication{
+	border-top-style: solid;
+	border-top-color: whitesmoke;
+	border-top-width: 1px;
+
+	margin-top: 5px;
+	padding-top: 10px;
+
+}
+
+.date{
+	text-align: right;
+	float: top;
+	font-size: 80%;
+}
+
+
+.note{
+	font-size: 80%;
+	padding: 4px;
+}

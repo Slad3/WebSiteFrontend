@@ -7,15 +7,18 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { FacebookDataAnalysisComponent } from './components/datascience/facebook-data-analysis/facebook-data-analysis.component';
 import { DatascienceHomeComponent } from './components/datascience/datascience-home/datascience-home.component';
 import { InstagramDataAnalysisComponent } from './components/datascience/instagram-data-analysis/instagram-data-analysis.component';
+import { ProfessionalExperienceComponent } from './components/professional-experience/professional-experience.component';
+import { PublicationsComponent } from './components/publications/publications.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'blog', component: FeedComponent },
+  { path: 'professionalExperience', component: ProfessionalExperienceComponent },
+  { path: 'publications', component: PublicationsComponent },
   { path: 'experience', component: ExperienceComponent },
   { path: 'datascience', component: DatascienceHomeComponent },
   { path: 'facebook', component: FacebookDataAnalysisComponent },
   { path: 'instagram', component: InstagramDataAnalysisComponent },
-
 ];
 
 @NgModule({

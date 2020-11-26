@@ -62,7 +62,7 @@ header {
   margin-top: 0px;
   position: relative;
 
-  background-image: url("../assets/images/mainphotoCompressedMedium.jpg");
+  background-image: url("../assets/images/mainphoto.jpg");
   background-position: 45% 50% top;
   /* background-position-y: center; */
   background-repeat: no-repeat;
@@ -210,7 +210,6 @@ footer {
 	  font-size: 200%;
 	  left: 50%;
 	}
-  }
 
   .text-block {
     position: absolute;

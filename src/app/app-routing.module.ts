@@ -13,9 +13,10 @@ const routes: Routes = [
   { path: 'blog', component: FeedComponent },
   { path: 'experience', component: ExperienceComponent },
   { path: 'datascience', component: DatascienceHomeComponent },
-  { path: 'facebook', component: FacebookDataAnalysisComponent },
-  { path: 'instagram', component: InstagramDataAnalysisComponent },
-  { path: 'TheOffice', component: TheOfficeScriptAnalyzerComponent },
+  { path: 'FacebookAnalysis', component: FacebookDataAnalysisComponent },
+  { path: 'InstagramAnalysis', component: InstagramDataAnalysisComponent },
+  { path: 'TheOfficeScriptAnalysis', component: TheOfficeScriptAnalyzerComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({

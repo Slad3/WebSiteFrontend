@@ -1,3 +1,9 @@
+.showButton{
+	color: whitesmoke;
+	float: right;
+}
+
+
 #submit {
   margin-left: 8px;
 }
@@ -7,10 +13,16 @@
   padding-right: 4px;
 }
 
+#submit{
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
 .textBox {
   margin-left: 7px;
   max-width: 85vw;
 }
+
 
 #summary > h4 {
   border-top-color: whitesmoke;
@@ -88,5 +100,16 @@
 }
 
 
+@media only screen and (min-width: 769px) {
+
+	.showButton{
+		visibility: hidden;
+	}
+}
+
 @media only screen and (max-width: 768px) {
+
+	.showButton{
+
+	}
 }

@@ -3,53 +3,79 @@
 <div class="container-fluid">
   <div class="row">
     <div id="about" class="block col-md-5">
-      <h2>About/How to use</h2>
-      <p>
-        If you're ever like me and a quote from The Office pops in your head or
-        someone sends you a meme from the show, but you can't seem to place
-        where in the show it is, this is how you find that location.
-      </p>
+      <h2>
+        About/How to use
+        <button
+          class="btn btn-xs col-xs-2 showButton"
+          id="aboutButton"
+          data-toggle="collapse"
+          href="#aboutSection"
+        >
+          V
+        </button>
+      </h2>
+      <div #aboutSection id="aboutSection">
+        <p>
+          If you're ever like me and a quote from The Office pops in your head
+          or someone sends you a meme from the show, but you can't seem to place
+          where in the show it is, this is how you find that location.
+        </p>
 
-      <p>
-        You can leave either the quote or the character text field blank to get
-        either all lines said by a character, or all times a quote has been said
-        in the show regardless of character.
-      </p>
-      <p>
-        Don't worry about case or any non alpha-numeric characters when entering
-        the queries, it just freaking works.
-      </p>
+        <p>
+          You can leave either the quote or the character text field blank to
+          get either all lines said by a character, or all times a quote has
+          been said in the show regardless of character.
+        </p>
+        <p>
+          Don't worry about case or any non alpha-numeric characters when
+          entering the queries, it just freaking works.
+        </p>
+      </div>
     </div>
     <div id="uploadForm" class="block col-md-7">
-      <div class="container">
+      <h2>
+        Query
+        <button
+          class="btn btn-xs col-xs-2 showButton"
+          id="aboutButton"
+          data-toggle="collapse"
+          href="#formSection"
+        >
+          V
+        </button>
+      </h2>
+      <div #formSection id="formSection">
         <form
           [formGroup]="form"
           (ngSubmit)="onSubmitUpload()"
-          class="form-group row"
+          class="form-group"
         >
-          <h3 class="textTitle" for="query">Quote:</h3>
-          <input
-            id="query"
-            class="textBox form-control-file col-lg-5"
-            type="text"
-            name="query"
-            aria-describedby="repoHelp"
-            placeholder=""
-            (change)="onFileChange($event)"
-          />
-          <div class="">
-            <h3 class="textTitle" for="person">Who:</h3>
-            <input
-              id="person"
-              class="textBox form-control-file col-lg-3"
-              type="text"
-              name="person"
-              aria-describedby="repoHelp"
-              placeholder=""
-              (change)="onFileChange($event)"
-            />
+          <div class="container row">
+            <div class="col-lg-7">
+              <h3 class="textTitle" for="query">Quote:</h3>
+              <input
+                id="query"
+                class="textBox form-control-file"
+                type="text"
+                name="query"
+                aria-describedby="repoHelp"
+                placeholder=""
+                (change)="onFileChange($event)"
+              />
+            </div>
+            <div class="col-lg-5">
+              <h3 class="textTitle" for="person">Who:</h3>
+              <input
+                id="person"
+                class="textBox form-control-file"
+                type="text"
+                name="person"
+                aria-describedby="repoHelp"
+                placeholder=""
+                (change)="onFileChange($event)"
+              />
+            </div>
           </div>
-
           <button type="submit" class="btn btn-primary" id="submit">
             Submit
           </button>

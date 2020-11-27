@@ -424,10 +424,14 @@
     margin-right: 0px;
   }
 
-  #introTitle{
-
+  .sectionTitle{
+	  text-align: center;
 	  margin-left: auto;
+	  margin-right: auto;
   }
+
+
+
 
   #experience {
     width: 100%;
@@ -442,13 +446,12 @@
 	padding-bottom: 5%;
   }
 
-  #skills > h1 {
-    float: left;
-    margin-left: 10%;
-  }
+  #skills > h1{
+	margin-bottom: 0px;
+}
 
   #skills > #languages {
-    margin-top: 50px;
+    margin-top: 0px;
   }
 
   #skills > #languages > .list > .language {

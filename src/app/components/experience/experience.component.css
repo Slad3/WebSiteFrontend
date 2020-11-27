@@ -12,8 +12,6 @@
   animation: fadeIn 1s ease 1s forwards;
 }
 
-.carousel-item {
-}
 
 .companyImage {
   float: left;
@@ -40,27 +38,9 @@
   display: inline-block;
 }
 
-.title {
-  font-weight: bolder;
-  font-size: 27px;
-  float: top;
-  font-family: sans-serif;
-  clear: both;
-}
-
 .experienceType {
   float: right;
   font-size: 50%;
-}
-
-.mainTitle {
-  margin-left: 10px;
-  float: top;
-  margin-top: 0px;
-  font-size: 30px;
-  font-weight: bolder;
-  margin-bottom: 5px;
-  text-align: left;
 }
 
 .place {
@@ -98,7 +78,7 @@
     border-right-width: 0px;
   }
 
-  .mainTitle {
+  .sectionTitle {
     font-size: 120%;
     padding: 5px;
     border-bottom-style: solid;

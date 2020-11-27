@@ -62,7 +62,7 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
 
 	if (location.host.toString() === 'localhost:4200') {
 		this.dev = true;
-		this.backendUrl = "http://localhost:8092/"
+		// this.backendUrl = "http://localhost:8092/"
 	  } else {
 		this.dev = false;
 	  }

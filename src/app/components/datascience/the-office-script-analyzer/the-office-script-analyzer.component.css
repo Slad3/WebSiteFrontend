@@ -1,5 +1,7 @@
-#uploadForm {
-  /* width: 50%; */
+.showButton,
+.mobileButton {
+  color: whitesmoke;
+  float: right;
 }
 
 #submit {
@@ -11,12 +13,21 @@
   padding-right: 4px;
 }
 
+#submit {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
 .textBox {
   margin-left: 7px;
   max-width: 85vw;
 }
 
-#summary > h4 {
+#summary > #summaryTitle {
+  margin-bottom: 40px;
+}
+
+#summary > #summaryContent > h4 {
   border-top-color: whitesmoke;
   border-top-style: dashed;
   border-top-width: 1px;
@@ -91,6 +102,13 @@
   font-weight: bold;
 }
 
+@media only screen and (min-width: 769px) {
+  .mobileButton {
+    visibility: hidden;
+  }
+}
 
 @media only screen and (max-width: 768px) {
+  .mobileButton {
+  }
 }

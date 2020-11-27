@@ -183,20 +183,18 @@ footer {
 
 .contactList {
   color: whitesmoke;
-  list-style: none;
-  list-style-position: outside;
-}
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%
+} 
 
-.contactList > li {
-  align-self: left;
-}
-
-.contactList > li > a {
+.contactList > .row > a {
   color: whitesmoke;
 }
-
-.contactList > li > a:hover {
-  color: rgb(102, 102, 255);
+ 
+.contactList > .row >  a:hover {
+  color: rgb(196, 196, 196);
   background-color: transparent;
 }
 

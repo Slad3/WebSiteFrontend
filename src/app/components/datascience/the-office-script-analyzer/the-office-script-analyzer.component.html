@@ -1,68 +1,92 @@
 <h1 class="mainTitle">The Office Quote Analysis</h1>
 
-<div id="uploadForm" class="block">
-  <div class="contain">
-    <form
-      [formGroup]="form"
-      (ngSubmit)="onSubmitUpload()"
-      class="form-group row"
-    >
-      <h3 class="textTitle" for="query">Quote:</h3>
-      <input
-        id="query"
-        class="textBox form-control-file col-lg-5"
-        type="text"
-        name="query"
-        aria-describedby="repoHelp"
-        placeholder=""
-        (change)="onFileChange($event)"
-      />
-      <br />
-      <h3 class="textTitle" for="person">Who:</h3>
-      <input
-        id="person"
-        class="textBox form-control-file col-lg-3"
-        type="text"
-        name="person"
-        aria-describedby="repoHelp"
-        placeholder=""
-        (change)="onFileChange($event)"
-      />
-      <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-    </form>
+<div class="container-fluid">
+  <div class="row">
+    <div id="about" class="block col-md-5">
+      <h2>About/How to use</h2>
+      <p>
+        If you're ever like me and a quote from The Office pops in your head or
+        someone sends you a meme from the show, but you can't seem to place
+        where in the show it is, this is how you find that location.
+      </p>
 
-    <h4>Sample Queries</h4>
-    <button
-      class="btn btn-secondary col-sm-4"
-      id="testSuccess"
-      (click)="this.loadThatsWhatSheSaid()"
-    >
-      Every "That's What She Said"
-    </button>
+      <p>
+        You can leave either the quote or the character text field blank to get
+        either all lines said by a character, or all times a quote has been said
+        in the show regardless of character.
+      </p>
+      <p>
+        Don't worry about case or any non alpha-numeric characters when entering
+        the queries, it just freaking works.
+      </p>
+    </div>
+    <div id="uploadForm" class="block col-md-7">
+      <div class="container">
+        <form
+          [formGroup]="form"
+          (ngSubmit)="onSubmitUpload()"
+          class="form-group row"
+        >
+          <h3 class="textTitle" for="query">Quote:</h3>
+          <input
+            id="query"
+            class="textBox form-control-file col-lg-5"
+            type="text"
+            name="query"
+            aria-describedby="repoHelp"
+            placeholder=""
+            (change)="onFileChange($event)"
+          />
+          <div class="">
+            <h3 class="textTitle" for="person">Who:</h3>
+            <input
+              id="person"
+              class="textBox form-control-file col-lg-3"
+              type="text"
+              name="person"
+              aria-describedby="repoHelp"
+              placeholder=""
+              (change)="onFileChange($event)"
+            />
+          </div>
 
-    <button
-      class="btn btn-secondary col-sm-4"
-      id="testSuccess"
-      (click)="this.loadTuna()"
-    >
-      All times Andy says Tuna
-    </button>
+          <button type="submit" class="btn btn-primary" id="submit">
+            Submit
+          </button>
+        </form>
 
-    <button
-      class="btn btn-secondary col-sm-4"
-      id="testSuccess"
-      (click)="this.loadIdiot()"
-    >
-      All times Dwight says Idiot
-    </button>
+        <h4>Sample Queries</h4>
+        <button
+          class="btn btn-secondary col-sm-4"
+          id="testSuccess"
+          (click)="this.loadThatsWhatSheSaid()"
+        >
+          Every "That's What She Said"
+        </button>
+
+        <button
+          class="btn btn-secondary col-sm-4"
+          id="testSuccess"
+          (click)="this.loadTuna()"
+        >
+          All times Andy says Tuna
+        </button>
+
+        <button
+          class="btn btn-secondary col-sm-4"
+          id="testSuccess"
+          (click)="this.loadIdiot()"
+        >
+          All times Dwight says Idiot
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 
 <div *ngIf="this.graphsToggle">
   <div #Summary id="summary" class="container-fluid block">
-    <h2 class="title">
-      Summary of: "{{this.query}}"
-    </h2>
+    <h2 class="title">Summary of: "{{ this.query }}"</h2>
 
     <h4 class="subtitle">Said a total:</h4>
 
@@ -80,9 +104,7 @@
   </div>
 
   <div #AllTimes class="container-fluid block">
-    <h3 class="title">
-      All Times in Series
-    </h3>
+    <h3 class="title">All Times in Series</h3>
 
     <div class="table-responsiv">
       <table id="fullTable" class="table">

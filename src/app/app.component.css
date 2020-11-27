@@ -207,7 +207,7 @@ footer {
 	}
   
 	header > .text-block {
-	  font-size: 200%;
+	  font-size: 125%;
 	  left: 50%;
 	}
 
@@ -239,13 +239,12 @@ footer {
   }
 }
 
-/* Full Size CSS */
+/* Medium Size CSS */
+/* @media (max-width: 1720px) { */
 @media (max-width: 1720px) {
   .text-block {
     position: absolute;
     resize: both;
-    /* top: 10%;
-			  left: 45%; */
     top: 40%;
     left: 55%;
     padding: 1%;
@@ -271,7 +270,7 @@ footer {
   }
 }
 
-/* Full Size CSS */
+/* Small Size CSS */
 @media only screen and (max-width: 768px) {
   .text-block {
     position: absolute;

@@ -106,8 +106,8 @@
   display: inline-block;
   background-color: RGB(28, 28, 28, 0.6);
 
-  /* opacity: 0;
-  animation: fadeIn 1.5s ease 1.3s forwards; */
+  opacity: 0;
+  animation: fadeIn 1.5s ease 1.3s forwards;
 }
 
 #skills > .title {

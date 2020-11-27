@@ -7,7 +7,8 @@ body {
   /*background-color: #cacaca;*/
   /* background-color: rgba(52, 52, 52, 0.64);*/
   background-image: url("assets/images/prism.png");
-  /*background-image: url("assets/images/tealGraphVisual.jpg");*/
+  /* background-image: url("assets/images/tealGraphVisual.jpg"); */
+  background-attachment: fixed;
   scroll-behavior: smooth;
   overflow-y: scroll;
 

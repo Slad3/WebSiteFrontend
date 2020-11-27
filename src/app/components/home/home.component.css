@@ -4,12 +4,6 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.title {
-  font-weight: bold;
-  font-size: 30px;
-  margin-left: 50px;
-  font-family: sans-serif;
-}
 
 #intro {
   margin-bottom: 20px;
@@ -117,8 +111,7 @@
 }
 
 #skills > .title {
-  margin-bottom: 0px;
-  float: top;
+
 }
 
 #skills > #languages > h3 {
@@ -272,9 +265,11 @@
 
 #FAQ {
 	position: relative;
-  /* background-color: rgba(245, 245, 245, 0.5);
-  color: black; */
 }
+
+#FAQ > .sectionTitle {
+	margin-bottom: 20px;
+} 
 
 #FAQ > ul {
   list-style: none;

@@ -6,7 +6,7 @@
       <h2>
         About/How to use
         <button
-          class="btn btn-xs col-xs-2 showButton"
+          class="btn btn-xs col-xs-2 mobileButton"
           id="aboutButton"
           data-toggle="collapse"
           href="#aboutSection"
@@ -36,7 +36,7 @@
       <h2>
         Query
         <button
-          class="btn btn-xs col-xs-2 showButton"
+          class="btn btn-xs col-xs-2 mobileButton"
           id="aboutButton"
           data-toggle="collapse"
           href="#formSection"
@@ -110,27 +110,51 @@
   </div>
 </div>
 
+<div *ngIf="!this.graphsToggle">
+  <h2>Loading...</h2>
+</div>
+
 <div *ngIf="this.graphsToggle">
   <div #Summary id="summary" class="container-fluid block">
-    <h2 class="title">Summary of: "{{ this.query }}"</h2>
-
-    <h4 class="subtitle">Said a total:</h4>
-
-    <h2>{{ this.data["Times"] }} times</h2>
-
-    <h4 class="subtitle">Said the most by:</h4>
-
-    <h2>
-      "{{ this.data["Mode"]["Character"] }}"
-      {{ this.data["Mode"]["CharacterTimes"] }} times
+    <h2 id="summaryTitle" class="sectionTitle">
+      Summary of: "{{ this.query }}"
+      <button
+        class="btn btn-xs col-xs-2 showButton"
+        id="summaryButton"
+        data-toggle="collapse"
+        href="#summaryContent"
+      >
+        V
+      </button>
     </h2>
+    <div id="summaryContent">
+      <h4 class="subtitle">Said a total:</h4>
 
-    <h4 class="subtitle">Said most in the episode:</h4>
-    <h2>{{ this.data["Mode"]["Mode"] }}</h2>
+      <h2>{{ this.data["Times"] }} times</h2>
+
+      <h4 class="subtitle">Said the most by:</h4>
+
+      <h2>
+        "{{ this.data["Mode"]["Character"] }}"
+        {{ this.data["Mode"]["CharacterTimes"] }} times
+      </h2>
+
+      <h4 class="subtitle">Said most in the episode:</h4>
+      <h2>{{ this.data["Mode"]["Mode"] }}</h2>
+    </div>
   </div>
 
   <div #AllTimes class="container-fluid block">
-    <h3 class="title">All Times in Series</h3>
+    <h3 class="sectionTitle">All Times in Series
+		<button
+        class="btn btn-xs col-xs-2 showButton"
+        id="fullTableButton"
+        data-toggle="collapse"
+        href="#fullTable"
+      >
+        V
+      </button>
+	</h3>
 
     <div class="table-responsiv">
       <table id="fullTable" class="table">

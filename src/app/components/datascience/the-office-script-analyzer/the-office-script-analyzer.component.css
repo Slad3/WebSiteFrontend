@@ -1,8 +1,8 @@
-.showButton{
-	color: whitesmoke;
-	float: right;
+.showButton,
+.mobileButton {
+  color: whitesmoke;
+  float: right;
 }
-
 
 #submit {
   margin-left: 8px;
@@ -13,9 +13,9 @@
   padding-right: 4px;
 }
 
-#submit{
-	margin-top: 10px;
-	margin-left: 20px;
+#submit {
+  margin-top: 10px;
+  margin-left: 20px;
 }
 
 .textBox {
@@ -23,8 +23,11 @@
   max-width: 85vw;
 }
 
+#summary > #summaryTitle {
+  margin-bottom: 40px;
+}
 
-#summary > h4 {
+#summary > #summaryContent > h4 {
   border-top-color: whitesmoke;
   border-top-style: dashed;
   border-top-width: 1px;
@@ -99,17 +102,13 @@
   font-weight: bold;
 }
 
-
 @media only screen and (min-width: 769px) {
-
-	.showButton{
-		visibility: hidden;
-	}
+  .mobileButton {
+    visibility: hidden;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-
-	.showButton{
-
-	}
+  .mobileButton {
+  }
 }

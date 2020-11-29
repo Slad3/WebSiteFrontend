@@ -1,8 +1,4 @@
-.showButton,
-.mobileButton {
-  color: whitesmoke;
-  float: right;
-}
+
 
 #submit {
   margin-left: 8px;
@@ -102,11 +98,7 @@
   font-weight: bold;
 }
 
-@media only screen and (min-width: 769px) {
-  .mobileButton {
-    visibility: hidden;
-  }
-}
+
 
 @media only screen and (max-width: 768px) {
   .mobileButton {

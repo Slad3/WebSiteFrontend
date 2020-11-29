@@ -79,3 +79,28 @@
 	overflow: hidden;
 }
 
+
+#content{
+	width: calc(100% - 60px);
+	margin-left: 50px;
+	margin-right: auto;
+}
+
+#left{
+	float: left;
+	position: fixed;
+}
+
+#left > ul {
+	list-style: none;
+}
+
+#left > ul > li{
+	margin-top: 50px;
+
+	font-size: 90%;
+
+	left: 0;
+	width: 40px;
+	transform: rotate(90deg);
+}

@@ -114,7 +114,6 @@ export class MessagesComponent implements OnInit {
   onPersonSelected(value) {
 
     this.data['MessageThreads'].forEach((element) => {
-		console.log("here");
       if (element.to === value) {
         this.personData = element;
         return;

@@ -21,7 +21,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
-import { ThrowStmt, NONE_TYPE } from '@angular/compiler';
+import { ThrowStmt, NONE_TYPE, ConstantPool } from '@angular/compiler';
 
 import * as Highcharts from 'highcharts';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -40,7 +40,7 @@ export class InstagramDataAnalysisComponent implements OnInit {
   backendUrl = 'https://dev.benbarcaskey.com/SocialMedia/';
 
   maxFileSizeMB = 200;
- 
+
   form: FormGroup;
   uploadStatus: Observable<number>;
 
@@ -53,6 +53,8 @@ export class InstagramDataAnalysisComponent implements OnInit {
 
   messageGraphsToggle = false;
   accountHistoryToggle = false;
+  fileErrorToggle = false;
+  emptyResultToggle = false;
 
   progress: number;
 
@@ -68,8 +70,8 @@ export class InstagramDataAnalysisComponent implements OnInit {
       file: [''],
     });
     if (location.host.toString() === 'localhost:4200') {
-	  this.dev = true;
-	  this.backendUrl = "http://localhost:8091/"
+      this.dev = true;
+      this.backendUrl = 'http://localhost:8091/';
     } else {
       this.dev = false;
     }
@@ -77,7 +79,9 @@ export class InstagramDataAnalysisComponent implements OnInit {
     this.instructionsToggle = true;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+	  this.loadTestSuccess()
+  }
 
   onFileChange(event) {
     // console.log('change');
@@ -157,21 +161,23 @@ export class InstagramDataAnalysisComponent implements OnInit {
   }
 
   loadGraphs() {
-    // console.log('loading Graphs');
-    // console.log(this.data);
-
     this.instructionsToggle = false;
 
+	console.log(this.data)
     if (this.data['MessageData'] != null) {
       this.messageGraphsToggle = true;
-    }
+      this.fileErrorToggle = false;
+	}
 
-    if (this.data['AccountHistory'] != null) {
+	if (this.data['AccountHistory'] != null) {
       this.accountHistory = this.data['AccountHistory'];
       this.accountHistoryToggle = true;
-    }
+      this.fileErrorToggle = false;
+	} 
+
 
     this.graphsToggle = true;
+
     this.spinner.hide();
   }
 }

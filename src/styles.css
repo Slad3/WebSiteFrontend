@@ -54,6 +54,7 @@ body {
 }
 
 
+
 .btn-primary {
 	background-color: #0f4c75;
 	border-color: #0f4c75;
@@ -65,3 +66,22 @@ body {
 	border-color: white; 
 	color: white;
 }
+
+.showButton,
+.mobileButton {
+  color: whitesmoke;
+  float: right;
+}
+
+.showButton:hover,
+.mobileButton:hover{
+	color: gray;
+}
+
+
+
+@media only screen and (min-width: 769px) {
+	.mobileButton {
+	  visibility: hidden;
+	}
+  }

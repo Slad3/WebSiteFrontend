@@ -111,7 +111,6 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
 		}
 	  });
 	
-    // this.loadThatsWhatSheSaid();
   }
 
   onFileChange(event) {

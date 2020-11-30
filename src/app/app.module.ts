@@ -25,6 +25,7 @@ import { DatascienceHomeComponent } from './components/datascience/datascience-h
 import { InstagramDataAnalysisComponent } from './components/datascience/instagram-data-analysis/instagram-data-analysis.component';
 import { MessagesComponent } from './components/datascience/messages/messages.component';
 import { TheOfficeScriptAnalyzerComponent } from './components/datascience/the-office-script-analyzer/the-office-script-analyzer.component';
+import { ProjectComponent } from './components/project/project.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { TheOfficeScriptAnalyzerComponent } from './components/datascience/the-o
     InstagramDataAnalysisComponent,
     MessagesComponent,
     TheOfficeScriptAnalyzerComponent,
+    ProjectComponent,
   ],
   imports: [
 	  	BrowserModule,

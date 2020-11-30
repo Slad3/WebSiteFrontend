@@ -1,34 +1,3 @@
-.mainTitle{
-
-	text-align: center;
-	/* margin-left: 20%; */
-	font-weight: bold;
-}
-
-#submitFile {
-	margin-left: auto;
-	padding-left: 5%;
-	padding-right: 5%;
-	/* float: right !important; */
-}
-
-#submitFile, #fileUpload{
-	margin: 5px;
-}
-
-
-
-
-.title {
-	text-align: left;
-	font-weight: bold;
-	font-size: 200%;
-}
-
-.subtitle{
-	margin-top: 20px;
-	text-align: center;
-}
 
 
 .chart{
@@ -45,15 +14,6 @@
 	border-style: dotted;
 	border-color: whitesmoke;
 	border-width: 1px;
-}
-
-.sectionData {
-	padding: 1%;
-}
-
-
-.showButton{
-	float: right;
 }
 
 

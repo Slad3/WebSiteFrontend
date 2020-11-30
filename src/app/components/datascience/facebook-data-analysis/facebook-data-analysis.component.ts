@@ -29,7 +29,10 @@ import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-facebook-data-analysis',
   templateUrl: './facebook-data-analysis.component.html',
-  styleUrls: ['./facebook-data-analysis.component.css'],
+  styleUrls: [
+    './facebook-data-analysis.component.css',
+    '../../../stylesheets/DataAnalysis.css',
+  ],
 })
 export class FacebookDataAnalysisComponent implements OnInit {
   dev: boolean;
@@ -53,7 +56,6 @@ export class FacebookDataAnalysisComponent implements OnInit {
 
   progress: number;
 
-
   constructor(
     private request: Request,
     private http: HttpClient,
@@ -71,7 +73,6 @@ export class FacebookDataAnalysisComponent implements OnInit {
     }
 
     this.instructionsToggle = true;
-
   }
 
   // Graphs and Charts
@@ -91,8 +92,6 @@ export class FacebookDataAnalysisComponent implements OnInit {
   chart4: typeof Highcharts;
   chart4Options: Highcharts.Options;
   chart4NotFound: string[];
-
-
 
   ngOnInit(): void {
     // this.progressbar =  document.getElementById('progressbar')
@@ -177,7 +176,6 @@ export class FacebookDataAnalysisComponent implements OnInit {
   }
 
   loadGraphs() {
-
     this.instructionsToggle = false;
 
     if (this.data['SearchHistory'] != null) {
@@ -334,11 +332,11 @@ export class FacebookDataAnalysisComponent implements OnInit {
       };
 
       this.searchHistoryGraphsToggle = true;
-	}
-	
-	if(this.data['MessageData'] != null){
-		this.messageGraphsToggle = true; 
-	}
+    }
+
+    if (this.data['MessageData'] != null) {
+      this.messageGraphsToggle = true;
+    }
 
     this.graphsToggle = true;
     this.spinner.hide();
@@ -368,7 +366,4 @@ export class FacebookDataAnalysisComponent implements OnInit {
   formatPercent(num: number) {
     return (num * 100).toString().slice(0, 5) + '%';
   }
-
-
-
 }

@@ -1,7 +1,1 @@
-- Make main image not conform to height of screen
-	- Use javascript to access the css
-- Mobile site menu
-- Add pretty icons to the languages titles
-- Get professional email account
-- Figure out loading JSON in typescript
-- 
+ 

@@ -115,7 +115,6 @@
 </div>
 
 <div id="graphs" *ngIf="this.graphsToggle">
-  <!-- <h3 class="title">Graphs</h3> -->
 
   <div *ngIf="this.messageGraphsToggle" >
 	<app-messages [data]="this.data['MessageData']"></app-messages>
@@ -126,7 +125,7 @@
     *ngIf="this.searchHistoryGraphsToggle"
     class="container-fluid block"
   >
-    <h3 class="title sectionData">
+    <h3 class="sectionTitle">
       Search History Analysis
       <button
         class="btn btn-secondary btn-xs col-xs-2 showButton"

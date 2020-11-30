@@ -12,12 +12,11 @@
 }
 
 #introText {
-  /* background-color: #cacaca; */
+
+
+  /* margin-left: 0%; */
+
   opacity: 0;
-  color: whitesmoke;
-  /* float: left;
-  align-self: center; */
-  margin-left: 0%;
   animation: fadeIn 2s ease 0.3s forwards;
 }
 
@@ -46,8 +45,7 @@
 
 .introPara {
   text-indent: initial;
-  width: 90%;
-  padding-left: 5%;
+  padding-left: 2%;
   line-height: 1.5;
   font-size: large;
 }

@@ -31,7 +31,10 @@ import { Timestamp } from 'rxjs/internal/operators/timestamp';
 @Component({
   selector: 'app-instagram-data-analysis',
   templateUrl: './instagram-data-analysis.component.html',
-  styleUrls: ['./instagram-data-analysis.component.css'],
+  styleUrls: [
+    './instagram-data-analysis.component.css',
+    '../../../stylesheets/DataAnalysis.css',
+  ],
 })
 export class InstagramDataAnalysisComponent implements OnInit {
   dev: boolean;
@@ -80,7 +83,7 @@ export class InstagramDataAnalysisComponent implements OnInit {
   }
 
   ngOnInit(): void {
-	  this.loadTestSuccess()
+    this.loadTestSuccess();
   }
 
   onFileChange(event) {
@@ -163,18 +166,17 @@ export class InstagramDataAnalysisComponent implements OnInit {
   loadGraphs() {
     this.instructionsToggle = false;
 
-	console.log(this.data)
+    console.log(this.data);
     if (this.data['MessageData'] != null) {
       this.messageGraphsToggle = true;
       this.fileErrorToggle = false;
-	}
+    }
 
-	if (this.data['AccountHistory'] != null) {
+    if (this.data['AccountHistory'] != null) {
       this.accountHistory = this.data['AccountHistory'];
       this.accountHistoryToggle = true;
       this.fileErrorToggle = false;
-	} 
-
+    }
 
     this.graphsToggle = true;
 

@@ -1,24 +1,34 @@
-
 <div id="home">
   <div id="intro" class="container-fluid fade-in">
     <div class="row">
-      <div class="block col-md-9 col-sm-12 " id="introText">
-        <h1 id="introTitle" class="sectionTitle">About This Site and About Me</h1>
+      <div class="block col-md-9 col-sm-12" id="introText">
+        <h1 id="introTitle" class="sectionTitle">
+          About This Site and About Me
+        </h1>
 
         <p class="introPara">
           The main goal of this project is to provide public visuals for some of
-          the side projects and data science that I like to do. Some of my datascience projects are open source, especially the ones that require users to upload personal data.
+          the side projects and data science that I like to do. Some of my
+          datascience projects are open source, especially the ones that require
+          users to upload personal data.
         </p>
 
         <p class="introPara">
-          Everyone needs have a personal pet project where you can always positively outlet your emotions toward, and this is mine. Also it seems like every developer has a personal website now days so
-          what the heck.
+          Everyone needs have a personal pet project where you can always
+          positively outlet your emotions toward, and this is mine. Also it
+          seems like every developer has a personal website now days so what the
+          heck.
         </p>
 
+        <p class="introPara">
+          Check out the
+          <a [routerLink]="'/datascience'">Data Science tab</a>
+          for the more interesting projects.
+        </p>
       </div>
       <div class="d-md-block d-none col-md-3 col-sm-0 center-image">
-		<img
-			class= ""
+        <img
+          class=""
           id="profilePhoto"
           src="../../../assets/images/profileCroppedDelaneyEdit.jpg"
           alt="What did I ever do to make you treat me so disrespectfully"
@@ -30,7 +40,6 @@
   <app-experience #experience id="experience"></app-experience>
   <br />
 
-
   <div #Skills id="skills" class="block">
     <h1 class="sectionTitle">Skills</h1>
     <div class="" id="languages">
@@ -41,8 +50,8 @@
             <h4>Python</h4>
           </div>
           <ul>
-			<li>Flask Microframework</li>
-			<li>NumPy</li>
+            <li>Flask Microframework</li>
+            <li>NumPy</li>
             <li>Pandas</li>
             <li>OpenCV</li>
             <li>MatPlotLib</li>
@@ -56,20 +65,20 @@
           </div>
           <ul>
             <li>DOM & Stax XML Parsing</li>
-			<li>Jooby Microframework</li>
-			<li>Maven & Gradle</li> 
+            <li>Jooby Microframework</li>
+            <li>Maven & Gradle</li>
             <li>Android Development</li>
-			<li>JSON Parsing</li>
-			<li>Java FX</li>
+            <li>JSON Parsing</li>
+            <li>Java FX</li>
           </ul>
         </li>
-        <li class="language " id="linux">
+        <li class="language" id="linux">
           <div class="languageTitle">
             <img class="icon" src="../../assets/icons/linuxIcon.png" />
             <h4>Linux</h4>
           </div>
           <ul>
-			<li>Debian and Fedora</li>
+            <li>Debian and Fedora</li>
             <li>GUI and terminal/SSH</li>
             <li>Apache & Nginx http Server</li>
             <li>Bash Scripting</li>
@@ -84,9 +93,9 @@
     <div class="panel">
       <h3 id="otherCSSkillsTitle">Technical Skills</h3>
       <ul class="list" id="otherCSSkills">
-		<li>TypeScript</li>
-		<li>HTML/CSS/Javascript</li>
-		<li>Angular</li>
+        <li>TypeScript</li>
+        <li>HTML/CSS/Javascript</li>
+        <li>Angular</li>
         <li>Audio Production/Manipulation</li>
         <li>C/C++</li>
         <li>Git</li>
@@ -117,7 +126,7 @@
       </div>
     </div>
   </div>
- 
+
   <div id="FAQ" class="block">
     <h1 class="sectionTitle">FAQ</h1>
     <ul id="FAQList">
@@ -188,8 +197,8 @@
             </li>
           </ul>
         </div>
-	  </li>
-	  <!-- <li>
+      </li>
+      <!-- <li>
         <button class="accordion">Are Macs good for development?</button>
         <div class="answer">
           <p>
@@ -238,5 +247,4 @@
 	  </li>
 	</ul>
   </div> -->
-
 </div>

@@ -24,8 +24,12 @@ import { FacebookDataAnalysisComponent } from './components/datascience/facebook
 import { DatascienceHomeComponent } from './components/datascience/datascience-home/datascience-home.component';
 import { InstagramDataAnalysisComponent } from './components/datascience/instagram-data-analysis/instagram-data-analysis.component';
 import { MessagesComponent } from './components/datascience/messages/messages.component';
+
 import { ProfessionalExperienceComponent } from './components/professional-experience/professional-experience.component';
 import { PublicationsComponent } from './components/publications/publications.component';
+
+import { TheOfficeScriptAnalyzerComponent } from './components/datascience/the-office-script-analyzer/the-office-script-analyzer.component';
+import { ProjectComponent } from './components/project/project.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +48,8 @@ import { PublicationsComponent } from './components/publications/publications.co
     MessagesComponent,
     ProfessionalExperienceComponent,
     PublicationsComponent,
+    TheOfficeScriptAnalyzerComponent,
+    ProjectComponent,
   ],
   imports: [
 	  	BrowserModule,

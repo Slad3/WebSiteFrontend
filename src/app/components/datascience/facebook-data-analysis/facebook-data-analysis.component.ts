@@ -29,12 +29,16 @@ import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-facebook-data-analysis',
   templateUrl: './facebook-data-analysis.component.html',
-  styleUrls: ['./facebook-data-analysis.component.css'],
+  styleUrls: [
+    './facebook-data-analysis.component.css',
+    '../../../stylesheets/DataAnalysis.css',
+  ],
 })
 export class FacebookDataAnalysisComponent implements OnInit {
   dev: boolean;
   data: Object;
-  backendUrl = 'https://dev.benbarcaskey.com/facebook';
+  backendUrl = 'https://dev.benbarcaskey.com/SocialMedia/';
+
   maxFileSizeMB = 200;
 
   form: FormGroup;
@@ -51,7 +55,6 @@ export class FacebookDataAnalysisComponent implements OnInit {
   searchHistoryGraphsToggle = false;
 
   progress: number;
-
 
   constructor(
     private request: Request,
@@ -70,7 +73,6 @@ export class FacebookDataAnalysisComponent implements OnInit {
     }
 
     this.instructionsToggle = true;
-
   }
 
   // Graphs and Charts
@@ -91,8 +93,6 @@ export class FacebookDataAnalysisComponent implements OnInit {
   chart4Options: Highcharts.Options;
   chart4NotFound: string[];
 
-
-
   ngOnInit(): void {
     // this.progressbar =  document.getElementById('progressbar')
     // this.progressbar.innerHTML = "asdfasdf"
@@ -101,10 +101,8 @@ export class FacebookDataAnalysisComponent implements OnInit {
   }
 
   onFileChange(event) {
-    // console.log('change');
     if (event.target.files && event.target.files[0]) {
       let size = event.target.files[0].size / 1024 / 1024;
-      // console.log(size)
       if (size < this.maxFileSizeMB) {
         const file = event.target.files[0];
         this.form.get('file').setValue(file);
@@ -178,9 +176,6 @@ export class FacebookDataAnalysisComponent implements OnInit {
   }
 
   loadGraphs() {
-    // console.log('loading Graphs');
-    // console.log(this.data);
-
     this.instructionsToggle = false;
 
     if (this.data['SearchHistory'] != null) {
@@ -337,11 +332,11 @@ export class FacebookDataAnalysisComponent implements OnInit {
       };
 
       this.searchHistoryGraphsToggle = true;
-	}
-	
-	if(this.data['MessageData'] != null){
-		this.messageGraphsToggle = true; 
-	}
+    }
+
+    if (this.data['MessageData'] != null) {
+      this.messageGraphsToggle = true;
+    }
 
     this.graphsToggle = true;
     this.spinner.hide();
@@ -371,7 +366,4 @@ export class FacebookDataAnalysisComponent implements OnInit {
   formatPercent(num: number) {
     return (num * 100).toString().slice(0, 5) + '%';
   }
-
-
-
 }

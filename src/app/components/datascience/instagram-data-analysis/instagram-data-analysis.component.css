@@ -10,6 +10,7 @@
 	text-align: left;
 	font-weight: bold;
 	font-size: 200%;
+	padding-left: 10px;
 }
 
 
@@ -17,44 +18,11 @@
 	margin-bottom: 10px;
 }
 
-#submitFile {
-	margin-left: auto;
-	padding-left: 5%;
-	padding-right: 5%;
-	/* float: right !important; */
-}
-
-#submitFile, #fileUpload{
-	margin: 5px;
-}
 
 #graphs > h3 {
 	margin-top: 20px;
 }
 
-.chunk {
-	margin: 0;
-	border-style: dotted;
-	border-color: whitesmoke;
-	border-width: 1px;
-}
-
-.sectionData {
-	padding: 1%;
-}
-
-
-.showButton{
-	float: right;
-}
-
-
-#downloadExamplePhoto {
-	margin-top: 10px;
-	margin-bottom: 20px;
-	width: 100%;
-	max-height: 100%;
-}
 
 #accountTable {
 	overflow: hidden;
@@ -78,3 +46,28 @@
 	overflow: hidden;
 }
 
+
+#content{
+	/* width: calc(100% - 60px); */
+	/* margin-left: 50px; */
+	/* margin-right: auto; */
+}
+
+#left{
+	float: left;
+	position: fixed;
+}
+
+#left > ul {
+	list-style: none;
+}
+
+#left > ul > li{
+	margin-top: 50px;
+
+	font-size: 90%;
+
+	left: 0;
+	width: 40px;
+	transform: rotate(90deg);
+}

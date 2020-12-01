@@ -6,28 +6,26 @@
 </header>
 
 <nav id="navbar">
+
   <li><a class="left" [routerLink]="'/'">Home</a></li>
   <li><a class="left" [routerLink]="'/professionalExperience'">Experience</a></li>
   <li><a class="left" [routerLink]="'/publications'">Publications</a></li>
-
-  <!-- <li><a class="left" [routerLink]="'/blog'">Blog</a></li> -->
-  <!-- <li><a class="left" [routerLink]="'/projects'">Projects</a></li> -->
+  <li><a class="left item" [routerLink]="'/projects'">Projects</a></li>
   <li>
-    <a class="left" [routerLink]="'/datascience'">Data Science</a>
+    <a class="left item" [routerLink]="'/datascience'">Data Science Projects</a>
   </li>
-
   <li>
-    <a id="icon" href="mailto:benbarcaskey@gmail.com"
+    <a class="icon item" target="_blank" href="mailto:benbarcaskey@gmail.com"
       ><img class="iconImage" src="./assets/images/email.png"
     /></a>
-  </li>
+  </li> 
   <li>
-    <a id="icon" href="https://www.linkedin.com/in/ben-barcaskey/"
-      ><img class="iconImage" src="./assets/images/linkedin.png"
+    <a class="icon item" target="_blank" href="https://www.linkedin.com/in/ben-barcaskey/"
+      ><img class="iconImage"  src="./assets/images/linkedin.png"
     /></a>
   </li>
   <li>
-    <a id="icon" href="https://github.com/Slad3"
+    <a class="icon item"target="_blank" href="https://github.com/Slad3"
       ><img class="iconImage" src="./assets/images/github.png"
     /></a>
   </li>
@@ -43,7 +41,7 @@
     <a href="https://www.linkedin.com/benbarcaskey">
       <img src="./assets/images/linkedin.png" class="" />
     </a>
-  </div>
+  </div> 
 </div> -->
 
 <div #body id="body">
@@ -54,19 +52,17 @@
     <router-outlet></router-outlet>
   </div>
   <footer>
-    <!-- <div class="footerLinks">
-      <ul class="contactList">
-        <h4>Contact</h4>
-        <li>
-          <a href="mailto:benbarcaskey@gmail.com">Email</a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/ben-barcaskey/"
-            >LinkedIn</a
-          >
-        </li>
-        <li></li>
-      </ul>
-    </div> -->
+    <div class="footerLinks">
+      <div class="contactList container=fluid">
+        <h4>Contact Me</h4>
+        <div class="row">
+
+		  <a class="col-sm-6"target="_blank" href="mailto:benbarcaskey@gmail.com">Email</a>
+		  
+          <a class="col-sm-6" href="https://www.linkedin.com/in/ben-barcaskey/">LinkedIn</a>
+        </div>
+
+      </div>
+    </div>
   </footer>
 </div>

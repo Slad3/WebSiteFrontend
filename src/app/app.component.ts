@@ -67,4 +67,21 @@ export class AppComponent implements OnInit {
       }
     );
   }
+
+  mobileNav(){
+	var x = document.getElementById("navItems");
+	if (x.classList.contains("hide")){
+		console.log("collapse")
+		x.classList.remove("hide");
+	}
+	else{
+		console.log("expand")
+		x.classList.add("hide");
+	}
+
+  }
+
+
+
+
 }

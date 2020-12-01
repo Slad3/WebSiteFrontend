@@ -57,8 +57,19 @@
 </div>
 
 <div id="instructions" class="block" *ngIf="this.instructionsToggle">
-  <h2>Instructions for Downloading Your Data</h2>
+  <h2 class="sectionTitle">
+	  Instructions for Downloading Your Data
+	  <button
+	  class="btn btn-xs col-xs-2 showButton"
+	  id=""
+	  data-toggle="collapse"
+	  href="#instructionsSection"
+	>
+	  V
+	</button>
+	</h2>
 
+	<div id="instructionsSection">
   <a href="https://www.facebook.com/dyi/?referrer=ayi" target="_blank">
     <h4 style="font-weight: bold; text-align: center">
       Access your Facebook data at here.
@@ -100,10 +111,10 @@
     sources.<br />TLDU: I don't want your data, nor do I want to send your data
     to someone. That's creepy.
   </h4>
+  </div>
 </div>
 
 <div id="graphs" *ngIf="this.graphsToggle">
-  <!-- <h3 class="title">Graphs</h3> -->
 
   <div *ngIf="this.messageGraphsToggle" >
 	<app-messages [data]="this.data['MessageData']"></app-messages>
@@ -114,7 +125,7 @@
     *ngIf="this.searchHistoryGraphsToggle"
     class="container-fluid block"
   >
-    <h3 class="title sectionData">
+    <h3 class="sectionTitle">
       Search History Analysis
       <button
         class="btn btn-secondary btn-xs col-xs-2 showButton"

@@ -8,8 +8,7 @@ import {
 import { Observable, throwError, Subject } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
-import {Injectable} from '@angular/core';
-
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class Request {
@@ -20,47 +19,68 @@ export class Request {
       responseType: 'text',
     });
 
+    const progress = new Subject<number>();
+    const response = new Subject<any>();
 
-    const result =
-      new Promise((resolve, reject) =>
-        this.http.request(req).subscribe(
-          (event) => {
-            if (event instanceof HttpResponse) {
-              console.log('here');
-              resolve(event.body);
-            }
-          },
-          (error) => {
-            console.log('Error', error);
-            reject('Error');
-          }
-        )
-      );
-
-    return result.then((res) => {
-        return res;
-    })
-  }
-
-  post(url) {
-    const req = new HttpRequest('POST', url, {
-      responseType: 'text',
-    });
-
-    return this.http.request(req).subscribe(
+    this.http.request(req).subscribe(
       (event) => {
-        if (event instanceof HttpResponse) {
-          return event.body;
+        if (event.type === HttpEventType.UploadProgress) {
+          // calculate the progress percentage
+          // pass the percentage into the progress-stream
+        } else if (event instanceof HttpResponse) {
+          // Close the progress-stream if we get an answer form the API
+          progress.complete();
+          response.next(event.body);
+          response.complete();
         }
       },
       (error) => {
-        console.log('Error', error);
-        return 'Error';
+        progress.complete();
+        response.next(
+          '<?xml version="1.0"?><error>The server responded with an error.</error>'
+        );
+        response.complete();
       }
     );
+    // return the map of progress.observables
+    return { status: progress.asObservable(), file: response.asObservable() };
   }
 
-  
+  postQuery(form, url: string) {
+    const formData: FormData = new FormData();
+    formData.append('query', form.get('query').value);
+    formData.append('person', form.get('person').value);
+
+    const req = new HttpRequest('POST', url, formData, {
+      responseType: 'text',
+    });
+    const progress = new Subject<number>();
+    const response = new Subject<any>();
+
+    this.http.request(req).subscribe(
+      (event) => {
+        if (event.type === HttpEventType.UploadProgress) {
+          // calculate the progress percentage
+          // pass the percentage into the progress-stream
+        } else if (event instanceof HttpResponse) {
+          // Close the progress-stream if we get an answer form the API
+          progress.complete();
+          response.next(event.body);
+          response.complete();
+        }
+      },
+      (error) => {
+        progress.complete();
+        response.next(
+          '<?xml version="1.0"?><error>The server responded with an error.</error>'
+        );
+        response.complete();
+      }
+    );
+    // return the map of progress.observables
+    return { status: progress.asObservable(), file: response.asObservable() };
+  }
+
   uploadFile(
     file: File,
     url
@@ -93,7 +113,7 @@ export class Request {
           // Close the progress-stream if we get an answer form the API
           progress.complete();
           response.next(event.body);
-		  response.complete();
+          response.complete();
         }
       },
       (error) => {

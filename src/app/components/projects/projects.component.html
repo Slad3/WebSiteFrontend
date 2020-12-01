@@ -1,1 +1,18 @@
-<h1>This is where I will provide a list of done or in progress progress with description, a bunch of useful images, and most likely a github link.  <br/> Currently in development.</h1>
+<!-- <h1>This is where I will provide a list of done or in progress progress with description, a bunch of useful images, and most likely a github link.  <br/> Currently in development.</h1> -->
+
+<!-- <h2 class="floatingTitle">Projects</h2> -->
+
+<div class="container block">
+  <h2 class="sectionTitle">Personal Projects</h2>
+  <div *ngIf="loaded == false">
+    <h4>Loading...</h4>
+  </div>
+
+  <div *ngIf="loaded" class="row">
+    <project
+      *ngFor="let project of projects"
+      [data]="project"
+      class="col-md-6"
+    ></project>
+  </div>
+</div>

@@ -81,11 +81,8 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
 	this.activatedRoute.queryParams.subscribe((params) => {
 		let quote = params['quote'];
 		let person = params['character'];
-		  console.log(quote);
-		  console.log(person);
 		if (quote !== undefined || person !== undefined) {
 		  if (quote !== undefined) {
-			  console.log("Quote: ", quote)
 		    let queryElement: HTMLInputElement = document.getElementById(
 		      'query'
 		    ) as HTMLInputElement;
@@ -94,7 +91,6 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
 			this.form.get('query').setValue(quote);
 		  }
 		  if (person !== undefined) {
-			  console.log("Person: ", person)
 			  let personElement: HTMLInputElement = document.getElementById(
 			  	'person'
 			    ) as HTMLInputElement;
@@ -211,7 +207,6 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
   }
 
   loadGraphs() {
-    console.log(this.data);
     this.instructionsToggle = false;
 
     this.graphsToggle = true;

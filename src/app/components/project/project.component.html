@@ -1,34 +1,36 @@
 <div class="project">
-	<h2 class="sectionTitle projectTitle">
-	  Personal Website
-	  <div class="links">
-		<div class="link">
-		  <a target="_blank" href="https://github.com/Slad3/Slad3.github.io">
-			<img class="iconImage" src="../../../assets/images/github.png" />
-		  </a>
-		</div>
-		<div class="link">
-		  <a target="_blank" href="https://benbarcaskey.com/">
-			<img class="iconImage" src="../../../assets/icons/linkIcon.png" />
-		  </a>
-		</div>
-	  </div>
-	</h2>
-	<p class="date">Last Updated: 2020-11-9</p>
-	<p class="typeofProject">Frontend</p>
+  <h3>
+    <div class="links">
+      <div class="link">
+        <a target="_blank" href="{{ links['github'] }}">
+          <img class="iconImage" src="../../../assets/images/github.png" />
+        </a>
+      </div>
+      <div class="link">
+        <a target="_blank" href="{{ links['production'] }}">
+          <img class="iconImage" src="../../../assets/icons/linkIcon.png" />
+        </a>
+      </div>
+    </div>
+  </h3>
+  <h3 class="projectTitle">
+    {{ title }}
+  </h3>
 
-	<div class="discription">
-	  <p>
-		My personal website/portfolio, hosted on GitHub pages. The frontend of
-		my data science projects will most likely be hosted here.
-	  </p>
-	</div>
+  <p class="date">Last Updated: {{ lastUpdated }}</p>
+  <p class="typeofProject">{{ typeOfProject }}</p>
 
-	<div class="container">
-	  <div class="tags row">
-		<li>TypeScript</li>
-		<li>HTML/CSS</li>
-		<li>Python</li>
-	  </div>
-	</div>
+  <div class="discription">
+    <p>
+      {{ description }}
+    </p>
   </div>
+
+  <div class="container">
+    <div class="tags row">
+      <li *ngFor="let tag of tags">
+        {{ tag }}
+      </li>
+    </div>
+  </div>
+</div>

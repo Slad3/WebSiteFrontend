@@ -5,18 +5,27 @@
 
 
 .publication{
-	border-top-style: solid;
-	border-top-color: whitesmoke;
-	border-top-width: 1px;
+	border-left-style: dashed;
+	border-left-color: whitesmoke;
+	border-left-width: 1px;
+	border-right-style: dashed;
+	border-right-color: whitesmoke;
+	border-right-width: 1px;
 
+	border-bottom-style: solid;
+	border-bottom-color: whitesmoke;
+	border-bottom-width: 1px;
+
+	width: 100%;
+	/* margin: 5px; */
 	margin-top: 5px;
 	padding-top: 10px;
 
 }
 
 .date{
-	text-align: right;
-	float: top;
+	/* text-align: right; */
+	/* float: top; */
 	font-size: 80%;
 }
 

@@ -12,15 +12,25 @@
 	border-right-color: whitesmoke;
 	border-right-width: 1px;
 
+	border-top-style: solid;
+	border-top-color: whitesmoke;
+	border-top-width: 1px;
 	border-bottom-style: solid;
 	border-bottom-color: whitesmoke;
 	border-bottom-width: 1px;
+
+	border-radius: 10px;
 
 	width: 100%;
 	/* margin: 5px; */
 	margin-top: 5px;
 	padding-top: 10px;
 
+}
+
+.pubTitle{
+	font-weight: bold;
+	font-style: italic;
 }
 
 .date{

@@ -2,17 +2,19 @@
 
 <!-- <h2 class="floatingTitle">Projects</h2> -->
 
-<div class="container block">
-  <h2 class="sectionTitle">Personal Projects</h2>
-  <div *ngIf="loaded == false">
-    <h4>Loading...</h4>
-  </div>
+<div class="block">
+  <div class="container">
+    <h2 class="sectionTitle">Personal Projects</h2>
+    <div *ngIf="loaded == false">
+      <h4>Loading...</h4>
+    </div>
 
-  <div *ngIf="loaded" class="row">
-    <project
-      *ngFor="let project of projects"
-      [data]="project"
-      class="col-md-6"
-    ></project>
+    <div *ngIf="loaded" class="row">
+      <project
+        *ngFor="let project of projects"
+        [data]="project"
+        class="col-md-6"
+      ></project>
+    </div>
   </div>
 </div>

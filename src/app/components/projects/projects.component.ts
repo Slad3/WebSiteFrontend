@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import {
   HttpClient,
@@ -16,10 +16,11 @@ import { Request } from '../../api/request.service';
   styleUrls: ['./projects.component.css'],
 })
 export class ProjectsComponent implements OnInit {
+  @Input() amount: Number;
   backendUrl = 'https://dev.benbarcaskey.com/';
 
   dev = false;
-  
+
   loaded = false;
 
   tempProject = {
@@ -45,27 +46,31 @@ export class ProjectsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-	this.loadProjects();
-	this.loaded = true;
-	
-
+    this.loadProjects();
+    this.loaded = true;
   }
 
   loadProjects() {
-	let req = new HttpRequest('GET', this.backendUrl + 'projects', {
-		responseType: 'text',
-	  });
-  
-	  this.http.request(req).subscribe(
-		(event) => {
-		  if (event instanceof HttpResponse) {
-			  console.log(event.body)
-			this.projects = JSON.parse(event.body.toString())
-		  }
-		},
-		(error) => {
-		  console.log('Error', error);
-		}
-	  );
-}
+	if(this.amount === undefined){
+		this.amount = 4;
+	}
+	const formData: FormData = new FormData();
+    formData.append('amount', this.amount.toString());
+
+    let req = new HttpRequest('POST', this.backendUrl + 'projects', formData, {
+      responseType: 'text',
+    });
+
+    this.http.request(req).subscribe(
+      (event) => {
+        if (event instanceof HttpResponse) {
+          console.log(event.body);
+          this.projects = JSON.parse(event.body.toString());
+        }
+      },
+      (error) => {
+        console.log('Error', error);
+      }
+    );
+  }
 }

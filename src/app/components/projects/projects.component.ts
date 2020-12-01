@@ -19,6 +19,8 @@ export class ProjectsComponent implements OnInit {
   backendUrl = 'https://dev.benbarcaskey.com/';
 
   dev = false;
+  
+  loaded = false;
 
   tempProject = {
     Project: {
@@ -44,7 +46,7 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
 	this.loadProjects();
-
+	this.loaded = true;
 	
 
   }

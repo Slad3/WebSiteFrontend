@@ -9,6 +9,7 @@ export class ProjectComponent implements OnInit {
   @Input() data: Object;
   @Input() id: string;
 
+
   project: { title; description; tags; typeOfProject; lastUpdated; links };
 
   title: string;
@@ -48,6 +49,7 @@ export class ProjectComponent implements OnInit {
         github: `https://github.com/Slad3/Slad3.github.io`,
         production: `https://benbarcaskey.com/`,
       };
-    }
+	}
   }
+
 }

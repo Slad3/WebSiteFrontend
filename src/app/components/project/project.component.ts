@@ -10,7 +10,13 @@ export class ProjectComponent implements OnInit {
   @Input() id: string;
 
 
-  project: { title; description; tags; typeOfProject; lastUpdated; links };
+  pinned = false;
+  productionToggle = true;
+  githubToggle = true;
+
+
+  project: {
+  };
 
   title: string;
   description: string;
@@ -27,21 +33,21 @@ export class ProjectComponent implements OnInit {
   ngOnInit(): void {
     if (this.data != null) {
       this.project = this.data['Project'];
-      this.title = this.project['title'];
-      this.description = this.project['description'];
-      this.lastUpdated = this.project['date'];
-      this.typeOfProject = this.project['typeOfProject'];
-      this.tags = this.project['tags'];
-
-      if (this.project['links'] !== undefined) {
-        this.links = this.project['links'];
-      }
     } else if (this.id != null) {
     } else {
+      this.project = {
+        title: 'Sample Title',
+        description:
+          'Sample description Sample description Sample description Sample description Sample description',
+        lastUpdated: '1942-12-7',
+        typeOfProject: 'Some Type',
+        tags: ['Python', 'Flask', 'JSON', 'Apache'],
+      };
+
       this.title = 'Personal Website';
       this.description =
         'My personal website/portfolio, hosted on GitHub pages. The frontend ofmy data science projects will most likely be hosted here.';
-      this.lastUpdated = ' 2020-11-9';
+      this.lastUpdated = '2020-11-9';
       this.typeOfProject = 'Frontend';
       this.tags = ['TypeScript', 'HTML/CSS', 'Digital Ocean', 'Python'];
 
@@ -49,7 +55,17 @@ export class ProjectComponent implements OnInit {
         github: `https://github.com/Slad3/Slad3.github.io`,
         production: `https://benbarcaskey.com/`,
       };
-	}
-  }
+    }
 
+    this.pinned = this.project['pinned'];
+    this.title = this.project['title'];
+    this.description = this.project['description'];
+    this.lastUpdated = this.project['date'];
+    this.typeOfProject = this.project['typeOfProject'];
+    this.tags = this.project['tags'];
+
+    if (this.project['links'] !== undefined) {
+      this.links = this.project['links'];
+    }
+  }
 }

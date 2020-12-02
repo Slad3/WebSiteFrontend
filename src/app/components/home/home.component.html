@@ -21,9 +21,17 @@
         </p>
 
         <p class="introPara">
-          Check out the
-          <a [routerLink]="'/datascience'">Data Science tab</a>
-          for the more interesting projects.
+          Feel free to check out the
+          <a [routerLink]="'/datascience'">Data Science</a>
+          tab for the more interesting projects.
+        </p>
+        <p class="introPara">
+          <b><i>Recruiters and employers</i></b
+          >, feel free to check out the
+          <a [routerLink]="'/professionalExperience'"
+            >Professional Experience</a
+          >
+          page for a more comprehensive list
         </p>
       </div>
       <div class="d-md-block d-none col-md-3 col-sm-0 center-image">
@@ -37,129 +45,105 @@
     </div>
   </div>
 
+  <app-projects [amount]="2"></app-projects>
+  <app-publications [full]="false"></app-publications>
 
-  <app-projects [amount] = "4"></app-projects>
-  <app-publications></app-publications>
-  <!-- <app-professional-experience></app-professional-experience> -->
-
-  <div id="FAQ" class="block">
-    <h1 class="sectionTitle">FAQ</h1>
-    <ul id="FAQList">
-      <li>
-        <button class="accordion">How tall are you?</button>
-        <div class="answer">
-          <p>
-            Technically 6'4.5", but 6 4 just rolls off the tongue better. Also,
-            don't lie about your height; Anyone can literally take a tape
-            measure and get an exact objective numerical value of how tall you
-            are.
-          </p>
-        </div>
-      </li>
-      <li>
-        <button class="accordion">
-          Favorite language/libraries to work with?
-        </button>
-        <div class="answer">
-          <p>
-            Even though I tend to favor low level control at the cost of
-            convienience, my favorite language to work in is Python, Java coming
-            in at a close second. Other than the 'def' keyword, everything just
-            makes sense. The library is also support is the gold standard in my
-            experience, data science support with python is the best, and most
-            complaints about the extremely slow raw perfomence can be overcome
-            by knowledge of libraries like NumPy and TensorFlow.
-          </p>
-          <p>
-            Although for some things I tend to perfer Java for the times when I
-            want over all general speed, easy packaging, and XML parsing.
-          </p>
-        </div>
-      </li>
-      <li>
-        <button class="accordion">Main Desktop Specs</button>
-        <div class="answer">
-          <p>My current desktop specs:</p>
-          <ul>
-            <li class="spec">CPU: Ryzen R5 2600 3.9GHz</li>
-            <li class="spec">
-              RAM: 32GB (4 x 8GB) G.Skill DDR4-3200 (Almost died getting that
-              last 16GB)
-            </li>
-            <li class="spec">
-              Motherboard: Asus TUF X470-PLUS AM4 (Used motherboards don't have
-              IO shields though)
-            </li>
-            <li class="spec">
-              GPU: R9 380 4GB Asus Strix (It's like the legs of Mr Incredible
-              holding up Mr Incredible)
-            </li>
-            <li class="spec">
-              Storage: 2 SSDs, one per OS. Plus a 1TB 7200rpm and a 3TB 5400rpm
-              of spinning rust
-            </li>
-            <li class="spec">Case: Corsair Spec-01</li>
-            <li class="spec">PSU: Corsair CXM 650W 80+ Bronze</li>
-            <li class="spec">
-              Monitor: Acer XV272U 27" 2560x1440 144hz IPS Freesync (My Baby)
-            </li>
-            <li class="spec">
-              Mouse: Kingston HyperX Pulsefire Surge (I broke my
-            </li>
-            <li class="spec">
-              Keyboard: Some old dusty Dell PS2 keyboard I found in the basement
-              4 years ago
-            </li>
-          </ul>
-        </div>
-      </li>
-      <!-- <li> 
+  <div class="container-fluid">
+    <div class="row">
+      <div id="FAQ" class="block col-md-10">
+        <h1 class="sectionTitle">FAQ</h1>
+        <ul id="FAQList">
+          <li>
+            <button class="accordion">How tall are you?</button>
+            <div class="answer">
+              <p>
+                Technically 6'4.5", but 6 4 just rolls off the tongue better.
+                Also, don't lie about your height; Anyone can literally take a
+                tape measure and get an exact objective numerical value of how
+                tall you are.
+              </p>
+            </div>
+          </li>
+          <li>
+            <button class="accordion">
+              Favorite language/libraries to work with?
+            </button>
+            <div class="answer">
+              <p>
+                Even though I tend to favor low level control at the cost of
+                convienience, my favorite language to work in is Python, Java
+                coming in at a close second. Other than the 'def' keyword,
+                everything just makes sense. The library is also support is the
+                gold standard in my experience, data science support with python
+                is the best, and most complaints about the extremely slow raw
+                perfomence can be overcome by knowledge of libraries like NumPy
+                and TensorFlow.
+              </p>
+              <p>
+                Although for some things I tend to perfer Java for the times
+                when I want over all general speed, easy packaging, and XML
+                parsing.
+              </p>
+            </div>
+          </li>
+          <li>
+            <button class="accordion">Main Desktop Specs</button>
+            <div class="answer">
+              <p>My current desktop specs:</p>
+              <ul>
+                <li class="spec">CPU: Ryzen R5 2600 3.9GHz</li>
+                <li class="spec">
+                  RAM: 32GB (4 x 8GB) G.Skill DDR4-3200 (Almost died getting
+                  that last 16GB)
+                </li>
+                <li class="spec">
+                  Motherboard: Asus TUF X470-PLUS AM4 (Used motherboards don't
+                  have IO shields though)
+                </li>
+                <li class="spec">
+                  GPU: R9 380 4GB Asus Strix (It's like the legs of Mr
+                  Incredible holding up Mr Incredible)
+                </li>
+                <li class="spec">
+                  Storage: 2 SSDs, one per OS. Plus a 1TB 7200rpm and a 3TB
+                  5400rpm of spinning rust
+                </li>
+                <li class="spec">Case: Corsair Spec-01</li>
+                <li class="spec">PSU: Corsair CXM 650W 80+ Bronze</li>
+                <li class="spec">
+                  Monitor: Acer XV272U 27" 2560x1440 144hz IPS Freesync (My
+                  Baby)
+                </li>
+                <li class="spec">
+                  Mouse: Kingston HyperX Pulsefire Surge (I broke my
+                </li>
+                <li class="spec">
+                  Keyboard: Some old dusty Dell PS2 keyboard I found in the
+                  basement 4 years ago
+                </li>
+              </ul>
+            </div>
+          </li>
+          <!-- <li> 
         <button class="accordion">Are Macs good for development?</button>
         <div class="answer">
           <p>
-			Unless you like thermal throttling, a locked down operating system, 
+			Unless you like thermal throttling, a locked down operating system, and supporting a $200 billion company still using child labor, use something else.
           </p>
         </div>
       </li> -->
-    </ul>
+        </ul>
+      </div>
+	  <a
+	  id="typeracer"
+	  class="col-md-2"
+        href="https://data.typeracer.com/pit/profile?user=feba23&ref=badge"
+        target="_top"
+		><img
+          src="https://data.typeracer.com/misc/badge?user=feba23"
+          border="0"
+          alt="TypeRacer.com scorecard for user feba23"
+      /></a>
+    </div>
   </div>
-
-  <!-- <div id="siteTechnical" class="block" >
-	<h1 class="title">Technical About this site</h1>
-
-  </div> -->
-  <!-- <div id="techBasedInterests" class="block">
-	<h1 class="title">Technology Based Interests</h1>
-	<ul>
-	  <li class="">
-		<h4>Data Science / Analysis</h4>
-		<p>
-		  Numbers by themselves are boring. However, numbers that mean something
-		  can impact the way that we think and act upon certain situations.
-		</p>
-	  </li>
-	  <li class="">
-		<h4>Backend / API Development</h4>
-		<p>
-		  Numbers by themselves are boring. However numbers that mean something
-		  can impact the way that we think and act upon certain situations.
-		</p>
-	  </li>
-	  <li class="">
-		<h4>Computer Hardware / Small Scale Electronics</h4>
-		<p>
-		  If one is to study the great mystery of computers, one must study all
-		  it's aspects. Although I'm a software guy. I definitley got sexier
-		  when girls started to like Henry Cavill for building a PC.
-		</p>
-	  </li>
-	  <li class="">
-		<h4>System Design / Simulation</h4>
-		<p>
-		  With the power of computers, we have the power to visualize and design
-		  things.
-		</p>
-	  </li>
-	</ul>
-  </div> -->
 </div>

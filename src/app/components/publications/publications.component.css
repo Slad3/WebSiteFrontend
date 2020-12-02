@@ -1,52 +1,60 @@
-
-#publcationList{
-	list-style: none;
+#publcationList {
+  list-style: none;
 }
 
+.publication {
+  border-left-style: dashed;
+  border-left-color: whitesmoke;
+  border-left-width: 1px;
+  border-right-style: dashed;
+  border-right-color: whitesmoke;
+  border-right-width: 1px;
 
-.publication{
-	border-left-style: dashed;
-	border-left-color: whitesmoke;
-	border-left-width: 1px;
-	border-right-style: dashed;
-	border-right-color: whitesmoke;
-	border-right-width: 1px;
+  border-top-style: solid;
+  border-top-color: whitesmoke;
+  border-top-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: whitesmoke;
+  border-bottom-width: 1px;
 
-	border-top-style: solid;
-	border-top-color: whitesmoke;
-	border-top-width: 1px;
-	border-bottom-style: solid;
-	border-bottom-color: whitesmoke;
-	border-bottom-width: 1px;
+  border-radius: 10px;
 
-	border-radius: 10px;
-
-	width: 100%;
-	/* margin: 5px; */
-	margin-top: 5px;
-	padding-top: 10px;
-
+  width: 100%;
+  /* margin: 5px; */
+  margin-top: 5px;
+  padding-top: 10px;
 }
 
-.pubTitle{
-	/* font-weight: bold; */
-	font-style: italic;
+.sectionTitle > a {
+  font-size: 20px;
+  float: right;
+  text-align: right;
 }
 
-.conference{
-	margin-top: 10px;
-	font-weight: bold;
-	font-size: 20px;
+.pubTitle {
+  /* font-weight: bold; */
+  font-style: italic;
 }
 
-.date{
-	margin-top: 10px;
-	text-align: right;
-	/* float: top; */
+.conference {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
+.date {
+  margin-top: 10px;
+  text-align: right;
+  /* float: top; */
+}
 
-.note{
-	/* font-size: 80%; */
-	padding: 4px;
+.note {
+  /* font-size: 80%; */
+  padding: 4px;
+}
+
+@media only screen and (max-width: 768px){
+	#publicationList{
+		margin-top: 30px;
+	}
 }

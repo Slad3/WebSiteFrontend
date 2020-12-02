@@ -4,7 +4,6 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
 #intro {
   margin-bottom: 20px;
   /* display: inline; */
@@ -12,8 +11,6 @@
 }
 
 #introText {
-
-
   /* margin-left: 0%; */
 
   opacity: 0;
@@ -27,20 +24,18 @@
   opacity: 0;
   border-radius: 5%;
   margin-top: 30px;
-  animation: fadeIn 2s ease .5s forwards;
+  animation: fadeIn 2s ease 0.5s forwards;
 }
 
 #typeracer {
-  margin-top: 25px;
-  align-self: center;
+  margin-top: 45px;
   /* max-width: 30%; */
-  margin-left: 9%;
   /* width: 186px; */
-  float: left;
 }
 
 #typeracer > img {
-  size: 150%;
+  align-self: center;
+  width: auto;
 }
 
 .introPara {
@@ -50,16 +45,15 @@
   font-size: large;
 }
 
-
 #FAQ {
-	position: relative;
+  position: relative;
   /* background-color: rgba(245, 245, 245, 0.5); */
   /* color: black; */
 }
 
 #FAQ > .sectionTitle {
-	margin-bottom: 20px;
-} 
+  margin-bottom: 20px;
+}
 
 #FAQ > ul {
   list-style: none;
@@ -173,12 +167,11 @@
 
   #skills > #languages > .list > .language > ul {
     float: left;
-	margin-top: 5%;
-	margin-left: 10%;
+    margin-top: 5%;
+    margin-left: 10%;
     width: -70%;
     word-wrap: normal;
   }
-
 
   #skills > #languages > .list > .language > .languageTitle > h4 {
     float: left;
@@ -214,14 +207,11 @@
     margin-right: 0px;
   }
 
-  .sectionTitle{
-	  text-align: center;
-	  margin-left: auto;
-	  margin-right: auto;
+  .sectionTitle {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
-
-
-
 
   #experience {
     width: 100%;
@@ -233,12 +223,12 @@
   }
 
   #skills {
-	padding-bottom: 5%;
+    padding-bottom: 5%;
   }
 
-  #skills > h1{
-	margin-bottom: 0px;
-}
+  #skills > h1 {
+    margin-bottom: 0px;
+  }
 
   #skills > #languages {
     margin-top: 0px;
@@ -246,14 +236,13 @@
 
   #skills > #languages > .list > .language {
     align-self: center;
-	width: 95%;
-	position: relative;
-	/* min-height: 500px; */
-	overflow: hidden;
-	margin-left: 0;
+    width: 95%;
+    position: relative;
+    /* min-height: 500px; */
+    overflow: hidden;
+    margin-left: 0;
 
-
-	border-top-style: solid;
+    border-top-style: solid;
     border-top-width: 1px;
     border-top-color: whitesmoke;
     border-top-left-radius: 2%;
@@ -265,9 +254,9 @@
     margin-top: 60px;
     margin-bottom: 10px;
     margin-left: 5%;
-	/* padding-left: 30px; */
-	float: none;
-	min-height: 100%;
+    /* padding-left: 30px; */
+    float: none;
+    min-height: 100%;
   }
 
   #skills #languages > .list > .language > .languageTitle > .icon {
@@ -278,11 +267,10 @@
     margin-right: 10%;
   }
 
-
   #skills > #softSkills {
     clear: both;
     margin-left: 10%;
-    margin-top: 100px; 
+    margin-top: 100px;
   }
 
   #skills > .accordion {

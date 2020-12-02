@@ -3,13 +3,18 @@
 <!-- <h2 class="floatingTitle">Projects</h2> -->
 
 <div class="block">
+  <h1 class="sectionTitle">
+    Personal Projects
+    <a *ngIf="this.full === false" [routerLink]="'/projects'">
+      See all projects
+    </a>
+  </h1>
   <div class="container">
-    <h2 class="sectionTitle">Personal Projects</h2>
     <div *ngIf="loaded == false">
       <h4>Loading...</h4>
     </div>
 
-    <div *ngIf="loaded" class="row">
+    <div *ngIf="loaded" class="row" id="projectList">
       <project
         *ngFor="let project of projects"
         [data]="project"

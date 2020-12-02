@@ -59,7 +59,7 @@
   list-style: none;
 }
 
-#FAQ > #FAQList > li > .accordion {
+.accordion {
   background-color: #0f4c75;
   color: whitesmoke;
   cursor: pointer;
@@ -73,7 +73,7 @@
   float: left;
 }
 
-#FAQ > #FAQList > li > .accordion:after {
+.accordion:after {
   content: "\002B";
   color: whitesmoke;
   font-weight: bold;
@@ -81,12 +81,12 @@
   margin-right: 10px;
 }
 
-#FAQ > #FAQList > li > .active:after {
+.active:after {
   content: "\2212";
   float: left;
 }
 
-#FAQ > #FAQList > li > .answer {
+ .answer {
   padding: 0 20px;
   max-height: 0;
   overflow: hidden;

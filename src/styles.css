@@ -62,7 +62,7 @@ body {
 
   background-image: linear-gradient(
     90deg,
-    rgba(22, 22, 22, .6) 0%,
+    rgba(22, 22, 22, 0.6) 0%,
     rgba(22, 22, 22, 0.4) 22.39%,
     rgba(22, 22, 22, 0.3) 42.6%,
     rgba(0, 0, 0, 0.1) 79.19%,
@@ -112,7 +112,21 @@ body {
 }
 
 @media only screen and (min-width: 769px) {
+  .mobile {
+    visibility: hidden;
+    height: 0px;
+    width: 0px;
+  }
+
   .mobileButton {
     visibility: hidden;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .desktop {
+    visibility: hidden;
+    height: 0px;
+    width: 0px;
   }
 }

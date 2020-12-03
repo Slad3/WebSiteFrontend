@@ -1,0 +1,36 @@
+<div class="project">
+  <h3>
+    <div class="links">
+      <div class="link">
+        <a target="_blank" href="{{ links['github'] }}">
+          <img class="iconImage" src="../../../assets/images/github.png" />
+        </a>
+      </div>
+      <div class="link">
+        <a target="_blank" href="{{ links['production'] }}">
+          <img class="iconImage" src="../../../assets/icons/linkIcon.png" />
+        </a>
+      </div>
+    </div>
+  </h3>
+  <h3 class="projectTitle">
+    {{ title }}
+  </h3>
+
+  <p class="date">Last Updated: {{ lastUpdated }}</p>
+  <p class="typeofProject">{{ typeOfProject }}</p>
+
+  <div class="discription">
+    <p>
+      {{ description }}
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="tags row">
+      <li *ngFor="let tag of tags">
+        {{ tag }}
+      </li>
+    </div>
+  </div>
+</div>

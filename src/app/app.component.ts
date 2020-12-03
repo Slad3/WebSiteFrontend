@@ -26,9 +26,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-
-
-    this.navbar = document.getElementById('navbar') as HTMLElement;
+    this.navbar = document.getElementById('navbarTop') as HTMLElement;
     this.body = document.getElementById('body') as HTMLElement;
     this.sticky = this.navbar.offsetTop;
 
@@ -43,7 +41,6 @@ export class AppComponent implements OnInit {
     });
 
     window.addEventListener('resize', (event) => {
-
       if (this.navbar.offsetTop > 0) {
         this.sticky = this.navbar.offsetTop;
       }
@@ -67,21 +64,5 @@ export class AppComponent implements OnInit {
       }
     );
   }
-
-  mobileNav(){
-	var x = document.getElementById("navItems");
-	if (x.classList.contains("hide")){
-		console.log("collapse")
-		x.classList.remove("hide");
-	}
-	else{
-		console.log("expand")
-		x.classList.add("hide");
-	}
-
-  }
-
-
-
 
 }

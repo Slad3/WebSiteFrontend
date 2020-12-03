@@ -3,6 +3,11 @@
   clear: both;
 }
 
+#resume{
+	border-top: solid yellow 1px;
+	border-bottom: solid yellow 1px;
+}
+
 #techBasedInterests {
   color: black;
   background-color: #cacaca;

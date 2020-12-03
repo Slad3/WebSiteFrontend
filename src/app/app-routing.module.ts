@@ -15,9 +15,8 @@ import { TheOfficeScriptAnalyzerComponent } from './components/datascience/the-o
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'blog', component: FeedComponent },
-  { path: 'professionalExperience', component: ProfessionalExperienceComponent },
+  { path: 'experience', component: ProfessionalExperienceComponent },
   { path: 'publications', component: PublicationsComponent },
-  { path: 'experience', component: ExperienceComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'datascience', component: DatascienceHomeComponent },
   { path: 'FacebookAnalysis', component: FacebookDataAnalysisComponent },

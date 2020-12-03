@@ -22,18 +22,11 @@ export class AppComponent implements OnInit {
   quote: string = 'Loading';
 
   constructor(private request: Request, private http: HttpClient) {
-	// this.getQuote();
-	
-
-
-
-
+    // this.getQuote();
   }
 
   ngOnInit() {
-    this.navbar = document.getElementById(
-      'navbarTop'
-    ) as HTMLElement;
+    this.navbar = document.getElementById('navbarTop') as HTMLElement;
     this.body = document.getElementById('body') as HTMLElement;
     this.sticky = this.navbar.offsetTop;
 
@@ -52,21 +45,18 @@ export class AppComponent implements OnInit {
         this.sticky = this.navbar.offsetTop;
       }
     });
-
   }
-
 
   dropDownMenu() {
-	var x = document.getElementById("linkList");
+    var x = document.getElementById('linkList');
 
-	console.log("here")
-	if (x.style.display === "block") {
-	  x.style.display = "none";
-	} else {
-	  x.style.display = "block";
-	}
+    console.log('here');
+    if (x.style.display === 'block') {
+      x.style.display = 'none';
+    } else {
+      x.style.display = 'block';
+    }
   }
-
 
   getQuote() {
     let req = new HttpRequest('GET', this.backendUrl + 'QOTD', {

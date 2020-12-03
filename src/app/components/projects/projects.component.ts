@@ -17,9 +17,9 @@ import { Request } from '../../api/request.service';
 })
 export class ProjectsComponent implements OnInit {
   @Input() amount: Number;
-  @Input() full: boolean;
   backendUrl = 'https://dev.benbarcaskey.com/';
 
+  full = true;
   dev = false;
 
   loaded = false;
@@ -40,38 +40,31 @@ export class ProjectsComponent implements OnInit {
   constructor(private request: Request, private http: HttpClient) {
     if (location.host.toString() === 'localhost:4200') {
       this.dev = true;
-    //   this.backendUrl = 'http://localhost:8080/';
+      //   this.backendUrl = 'http://localhost:8080/';
     } else {
       this.dev = false;
     }
   }
 
   ngOnInit(): void {
+    if (this.amount === undefined || this.amount === -1) {
+	  this.full = true;
+	  this.amount = -1;
+    } else {
+      this.full = false;
+    }
 
-
-	this.projects = [];
-	this.loadProjects();
-	
-	if(this.full !== undefined || (this.amount !== undefined && this.amount != 4)){
-		this.full = false;
-	}
-	else{
-		this.full = true;
-	}
-
-	if(!this.full){
-		// this.projects = this.projects.slice(0, 2);
-	}
-
+    this.projects = [];
+    this.loadProjects();
 
     this.loaded = true;
   }
 
   loadProjects() {
-	if(this.amount === undefined){
-		this.amount = 0;
-	}
-	const formData: FormData = new FormData();
+    if (this.amount === undefined) {
+      this.amount = -1;
+    }
+    const formData: FormData = new FormData();
     formData.append('amount', this.amount.toString());
 
     let req = new HttpRequest('POST', this.backendUrl + 'projects', formData, {

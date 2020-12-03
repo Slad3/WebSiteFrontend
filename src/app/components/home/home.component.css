@@ -13,18 +13,18 @@
 #introText {
   /* margin-left: 0%; */
 
-  opacity: 0;
-  animation: fadeIn 2s ease 0.3s forwards;
+  /* opacity: 0;
+  animation: fadeIn 2s ease 0.3s forwards; */
 }
 
 #profilePhoto {
   align-self: center;
   max-width: 100%;
 
-  opacity: 0;
   border-radius: 5%;
   margin-top: 30px;
-  animation: fadeIn 2s ease 0.5s forwards;
+  /* opacity: 0;
+  animation: fadeIn 2s ease 0.5s forwards; */
 }
 
 #typeracer {
@@ -44,6 +44,14 @@
   line-height: 1.5;
   font-size: large;
 }
+
+#projects{
+	opacity: 0;
+	animation: fadeIn 2s ease 0.3s forwards;
+}
+
+#publications{}
+
 
 #FAQ {
   position: relative;

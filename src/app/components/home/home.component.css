@@ -13,8 +13,8 @@
 #introText {
   /* margin-left: 0%; */
 
-  /* opacity: 0;
-  animation: fadeIn 2s ease 0.3s forwards; */
+  opacity: 0;
+  animation: fadeIn 2s ease 0.3s forwards;
 }
 
 #profilePhoto {
@@ -23,8 +23,8 @@
 
   border-radius: 5%;
   margin-top: 30px;
-  /* opacity: 0;
-  animation: fadeIn 2s ease 0.5s forwards; */
+  opacity: 0;
+  animation: fadeIn 2s ease 0.5s forwards;
 }
 
 #typeracer {
@@ -47,16 +47,23 @@
 
 #projects{
 	opacity: 0;
-	animation: fadeIn 2s ease 0.3s forwards;
+	animation: fadeIn 2s ease .7s forwards;
 }
 
-#publications{}
+#publications{
+	opacity: 0;
+	animation: fadeIn 2s ease 1s forwards;
+
+}
 
 
 #FAQ {
   position: relative;
   /* background-color: rgba(245, 245, 245, 0.5); */
   /* color: black; */
+
+  opacity: 0;
+  animation: fadeIn 1.5s ease 1.3s forwards;
 }
 
 #FAQ > .sectionTitle {

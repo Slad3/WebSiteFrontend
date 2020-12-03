@@ -47,17 +47,6 @@ export class AppComponent implements OnInit {
     });
   }
 
-  dropDownMenu() {
-    var x = document.getElementById('linkList');
-
-    console.log('here');
-    if (x.style.display === 'block') {
-      x.style.display = 'none';
-    } else {
-      x.style.display = 'block';
-    }
-  }
-
   getQuote() {
     let req = new HttpRequest('GET', this.backendUrl + 'QOTD', {
       responseType: 'text',
@@ -76,14 +65,4 @@ export class AppComponent implements OnInit {
     );
   }
 
-  mobileNav() {
-    var x = document.getElementById('navItems');
-    if (x.classList.contains('hide')) {
-      console.log('collapse');
-      x.classList.remove('hide');
-    } else {
-      console.log('expand');
-      x.classList.add('hide');
-    }
-  }
 }

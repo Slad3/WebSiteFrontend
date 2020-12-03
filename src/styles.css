@@ -1,13 +1,10 @@
-
 a {
-	font-style: italic;
+  font-style: italic;
 }
 
 a:hover {
-	color: rgb(255, 255, 0);
-	
+  color: rgb(255, 255, 0);
 }
-
 
 body {
   padding: 0px;
@@ -44,13 +41,11 @@ body {
   font-size: 32px;
 }
 
-.mainTitle{
-
-	text-align: center;
-	font-size: 32px;
-	font-weight: bold;
+.mainTitle {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
 }
-
 
 .sectionTitle {
   margin-left: 10px;
@@ -137,5 +132,13 @@ body {
     visibility: hidden;
     height: 0px;
     width: 0px;
+  }
+
+  .block {
+    border-left-width: 0px;
+    border-right-width: 0px;
+
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }

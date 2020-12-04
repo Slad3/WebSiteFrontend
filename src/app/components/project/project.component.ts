@@ -56,8 +56,7 @@ export class ProjectComponent implements OnInit {
         production: `https://benbarcaskey.com/`,
       };
     }
-
-    this.pinned = this.project['pinned'];
+	this.pinned = this.project['pin'];
     this.title = this.project['title'];
     this.description = this.project['description'];
     this.lastUpdated = this.project['date'];

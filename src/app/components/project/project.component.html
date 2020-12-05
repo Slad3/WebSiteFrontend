@@ -2,12 +2,12 @@
   <div class="project">
     <h3>
       <div class="links">
-        <div class="link">
+        <div class="link" *ngIf="this.project['links']['github'] !== ''">
           <a target="_blank" href="{{ this.project['links']['github'] }}">
             <img class="iconImage" src="../../../assets/images/github.png" />
           </a>
         </div>
-        <div class="link">
+        <div class="link" *ngIf="this.project['links']['production'] !== ''">
           <a target="_blank" href="{{ this.project['links']['production'] }}">
             <img class="iconImage" src="../../../assets/icons/linkIcon.png" />
           </a>

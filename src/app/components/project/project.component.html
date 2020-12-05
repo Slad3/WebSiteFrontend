@@ -1,40 +1,42 @@
-<div class="project">
-  <h3>
-    <div class="links">
-      <div class="link">
-        <a target="_blank" href="{{ links['github'] }}">
-          <img class="iconImage" src="../../../assets/images/github.png" />
-        </a>
+<div *ngIf="this.loaded">
+  <div class="project">
+    <h3>
+      <div class="links">
+        <div class="link">
+          <a target="_blank" href="{{ this.project['links']['github'] }}">
+            <img class="iconImage" src="../../../assets/images/github.png" />
+          </a>
+        </div>
+        <div class="link">
+          <a target="_blank" href="{{ this.project['links']['production'] }}">
+            <img class="iconImage" src="../../../assets/icons/linkIcon.png" />
+          </a>
+        </div>
       </div>
-      <div class="link">
-        <a target="_blank" href="{{ links['production'] }}">
-          <img class="iconImage" src="../../../assets/icons/linkIcon.png" />
-        </a>
-      </div>
+    </h3>
+
+    <div class="pin" *ngIf="this.project['pin']">
+      <img src="../../../assets/icons/pinWhite.png" />
     </div>
-  </h3>
+    <h3 class="projectTitle">
+      {{ this.project["title"] }}
+    </h3>
 
-  <div class="pin" *ngIf="this.pinned">
-    <img src="../../../assets/icons/pinWhite.png" />
-  </div>
-  <h3 class="projectTitle">
-    {{ title }}
-  </h3>
+    <p class="date">Last Updated: {{ this.project["date"] }}</p>
+    <p class="typeofProject">{{ this.project["typeOfProject"] }}</p>
 
-  <p class="date">Last Updated: {{ lastUpdated }}</p>
-  <p class="typeofProject">{{ typeOfProject }}</p>
+    <div class="description">
+      <p>
+        {{ this.project["description"] }}
+      </p>
+    </div>
 
-  <div class="discription">
-    <p>
-      {{ description }}
-    </p>
-  </div>
-
-  <div class="container">
-    <div class="tags row">
-      <li *ngFor="let tag of tags">
-        {{ tag }}
-      </li>
+    <div class="container">
+      <div class="tags row">
+        <li *ngFor="let tag of this.project['tags']">
+          {{ tag }}
+        </li>
+      </div>
     </div>
   </div>
 </div>

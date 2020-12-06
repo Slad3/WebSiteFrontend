@@ -92,8 +92,6 @@ export class ProjectComponent implements OnInit {
   }
 
   loadProject() {
-
     this.loaded = true;
   }
-
 }

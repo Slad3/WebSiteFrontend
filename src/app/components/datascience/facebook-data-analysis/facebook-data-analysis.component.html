@@ -17,7 +17,7 @@
       class="form-group row"
     >
       <div *ngIf="fileNeeded">Please select a file before submitting.</div>
-      <h3 for="fileUpload">Upload File: </h3>
+      <h3 for="fileUpload">Upload File:</h3>
       <input
         id="fileUpload"
         class="form-control-file col-lg-5"
@@ -58,66 +58,66 @@
 
 <div id="instructions" class="block" *ngIf="this.instructionsToggle">
   <h2 class="sectionTitle">
-	  Instructions for Downloading Your Data
-	  <button
-	  class="btn btn-xs col-xs-2 showButton"
-	  id=""
-	  data-toggle="collapse"
-	  href="#instructionsSection"
-	>
-	  V
-	</button>
-	</h2>
+    Instructions for Downloading Your Data
+    <button
+      class="btn btn-xs col-xs-2 showButton"
+      id=""
+      data-toggle="collapse"
+      href="#instructionsSection"
+    >
+      V
+    </button>
+  </h2>
 
-	<div id="instructionsSection">
-  <a href="https://www.facebook.com/dyi/?referrer=ayi" target="_blank">
-    <h4 style="font-weight: bold; text-align: center">
-      Access your Facebook data at here.
+  <div id="instructionsSection">
+    <a href="https://www.facebook.com/dyi/?referrer=ayi" target="_blank">
+      <h4 style="font-weight: bold; text-align: center">
+        Access your Facebook data at here.
+      </h4>
+    </a>
+
+    <h4 style="text-align: center">
+      Required: Make sure your download data format is in JSON, not HTML as
+      shown in the image below.
     </h4>
-  </a>
+    <a href="https://www.facebook.com/dyi/?referrer=ayi" target="_blank">
+      <img
+        id="downloadExamplePhoto"
+        src="../../../../assets/facebookDownloadForm.png"
+      />
+    </a>
 
-  <h4 style="text-align: center">
-    Required: Make sure your download data format is in JSON, not HTML as shown
-    in the image below.
-  </h4>
-  <a href="https://www.facebook.com/dyi/?referrer=ayi" target="_blank">
-    <img
-      id="downloadExamplePhoto"
-      src="../../../../assets/facebookDownloadForm.png"
-    />
-  </a>
+    <p>
+      It is recommended that you download only the data you want analyzed or
+      downloaded in order to keep the file size small so uploading doesn't take
+      forever.
+    </p>
 
-  <p>
-    It is recommended that you download only the data you want analyzed or
-    downloaded in order to keep the file size small so uploading doesn't take
-    forever.
-  </p>
+    <p>
+      Its also recommended that you set the media quality to low to lower the
+      file size.
+    </p>
 
-  <p>
-    Its also recommended that you set the media quality to low to lower the file
-    size.
-  </p>
+    <p>
+      From here you can request your data to be downloaded. Once your request
+      has been sent, Facebook will send you an email to the address you use to
+      log into Facebook with, with a direct link for you to download your data.
+      It is strongly recommended you download and upload this on a
+      desktop/laptop platform rather than a mobile device, though it is possible
+      on a phone.
+    </p>
 
-  <p>
-    From here you can request your data to be downloaded. Once your request has
-    been sent, Facebook will send you an email to the address you use to log
-    into Facebook with, with a direct link for you to download your data. It is
-    strongly recommended you download and upload this on a desktop/laptop
-    platform rather than a mobile device, though it is possible on a phone.
-  </p>
-
-  <h4 style="font-weight: bold; color: red">
-    DISCLAIMER: No data is saved after session ends, nor sent to any external
-    sources.<br />TLDU: I don't want your data, nor do I want to send your data
-    to someone. That's creepy.
-  </h4>
+    <h4 style="font-weight: bold; color: red">
+      DISCLAIMER: No data is saved after session ends, nor sent to any external
+      sources.<br />TLDU: I don't want your data, nor do I want to send your
+      data to someone. That's creepy.
+    </h4>
   </div>
 </div>
 
 <div id="graphs" *ngIf="this.graphsToggle">
-
-  <div *ngIf="this.messageGraphsToggle" >
-	<app-messages [data]="this.data['MessageData']"></app-messages>
+  <div *ngIf="this.messageGraphsToggle">
+    <app-messages [data]="this.data['MessageData']"></app-messages>
   </div>
 
   <div
@@ -172,3 +172,4 @@
     </div>
   </div>
 </div>
+<project [name]="'SocialMediaUserDataAnalysis'"> </project>

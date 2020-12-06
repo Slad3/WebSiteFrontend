@@ -13,125 +13,134 @@
   </ul>
 
   <!-- The slideshow -->
-  <div class="carousel-inner block">
-    <div class="carousel-item active">
-      <h1 class="sectionTitle">Professional Experience</h1>
-      <div class="companyImage">
-        <img src="{{ experience[0].image }}" />
-        <p class="credit">{{ experience[0].imageCredit }}</p>
-      </div>
-      <div class="content">
-        <h1 class="title">
-          {{ experience[0].title }}
-          <div class="experienceType">{{ experience[0].experience }}</div>
-        </h1>
-        <h3 class="place">
-          {{ experience[0].place }}
-          <div class="date">{{ experience[0].date }}</div>
-        </h3>
+  <div class="block">
+	<h1 class="sectionTitle">Professional Experience</h1>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
 
-        <div class="description">
-          <p class="paragraph" *ngFor="let para of experience[0].description">
-            {{ para }}
-          </p>
+        <div class="companyImage">
+          <img src="{{ experience[0].image }}" />
+          <p class="credit">{{ experience[0].imageCredit }}</p>
         </div>
+        <div class="content">
+          <h1 class="title">
+            {{ experience[0].title }}
+            <div class="experienceType">{{ experience[0].experience }}</div>
+          </h1>
+          <h3 class="place">
+            {{ experience[0].place }}
+            <div class="date">{{ experience[0].date }}</div>
+          </h3>
 
-        <h3 class="skillsTitle">Skills Utilized</h3>
-        <ul class="expSkillsList">
-          <li *ngFor="let sk of experience[0].skills">{{ sk }} |</li>
-        </ul>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <h1 class="sectionTitle">Professional Experience</h1>
-      <div class="companyImage">
-        <img src="{{ experience[1].image }}" />
-        <p class="credit">{{ experience[1].imageCredit }}</p>
-      </div>
-      <div class="content">
-        <h1 class="title">
-          {{ experience[1].title }}
-          <div class="experienceType">{{ experience[0].experience }}</div>
-        </h1>
-        <h3 class="place">
-          {{ experience[1].place }}
-          <div class="date">{{ experience[1].date }}</div>
-        </h3>
+          <div class="description">
+            <p class="paragraph" *ngFor="let para of experience[0].description">
+              {{ para }}
+            </p>
+          </div>
 
-        <div class="description">
-          <p class="paragraph" *ngFor="let para of experience[1].description">
-            {{ para }}
-          </p>
+          <h3 class="skillsTitle">Skills Utilized</h3>
+          <ul class="expSkillsList">
+            <li *ngFor="let sk of experience[0].skills">{{ sk }} |</li>
+          </ul>
         </div>
-
-        <h3 class="skillsTitle">Skills Utilized</h3>
-        <ul class="expSkillsList">
-          <li *ngFor="let sk of experience[1].skills">{{ sk }} |</li>
-        </ul>
       </div>
-    </div>
-    <div class="carousel-item">
-      <h1 class="sectionTitle">Professional Experience</h1>
-      <div class="companyImage">
-        <img src="{{ experience[2].image }}" />
-        <p class="credit">{{ experience[2].imageCredit }}</p>
-      </div>
-      <div class="content">
-        <h1 class="title">
-          {{ experience[2].title }}
-          <div class="experienceType">{{ experience[2].experience }}</div>
-        </h1>
-        <h3 class="place">
-          {{ experience[2].place }}
-          <div class="date">{{ experience[2].date }}</div>
-        </h3>
-
-        <div class="description">
-          <p class="paragraph" *ngFor="let para of experience[2].description">
-            {{ para }}
-          </p>
+      <div class="carousel-item">
+        <div class="companyImage">
+          <img src="{{ experience[1].image }}" />
+          <p class="credit">{{ experience[1].imageCredit }}</p>
         </div>
+        <div class="content">
+          <h1 class="title">
+            {{ experience[1].title }}
+            <div class="experienceType">{{ experience[0].experience }}</div>
+          </h1>
+          <h3 class="place">
+            {{ experience[1].place }}
+            <div class="date">{{ experience[1].date }}</div>
+          </h3>
 
-        <h3 class="skillsTitle" >Skills Utilized</h3>
-        <ul class="expSkillsList">
-          <li *ngFor="let sk of experience[2].skills">{{ sk }} |</li>
-        </ul>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <h1 class="sectionTitle">Professional Experience</h1>
-      <div class="companyImage">
-        <img src="{{ experience[3].image }}" />
-        <p class="credit">{{ experience[3].imageCredit }}</p>
-      </div>
-      <div class="content">
-        <h1 class="title">
-          {{ experience[3].title }}
-          <div class="experienceType">{{ experience[3].experience }}</div>
-        </h1>
-        <h3 class="place">
-          {{ experience[3].place }}
-          <div class="date">{{ experience[3].date }}</div>
-        </h3>
+          <div class="description">
+            <p class="paragraph" *ngFor="let para of experience[1].description">
+              {{ para }}
+            </p>
+          </div>
 
-        <div class="description">
-          <p class="paragraph" *ngFor="let para of experience[3].description">
-            {{ para }}
-          </p>
+          <h3 class="skillsTitle">Skills Utilized</h3>
+          <ul class="expSkillsList">
+            <li *ngFor="let sk of experience[1].skills">{{ sk }} |</li>
+          </ul>
         </div>
-
-        <h3 class="skillsTitle">Skills Utilized</h3>
-        <ul class="expSkillsList">
-          <li *ngFor="let sk of experience[3].skills">{{ sk }} |</li>
-        </ul>
       </div>
-    </div>
+      <div class="carousel-item">
+        <div class="companyImage">
+          <img src="{{ experience[2].image }}" />
+          <p class="credit">{{ experience[2].imageCredit }}</p>
+        </div>
+        <div class="content">
+          <h1 class="title">
+            {{ experience[2].title }}
+            <div class="experienceType">{{ experience[2].experience }}</div>
+          </h1>
+          <h3 class="place">
+            {{ experience[2].place }}
+            <div class="date">{{ experience[2].date }}</div>
+          </h3>
 
-    <a class="carousel-control-prev" href="#experienceBlock" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#experienceBlock" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
+          <div class="description">
+            <p class="paragraph" *ngFor="let para of experience[2].description">
+              {{ para }}
+            </p>
+          </div>
+
+          <h3 class="skillsTitle">Skills Utilized</h3>
+          <ul class="expSkillsList">
+            <li *ngFor="let sk of experience[2].skills">{{ sk }} |</li>
+          </ul>
+        </div>
+      </div>
+      <div class="carousel-item">
+
+        <div class="companyImage">
+          <img src="{{ experience[3].image }}" />
+          <p class="credit">{{ experience[3].imageCredit }}</p>
+        </div>
+        <div class="content">
+          <h1 class="title">
+            {{ experience[3].title }}
+            <div class="experienceType">{{ experience[3].experience }}</div>
+          </h1>
+          <h3 class="place">
+            {{ experience[3].place }}
+            <div class="date">{{ experience[3].date }}</div>
+          </h3>
+
+          <div class="description">
+            <p class="paragraph" *ngFor="let para of experience[3].description">
+              {{ para }}
+            </p>
+          </div>
+
+          <h3 class="skillsTitle">Skills Utilized</h3>
+          <ul class="expSkillsList">
+            <li *ngFor="let sk of experience[3].skills">{{ sk }} |</li>
+          </ul>
+        </div>
+      </div>
+
+      <a
+        class="carousel-control-prev"
+        href="#experienceBlock"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#experienceBlock"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
   </div>
 </div>

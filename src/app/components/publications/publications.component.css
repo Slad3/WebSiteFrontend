@@ -1,28 +1,13 @@
-#publcationList {
-  list-style: none;
-}
-
 .publication {
-  border-left-style: dashed;
-  border-left-color: whitesmoke;
-  border-left-width: 1px;
-  border-right-style: dashed;
-  border-right-color: whitesmoke;
-  border-right-width: 1px;
-
-  border-top-style: solid;
-  border-top-color: whitesmoke;
-  border-top-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: whitesmoke;
-  border-bottom-width: 1px;
-
+  border-left: dashed whitesmoke 1px;
+  border-right: dashed whitesmoke 1px;
+  border-top: solid whitesmoke 1px;
+  border-bottom: solid whitesmoke 1px;
   border-radius: 10px;
 
   width: 100%;
-  /* margin: 5px; */
-  margin-top: 5px;
-  padding-top: 10px;
+  height: 100%;
+  padding: 15px;
 }
 
 .sectionTitle > a {
@@ -53,8 +38,8 @@
   padding: 4px;
 }
 
-@media only screen and (max-width: 768px){
-	#publicationList{
-		margin-top: 30px;
-	}
+@media only screen and (max-width: 768px) {
+  #publicationList {
+    margin-top: 30px;
+  }
 }

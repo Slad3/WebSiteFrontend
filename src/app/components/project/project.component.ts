@@ -53,7 +53,6 @@ export class ProjectComponent implements OnInit {
 
       loadedProject.file.subscribe((file) => {
         this.project = JSON.parse(file);
-        console.log('Response: ', this.project);
         this.loadProject();
       });
     } else {
@@ -94,12 +93,7 @@ export class ProjectComponent implements OnInit {
 
   loadProject() {
 
-    console.log('End project: ', this.project);
     this.loaded = true;
   }
 
-  delay(ms: number) {
-    console.log('waiting');
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
 }

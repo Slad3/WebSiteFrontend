@@ -14,10 +14,7 @@ export class ProjectComponent implements OnInit {
   @Input() id: string;
   @Input() name: string;
 
-  backendUrl = `https://https://dev.benbarcaskey.com/`;
-
-  tempBackend = `https://https://dev.benbarcaskey.com/project?name=Personal%20Frontend`;
-
+  backendUrl = `https://dev.benbarcaskey.com/`;
   loaded = false;
 
   pinned = false;
@@ -38,7 +35,7 @@ export class ProjectComponent implements OnInit {
 
   constructor(private http: HttpClient) {
     if (location.host.toString() === 'localhost:4200') {
-      this.backendUrl = 'http://localhost:8080/';
+    //   this.backendUrl = 'http://localhost:8080/';
     } else {
     }
   }

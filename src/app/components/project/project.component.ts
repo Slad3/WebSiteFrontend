@@ -45,14 +45,14 @@ export class ProjectComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.data != null) {
-      this.project = this.data['Project'];
+      this.project = this.data;
       this.loadProject();
     } else if (this.id != null) {
     } else if (this.name != null) {
       let loadedProject = this.getProject(this.name);
 
       loadedProject.file.subscribe((file) => {
-        this.project = JSON.parse(file)['Project'];
+        this.project = JSON.parse(file);
         console.log('Response: ', this.project);
         this.loadProject();
       });

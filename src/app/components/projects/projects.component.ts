@@ -40,7 +40,7 @@ export class ProjectsComponent implements OnInit {
   constructor(private request: Request, private http: HttpClient) {
     if (location.host.toString() === 'localhost:4200') {
       this.dev = true;
-      //   this.backendUrl = 'http://localhost:8080/';
+        this.backendUrl = 'http://localhost:8080/'; 
     } else {
       this.dev = false;
     }

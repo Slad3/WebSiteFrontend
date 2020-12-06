@@ -83,7 +83,6 @@ export class InstagramDataAnalysisComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadTestSuccess();
   }
 
   onFileChange(event) {

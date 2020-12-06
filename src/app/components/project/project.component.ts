@@ -1,5 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { HttpClient, HttpRequest, HttpResponse } from '@angular/common/http';
+
+import { Observable, throwError, Subject } from 'rxjs';
+
 @Component({
   selector: 'project',
   templateUrl: './project.component.html',
@@ -8,15 +12,19 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProjectComponent implements OnInit {
   @Input() data: Object;
   @Input() id: string;
+  @Input() name: string;
 
+  backendUrl = `https://https://dev.benbarcaskey.com/`;
+
+  tempBackend = `https://https://dev.benbarcaskey.com/project?name=Personal%20Frontend`;
+
+  loaded = false;
 
   pinned = false;
   productionToggle = true;
   githubToggle = true;
 
-
-  project: {
-  };
+  project: {};
 
   title: string;
   description: string;
@@ -28,12 +36,25 @@ export class ProjectComponent implements OnInit {
     production: '',
   };
 
-  constructor() {}
+  constructor(private http: HttpClient) {
+    if (location.host.toString() === 'localhost:4200') {
+      this.backendUrl = 'http://localhost:8080/';
+    } else {
+    }
+  }
 
   ngOnInit(): void {
     if (this.data != null) {
-      this.project = this.data['Project'];
+      this.project = this.data;
+      this.loadProject();
     } else if (this.id != null) {
+    } else if (this.name != null) {
+      let loadedProject = this.getProject(this.name);
+
+      loadedProject.file.subscribe((file) => {
+        this.project = JSON.parse(file);
+        this.loadProject();
+      });
     } else {
       this.project = {
         title: 'Sample Title',
@@ -43,29 +64,34 @@ export class ProjectComponent implements OnInit {
         typeOfProject: 'Some Type',
         tags: ['Python', 'Flask', 'JSON', 'Apache'],
       };
-
-      this.title = 'Personal Website';
-      this.description =
-        'My personal website/portfolio, hosted on GitHub pages. The frontend ofmy data science projects will most likely be hosted here.';
-      this.lastUpdated = '2020-11-9';
-      this.typeOfProject = 'Frontend';
-      this.tags = ['TypeScript', 'HTML/CSS', 'Digital Ocean', 'Python'];
-
-      this.links = {
-        github: `https://github.com/Slad3/Slad3.github.io`,
-        production: `https://benbarcaskey.com/`,
-      };
     }
+  }
 
-    this.pinned = this.project['pinned'];
-    this.title = this.project['title'];
-    this.description = this.project['description'];
-    this.lastUpdated = this.project['date'];
-    this.typeOfProject = this.project['typeOfProject'];
-    this.tags = this.project['tags'];
+  getProject(input) {
+    let url = this.backendUrl + `project?name=${input}`;
+    let req = new HttpRequest('GET', url, {
+      responseType: 'text',
+    });
 
-    if (this.project['links'] !== undefined) {
-      this.links = this.project['links'];
-    }
+    const response = new Subject<any>();
+
+    this.http.request(req).subscribe(
+      (event) => {
+        if (event instanceof HttpResponse) {
+          response.next(event.body);
+          response.complete();
+        }
+      },
+      (error) => {
+        console.log('Error', error);
+        return { Error: error };
+      }
+    );
+
+    return { file: response.asObservable() };
+  }
+
+  loadProject() {
+    this.loaded = true;
   }
 }

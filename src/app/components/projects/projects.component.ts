@@ -25,14 +25,12 @@ export class ProjectsComponent implements OnInit {
   loaded = false;
 
   tempProject = {
-    Project: {
-      title: 'Sample Title',
-      description:
-        'Sample description Sample description Sample description Sample description Sample description',
-      date: '1942-12-7',
-      typeOfProject: 'Some Type',
-      tags: ['Python', 'Flask', 'JSON', 'Apache'],
-    },
+    title: 'Sample Title',
+    description:
+      'Sample description Sample description Sample description Sample description Sample description',
+    date: '1942-12-7',
+    typeOfProject: 'Some Type',
+    tags: ['Python', 'Flask', 'JSON', 'Apache'],
   };
 
   projects: [];
@@ -40,7 +38,7 @@ export class ProjectsComponent implements OnInit {
   constructor(private request: Request, private http: HttpClient) {
     if (location.host.toString() === 'localhost:4200') {
       this.dev = true;
-        // this.backendUrl = 'http://localhost:8080/'; 
+      // this.backendUrl = 'http://localhost:8080/';
     } else {
       this.dev = false;
     }
@@ -48,8 +46,8 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.amount === undefined || this.amount === -1) {
-	  this.full = true;
-	  this.amount = -1;
+      this.full = true;
+      this.amount = -1;
     } else {
       this.full = false;
     }

@@ -14,7 +14,7 @@ export class ProjectComponent implements OnInit {
   @Input() id: string;
   @Input() name: string;
 
-  backendUrl = `https://dev.benbarcaskey.com/`;
+  backendUrl = `https://api.benbarcaskey.com/`;
   loaded = false;
 
   pinned = false;

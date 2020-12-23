@@ -41,7 +41,7 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
   dev: boolean;
   progress: number;
   data: Object;
-  backendUrl = 'https://dev.benbarcaskey.com/ScriptAnalysis/';
+  backendUrl = 'https://api.benbarcaskey.com/ScriptAnalysis/';
 
   form: FormGroup;
 

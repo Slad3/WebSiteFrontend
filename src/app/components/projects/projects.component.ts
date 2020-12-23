@@ -17,7 +17,7 @@ import { Request } from '../../api/request.service';
 })
 export class ProjectsComponent implements OnInit {
   @Input() amount: Number;
-  backendUrl = 'https://dev.benbarcaskey.com/';
+  backendUrl = 'https://api.benbarcaskey.com/';
 
   full = true;
   dev = false;

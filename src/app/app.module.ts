@@ -29,7 +29,7 @@ import { ProfessionalExperienceComponent } from './components/professional-exper
 import { PublicationsComponent } from './components/publications/publications.component';
 
 import { TheOfficeScriptAnalyzerComponent } from './components/datascience/the-office-script-analyzer/the-office-script-analyzer.component';
-import { ProjectComponent } from './components/project/project.component';
+import { ProjectCardComponent } from './components/project-card/project-card.component';
 import { SkillsComponent } from './components/skills/skills.component';
 
 @NgModule({
@@ -50,7 +50,7 @@ import { SkillsComponent } from './components/skills/skills.component';
     ProfessionalExperienceComponent,
     PublicationsComponent,
     TheOfficeScriptAnalyzerComponent,
-    ProjectComponent,
+    ProjectCardComponent,
     SkillsComponent,
   ],
   imports: [

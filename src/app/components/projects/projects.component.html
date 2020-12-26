@@ -15,11 +15,11 @@
     </div>
 
     <div *ngIf="loaded" class="row" id="projectList">
-      <project
+      <project-card
         *ngFor="let project of projects"
         [data]="project"
         class="col-md-6"
-      ></project>
+      ></project-card>
     </div>
   </div>
 

@@ -30,7 +30,7 @@ export class ProjectsComponent implements OnInit {
       'Sample description Sample description Sample description Sample description Sample description',
     date: '1942-12-7',
     typeOfProject: 'Some Type',
-    tags: ['Python', 'Flask', 'JSON', 'Apache'],
+    tags: ['Sample', 'Sample', 'JSON', 'Sample'],
   };
 
   projects: [];
@@ -38,7 +38,7 @@ export class ProjectsComponent implements OnInit {
   constructor(private request: Request, private http: HttpClient) {
     if (location.host.toString() === 'localhost:4200') {
       this.dev = true;
-      this.backendUrl = 'http://localhost:8080/';
+    //   this.backendUrl = 'http://localhost:8080/';
     } else {
       this.dev = false;
     }

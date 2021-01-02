@@ -24,6 +24,12 @@ export class HomeComponent implements OnInit {
           panel.style.maxHeight = panel.scrollHeight + 'px';
         }
       });
-    }
+	}
+
+  }
+
+  scrollToBody(){
+	var elmnt = document.getElementById("home");
+	elmnt.scrollIntoView();
   }
 }

@@ -11,13 +11,14 @@ import { InstagramDataAnalysisComponent } from './components/datascience/instagr
 import { ProfessionalExperienceComponent } from './components/professional-experience/professional-experience.component';
 import { PublicationsComponent } from './components/publications/publications.component';
 import { TheOfficeScriptAnalyzerComponent } from './components/datascience/the-office-script-analyzer/the-office-script-analyzer.component';
+import { ProjectsPageComponent } from './components/projects-page/projects-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'blog', component: FeedComponent },
   { path: 'experience', component: ProfessionalExperienceComponent },
   { path: 'publications', component: PublicationsComponent },
-  { path: 'projects', component: ProjectsComponent },
+  { path: 'projects', component: ProjectsPageComponent },
   { path: 'datascience', component: DatascienceHomeComponent },
   { path: 'FacebookAnalysis', component: FacebookDataAnalysisComponent },
   { path: 'InstagramAnalysis', component: InstagramDataAnalysisComponent },

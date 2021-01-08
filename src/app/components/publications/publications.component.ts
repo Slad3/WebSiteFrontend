@@ -42,7 +42,6 @@ export class PublicationsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-	  console.log("here")
     if (this.full === undefined) {
       this.full = true;
     } else {

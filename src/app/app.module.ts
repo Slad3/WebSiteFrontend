@@ -31,6 +31,7 @@ import { PublicationsComponent } from './components/publications/publications.co
 import { TheOfficeScriptAnalyzerComponent } from './components/datascience/the-office-script-analyzer/the-office-script-analyzer.component';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { ProjectsPageComponent } from './components/projects-page/projects-page.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { SkillsComponent } from './components/skills/skills.component';
     TheOfficeScriptAnalyzerComponent,
     ProjectCardComponent,
     SkillsComponent,
+    ProjectsPageComponent,
   ],
   imports: [
 	  	BrowserModule,

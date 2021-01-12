@@ -95,6 +95,13 @@
   margin-right: 3%;
 }
 
+
+.skillsColumn {
+	padding-top: 15px;
+	align-content: center;
+	padding-left: 7%;
+}
+
 #skills > .skillList > li {
   text-align: left;
   font-size: 150%;

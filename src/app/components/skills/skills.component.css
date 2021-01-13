@@ -5,7 +5,7 @@
   display: inline-block;
 }
 
-#skills > #languages > h3 {
+#languages > h3 {
   font-weight: bold;
   font-size: 25px;
   /* text-align: center; */
@@ -18,7 +18,7 @@
   border-bottom: #cacaca;
 }
 
-#skills > #languages > .list > .language {
+#languages > .languageMain {
   list-style: none;
 
   float: left;
@@ -42,7 +42,7 @@
   border-right-color: #0f4c75;
 }
 
-#skills #languages > .list > .language > .languageTitle > h4 {
+#languages >  .languageMain > .languageTitle > h4 {
   font-weight: bold;
   font-size: 30px;
   color: white;
@@ -54,19 +54,19 @@
   font-size: 25px;
 }
 
-#skills #languages > .list > .language > .languageTitle > .icon {
+#languages > .languageMain > .languageTitle > .icon {
   margin-left: 10%;
   max-width: 70px;
   max-height: 50px;
   float: left;
 }
 
-#skills > #languages > .list > .language > ul {
+#languages > .languageMain > ul {
   list-style-position: inside;
   text-align: left;
 }
 
-#skills > #languages > .list > .language > li {
+#languages > .languageMain > li {
   text-align: left;
   float: left;
   font-size: 120%;
@@ -95,11 +95,19 @@
   margin-right: 3%;
 }
 
-
 .skillsColumn {
-	padding-top: 15px;
-	align-content: center;
-	padding-left: 7%;
+ 
+  margin: 7px;
+  padding: 10px;
+  align-content: center;
+ 
+	
+
+  height: 90%;
+
+  border: 1px solid white;
+
+
 }
 
 #skills > .skillList > li {
@@ -163,11 +171,11 @@
 
 /* Full Size CSS */
 @media (min-width: 1115px) {
-  #skills > #languages > .list > .language > ul {
+  #languages > .languageMain > ul {
     margin-top: 25px;
   }
 
-  #skills > #languages > .list > .language {
+  #languages > .languageMain {
     width: 31%;
     min-width: 54px;
   }
@@ -176,7 +184,7 @@
 /* When quad grids get too compressed */
 /* When trio grids get too compressed */
 @media only screen and (max-width: 1114px) {
-  #skills > #languages > .list > .language {
+  #languages > .languageMain {
     align-self: center;
 
     margin-left: 15%;
@@ -191,7 +199,7 @@
     min-height: 100%;
   }
 
-  #skills > #languages > .list > .language > ul {
+  #languages > .languageMain > ul {
     float: left;
     margin-top: 5%;
     margin-left: 10%;
@@ -199,12 +207,12 @@
     word-wrap: normal;
   }
 
-  #skills > #languages > .list > .language > .languageTitle > h4 {
+  #languages > .languageMain > .languageTitle > h4 {
     float: left;
     position: absolute;
   }
 
-  #skills > #languages > .list > .language > .languageTitle > .icon {
+  #languages > .languageMain > .languageTitle > .icon {
     margin-top: 60px;
     margin-left: 5%;
     max-width: 70px;
@@ -212,12 +220,12 @@
     float: left;
   }
 
-  #skills > #languages > .list > .language > h3 {
+  #languages > .languageMain > h3 {
     margin-bottom: 5px;
     float: left;
   }
 
-  #skills > #languages > .list > .language > ol > li > h4 {
+  #languages > .languageMain > ol > li > h4 {
     align-items: center;
     color: red;
   }
@@ -247,11 +255,11 @@
     margin-bottom: 0px;
   }
 
-  #skills > #languages {
+  #languages {
     margin-top: 0px;
   }
 
-  #skills > #languages > .list > .language {
+  #languages > .languageMain {
     align-self: center;
     width: 95%;
     position: relative;
@@ -266,7 +274,7 @@
     border-top-right-radius: 2%;
     border-top-style: dashed;
   }
-  #skills > #languages > .list > .language > ul {
+  #languages > .languageMain > ul {
     margin: 40px;
     margin-top: 60px;
     margin-bottom: 10px;
@@ -276,7 +284,7 @@
     min-height: 100%;
   }
 
-  #skills #languages > .list > .language > .languageTitle > .icon {
+  #languages > .languageMain > .languageTitle > .icon {
     float: right;
     max-width: 60px;
     max-height: 60px;

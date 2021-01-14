@@ -10,6 +10,7 @@ import { DatascienceHomeComponent } from './components/datascience/datascience-h
 import { InstagramDataAnalysisComponent } from './components/datascience/instagram-data-analysis/instagram-data-analysis.component';
 import { ProfessionalExperienceComponent } from './components/professional-experience/professional-experience.component';
 import { PublicationsComponent } from './components/publications/publications.component';
+import { SkillsComponent } from './components/skills/skills.component';
 import { TheOfficeScriptAnalyzerComponent } from './components/datascience/the-office-script-analyzer/the-office-script-analyzer.component';
 import { ProjectsPageComponent } from './components/projects-page/projects-page.component';
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'FacebookAnalysis', component: FacebookDataAnalysisComponent },
   { path: 'InstagramAnalysis', component: InstagramDataAnalysisComponent },
   { path: 'TheOfficeScriptAnalysis', component: TheOfficeScriptAnalyzerComponent },
+  { path: 'skills', component: SkillsComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

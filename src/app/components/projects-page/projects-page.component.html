@@ -1,4 +1,7 @@
+
+
 <div id="projectContent" class="content">
+	<h1 class="mainTitle">Personal Projects</h1>
 	<div class="block">
 	  <h1 class="sectionTitle">
 		Personal Projects
@@ -6,10 +9,10 @@
 		  See all projects
 		</a>
 	  </h1>
-	  <div class="container">
+	  <div class="container-fluid">
 		<div *ngIf="loaded == false">
 		  <h4>Loading...</h4>
-		</div>
+		</div> 
   
 		<div *ngIf="loaded" class="row" id="projectList">
 		  <project-card
@@ -25,4 +28,4 @@
 	  </h4>
 	</div>
   </div>
-  
+   

@@ -58,8 +58,21 @@ body {
 
 .mainTitle {
   text-align: center;
-  font-size: 32px;
-  font-weight: bold;
+  align-self: center;
+
+  width: 80%;
+
+  margin-left: 10%;
+  margin-right: 10%;
+
+  font-size: 40px;
+  /* padding-left: 15%; */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* font-weight: bold; */
+
+  border-top: 2px dashed whitesmoke;
+  border-bottom: 2px dashed whitesmoke;
 }
 
 .sectionTitle {

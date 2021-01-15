@@ -141,7 +141,7 @@ footer {
 
   min-height: 20vh;
   max-height: 50vh;
-  min-height: 200px;
+  /* min-height: 200px; */
   margin-bottom: 0px;
 }
 

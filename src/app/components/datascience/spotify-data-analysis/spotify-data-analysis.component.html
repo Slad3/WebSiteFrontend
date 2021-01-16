@@ -181,7 +181,13 @@
           </div>
         </div>
 
-        <div class="retentionRate">
+        <div id="totalRate">
+          <h2>TotalPlays :</h2>
+          <h4 id="perPlay">
+            <!-- Per Play: {{ this.songData.AverageRetentionRate.PerPlay }} -->
+          </h4>
+        </div>
+        <div id="retentionRate">
           <h2>Average Retention Rate:</h2>
           <h4 id="perPlay">
             Per Play: {{ this.songData.AverageRetentionRate.PerPlay }}
@@ -190,7 +196,7 @@
 
         <div class="container">
           <div class="row">
-            <div class="col-md-6" id="dayHistogram">
+            <div class="col-lg-6" id="dayHistogram">
               <highcharts-chart
                 class="dayHistogram"
                 [Highcharts]="dayHistogram"
@@ -198,7 +204,7 @@
                 style="width: 100%; display: block"
               ></highcharts-chart>
             </div>
-            <div class="col-md-6 chart">
+            <div class="col-lg-6 chart">
               <highcharts-chart
                 class="hourHistogram"
                 [Highcharts]="hourHistogram"
@@ -206,7 +212,7 @@
                 style="width: 100%; display: block"
               ></highcharts-chart>
             </div>
-            <div class="col-md-12" id="yearHistogram">
+            <div class="col-lg-12 chart" id="yearHistogram">
               <highcharts-chart
                 class="dateHistogram"
                 [Highcharts]="dateHistogram"

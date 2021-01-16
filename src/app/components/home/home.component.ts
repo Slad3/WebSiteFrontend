@@ -4,8 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: [
-	'./home.component.css',
-	'../datascience/datascience.component.css'
+	'./home.component.css'
   ],
 })
 export class HomeComponent implements OnInit {
@@ -24,6 +23,12 @@ export class HomeComponent implements OnInit {
           panel.style.maxHeight = panel.scrollHeight + 'px';
         }
       });
-    }
+	}
+
+  }
+
+  scrollToBody(){
+	var elmnt = document.getElementById("home");
+	elmnt.scrollIntoView();
   }
 }

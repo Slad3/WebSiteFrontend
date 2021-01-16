@@ -1,26 +1,22 @@
+.block {
+  margin: 10px;
+  margin-left: 0px;
 
-.block{
-
-	margin: 10px;
-	margin-left: 0px;
-
-	height: 100%;
-	width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
-#resume{
+#resume {
+  margin-left: 10px;
 
-	margin-left: 10px;
-
-	width: 100%;
-	border-bottom: solid yellow 2px;
+  width: 100%;
+  border-bottom: solid yellow 2px;
 }
+
 #experience {
   margin-top: 30px;
   clear: both;
 }
-
-
 
 #techBasedInterests {
   color: black;
@@ -63,13 +59,11 @@
 
 /* Full Size CSS */
 @media (min-width: 1115px) {
-
 }
 
 /* When quad grids get too compressed */
 /* When trio grids get too compressed */
 @media only screen and (max-width: 1114px) {
-
 }
 
 /* For mobile */
@@ -89,6 +83,4 @@
   #experience {
     width: 100%;
   }
-
-
 }

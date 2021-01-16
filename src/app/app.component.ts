@@ -11,7 +11,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  backendUrl = 'http://localhost:8080/';
+  backendUrl = 'https://api.benbarcaskey.com/';
   title = 'the strangest title';
 
   navbar: any;
@@ -22,7 +22,9 @@ export class AppComponent implements OnInit {
   quote: string = 'Loading';
 
   constructor(private request: Request, private http: HttpClient) {
-    // this.getQuote();
+    if (location.host.toString() !== 'localhost:4200') {
+      this.getQuote();
+    }
   }
 
   ngOnInit() {
@@ -64,5 +66,4 @@ export class AppComponent implements OnInit {
       }
     );
   }
-
 }

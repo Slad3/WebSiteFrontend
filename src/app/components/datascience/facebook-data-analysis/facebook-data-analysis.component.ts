@@ -37,7 +37,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class FacebookDataAnalysisComponent implements OnInit {
   dev: boolean;
   data: Object;
-  backendUrl = 'https://dev.benbarcaskey.com/SocialMedia/';
+  backendUrl = 'https://api.benbarcaskey.com/SocialMedia/';
 
   maxFileSizeMB = 200;
 
@@ -72,7 +72,8 @@ export class FacebookDataAnalysisComponent implements OnInit {
       this.dev = false;
     }
 
-    this.instructionsToggle = true;
+	this.instructionsToggle = true;
+	console.log(this.dev);
   }
 
   // Graphs and Charts

@@ -40,12 +40,6 @@
 }
 
 
-#content{
-	/* width: calc(100% - 60px); */
-	/* margin-left: 50px; */
-	/* margin-right: auto; */
-}
-
 #left{
 	float: left;
 	position: fixed;

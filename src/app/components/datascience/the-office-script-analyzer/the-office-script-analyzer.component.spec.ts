@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { TheOfficeScriptAnalyzerComponent } from './the-office-script-analyzer.component';
 
@@ -6,7 +6,7 @@ describe('TheOfficeScriptAnalyzerComponent', () => {
   let component: TheOfficeScriptAnalyzerComponent;
   let fixture: ComponentFixture<TheOfficeScriptAnalyzerComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ TheOfficeScriptAnalyzerComponent ]
     })

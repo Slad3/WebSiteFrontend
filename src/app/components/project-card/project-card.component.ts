@@ -5,16 +5,16 @@ import { HttpClient, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Observable, throwError, Subject } from 'rxjs';
 
 @Component({
-  selector: 'project',
-  templateUrl: './project.component.html',
-  styleUrls: ['./project.component.css'],
+  selector: 'project-card',
+  templateUrl: './project-card.component.html',
+  styleUrls: ['./project-card.component.css'],
 })
-export class ProjectComponent implements OnInit {
+export class ProjectCardComponent implements OnInit {
   @Input() data: Object;
   @Input() id: string;
   @Input() name: string;
 
-  backendUrl = `https://dev.benbarcaskey.com/`;
+  backendUrl = `https://api.benbarcaskey.com/`;
   loaded = false;
 
   pinned = false;

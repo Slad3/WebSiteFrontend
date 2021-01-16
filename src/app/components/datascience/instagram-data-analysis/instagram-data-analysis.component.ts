@@ -40,7 +40,7 @@ export class InstagramDataAnalysisComponent implements OnInit {
   dev: boolean;
   data: Object;
 
-  backendUrl = 'https://dev.benbarcaskey.com/SocialMedia/';
+  backendUrl = 'https://api.benbarcaskey.com/SocialMedia/';
 
   maxFileSizeMB = 200;
 

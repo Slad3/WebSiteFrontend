@@ -134,28 +134,30 @@
 
   <div #Graphs id="graphs" *ngIf="this.graphsToggle">
     <div class="block">
-		<div>
-      <h3 class="sectionTitle" style="float: left">Individual Song Analysis</h3>
-      <select
-        class="select-option"
-        id="songSelect"
-        #mySelect
-        (change)="onSongSelected(mySelect.value)"
-      >
-        <option
-          class="option"
-          id=""
-          *ngFor="let song of this.topSongs"
-          [value]="song.title"
+      <div>
+        <h3 class="sectionTitle" style="float: left">
+          Individual Song Analysis
+        </h3>
+        <select
+          class="select-option"
+          id="songSelect"
+          #mySelect
+          (change)="onSongSelected(mySelect.value)"
         >
-          {{ song.artists[0] + ", " + song.title }}
-        </option>
-	  </select>
-	  </div>
-	  <br />
-	  <br />
-	  <br />
-	  <div class="break"></div>
+          <option
+            class="option"
+            id=""
+            *ngFor="let song of this.topSongs"
+            [value]="song.title"
+          >
+            {{ song.artists[0] + ", " + song.title }}
+          </option>
+        </select>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="break"></div>
       <br />
 
       <div *ngIf="this.individualToggle">
@@ -188,16 +190,7 @@
 
         <div class="container">
           <div class="row">
-            <div class="col-md-12" id="yearHistogram">
-              <h3>Date Histogram</h3>
-              <highcharts-chart
-                class="dateHistogram"
-                [Highcharts]="dateHistogram"
-                [options]="dateHistogramOptions"
-                style="width: 100%; display: block"
-              ></highcharts-chart>
-            </div>
-            <div class="col-md-12" id="dayHistogram">
+            <div class="col-md-6" id="dayHistogram">
               <highcharts-chart
                 class="dayHistogram"
                 [Highcharts]="dayHistogram"
@@ -205,11 +198,19 @@
                 style="width: 100%; display: block"
               ></highcharts-chart>
             </div>
-            <div class="col-md-12 chart">
+            <div class="col-md-6 chart">
               <highcharts-chart
                 class="hourHistogram"
                 [Highcharts]="hourHistogram"
                 [options]="hourHistogramOptions"
+                style="width: 100%; display: block"
+              ></highcharts-chart>
+            </div>
+            <div class="col-md-12" id="yearHistogram">
+              <highcharts-chart
+                class="dateHistogram"
+                [Highcharts]="dateHistogram"
+                [options]="dateHistogramOptions"
                 style="width: 100%; display: block"
               ></highcharts-chart>
             </div>

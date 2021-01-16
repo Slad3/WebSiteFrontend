@@ -30,7 +30,7 @@
   text-align: center;
 }
 
-.content {
+.innerContent {
   width: 64%;
 
   clear: both;
@@ -85,11 +85,11 @@
     border-bottom-color: whitesmoke;
   }
 
-  .content {
+  .innerContent {
     width: 80%;
   }
 
-  .content > .title,
+  .innerContent > .title,
   .experienceType {
     margin: 0px;
     padding: 0px;

@@ -72,41 +72,35 @@ export class TheOfficeScriptAnalyzerComponent implements OnInit {
     } else {
       this.dev = false;
     }
-
-
-
-}
+  }
 
   ngOnInit(): void {
-	this.activatedRoute.queryParams.subscribe((params) => {
-		let quote = params['quote'];
-		let person = params['character'];
-		if (quote !== undefined || person !== undefined) {
-		  if (quote !== undefined) {
-		    let queryElement: HTMLInputElement = document.getElementById(
-		      'query'
-		    ) as HTMLInputElement;
-		    queryElement.value = quote;
-  
-			this.form.get('query').setValue(quote);
-		  }
-		  if (person !== undefined) {
-			  let personElement: HTMLInputElement = document.getElementById(
-			  	'person'
-			    ) as HTMLInputElement;
-			    personElement.value = person;
-  
-  
-			this.form.get('person').setValue(person);
-		  }
-		  
-		  this.onSubmitUpload()
-		}
-		else{
-			this.loadThatsWhatSheSaid();
-		}
-	  });
-	
+    this.activatedRoute.queryParams.subscribe((params) => {
+      let quote = params['quote'];
+      let person = params['character'];
+      if (quote !== undefined || person !== undefined) {
+        if (quote !== undefined) {
+          let queryElement: HTMLInputElement = document.getElementById(
+            'query'
+          ) as HTMLInputElement;
+          queryElement.value = quote;
+
+          this.form.get('query').setValue(quote);
+        }
+        if (person !== undefined) {
+          let personElement: HTMLInputElement = document.getElementById(
+            'person'
+          ) as HTMLInputElement;
+          personElement.value = person;
+
+          this.form.get('person').setValue(person);
+        }
+
+        this.onSubmitUpload();
+      } else {
+        this.loadThatsWhatSheSaid();
+      }
+    });
   }
 
   onFileChange(event) {

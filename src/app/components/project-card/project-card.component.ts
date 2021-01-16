@@ -35,7 +35,7 @@ export class ProjectCardComponent implements OnInit {
 
   constructor(private http: HttpClient) {
     if (location.host.toString() === 'localhost:4200') {
-      this.backendUrl = 'http://localhost:8080/';
+    //   this.backendUrl = 'http://localhost:8080/';
     } else {
     }
   }

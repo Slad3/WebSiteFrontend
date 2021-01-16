@@ -63,44 +63,7 @@ li a:hover {
   position: center;
 }
 
-header {
-  margin-top: 0px;
-  position: relative;
 
-  background-image: url("../assets/images/mainphotoCompressed.jpg");
-  background-position: 45% 50% top;
-  /* background-position-y: center; */
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  min-height: 300px;
-  height: 50vh;
-
-  opacity: 0;
-
-  animation: fadeIn 1.5s forwards;
-}
-
-header > .homeSouth {
-  color: whitesmoke;
-  text-align: center;
-  position: absolute;
-  left: calc(50% - 54px);
-  top: calc(100% - 120px);
-  display: block;
-}
-
-.text-block > #subText-block {
-  text-align: center;
-}
-
-.text-block #extension {
-  color: black;
-  /* padding: 10px;
-			margin: 1px; */
-  border-radius: 10%;
-  background-color: whitesmoke;
-}
 
 #mainphoto {
   width: 100%;
@@ -164,13 +127,8 @@ header > .homeSouth {
 }
 
 #router {
-  padding-top: 40px;
   padding-bottom: 2.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  align-self: center;
-  min-height: 50vh;
-  max-width: 1080px;
+
 }
 
 footer {
@@ -181,8 +139,9 @@ footer {
 
   position: relative;
 
+  min-height: 20vh;
   max-height: 50vh;
-  min-height: 200px;
+  /* min-height: 200px; */
   margin-bottom: 0px;
 }
 

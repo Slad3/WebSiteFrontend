@@ -17,6 +17,7 @@ import { Request } from '../../api/request.service';
 })
 export class ProjectsComponent implements OnInit {
   @Input() amount: Number;
+  @Input() segment: Boolean;
   backendUrl = 'https://api.benbarcaskey.com/';
 
   full = true;
@@ -38,7 +39,7 @@ export class ProjectsComponent implements OnInit {
   constructor(private request: Request, private http: HttpClient) {
     if (location.host.toString() === 'localhost:4200') {
       this.dev = true;
-    //   this.backendUrl = 'http://localhost:8080/';
+      //   this.backendUrl = 'http://localhost:8080/';
     } else {
       this.dev = false;
     }
@@ -50,6 +51,12 @@ export class ProjectsComponent implements OnInit {
       this.amount = -1;
     } else {
       this.full = false;
+    }
+
+    if (this.segment !== undefined && this.segment === true) {
+    } else {
+      var content = document.getElementById('projectContent');
+      content.classList.add('content');
     }
 
     this.projects = [];

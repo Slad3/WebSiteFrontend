@@ -12,6 +12,7 @@ import { ProfessionalExperienceComponent } from './components/professional-exper
 import { PublicationsComponent } from './components/publications/publications.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { TheOfficeScriptAnalyzerComponent } from './components/datascience/the-office-script-analyzer/the-office-script-analyzer.component';
+import { SpotifyDataAnalysisComponent } from './components/datascience/spotify-data-analysis/spotify-data-analysis.component';
 import { ProjectsPageComponent } from './components/projects-page/projects-page.component';
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'datascience', component: DatascienceHomeComponent },
   { path: 'FacebookAnalysis', component: FacebookDataAnalysisComponent },
   { path: 'InstagramAnalysis', component: InstagramDataAnalysisComponent },
+  { path: 'SpotifyAnalysis', component: SpotifyDataAnalysisComponent },
   { path: 'TheOfficeScriptAnalysis', component: TheOfficeScriptAnalyzerComponent },
   { path: 'skills', component: SkillsComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },

@@ -1,0 +1,224 @@
+<app-datascience></app-datascience>
+<ngx-spinner
+  type="line-scale-pulse-out"
+  size="medium"
+  color="#FFF"
+  fullScreen="false"
+></ngx-spinner>
+
+<div class="content">
+  <h1 class="mainTitle">Spotify Data Analysis</h1>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div id="intro" class="block col-md-6">
+        <h2 class="sectionTitle">
+          About/How to use
+          <button
+            class="btn btn-xs col-xs-2 mobileButton"
+            id="aboutButton"
+            data-toggle="collapse"
+            href="#introSection"
+          >
+            V
+          </button>
+        </h2>
+        <div id="introSection">
+          <p>
+            By US law, social media sites are required to allow the user to
+            download their data that the social media site stores for them. This
+            tool allows you to view what they collect on you, but to see some
+            extra analytics on things like conversations.
+          </p>
+        </div>
+      </div>
+      <div id="uploadForm" class="block col-md-6">
+        <div class="container-fluid">
+          <form
+            [formGroup]="form"
+            (ngSubmit)="onSubmitUpload()"
+            class="form-group row"
+          >
+            <div *ngIf="fileNeeded">
+              Please select a file before submitting.
+            </div>
+            <h3 class="" for="fileUpload">Input File:</h3>
+            <input
+              id="fileUpload"
+              class="form-control-file col-lg-5"
+              type="file"
+              name="file"
+              aria-describedby="repoHelp"
+              placeholder="Upload Zip"
+              (change)="onFileChange($event)"
+            />
+            <br />
+            <button
+              type="submit"
+              class="btn btn-primary col-lg-6"
+              id="submitFile"
+            >
+              Submit File
+            </button>
+          </form>
+          <button
+            *ngIf="this.dev"
+            class="btn btn-secondary btn-sm"
+            id="testSuccess"
+            (click)="this.loadTestSuccess()"
+          >
+            Example Success
+          </button>
+
+          <div class="progress" *ngIf="this.progressBarToggle">
+            <div
+              #progressbar
+              id="progressbar"
+              class="progress-bar"
+              role="progressbar"
+              aria-valuenow="60"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              [style.width]="this.progress + '%'"
+            ></div>
+            Uploading
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="instructions" class="block" *ngIf="this.instructionsToggle">
+    <h2>
+      Instructions for Downloading Your Data
+      <button
+        class="btn btn-xs col-xs-2 showButton"
+        id=""
+        data-toggle="collapse"
+        href="#instructionsSection"
+      >
+        V
+      </button>
+    </h2>
+
+    <div>
+      <a href="https://www.instagram.com/download/request/" target="_blank">
+        <h4 style="font-weight: bold; text-align: center">
+          Request your Instagram data at here.
+        </h4>
+      </a>
+      <br />
+      <p>
+        From here you can request your data to be downloaded. Once your request
+        has been sent, Facebook will send you an email to the address you use to
+        log into Facebook with, with a direct link for you to download your
+        data. It is strongly recommended you download and upload this on a
+        desktop/laptop platform rather than a mobile device, though it is
+        possible on a phone.
+      </p>
+      <br />
+      <p>
+        Downloaded Instagram data .zip files should be small enough to just
+        upload once you download them. However, it is always recommended you
+        remove pictures and videos from the zip file to speed up upload time,
+        especially with slow internet.
+      </p>
+
+      <h4 style="font-weight: bold; color: red">
+        DISCLAIMER: No data is saved after session ends, nor sent to any
+        external sources.<br />TLDU: I don't want your data, nor do I want to
+        send your data to someone. That's creepy.
+      </h4>
+    </div>
+  </div>
+
+  <div #Graphs id="graphs" *ngIf="this.graphsToggle">
+    <div class="block">
+      <h3 class="sectionTitle" style="float: left">Individual Song Analysis</h3>
+      <select
+        class="select-option"
+        id="songSelect"
+        #mySelect
+        (change)="onSongSelected(mySelect.value)"
+      >
+        <option
+          class="option"
+          id=""
+          *ngFor="let song of this.topSongs"
+          [value]="song.title"
+        >
+          {{ song.artists[0] + ", " + song.title }}
+        </option>
+      </select>
+      <br />
+      <br />
+
+      <div *ngIf="this.individualToggle">
+        <div id="songMetaData">
+          <div class="container">
+            <div class="row">
+              <h1 id="songTitle" class="col-md-9">{{ this.songData.title }}</h1>
+              <h2 id="mainArtist" class="col-md-3">
+                {{ this.songData.artists[0] }}
+              </h2>
+            </div>
+          </div>
+
+          <div *ngIf="this.songData.artists.length > 1">
+            <h3>Other Artists:</h3>
+            <ul>
+              <li *ngFor="let artist of this.songData.artists.slice(1)">
+                {{ artist }}
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="retentionRate">
+          <h2>Average Retention Rate:</h2>
+          <h4 id="perPlay">
+            Per Play: {{ this.songData.AverageRetentionRate.PerPlay }}
+          </h4>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12" id="yearHistogram">
+              <h3>Date Histogram</h3>
+              <highcharts-chart
+                class="dateHistogram"
+                [Highcharts]="dateHistogram"
+                [options]="dateHistogramOptions"
+                style="width: 100%; display: block"
+              ></highcharts-chart>
+            </div>
+            <div class="col-md-12" id="dayHistogram">
+              <highcharts-chart
+                class="dayHistogram"
+                [Highcharts]="dayHistogram"
+                [options]="dayHistogramOptions"
+                style="width: 100%; display: block"
+              ></highcharts-chart>
+            </div>
+            <div class="col-md-12 chart">
+              <highcharts-chart
+                class="hourHistogram"
+                [Highcharts]="hourHistogram"
+                [options]="hourHistogramOptions"
+                style="width: 100%; display: block"
+              ></highcharts-chart>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="this.emptyResultToggle">
+    <h2 class="sectionTitle">Could not find any valid files to analyze</h2>
+  </div>
+
+  <!-- <div>
+	  <project-card [name]="'SpotifyAnalysis'"> </project-card>
+	</div> -->
+</div>

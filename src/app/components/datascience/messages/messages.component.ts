@@ -136,6 +136,9 @@ export class MessagesComponent implements OnInit {
 			 messageHistogramCategories.push(element.time);
 			 messageHistogramData.push(element.value);
 		 });
+
+		 console.log(messageHistogramCategories)
+		 console.log(messageHistogramData)
 	
 		  this.messageHistogram = Highcharts;
 		  this.messageHistogramOptions = {

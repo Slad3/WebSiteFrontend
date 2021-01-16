@@ -5,7 +5,9 @@
 	padding-right: 5%;
 	/* float: right !important; */
 }
-
+.chart{
+	margin-bottom: 10px;
+}
 
 
 #submitFile, #fileUpload{

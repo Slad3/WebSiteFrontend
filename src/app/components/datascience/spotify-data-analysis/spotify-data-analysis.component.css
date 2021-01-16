@@ -29,12 +29,6 @@
 }
 
 
-#personSelect {
-	float: right;
-	height: 50px;
-	margin-bottom: 40px;
-}
-
 .individualAnalysis {
 	margin-top: 50px;
 	padding-top: 50px;
@@ -43,14 +37,22 @@
 	border-top-width: 2px;
 }
 
-.messageHistogram {
 
+#songSelect {
+	float: right;
+	max-width: 90%;
 }
-
+ 
 .charts{
 	/* margin-top: 30px; */
 }
 
+
+#songMetaData {
+	padding-bottom: 20px;
+	border-bottom: 1px dashed whitesmoke;
+	margin-bottom: 20px;
+}
 
 
 #songTitle{

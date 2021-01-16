@@ -134,6 +134,7 @@
 
   <div #Graphs id="graphs" *ngIf="this.graphsToggle">
     <div class="block">
+		<div>
       <h3 class="sectionTitle" style="float: left">Individual Song Analysis</h3>
       <select
         class="select-option"
@@ -149,8 +150,12 @@
         >
           {{ song.artists[0] + ", " + song.title }}
         </option>
-      </select>
-      <br />
+	  </select>
+	  </div>
+	  <br />
+	  <br />
+	  <br />
+	  <div class="break"></div>
       <br />
 
       <div *ngIf="this.individualToggle">

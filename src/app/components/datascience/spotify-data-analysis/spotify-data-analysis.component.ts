@@ -96,7 +96,7 @@ export class SpotifyDataAnalysisComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadTestSuccess();
+    this.loadTestSuccess(); 
   }
 
   onFileChange(event) {

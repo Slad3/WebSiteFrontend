@@ -42,16 +42,31 @@
             <div *ngIf="fileNeeded">
               Please select a file before submitting.
             </div>
-            <h3 class="" for="fileUpload">Input File:</h3>
-            <input
-              id="fileUpload"
-              class="form-control-file col-lg-5"
-              type="file"
-              name="file"
-              aria-describedby="repoHelp"
-              placeholder="Upload Zip"
-              (change)="onFileChange($event)"
-            />
+            <div class="col-lg-6">
+              <h3 class="" for="fileUpload">Input File:</h3>
+              <input
+                id="fileUpload"
+                class="form-control-file"
+                type="file"
+                name="file"
+                aria-describedby="repoHelp"
+                placeholder="Upload Zip"
+                (change)="onFileChange($event)"
+              />
+            </div>
+            <br />
+            <br />
+            <div class="col-lg-6">
+              <h3 class="" for="timezone">Timezone:</h3>
+              <input
+                id="timezone"
+                class="form-control-file"
+                type="number"
+                name="timezone"
+                aria-describedby="repoHelp"
+                (change)="onTimeZoneChange($event)"
+              />
+            </div>
             <br />
             <button
               type="submit"
@@ -102,7 +117,10 @@
     </h2>
 
     <div id="instructionsSection">
-      <a href="https://www.spotify.com/us/account/privacy/?_ga=2.129701775.2091880375.1610872086-1391581503.1604440820" target="_blank">
+      <a
+        href="https://www.spotify.com/us/account/privacy/?_ga=2.129701775.2091880375.1610872086-1391581503.1604440820"
+        target="_blank"
+      >
         <h4 style="font-weight: bold; text-align: center">
           Request your Spotify data at here.
         </h4>
@@ -111,8 +129,8 @@
       <p>
         From here you can request your data to be downloaded. Once your request
         has been sent, Spotify will send you an email to the address you use to
-        log into Spotify with, with a direct link for you to download your
-        data. File sizes usually rage from 1-2MB. 
+        log into Spotify with, with a direct link for you to download your data.
+        File sizes usually rage from 1-2MB.
       </p>
     </div>
   </div>

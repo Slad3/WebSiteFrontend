@@ -84,10 +84,11 @@ export class SpotifyDataAnalysisComponent implements OnInit {
   ) {
     this.form = this.formBuilder.group({
       file: [''],
+      timezone: 0,
     });
     if (location.host.toString() === 'localhost:4200') {
       this.dev = true;
-      this.backendUrl = 'http://localhost:8091/';
+      this.backendUrl = 'http://localhost:8093/';
     } else {
       this.dev = false;
     }
@@ -96,7 +97,12 @@ export class SpotifyDataAnalysisComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadTestSuccess(); 
+    let timezone = document.getElementById('timezone') as HTMLInputElement;
+    timezone.value = "-69";
+
+    this.form.get('timezone').setValue(timezone.value);
+
+    // this.loadTestSuccess();
   }
 
   onFileChange(event) {
@@ -115,15 +121,20 @@ export class SpotifyDataAnalysisComponent implements OnInit {
     }
   }
 
+  onTimeZoneChange(event) {
+    this.form.get('timezone').setValue(event.target.form[1].value);
+  }
+
   onSubmitUpload() {
     if (this.form.get('file').value !== '') {
       this.graphsToggle = false;
       this.spinner.show();
       this.progressBarToggle = true;
 
-      const response = this.request.uploadFile(
+      const response = this.request.uploadSpotify(
         this.form.get('file').value,
-        this.backendUrl + 'instagram'
+        this.form.get('timezone').value,
+        this.backendUrl + 'parse'
       );
 
       this.uploadStatus = response.status;
@@ -156,6 +167,7 @@ export class SpotifyDataAnalysisComponent implements OnInit {
     this.graphsToggle = false;
     this.spinner.show();
     this.data = null;
+    console.log('here');
     let req = new HttpRequest('GET', 'http://localhost:8093/' + 'sample', {
       responseType: 'text',
     });
@@ -213,9 +225,9 @@ export class SpotifyDataAnalysisComponent implements OnInit {
   }
 
   loadSongHistogram(song) {
+    console.log(song);
 
-
-	let color = '#005522'
+    let color = '#005522';
 
     // Hour Histogram
     const hourHistogramData = [];
@@ -257,7 +269,7 @@ export class SpotifyDataAnalysisComponent implements OnInit {
     this.dayHistogramNotFound = [];
 
     song.dayHistogram.forEach((element) => {
-		var date: Number = +element.date
+      var date: Number = +element.date;
       dayHistogramCategories.push(this.dateToWeekDay(date));
       dayHistogramData.push(element.times);
     });
@@ -318,41 +330,41 @@ export class SpotifyDataAnalysisComponent implements OnInit {
         },
       },
     };
-  } 
+  }
 
-  dateToWeekDay(input) {	
-	var value = "";
+  dateToWeekDay(input) {
+    var value = '';
     switch (input) {
       case 0: {
-		value = 'Sunday';
-		break;
+        value = 'Sunday';
+        break;
       }
       case 1: {
-		value =  'Monday';
-		break;
+        value = 'Monday';
+        break;
       }
       case 2: {
-		value =  'Tuesday';
-		break;
+        value = 'Tuesday';
+        break;
       }
       case 3: {
-		value =  'Wednesday';
-		break;
+        value = 'Wednesday';
+        break;
       }
       case 4: {
-		value =  'Thurdsay';
-		break;
+        value = 'Thurdsay';
+        break;
       }
       case 5: {
-		value =  'Friday';
-		break;
+        value = 'Friday';
+        break;
       }
       case 6: {
-		value =  'Saturday';
-		break;
+        value = 'Saturday';
+        break;
       }
-	}
-	
-	return value;
+    }
+
+    return value;
   }
 }

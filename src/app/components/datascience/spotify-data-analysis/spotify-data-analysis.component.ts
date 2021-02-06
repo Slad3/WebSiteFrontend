@@ -100,7 +100,8 @@ export class SpotifyDataAnalysisComponent implements OnInit {
     let timezone = document.getElementById('timezone') as HTMLInputElement;
     timezone.value = "-69";
 
-    this.form.get('timezone').setValue(timezone.value);
+    // this.form.get('timezone').setValue(timezone.value);
+    this.form.get('timezone').setValue(-8);
 
     // this.loadTestSuccess();
   }
@@ -133,7 +134,8 @@ export class SpotifyDataAnalysisComponent implements OnInit {
 
       const response = this.request.uploadSpotify(
         this.form.get('file').value,
-        this.form.get('timezone').value,
+        // this.form.get('timezone').value,
+        -8,
         this.backendUrl + 'parse'
       );
 

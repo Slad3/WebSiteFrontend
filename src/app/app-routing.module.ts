@@ -13,7 +13,7 @@ import { PublicationsComponent } from './components/publications/publications.co
 import { SkillsComponent } from './components/skills/skills.component';
 import { TheOfficeScriptAnalyzerComponent } from './components/datascience/the-office-script-analyzer/the-office-script-analyzer.component';
 import { ProjectsPageComponent } from './components/projects-page/projects-page.component';
-import { ADScriptAnalyzerComponent } from './components/datascience/adscript-analysis/adscript-analysis.component';
+import { ADScriptAnalysisComponent } from './components/datascience/adscript-analysis/adscript-analysis.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'FacebookAnalysis', component: FacebookDataAnalysisComponent },
   { path: 'InstagramAnalysis', component: InstagramDataAnalysisComponent },
   { path: 'TheOfficeScriptAnalysis', component: TheOfficeScriptAnalyzerComponent },
-  { path: 'ArrestedDevelopmentScriptAnalysis', component: ADScriptAnalyzerComponent },
+  { path: 'ArrestedDevelopmentScriptAnalysis', component: ADScriptAnalysisComponent },
   { path: 'skills', component: SkillsComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];

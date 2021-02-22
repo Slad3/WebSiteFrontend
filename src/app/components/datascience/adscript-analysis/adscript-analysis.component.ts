@@ -37,7 +37,7 @@ import { ActivationEnd } from '@angular/router';
     '../../../stylesheets/QueryAnalysis.css',
   ],
 })
-export class ADScriptAnalyzerComponent implements OnInit {
+export class ADScriptAnalysisComponent implements OnInit {
 	dev: boolean;
 	progress: number;
 	data: Object;

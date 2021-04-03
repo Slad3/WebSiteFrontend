@@ -51,8 +51,10 @@ header > #bottomButton {
   float: bottom;
   text-align: center;
   position: absolute;
+
   left: calc(50% - 54px);
   top: calc(100% - 140px);
+
 }
 
 header > #bottomButton > .smoothScrollBtn {
@@ -210,23 +212,21 @@ header > #bottomButton > .smoothScrollBtn {
   }
 
   .text-block {
-    font-size: 125%;
-    left: 50%;
-  }
-
-  .text-block {
     position: absolute;
     resize: both;
-    /* top: 40%;
-    left: 55%; */
     top: 40%;
-    left: 55%;
+	left: calc(50%);
     padding: 1%;
     color: rgba(0, 0, 0, 0.86);
     color: rgba(250, 250, 250, 0.86);
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 25px;
     transform: translateX(-50%) translateY(-50%);
+
+	font-size: 125%;
+
+
+
 
     max-width: 90vw;
     opacity: 0;
@@ -266,7 +266,7 @@ header > #bottomButton > .smoothScrollBtn {
     /* top: 40%;
     left: 55%; */
     top: 40%;
-    left: 55%;
+    left: 50%;
     padding: 1%;
     color: rgba(0, 0, 0, 0.86);
     color: rgba(250, 250, 250, 0.86);
@@ -303,8 +303,6 @@ header > #bottomButton > .smoothScrollBtn {
   .text-block {
     position: absolute;
     resize: both;
-    /* top: 40%;
-		left: 55%; */
     padding: 1%;
     color: rgba(0, 0, 0, 0.86);
     color: rgba(250, 250, 250, 0.86);

@@ -62,7 +62,7 @@ export class ProjectsComponent implements OnInit {
     this.projects = [];
     this.loadProjects();
 
-    this.loaded = true;
+
   }
 
   loadProjects() {
@@ -80,6 +80,7 @@ export class ProjectsComponent implements OnInit {
       (event) => {
         if (event instanceof HttpResponse) {
           this.projects = JSON.parse(event.body.toString());
+		  this.loaded = true;
         }
       },
       (error) => {

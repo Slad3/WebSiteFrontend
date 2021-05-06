@@ -22,7 +22,7 @@
     "@ng-bootstrap/ng-bootstrap": "^7.0.0",
     "angular-cli-ghpages": "^0.6.2",
     "bootstrap": "^4.6.0",
-    "highcharts": "^7.2.2",
+    "highcharts": "^9.0.0",
     "highcharts-angular": "^2.10.0",
     "jquery": "^3.6.0",
     "ngh": "^0.2.12",
